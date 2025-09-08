@@ -6,6 +6,7 @@ import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
 import ReactGA from 'react-ga4';
 import Header from './view/components/header/header.tsx';
 import WindowSizeProvider from './view/components/providers/window-size-provider.tsx';
+import ExperiencePage from './view/pages/experience-page.tsx';
 
 
 // Lazy load non-critical components and GSAP
@@ -62,6 +63,8 @@ function App() {
       return <HomePage />;
     } else if (pathname === "/privacy-policy") {
       return <LazyPrivacyPolicy />;
+    } else if (pathname === "/presentation") {
+      return <ExperiencePage />;
     } else {
       return <LazyNotFoundPage />;
     }

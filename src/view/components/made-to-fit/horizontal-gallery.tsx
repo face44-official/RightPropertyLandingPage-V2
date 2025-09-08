@@ -4,9 +4,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HorizontalGallery({
-    images
+    images,
+    pinId = "horizontal-gallery",
+    galleryInnerSelector = ".gallery__inner",
+    pinSelector = "#made-to-fit",
+
 }: {
-    images: string[]
+    images: string[],
+    pinId?: string,
+    galleryInnerSelector?: string,
+    pinSelector?: string,
 }) {
     const horizontalPinTl = useRef<gsap.core.Timeline>(null);
     useEffect(() => {
@@ -28,11 +35,10 @@ export default function HorizontalGallery({
     }, [images])
     const horizontalPin = () => {
         console.log("horizontalPin");
-        const gallery = document.querySelector("#made-to-fit");
-        const inner = gallery?.querySelector(".gallery__inner");
+        const inner = document?.querySelector(galleryInnerSelector);
         const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
         
-        if (!gallery || !inner || items.length === 0) return;
+        if ( !inner || items.length === 0) return;
         
         const offsetStep = window.innerWidth <= 768 ? 36 : 96; // pixels each one starts lower than the last
 
@@ -53,11 +59,12 @@ export default function HorizontalGallery({
                 start: "center center",
                 end: () => `+=${scrollDistance}`,
                 scrub: 1, // Add some smoothness
-                pin: '#made-to-fit',
-                id: "horizontal-gallery",
+                pin: pinSelector,
+                pinSpacing:true,
+                id: pinId,
                 anticipatePin: 1,
                 invalidateOnRefresh: true,
-                refreshPriority: -1,
+                refreshPriority: 10,
             },
         });
         
@@ -93,7 +100,7 @@ export default function HorizontalGallery({
             window.removeEventListener('resize', handleResize)
         }
     }, [horizontalPin])
-    return <div className="gallery relative min-h-full lg:min-h-[60vh] overflow-hidden max-w-[100vw]">
+    return <div className="gallery relative min-h-full lg:min-h-[10vh] overflow-hidden max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem]">
                 {images.map((image, index) => (
