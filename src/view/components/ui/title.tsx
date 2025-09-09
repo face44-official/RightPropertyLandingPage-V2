@@ -7,7 +7,7 @@ const TitleBig = ({ children,className }: { children: React.ReactNode,className?
 
 const TitleMedium = ({ children,className }: { children: React.ReactNode,className?:string }) => {
     const classNames = cn("font-general-sans font-semibold lg:font-medium text-[2.5rem] lg:text-[2rem] leading-[130%] -tracking-[0.01em] text-[#232323]",className)
-    return <p className={classNames}>{children}</p>
+    return <div className={classNames}>{children}</div>
 }
 
 
