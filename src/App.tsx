@@ -8,6 +8,7 @@ import Header from './view/components/header/header.tsx';
 import WindowSizeProvider from './view/components/providers/window-size-provider.tsx';
 import ExperiencePage from './view/pages/experience-page.tsx';
 import SalesPage from './view/pages/sales.tsx';
+import MarketingPage from './view/pages/marketing-page.tsx';
 
 
 // Lazy load non-critical components and GSAP
@@ -68,6 +69,8 @@ function App() {
       return <ExperiencePage />;
     } else if (pathname === "/sales") {
       return <SalesPage />;
+    } else if (pathname === "/marketing") {
+      return <MarketingPage />;
     } else {
       return <LazyNotFoundPage />;
     }

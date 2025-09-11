@@ -29,12 +29,15 @@ export default function Header() {
         $prevProgress.current = $progress.current;
     }
     useLenis(lenisHandler, []);
+    const onClick = () => {
+        window.location.href = '/';
+    }
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
     return (
         <div id="header-parent" className={headerClass}>
             <div className="rp-container flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
                 <div className="flex items-center gap-[5.52rem]">
-                    <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" />
+                    <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" onClick={onClick} />
                     <BuiltForDevelopers />
                 </div>
                 <NavigationItems />

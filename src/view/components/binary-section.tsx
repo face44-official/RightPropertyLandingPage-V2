@@ -1,7 +1,8 @@
+import { cn } from '@/lib/utils'
 import type { ReactNode } from 'react'
-export default function BinarySection({ subHeader, title, description, image }: { subHeader: string, title: string, description: string, image: ReactNode }) {
+export default function BinarySection({ subHeader, title, description, image,className }: { subHeader: string, title: string, description: string, image: ReactNode, className?: string }) {
     return (
-        <section className="bg-white p-[2.5rem] gap-[3.75rem] lg:gap-[2rem] flex items-center justify-center lg:p-6 lg:flex-col-reverse relative" aria-label="Company values and technology focus">
+        <section className={cn("bg-white p-[2.5rem] gap-[3.75rem] lg:gap-[2rem] flex items-center justify-center lg:p-6 lg:flex-col-reverse relative", className)} aria-label="Company values and technology focus">
             <div className="flex-flex-col w-[26.25rem] lg:w-full">
                 <p className='mb-6 lg:mb-4 font-geist-mono font-medium text-16 lg:text-sm leading-[150%] tracking-[0.04em] uppercase text-[#8D98A5]'>
                     {subHeader}
