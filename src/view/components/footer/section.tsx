@@ -156,6 +156,7 @@ export default function FooterSection() {
 
             </div>
         </div>
+        <img src="https://tracker.metricool.com/c3po.jpg?hash=c1206165890c83c3d25bd64940ffc24b"/>
     </div>
 }
 
