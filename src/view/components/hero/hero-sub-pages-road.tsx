@@ -1,5 +1,5 @@
 import road from "@/assets/v3/common/reverse_road.png";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import HeroSubPageHighlightPath from "./hero-sub-page-highlight-path";
 import { useMotionPath } from "@/lib/useMotionPath";
 
