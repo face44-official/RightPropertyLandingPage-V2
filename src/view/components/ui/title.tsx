@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils"
 
 const TitleBig = ({ children,className }: { children: React.ReactNode,className?:string }) => {
     const classNames = cn("font-general-sans font-semibold text-[3.75rem] lg:text-[2.5rem] leading-[100%] text-[#232323]",className)
-    return <p className={classNames}>{children}</p>
+    return <div className={classNames}>{children}</div>
 }
 
 const TitleMedium = ({ children,className }: { children: React.ReactNode,className?:string }) => {
