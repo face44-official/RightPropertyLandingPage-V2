@@ -18,7 +18,7 @@ interface UseMotionPathProps {
 
 export const useMotionPath = ({
     trigger = ".trigger",
-    startOffset = "top+=50px top",
+    startOffset = "top+=250px top",
     endOffset = "+=100%",
     scrollScrub = true,
     markers = false
@@ -27,6 +27,9 @@ export const useMotionPath = ({
     const pathRef = useRef<SVGPathElement>(null)
     const motionTimeline = useRef<gsap.core.Timeline | null>(null)
     const $passedTrigger = useRef(false)
+    const mousePosition = useRef({ x: 0, y: 0 })
+    const currentPosition = useRef({ x: 0, y: 0 })
+    const inertiaAnimation = useRef<gsap.core.Tween | null>(null)
     
     // Function to calculate responsive offsets
     const calculateOffsets = useCallback(() => {
@@ -48,16 +51,43 @@ export const useMotionPath = ({
         return { offsetX, offsetY }
     }, [])
 
+    // Update mask position with current position
+    const updateMaskPosition = useCallback(() => {
+        if (divRef.current) {
+            divRef.current.style.setProperty('--mask-x', `${currentPosition.current.x}px`)
+            divRef.current.style.setProperty('--mask-y', `${currentPosition.current.y}px`)
+        }
+    }, [])
+
+    // Start GSAP inertia animation
+    const startInertiaAnimation = useCallback(() => {
+        // Kill existing animation
+        if (inertiaAnimation.current) {
+            inertiaAnimation.current.kill()
+        }
+
+        // Create infinite GSAP animation that updates position with inertia
+        inertiaAnimation.current = gsap.to(currentPosition.current, {
+            duration: 1.5,
+            ease: "power2.out",
+            x: mousePosition.current.x,
+            y: mousePosition.current.y,
+            onUpdate: updateMaskPosition,
+            overwrite: true
+        })
+    }, [updateMaskPosition])
+
     // Mouse move handler for mask following
     const handleMouseMove = useCallback((e: MouseEvent) => {
         if (divRef.current) {
             const { left, top } = divRef.current.getBoundingClientRect()
-            const x = e.clientX - left
-            const y = e.clientY - top
-            divRef.current.style.setProperty('--mask-x', `${x}px`)
-            divRef.current.style.setProperty('--mask-y', `${y}px`)
+            mousePosition.current.x = e.clientX - left
+            mousePosition.current.y = e.clientY - top
+            
+            // Start GSAP inertia animation to new target position
+            startInertiaAnimation()
         }
-    }, [])
+    }, [startInertiaAnimation])
 
     // Start motion path animation
     const startMotionPath = useCallback(() => {
@@ -68,50 +98,50 @@ export const useMotionPath = ({
             }
             
             // Calculate responsive offsets
-            // const { offsetX, offsetY } = calculateOffsets()
+            const { offsetX, offsetY } = calculateOffsets()
             
-            // motionTimeline.current = gsap.timeline({
-            //     paused: true,
-            //     scrollTrigger: {
-            //         trigger: trigger,
-            //         start: startOffset,
-            //         end: endOffset,
-            //         scrub: false,
-            //         markers: markers,
-            //         invalidateOnRefresh: true,
-            //         onEnter: () => {
-            //             followPath(offsetX, offsetY)
-            //         }
-            //     }
-            // })
+            motionTimeline.current = gsap.timeline({
+                paused: true,
+                scrollTrigger: {
+                    trigger: trigger,
+                    start: startOffset,
+                    end: endOffset,
+                    scrub: scrollScrub,
+                    markers: markers,
+                    invalidateOnRefresh: true // This helps with responsiveness
+                }
+            })
             
             // Create a dummy object to animate along the path
-          
+            const follower = { x: 0, y: 0 }
+            motionTimeline.current.to(follower, {
+                ease: "power3.out",
+                motionPath: {
+                    path: pathRef.current,
+                    offsetX: offsetX,
+                    offsetY: offsetY-80,
+                    autoRotate: false
+                },
+                onUpdate: function () {
+                    if (divRef.current) {
+                        divRef.current.style.setProperty('--mask-x', `${follower.x}px`)
+                        divRef.current.style.setProperty('--mask-y', `${follower.y}px`)
+                    }
+                }
+            })
         }
     }, [trigger, startOffset, endOffset, scrollScrub, markers, calculateOffsets])
-    const followPath = useCallback((tl: gsap.core.Timeline,offsetX: number, offsetY: number) => {
-        const follower = { x: 0, y: 0 }
-        tl.to(follower, {
-            ease: "power3.out",
-            duration: 2,
-            motionPath: {
-                path: pathRef.current!,
-                offsetX: offsetX,
-                offsetY: offsetY-80,
-                autoRotate: false,
-            },
-            onUpdate: function () {
-                if (divRef.current) {
-                    divRef.current.style.setProperty('--mask-x', `${follower.x}px`)
-                    divRef.current.style.setProperty('--mask-y', `${follower.y}px`)
-                }
-            }
-        },"<=0.25")
-    }, [])
+
     // Move to initial position
     const moveToInitialPosition = useCallback(() => {
         if (divRef.current && pathRef.current) {
             window.removeEventListener('mousemove', handleMouseMove)
+            
+            // Stop GSAP inertia animation
+            if (inertiaAnimation.current) {
+                inertiaAnimation.current.kill()
+                inertiaAnimation.current = null
+            }
 
             // Calculate responsive offsets
             const { offsetX, offsetY } = calculateOffsets()
@@ -122,11 +152,9 @@ export const useMotionPath = ({
             const initialY = initialPoint.y + offsetY
 
             // Animate mask to initial position
-            const tl = gsap.timeline()
-
-            tl.to({}, {
+            gsap.to({}, {
                 duration: 1,
-                // ease: "power3.out",
+                ease: "power2.out",
                 onUpdate: function () {
                     const progress = this.progress()
                     if (divRef.current) {
@@ -141,9 +169,8 @@ export const useMotionPath = ({
                         divRef.current.style.setProperty('--mask-x', `${x}px`)
                         divRef.current.style.setProperty('--mask-y', `${y}px`)
                     }
-                },
+                }
             })
-            followPath(tl,offsetX, offsetY)
         }
     }, [handleMouseMove, calculateOffsets])
 
@@ -157,6 +184,14 @@ export const useMotionPath = ({
         } else {
             $passedTrigger.current = false
             window.addEventListener('mousemove', handleMouseMove)
+            
+            // Initialize current position for smooth transition back to mouse tracking
+            if (divRef.current) {
+                const currentX = parseFloat(getComputedStyle(divRef.current).getPropertyValue('--mask-x')) || 0
+                const currentY = parseFloat(getComputedStyle(divRef.current).getPropertyValue('--mask-y')) || 0
+                currentPosition.current.x = currentX
+                currentPosition.current.y = currentY
+            }
         }
     }, [handleMouseMove, moveToInitialPosition])
 
@@ -189,6 +224,12 @@ export const useMotionPath = ({
             window.removeEventListener('resize', handleResize)
             window.removeEventListener('mousemove', handleMouseMove)
             clearTimeout(resizeTimeout)
+            
+            // Clean up GSAP animation
+            if (inertiaAnimation.current) {
+                inertiaAnimation.current.kill()
+                inertiaAnimation.current = null
+            }
         }
     }, [handleMouseMove, startMotionPath])
 

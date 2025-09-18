@@ -40,6 +40,8 @@
   --color-blue-light: #7fd6f0;
   --color-blue-soft: #ddf3f8;
   --color-navy: #174b8c;
+  --color-darker-blue:#53B5EE;
+  --color-pale-blue:#BADEF3;
   --spacing-30: 1.875rem;
   --spacing-10: 0.625rem;
   --spacing-15: 0.9375rem;
@@ -82,16 +84,17 @@ body {
   /* — circle mask parameters from your Figma MASK layer — */
   --mask-x: 448px; /* Figma’s left */
   --mask-y: -50px; /* Figma’s top */
-  --mask-r: 320.5px; /* half of your 641 px diameter */
+  --mask-r: 500px; /* half of your 641 px diameter */
 
   /* === recreate that exact circle as an alpha mask === */
-  mask-image: radial-gradient(
-    circle var(--mask-r) at var(--mask-x) var(--mask-y),
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 0) 90%
-  );
+  mask-image: radial-gradient(circle var(--mask-r, 500px) at var(--mask-x, 50%) var(--mask-y, 50%), white 0%, white 50%, transparent 100%);
+  
+  
+  
+  
   mask-mode: alpha;
   mask-repeat: no-repeat;
+  mask-position: 0px 0px;
 
   /* WebKit / Safari */
   /* -webkit-mask-image: radial-gradient(
@@ -105,18 +108,17 @@ body {
 .mask .highlight {
   z-index: -1;
   position: absolute;
-  width: 1200px;
-  height: 1200px;
+  width: 100%;
+  height: 100%;
   left: var(--mask-x);
   top: var(--mask-y);
   transform: translate(-50%, -50%);
   pointer-events: none;
-  background: radial-gradient(
-    circle at 50% 50%,
-    #dbe8ff 0%,
-    #d5ebfe 25.96%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: radial-gradient(circle, rgb(219, 232, 255) 0%, rgb(213, 235, 255) 25%, white 100%);
+  mask-image:radial-gradient(600px at 50% 50%, white, transparent);
+  mask-size:100% 100%;
+  mask-repeat: no-repeat;
+  backface-visibility: hidden;
 }
 .photo-mask {
   position: relative; /* establish a positioning context */

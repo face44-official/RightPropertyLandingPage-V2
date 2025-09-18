@@ -22,9 +22,7 @@ import marketingOption1 from "@/assets/v3/marketing_option1.webm"
 import websiteTemplates from "@/assets/v3/website_templates.webm";
 import seoVideo from "@/assets/v3/seo.webm";
 gsap.registerPlugin(ScrollTrigger, Flip);
-export default function BackToBackReveal({
-}: {
-    }) {
+export default function BackToBackReveal() {
     const $ref = useRef<HTMLDivElement>(null);
     const $pinRef = useRef<HTMLDivElement>(null);
     const $cardRef = useRef<HTMLDivElement>(null);
@@ -32,8 +30,6 @@ export default function BackToBackReveal({
     const cardContents = flippingCardContents;
     const [currentItem, setCurrentItem] = useState(0);
     const $flipTl = useRef<GSAPTimeline>(null);
-    const [frontFaceContent, setFrontFaceContent] = useState(flippingCardContents[0]);
-    const [backFaceContent, setBackFaceContent] = useState(flippingCardContents[1]);
     const $direction = useRef<1 | -1>(null);
     const animationQueue = useRef<Array<{ direction: 1 | -1, index: number }>>([]);
     const isAnimating = useRef(false);
@@ -51,84 +47,10 @@ export default function BackToBackReveal({
         $cardSectionRef5,
         $cardSectionRef6
     ];
-    const processAnimationQueue = () => {
-        if (isAnimating.current || animationQueue.current.length === 0) return;
-
-        const nextAnimation = animationQueue.current.shift();
-        if (!nextAnimation) return;
-
-        executeFlipAnimation(nextAnimation.direction, nextAnimation.index);
-    };
-
-    const queueFlipAnimation = (direction: 1 | -1, index: number) => {
-        // Add to queue
-        animationQueue.current.push({ direction, index });
-        // Process queue
-        processAnimationQueue();
-    };
-
-    const executeFlipAnimation = (direction: 1 | -1, targetIndex: number) => {
-        if (isAnimating.current) return;
-
-        isAnimating.current = true;
-        const timing = 1;
-        const rotationX = direction === 1 ? "-=180" : "+=180";
-
-        $flipTl.current = gsap.timeline({
-            onStart: () => {
-                const totalCards = cardContents.length;
-                if (direction === 1) {
-                    if (targetIndex == totalCards - 1) {
-                        if (targetIndex % 2 != 0) {
-                            setBackFaceContent(cardContents[targetIndex]);
-
-                        } else {
-                            setFrontFaceContent(cardContents[targetIndex]);
-
-                        }
-                    } else {
-                        if (targetIndex % 2 != 0) {
-                            setBackFaceContent(cardContents[(targetIndex)]);
-
-                        } else {
-                            setFrontFaceContent(cardContents[((targetIndex))]);
-
-                        }
-                    }
-                } else {
-
-                    if (targetIndex == 0) {
-                        if (targetIndex % 2 != 0) {
-                            setBackFaceContent(cardContents[(targetIndex)]);
-
-                        } else {
-                            setFrontFaceContent(cardContents[(targetIndex)]);
-
-                        }
-                    } else {
-                        if (targetIndex % 2 != 0) {
-                            setBackFaceContent(cardContents[targetIndex]);
-
-                        } else {
-                            setFrontFaceContent(cardContents[targetIndex]);
-
-                        }
-                    }
-                }
-
-            },
-            onComplete: () => {
-                isAnimating.current = false;
-                // Process next animation in queue
-                setTimeout(() => processAnimationQueue(), 0);
-            }
-        });
-        $flipTl.current.to(".qf-card", { rotationX, duration: timing });
-        $flipTl.current.to(".quickflip", { z: 50, duration: timing / 2, yoyo: true, repeat: 1 }, 0);
-    };
+   
     useEffect(() => {
         if ($direction.current !== null) {
-            queueFlipAnimation($direction.current, currentItem);
+            // queueFlipAnimation($direction.current, currentItem);
         }
     }, [currentItem])
     useEffect(() => {
@@ -198,10 +120,7 @@ export default function BackToBackReveal({
             <div ref={$pinRef} className="absolute top-[215px] left-[109px]" >
                 <div ref={$cardRef} className="card quickflip relative w-[48.9375rem] h-[561px]" style={{ perspective: "800px", transformStyle: "preserve-3d" }}>
                     <div className="qf-card card-front relative top-0 left-0 w-full h-full backface-hidden transform-3d origin-center">
-                        <FlippingCardContent key={currentItem} {...frontFaceContent} />
-                    </div>
-                    <div className="qf-card card-back absolute top-0 left-0 w-full h-full backface-hidden transform-3d origin-center rotate-y-180 rotate-z-180">
-                        <FlippingCardContent key={currentItem + 1} {...backFaceContent} />
+                        <FlippingCardContent {...cardContents[currentItem]} />
                     </div>
                 </div>
 

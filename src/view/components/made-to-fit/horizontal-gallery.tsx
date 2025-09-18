@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react"
+import { useCallback, useEffect, useLayoutEffect, useRef } from "react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +33,8 @@ export default function HorizontalGallery({
             }
         };
     }, [images])
-    const horizontalPin = () => {
+
+    const horizontalPin = useCallback(() => {
         console.log("horizontalPin");
         const inner = document?.querySelector(galleryInnerSelector);
         const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
@@ -49,7 +50,7 @@ export default function HorizontalGallery({
         });
 
         // Calculate scroll distance more precisely
-        const scrollDistance = inner.scrollWidth - Math.min(window.innerWidth, 1680);
+        const scrollDistance = (680*(items.length-2.8) + 60* (items.length-2.8));
         const slideDuration = 1
         // timeline length = one chunk per slide
         const totalDuration = slideDuration * (items.length + 1)
@@ -62,7 +63,6 @@ export default function HorizontalGallery({
                 pin: pinSelector,
                 pinSpacing:true,
                 id: pinId,
-                anticipatePin: 1,
                 invalidateOnRefresh: true,
                 refreshPriority: 10,
             },
@@ -71,22 +71,13 @@ export default function HorizontalGallery({
         // Horizontal movement with precise calculation
         horizontalPinTl.current.to(inner, {
             x: () => `-${scrollDistance}px`,
+            y : () => `-${offsetStep*(items.length-2.8)}px`,
             // x: () => -(inner?.scrollWidth ?? 0) * 0.6,
             ease: "none",
             duration: totalDuration
         }, 'start+=0');
-        // tl.add(anim, 0)
-        // for each item, schedule its y → 0 at the right scroll-position
-        items.forEach((el: HTMLElement, i: number) => {
-            // we spread these out evenly over the scroll range by placing
-            // each tween at a normalized time of i (with default duration = 1)
-            horizontalPinTl.current?.to(el, {
-                y: 0,
-                ease: "power1.out",
-                duration: slideDuration * i,
-            }, i == 0 ? '<' : '>');
-        });
-    }
+    },[galleryInnerSelector, pinId, pinSelector])
+
     useLayoutEffect(() => {
         const handleResize = () => {
             // Debounce resize to avoid excessive recalculations
@@ -100,7 +91,7 @@ export default function HorizontalGallery({
             window.removeEventListener('resize', handleResize)
         }
     }, [horizontalPin])
-    return <div className="gallery relative min-h-full lg:min-h-[10vh] overflow-hidden max-w-[100vw]">
+    return <div className="gallery z-[8] relative min-h-full lg:min-h-[10vh] overflow-visible max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem]">
                 {images.map((image, index) => (

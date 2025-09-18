@@ -1,4 +1,4 @@
-import presentSmarterBg from "@/assets/v3/present_smarter_section.webp"
+import presentSmarterBg from "@/assets/v3/present_smarter_desktop.png"
 import presentSmarterBgMobile from "@/assets/v3/mobile_present_smarter.png"
 import Accessibility from "@/view/components/accessiblity"
 import { Parallax } from "../parallax"
@@ -20,9 +20,10 @@ export default function PresentSmarterSection() {
     ]
 
     return (
-        <div className="mb-[30rem] lg:mb-[3rem]">
-            <section className="rp-container lg:bg-none! lg:bg-[#EEF1F7] lg:h-auto! relative" style={{ height: "63.25rem", backgroundImage: `url(${presentSmarterBg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+        <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] overflow-visible">
+            <section className="rp-container lg:bg-none! lg:h-auto! relative">
                 <img src={presentSmarterBgMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
+                <img src={presentSmarterBg} alt="present smarter" className="absolute left-0 top-0 h-[63.25rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
                         <div className="w-[49.375rem] lg:w-full">

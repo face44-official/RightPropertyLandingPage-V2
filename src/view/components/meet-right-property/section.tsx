@@ -6,25 +6,24 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function MeetRightPropertySection() {
     useEffect(() => {
-        let tl: gsap.core.Timeline;
         const matchMedia = gsap.matchMedia();
-     
+
         const splitAnimation = () => {
             const splitText = new SplitText(".meet-right-property-text", {
                 type: "chars",
                 linesClass: "line"
             })
 
-            tl = gsap.timeline({
+            gsap.timeline({
                 onComplete: () => {
                     // Refresh other ScrollTriggers after this completes
                     ScrollTrigger.refresh();
                 },
                 scrollTrigger: {
                     trigger: "#meet-right-property",
-                    start: "center center",
-                    end: "+=1800",
-                    pin: '#first-two',
+                    start: "top+=50% bottom",
+                    end: "+=800",
+                    pin: false,
                     scrub: true,
                     id: "meet-right-property",
                     refreshPriority: 10, // Highest priority
@@ -32,11 +31,11 @@ export default function MeetRightPropertySection() {
             }).set(
                 splitText.chars,
                 {
-                    color: (index,_)=>{
-                        if(index == 72){
+                    color: (index) => {
+                        if (index == 72) {
                             return "#232323"
                         }
-                      return "#232323"
+                        return "#232323"
                     },
                     stagger: 0.1
                 },
@@ -51,29 +50,13 @@ export default function MeetRightPropertySection() {
             },
         );
 
-       
-
-
-
-        return () => {
-            if (tl) {
-                tl.kill();
-            }
-            // Clean up ScrollTrigger
-            ScrollTrigger.getAll().forEach(trigger => {
-                if (trigger.vars.id === "meet-right-property") {
-                    trigger.kill();
-                }
-            });
-        };
-
     }, [])
     return (
-        <section id="meet-right-property" className="rp-container mb-35 flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center pt-[13.75rem] pb-[7.5rem] lg:py-0" aria-label="Meet Right Property features">
+        <section id="meet-right-property" className="rp-container !mb-[19.75rem] flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center pt-[13.75rem] pb-[7.5rem] lg:py-0" aria-label="Meet Right Property features">
             <div className='max-w-[50.75rem] lg:max-w-full'>
                 <div className="pl-[1.25rem] flex flex-col justify-start  lg:p-4 lg:pt-0 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0 lg:mb-[7.5rem]">
                     <div className="mt-[0] lg:mt-3 flex flex-col w-full lg:w-full">
-                        <h2 className="mb-[0.625rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
+                        <h2 className="mb-[2rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                             Meet Right Property
                         </h2>
                         <p className="mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">

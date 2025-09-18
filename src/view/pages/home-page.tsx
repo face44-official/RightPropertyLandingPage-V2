@@ -12,9 +12,9 @@ import MeetRightPropertySection from "../components/meet-right-property/section"
 import PresentSmarterSection from "../components/present-smarter/section"
 import ScheduleADemoSection from "../components/schedule-a-demo/section"
 import SimpleSetupSection from "../components/simple-setup/section"
-import heroRoad from "../../assets/v3/road.png"
 import MaskPath from "../components/enhanced-presentations/mask-path"
 import { useMotionPath } from "../../lib/useMotionPath"
+import HeroRoad from "../components/common/hero-road"
 export default function HomePage() {
     // Use the motion path hook
     const { divRef, pathRef, initializeMotionPath } = useMotionPath({
@@ -40,9 +40,10 @@ export default function HomePage() {
             <main role="main" className="relative z-[10]" aria-label="Right Property homepage content">
                 <div className="relative z-[20]">
                     <div id="first-two">
-                        <div ref={divRef} className="z-[8] absolute top-[-5.25rem] left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden">
+                        <div ref={divRef} className="transition-colors duration-300 z-[8] absolute top-[-5.25rem] left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden">
                             <div className="rp-container relative">
-                                <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" />
+                                <HeroRoad className="w-[62.37rem] h-auto trigger" />
+                                {/* <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" /> */}
                                 <div className="z-[8] absolute top-[23.75rem] left-[15rem]">
                                     <div className="rp-container ">
                                         <div ref={(el) => {

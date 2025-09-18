@@ -188,10 +188,10 @@ export default function ExperienceFlippingCardsSection({
             <div ref={$pinRef} className="absolute top-[215px] left-[109px]" >
                 <div ref={$cardRef} className="card quickflip relative w-[48.9375rem] h-[561px]" style={{ perspective: "800px", transformStyle: "preserve-3d" }}>
                     <div className="qf-card card-front relative top-0 left-0 w-full h-full backface-hidden transform-3d origin-center">
-                        <FlippingCardContent key={currentItem} {...frontFaceContent} />
+                        <FlippingCardContent {...frontFaceContent} />
                     </div>
                     <div className="qf-card card-back absolute top-0 left-0 w-full h-full backface-hidden transform-3d origin-center rotate-y-180 rotate-z-180">
-                        <FlippingCardContent key={currentItem + 1} {...backFaceContent} />
+                        <FlippingCardContent {...backFaceContent} />
                     </div>
                 </div>
 
