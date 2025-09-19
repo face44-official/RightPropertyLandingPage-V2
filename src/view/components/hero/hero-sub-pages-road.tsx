@@ -10,7 +10,8 @@ export default function HeroSubPagesRoad() {
         startOffset: "top top",
         endOffset: "+=100%",
         scrollScrub: true,
-        markers: false
+        markers: false,
+        maskRadius: 400
     })
     useEffect(() => {
         initializeMotionPath()

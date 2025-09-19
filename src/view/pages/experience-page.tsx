@@ -1,6 +1,5 @@
 import ExperienceImmersiveSection from "../components/experience/experience-immersive-section";
 import ExperienceSpaceSection from "../components/experience/experience-space-section";
-import ExperienceSplitTextSection from "../components/experience/experience-splittext-section";
 import FastVisualEfficientSection from "../components/experience/fast-visual-efficient-section";
 import ItsDifferentSection from "../components/experience/its-different-section";
 import BodyText from "../components/ui/body-text";
@@ -17,6 +16,7 @@ import mobileHeroRoad2 from "@/assets/v3/experience/mobile_hero_road_2.png";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import HeroSubPagesRoad from "../components/hero/hero-sub-pages-road";
+import { ExperienceSplitTextSection } from "../components/experience/experience-splittext-section";
 export default function ExperiencePage() {
     const leftImageRef = useRef<HTMLImageElement>(null);
     const rightImageRef = useRef<HTMLImageElement>(null);

@@ -13,7 +13,8 @@ interface UseMotionPathProps {
     startOffset?: string
     endOffset?: string
     scrollScrub?: boolean
-    markers?: boolean
+    markers?: boolean,
+    maskRadius?: number
 }
 
 export const useMotionPath = ({
@@ -21,7 +22,8 @@ export const useMotionPath = ({
     startOffset = "top+=250px top",
     endOffset = "+=100%",
     scrollScrub = true,
-    markers = false
+    markers = false,
+    maskRadius = 500
 }: UseMotionPathProps = {}) => {
     const divRef = useRef<HTMLDivElement>(null)
     const pathRef = useRef<SVGPathElement>(null)
@@ -199,6 +201,12 @@ export const useMotionPath = ({
     const initializeMotionPath = useCallback(() => {
         setTimeout(() => {
             startMotionPath()
+            if (maskRadius) {
+                const mask = document.getElementsByClassName('mask')[0] as HTMLDivElement
+                if (mask) {
+                    mask.style.setProperty('--mask-r', `${maskRadius}px`)
+                }
+            }
         }, 10)
     }, [startMotionPath])
 

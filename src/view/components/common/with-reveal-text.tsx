@@ -50,7 +50,7 @@ export function withRevealText<T extends object>(
               );
 
               if (wordIndex !== -1) {
-                const lastCharIndex = split.chars.findLastIndex((char: any) =>
+                const lastCharIndex = split.chars.findLastIndex((char: Element) =>
                   split.words[wordIndex].contains(char),
                 );
                 const timing = lastCharIndex * 0.02;

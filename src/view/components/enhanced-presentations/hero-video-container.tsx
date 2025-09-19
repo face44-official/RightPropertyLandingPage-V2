@@ -1,6 +1,6 @@
 import heroVideo from '@/assets/v3/hero-noframe.mp4';
 import heroFrame from '@/assets/v3/hero-frame.png';
-import heroFirstFrame from '@/assets/v3/hero_first_frame.webp';
+import heroFirstFrame from '/hero_first_frame.webp';
 import { useState } from 'react';
 export default function HeroVideoContainer() {
     const [showVideo, setShowVideo] = useState(false);
