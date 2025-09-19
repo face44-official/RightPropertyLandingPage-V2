@@ -8,7 +8,7 @@ import EnhancedPresentationsSection from "../components/enhanced-presentations/s
 import FaqSection from "../components/faq/section"
 import FeaturesCarousel from "../components/features-carousel"
 import MadeToFit from "../components/made-to-fit/section"
-import MeetRightPropertySection from "../components/meet-right-property/section"
+import  { MeetRightProperty } from "../components/meet-right-property/section"
 import PresentSmarterSection from "../components/present-smarter/section"
 import ScheduleADemoSection from "../components/schedule-a-demo/section"
 import SimpleSetupSection from "../components/simple-setup/section"
@@ -62,7 +62,7 @@ export default function HomePage() {
 
                         <div className="relative z-[10]">
                             <EnhancedPresentationsSection />
-                            <MeetRightPropertySection />
+                            <MeetRightProperty />
                         </div>
                     </div>
 

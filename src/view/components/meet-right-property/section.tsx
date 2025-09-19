@@ -1,78 +1,61 @@
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect } from "react";
+import { withRevealText } from "../common/with-reveal-text";
+import type { FC, ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import { circleNumber } from "./circle-variants";
+
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-export default function MeetRightPropertySection() {
-    useEffect(() => {
-        const matchMedia = gsap.matchMedia();
+interface Props {
+    className?: string;
+    ref?: React.Ref<HTMLDivElement>;
+}
+const MeetRightPropertySection = ({ ref }: Props) => {
 
-        const splitAnimation = () => {
-            const splitText = new SplitText(".meet-right-property-text", {
-                type: "chars",
-                linesClass: "line"
-            })
-
-            gsap.timeline({
-                onComplete: () => {
-                    // Refresh other ScrollTriggers after this completes
-                    ScrollTrigger.refresh();
-                },
-                scrollTrigger: {
-                    trigger: "#meet-right-property",
-                    start: "top+=50% bottom",
-                    end: "+=800",
-                    pin: false,
-                    scrub: true,
-                    id: "meet-right-property",
-                    refreshPriority: 10, // Highest priority
-                }
-            }).set(
-                splitText.chars,
-                {
-                    color: (index) => {
-                        if (index == 72) {
-                            return "#232323"
-                        }
-                        return "#232323"
-                    },
-                    stagger: 0.1
-                },
-                0.1
-            );
-        }
-
-        matchMedia.add(
-            "(min-width: 769px)",
-            () => {
-                splitAnimation();
-            },
-        );
-
-    }, [])
     return (
-        <section id="meet-right-property" className="rp-container !mb-[19.75rem] flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center pt-[13.75rem] pb-[7.5rem] lg:py-0" aria-label="Meet Right Property features">
-            <div className='max-w-[50.75rem] lg:max-w-full'>
+        <section ref={ref} id="meet-right-property" className="rp-container !mb-[19.75rem] flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center pt-[13.75rem] pb-[7.5rem] lg:py-0" aria-label="Meet Right Property features">
+            <div className='max-w-[53.75rem] lg:max-w-full'>
                 <div className="pl-[1.25rem] flex flex-col justify-start  lg:p-4 lg:pt-0 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0 lg:mb-[7.5rem]">
                     <div className="mt-[0] lg:mt-3 flex flex-col w-full lg:w-full">
                         <h2 className="mb-[2rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                             Meet Right Property
                         </h2>
-                        <p className="mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">
-                            Property sales require more than just listings, 3D models, and brochures — it's about
-                            <span className="inline-flex items-center lg:items-end ml-3 lg:ml-1">
-                                <NumberIndicator number="1" />
-                                <span className="ml-2">connecting with buyers,</span>
-                            </span>
-                            <span className="inline-flex items-center lg:items-end ml-3 lg:ml-1">
-                                <NumberIndicator number="2" />
-                            </span>
-                            <span className="ml-2">tracking every opportunity, and</span>
-                            <span className="ml-2 inline-flex items-center lg:items-end">
-                                <NumberIndicator number="3" />
-                            </span>
-                            <span className="ml-2 lg:ml-0">turning interest into action.</span>
+                        <p
+                            data-bg-color="#C4C4C4"
+                            data-fg-color="#000000"
+                            className="reveal-type mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">
+                            Property sales require more than just listings, 3D models and
+                            brochures - it's about
+                            <span className="block"></span>
+                            <CircleNumber
+                                borderColor="lightPurple"
+                                className="circle-fill mr-2 mb-1"
+                                fillColor="#E4D6F6"
+                                circleNo="1"
+                            >
+                                1
+                            </CircleNumber>
+                            connecting with buyers,
+                            <CircleNumber
+                                borderColor="lightOrange"
+                                className="circle-fill mx-2 mb-1"
+                                fillColor="#FAD9BF"
+                                circleNo="2"
+                            >
+                                2
+                            </CircleNumber>
+                            tracking every opportunity, and
+                            <CircleNumber
+                                borderColor="lightGreen"
+                                className="circle-fill mx-2 mb-1"
+                                fillColor="#C0E3D5"
+                                circleNo="3"
+                            >
+                                3
+                            </CircleNumber>
+                            turning interest into action.
                         </p>
                         <p className='mb-[5rem] lg:mb-[2rem] font-geist font-normal text-24 leading-[140%] -tracking-[0.01em] lg:leading-[130%]'>
                             Right Property gives you precisely what you need to make your sales and marketing efforts truly count.
@@ -89,13 +72,37 @@ export default function MeetRightPropertySection() {
         </section>
     );
 }
+export const MeetRightProperty = withRevealText(MeetRightPropertySection);
 
-const NumberIndicator = ({ number }: { number: string }) => {
+
+
+type CircleNumberProps = {
+    children: ReactNode;
+    className?: string;
+    fillColor?: string;
+    circleNo?: string;
+} & CircleNumberVariants;
+
+export const CircleNumber: FC<CircleNumberProps> = ({
+    children,
+    className,
+    size,
+    borderColor,
+    bgColor,
+    fillColor,
+    circleNo,
+}) => {
     return (
-        <span className="inline-flex items-center justify-center w-[2.75rem] h-[2.75rem] bg-blue-light rounded-full lg:w-[1.75rem] lg:h-[1.75rem]">
-            <span className="text-[#D7D7D7] lg:text-black font-geist font-medium text-28 leading-[120%] lg:text-base">
-                {number}
-            </span>
+        <span
+            className={cn(circleNumber({ size, borderColor, bgColor }), className)}
+            data-fill-color={fillColor}
+            data-circle={circleNo}
+        >
+            {children}
         </span>
     );
 };
+
+
+
+export type CircleNumberVariants = Parameters<typeof circleNumber>[0];

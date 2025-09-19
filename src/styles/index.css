@@ -32,6 +32,16 @@
   --text-60: 3.75rem;
   --text-64: 4rem;
   --text-80: 5rem;
+  --color-primary-blue: #badef3;
+  --color-primary-red: #ff9985;
+  --color-primary-black: #232323;
+  --color-dark-blue: #1f3147;
+  --color-dark-red: #ef716e;
+  --color-dark-gray: #434343;
+  --color-light-purple: #e4d6f6;
+  --color-light-green: #c0e3d5;
+  --color-light-orange: #fad9bf;
+  --color-lighter-blue: #eef1f7;
   --color-azure: #274d66;
   --color-raisin-black: #232323;
   --color-tundora: #434343;
