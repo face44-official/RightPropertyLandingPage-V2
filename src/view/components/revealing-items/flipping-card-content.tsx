@@ -33,7 +33,6 @@ export default function FlippingCardContent({ subHeading, title, description, us
         ].filter(Boolean);
 
         // Kill any existing animations
-        gsap.killTweensOf("*");
 
         // Create SplitText instances and animate
         textElements.forEach(element => {
