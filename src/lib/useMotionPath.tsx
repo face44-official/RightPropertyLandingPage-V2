@@ -120,8 +120,8 @@ export const useMotionPath = ({
                 ease: "power3.out",
                 motionPath: {
                     path: pathRef.current,
-                    offsetX: offsetX-80,
-                    offsetY: offsetY+80,
+                    offsetX: offsetX,
+                    offsetY: offsetY-80,
                     autoRotate: false
                 },
                 onUpdate: function () {

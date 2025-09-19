@@ -20,8 +20,8 @@ export default function ItsDifferentSection() {
     ]
 
     return (
-        <div className="mb-[12.5rem] lg:mb-[3rem]">
-            <section className="rp-container lg:bg-none! lg:bg-[#EEF1F7] lg:h-auto! relative" style={{ width: "100%",height:"auto", backgroundImage: `url(${itsDifferentBg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+        <div className="mb-[12.5rem] lg:mb-[3rem] bg-[#EEF1F7]">
+            <section className="rp-container lg:bg-none!  lg:h-auto! relative" style={{ width: "100%",height:"auto", backgroundImage: `url(${itsDifferentBg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
                 <img src={itsDifferentBgMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>

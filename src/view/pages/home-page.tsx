@@ -44,7 +44,7 @@ export default function HomePage() {
                             <div className="rp-container relative">
                                 <HeroRoad className="w-[62.37rem] h-auto trigger -translate-y-[2.5rem] translate-x-[2.5rem] " />
                                 {/* <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" /> */}
-                                <div className="z-[8] absolute top-[26.65rem] left-[11.3125rem]">
+                                <div className="z-[8] absolute top-[23.4375rem] left-[8.5rem]">
                                     <div className="rp-container ">
                                         <div ref={(el) => {
                                             if (el) {

@@ -1,19 +1,23 @@
-import laptopImage from "@/assets/gallery/laptop_optimized.webp";
-import lounge01 from "@/assets/gallery/lounge01_optimized.webp";
-import lounge02 from "@/assets/gallery/lounge02_optimized.webp";
-import lounge03 from "@/assets/gallery/lounge03_optimized.webp";
-import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
+import galleryitem0 from "@/assets/v3/experience/gallery_item_0.png";
+import galleryitem1 from "@/assets/v3/experience/gallery_item_1.png";
+import galleryitem2 from "@/assets/v3/experience/gallery_item_2.png";
+import galleryitem3 from "@/assets/v3/experience/gallery_item_3.png";
+import galleryitem4 from "@/assets/v3/experience/gallery_item_4.png";
+import galleryitem5 from "@/assets/v3/experience/gallery_item_5.png";
+import galleryitem6 from "@/assets/v3/experience/gallery_item_6.png";
 import HorizontalGallery from "../made-to-fit/horizontal-gallery";
 import BodyText from "../ui/body-text";
 import { TitleMedium } from "../ui/title";
 
 export default function ExperienceDesignedForEveryScreenSection() {
     const imagesSources = [
-        laptopImage,
-        lounge01,
-        lounge02,
-        lounge03,
-        lounge04
+        galleryitem0,
+        galleryitem1,
+        galleryitem2,
+        galleryitem3,
+        galleryitem4,
+        galleryitem5,
+        galleryitem6
     ]
 
     return (
@@ -26,10 +30,10 @@ export default function ExperienceDesignedForEveryScreenSection() {
                 <BodyText className="font-medium mb-[3.75rem]">
                     Surface and Space work across environments:
                 </BodyText>
-                <div className=" mb-[2rem]">
+                <div className="mb-[2.8125rem] lg:mb-[2rem]">
                     <HorizontalGallery pinId="experience-designed" images={imagesSources} galleryInnerSelector=".gallery__inner" pinSelector="#experience-designed-for-every-screen" />
                 </div>
-                <BodyText className="!text-[1rem] hidden lg:block">The experience scales beautifully—whatever the context, the presentation always feels premium.</BodyText>
+                <BodyText className="relative z-[10] bg-blend-multiply !text-24 font-geist font-normal lg:!text-[1rem]">The experience scales beautifully—whatever the context, the<br className="lg:hidden"/>presentation always feels premium.</BodyText>
             </div>
         </section>
     )

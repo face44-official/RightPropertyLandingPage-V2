@@ -4,11 +4,13 @@ import { TitleMedium } from "../ui/title";
 import surfaceFullImage from "@/assets/v3/experience/surface_full.png";
 export default function ExperienceSurfaceSection() {
     return (
-        <section id="experience-surface" className="rp-container !mb-[20.375rem] lg:!mb-[3.75rem] lg:!px-4" aria-label="Choose the experience">
+        <section id="experience-surface" className="rp-container !mb-[20.375rem] lg:!mb-[3.75rem] !px-[5rem] lg:!px-4" aria-label="Choose the experience">
             <Caption className="uppercase mb-[2rem]">choose the presentation experience</Caption>
             <TitleMedium className="w-[40.8125rem] lg:w-full mb-[2.5rem]">Right Property offers two powerful ways to present</TitleMedium>
-            <div className="relative mb-[2.5rem]">
-                <img src={surfaceFullImage} alt="surface full" className="w-full h-auto" />
+            <div className="group relative mb-[2.5rem]">
+                <div className="w-full h-auto overflow-hidden">
+                    <img src={surfaceFullImage} alt="surface full" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
+                </div>
                 <div className="absolute left-[5rem] top-[4rem] lg:top-6 lg:left-6">
                     <TitleMedium>Surface</TitleMedium>
                     <div className="font-geist text-[1.375rem]  lg:text-[1rem] font-regular leading-[140%] text-[#434343]">Fast, efficient, and visually powerful</div>

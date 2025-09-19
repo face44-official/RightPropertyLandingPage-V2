@@ -11,7 +11,7 @@ export default function HeroSubPagesRoad() {
         endOffset: "+=100%",
         scrollScrub: true,
         markers: false,
-        maskRadius: 400
+        maskRadius: 350
     })
     useEffect(() => {
         initializeMotionPath()
@@ -45,7 +45,7 @@ export default function HeroSubPagesRoad() {
     // }, [handleMouseMove,])
 
     return (
-        <div ref={divRef} className="w-[100vw] h-[139.625rem]! mask left-1/2 -translate-x-1/2">
+        <div ref={divRef} className="w-[100vw] overflow-hidden h-[139.625rem]! mask left-1/2 -translate-x-1/2">
             <div className="rp-container ">
                 <img src={road} className="trigger-road absolute w-[47.8125rem] h-[95.25rem] top-[5.6956rem] left-[46.0456rem] z-[-1]" alt="Hero Sub Pages Road" />
                 <img src={road} className="absolute w-[47.8125rem] h-[95.25rem] top-[44.4243rem] left-[8.7962rem] z-[-1]" alt="Hero Sub Pages Road" />

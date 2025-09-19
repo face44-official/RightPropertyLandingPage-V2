@@ -38,10 +38,16 @@ export default function FlippingCardContent({ subHeading, title, description, us
         textElements.forEach(element => {
             if (!element) return;
             
-            // Split text into characters
-            const splitText = new SplitText(element, { type: "chars" });
+            // Split text into lines first, then chars
+            const splitText = new SplitText(element, { type: "lines,chars" });
             
-            // Set initial state
+            // Set line height and overflow hidden for reveal effect
+            gsap.set(splitText.lines, { 
+                overflow: "hidden",
+                lineHeight: "1.2em"
+            });
+            
+            // Set initial state for characters
             gsap.set(splitText.chars, { y: "200%" });
             
             // Animate characters
