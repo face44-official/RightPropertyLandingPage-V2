@@ -55,7 +55,7 @@ export const AccessibilityItems = ({ items }: { items: { icon: React.ReactNode, 
     </div>
 }
 
-export default function Accessibility({ subHeading, title, description, items }: { subHeading: string, title: string, description: string, items: { icon: React.ReactNode, title: string, description: string }[] }) {
+export default function Accessibility({ subHeading, title, description, items }: { subHeading: string, title: string, description: string, items: { icon: React.ReactNode, title: string | React.ReactNode, description: string }[] }) {
     const itemColors = ['#E4D6F6', '#FAD9BF'];
     return (
         <div className="bg-white p-[3.35rem] lg:p-[1.5rem]">

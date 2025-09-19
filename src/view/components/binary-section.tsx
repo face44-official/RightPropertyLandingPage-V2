@@ -16,7 +16,7 @@ export default function BinarySection({ subHeader, title, description, image,cla
             </div>
             {image}
 
-            <div className='z-[-1] absolute left-1/2 top-1/2 -translate-1/2  w-[1467px] h-[1064px]' style={{ background: "radial-gradient(50% 50% at 50% 50%, #E7DFF2 0%, rgba(255, 255, 255, 0) 100%)" }}>
+            <div className='z-[-1] absolute left-1/2 top-1/2 -translate-1/2  w-[1467px] h-[1064px] hidden lg:block' style={{ background: "radial-gradient(50% 50% at 50% 50%, #E7DFF2 0%, rgba(255, 255, 255, 0) 100%)" }}>
 
             </div>
         </section>

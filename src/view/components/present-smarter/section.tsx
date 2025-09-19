@@ -8,12 +8,12 @@ export default function PresentSmarterSection() {
     
     const items = [
         {
-            title: "Interactive & Non-linear storytelling",
+            title: <span>Interactive &<br/>Non-linear storytelling</span>,
             description: "Break the limitations of traditional presentations. Let your audience explore freely, follow their curiosity, and experience your project in a way that fits the moment.",
             icon: <img src={startIcon} alt="interactive storytelling icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         },
         {
-            title: "Ready for Every Screen, Every Space",
+            title: <span>Ready for Every Screen,<br/>Every Space</span>,
             description: "Whether it’s a large-scale presentation in a sales suite or a one-on-one meeting on a tablet, Right Property adapts to the setting—without losing impact.",
             icon: <img src={spaceIcon} alt="responsive design icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         }
