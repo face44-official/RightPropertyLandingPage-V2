@@ -26,11 +26,14 @@ export default function ConvertMoreLeadsSection() {
                     <img src={convertMoreLeadsMobile} alt="convert more leads" className="z-[-1] w-full h-auto " />
                     <div className="absolute right-0 bottom-[0] w-[375px] h-[68px]" style={{ background: "linear-gradient(180deg, rgba(238, 241, 247, 0) 0%, #EEF1F7 100%)" }} />
                 </div>
-                <img src={convertMoreLeads} alt="convert more leads" className="z-[-1] absolute top-0 left-0 w-full h-auto lg:hidden" />
-                <div className="rp-container  z-[10] w-[49.375rem]  px-[7.5rem] pt-[7.5rem] lg:pt-0 lg:px-0 lg:py-[2.25rem] lg:pb-[0] lg:w-full lg:p-4 relative lg:-mt-[4rem]">
+                <div className="rp-container lg:bg-none! lg:h-auto! relative z-[8] flex p-[7.5rem] justify-start lg:p-4">
+                    <img src={convertMoreLeads} alt="convert more leads" className="z-[-1] h-[63.25rem] absolute top-0 left-0 w-full lg:hidden" />
 
                     <Parallax id="convert-more-leads-section" speed={1.3}>
+                    <div className="w-[49.375rem] lg:w-full">
+
                         <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
+                    </div>
                     </Parallax>
                 </div>
 

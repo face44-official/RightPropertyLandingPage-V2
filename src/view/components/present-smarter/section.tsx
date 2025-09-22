@@ -23,8 +23,9 @@ export default function PresentSmarterSection() {
         <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative">
             <section className="">
                 <img src={presentSmarterBgMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
-                <img src={presentSmarterBg} alt="present smarter" className="absolute left-0 top-0 h-[63.25rem] lg:hidden" />
                 <div className="rp-container lg:bg-none! lg:h-auto! relative z-[8] flex p-[7.5rem] justify-end lg:p-4">
+                    <img src={presentSmarterBg} alt="present smarter" className="absolute left-0 top-0 h-[63.25rem] lg:hidden" />
+
                     <Parallax id="present-smarter-section" speed={1.3}>
                         <div className="w-[49.375rem] lg:w-full">
                             <Accessibility title="Present smarter, your way" subHeading="Presentation" description="A property is more than floor plans and price lists - it’s an experience waiting to be brought to life. Our technology turns presentations into interactive journeys, tailored for any setting." items={items} />
