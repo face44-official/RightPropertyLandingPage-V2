@@ -84,9 +84,12 @@ export default function SimpleSetupSection() {
         }
     }, [gradientRef, pathRef])
     useEffect(() => {
-        setTimeout(() => {
-            startMotionPath()
-        }, 300)
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 769px)', () => {
+            setTimeout(() => {
+                startMotionPath()
+            }, 300)
+        })
     }, [startMotionPath])
     return (
         <section id="simple-setup" className="" aria-label="Simple setup process for Right Property platform">
