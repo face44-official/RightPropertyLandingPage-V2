@@ -41,8 +41,8 @@ export default function HorizontalGallery({
         
         if ( !inner || items.length === 0) return;
         
-        const offsetStep = window.innerWidth <= 768 ? 36 : 96; // pixels each one starts lower than the last
-
+        const offsetStep = window.innerWidth <= 768 ? 31 : 96; // pixels each one starts lower than the last
+        const gapStep = window.innerWidth <= 768 ? 60 : 20; // gap between items
       
         // 1) set up initial vertical offsets
         items.forEach((el, i) => {
@@ -50,7 +50,7 @@ export default function HorizontalGallery({
         });
 
         // Calculate scroll distance more precisely
-        const scrollDistance = (680*(items.length-2.8) + 60* (items.length-2.8));
+        const scrollDistance = window.innerWidth <= 768 ? (221*(items.length-2) + gapStep * (items.length-2)) :  (680*(items.length-2.8) + gapStep * (items.length-2.8));
         const slideDuration = 1
         // timeline length = one chunk per slide
         const totalDuration = slideDuration * (items.length + 1)
@@ -91,9 +91,9 @@ export default function HorizontalGallery({
             window.removeEventListener('resize', handleResize)
         }
     }, [horizontalPin])
-    return <div className="gallery z-[8] relative min-h-full lg:min-h-[10vh] overflow-visible max-w-[100vw]">
+    return <div className="gallery z-[8] relative min-h-full lg:min-h-[100vw]  overflow-visible max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
-            <div className="gallery__inner flex h-full gap-[3.75rem]">
+            <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[1.25rem]">
                 {images.map((image, index) => (
                     <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] lg:w-[13.875rem] lg:h-[13.875rem] object-cover relative" />
                 ))}
