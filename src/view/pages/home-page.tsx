@@ -40,7 +40,7 @@ export default function HomePage() {
             <main role="main" className="relative z-[10]" aria-label="Right Property homepage content">
                 <div className="relative z-[20]">
                     <div id="first-two">
-                        <div ref={divRef} className="transition-colors duration-300 z-[8] absolute top-0 left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden">
+                        <div ref={divRef} className="lg:hidden transition-colors duration-300 z-[8] absolute top-0 left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden">
                             <div className="rp-container relative">
                                 <HeroRoad className="w-[62.37rem] h-auto trigger -translate-y-[2.5rem] translate-x-[2.5rem] " />
                                 {/* <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" /> */}

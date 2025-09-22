@@ -15,7 +15,7 @@ interface Props {
 const MeetRightPropertySection = ({ ref }: Props) => {
 
     return (
-        <section ref={ref} id="meet-right-property" className="rp-container !pb-[19.75rem] flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center pt-[13.75rem]  lg:py-0" aria-label="Meet Right Property features">
+        <section ref={ref} id="meet-right-property" className="rp-container pb-[19.75rem] flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center pt-[13.75rem]  lg:py-0" aria-label="Meet Right Property features">
             <div className='max-w-[53.75rem] lg:max-w-full'>
                 <div className="pl-[1.25rem] flex flex-col justify-start  lg:p-4 lg:pt-0 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0 lg:mb-[7.5rem]">
                     <div className="mt-[0] lg:mt-3 flex flex-col w-full lg:w-full">

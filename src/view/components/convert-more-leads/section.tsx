@@ -18,23 +18,27 @@ export default function ConvertMoreLeadsSection() {
         }
     ]
     return (
-        <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] overflow-visible">
+        <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative">
 
 
-            <section className="rp-container px-[7.5rem] pt-[7.5rem] lg:pt-0 lg:px-0 lg:py-[2.25rem] lg:pb-[0] lg:bg-[#EEF1F7] relative">
-                <img src={convertMoreLeadsMobile} alt="convert more leads" className="z-[-1] w-full h-auto hidden lg:block" />
+            <section className="">
+                <div className="relative hidden lg:block">
+                    <img src={convertMoreLeadsMobile} alt="convert more leads" className="z-[-1] w-full h-auto " />
+                    <div className="absolute right-0 bottom-[0] w-[375px] h-[68px]" style={{ background: "linear-gradient(180deg, rgba(238, 241, 247, 0) 0%, #EEF1F7 100%)" }} />
+                </div>
                 <img src={convertMoreLeads} alt="convert more leads" className="z-[-1] absolute top-0 left-0 w-full h-auto lg:hidden" />
-                <div className="w-[49.375rem] lg:w-full lg:p-4 relative lg:-mt-[4rem]">
-                    <div className="absolute left-[7.6rem] top-[0] w-[375px] h-[68px]" style={{ background: "linear-gradient(180deg, rgba(238, 241, 247, 0) 0%, #EEF1F7 100%)" }} />
+                <div className="rp-container  z-[10] w-[49.375rem]  px-[7.5rem] pt-[7.5rem] lg:pt-0 lg:px-0 lg:py-[2.25rem] lg:pb-[0] lg:w-full lg:p-4 relative lg:-mt-[4rem]">
 
                     <Parallax id="convert-more-leads-section" speed={1.3}>
                         <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
                     </Parallax>
                 </div>
-                <div className="hidden lg:block absolute bottom-0 w-full h-[13rem] bg-white z-[-1]">
 
-                </div>
             </section>
+
+            <div className="hidden lg:block absolute bottom-0 w-full h-[13rem] bg-white z-[5]">
+
+            </div>
         </div>
     )
 }

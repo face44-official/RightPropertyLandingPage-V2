@@ -7,25 +7,27 @@ export function Parallax({ className, children, speed = 1, id = "parallax" }: { 
     const target = useRef<HTMLDivElement>(null);
     const timeline = useRef<GSAPTimeline>(null);
     const { width: windowWidth } = useWindowSize();
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        
-        const y = (windowWidth ?? 0) * speed * 0.1;
-        const setY = gsap.quickSetter(target.current, "y", "px");
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 769px)', () => {
+            const y = (windowWidth ?? 0) * speed * 0.1;
+            const setY = gsap.quickSetter(target.current, "y", "px");
 
-        timeline.current = gsap.timeline({
-            scrollTrigger: {
-                id: id,
-                trigger: trigger.current,
-                scrub: true,
-                start: "top bottom",
-                end: "bottom top",
-                onUpdate: (e) => {
-                    setY(e.progress * -y);
+            timeline.current = gsap.timeline({
+                scrollTrigger: {
+                    id: id,
+                    trigger: trigger.current,
+                    scrub: true,
+                    start: "top bottom",
+                    end: "bottom top",
+                    onUpdate: (e) => {
+                        setY(e.progress * -y);
+                    },
                 },
-            },
-        });
-
+            });
+        })
         return () => {
             timeline?.current?.kill();
         };
