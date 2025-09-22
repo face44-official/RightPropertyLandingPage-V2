@@ -6,7 +6,6 @@ import BinarySection, { BinaryBlockImage } from "../binary-section";
 import softwareMinds from "@/assets/v3/software_minds.png"
 import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.png";
-import mobileRoad2 from '@/assets/v3/mobile_road_2.png';
 import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";
 // Helper function to interpolate between two colors
 
