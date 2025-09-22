@@ -7,7 +7,7 @@ export const circleNumber = tv({
     variants: {
       size: {
         sm: "h-6 w-6 text-sm",
-        md: "xl:h-10 xl:w-10  h-8 w-8 text-base",
+        md: "lg:h-8 lg:w-8  h-8 w-8 text-base",
         lg: "h-14 w-14 text-xl",
       },
       borderColor: {

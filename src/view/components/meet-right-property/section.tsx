@@ -28,10 +28,10 @@ const MeetRightPropertySection = ({ ref }: Props) => {
                             className="reveal-type mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">
                             Property sales require more than just listings, 3D models and
                             brochures - it's about
-                            <span className="block"></span>
+                            <span className="block lg:hidden"></span>
                             <CircleNumber
                                 borderColor="lightPurple"
-                                className="circle-fill mr-2 mb-1"
+                                className="circle-fill mr-2 lg:mx-2 mb-1"
                                 fillColor="#E4D6F6"
                                 circleNo="1"
                             >
