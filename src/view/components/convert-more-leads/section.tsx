@@ -18,7 +18,7 @@ export default function ConvertMoreLeadsSection() {
         }
     ]
     return (
-        <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative">
+        <div className="mb-[30rem] lg:mb-[0] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative">
 
 
             <section className="">
@@ -30,10 +30,10 @@ export default function ConvertMoreLeadsSection() {
                     <img src={convertMoreLeads} alt="convert more leads" className="z-[-1] h-[63.25rem] absolute top-0 left-0 w-full lg:hidden" />
 
                     <Parallax id="convert-more-leads-section" speed={1.3}>
-                    <div className="w-[49.375rem] lg:w-full">
+                        <div className="w-[49.375rem] lg:w-full">
 
-                        <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
-                    </div>
+                            <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
+                        </div>
                     </Parallax>
                 </div>
 

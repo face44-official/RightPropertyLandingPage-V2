@@ -123,7 +123,7 @@ export default function ExperienceHeroVideos() {
                     <div className="relative">
                         <video
                             src={surface}
-                            className={`absolute w-[55rem] top-[5rem] left-[3.5rem] z-[-1]  h-auto  lg:top-[2.5rem] lg:left-[1.9rem] lg:w-[27.25rem] `}
+                            className={`absolute w-[55rem] lg:w-[21rem] top-[5rem] lg:top-[2rem] left-[3.5rem] lg:left-[1.2rem] z-[-1]  h-auto  `}
                             width="1200"
                             height="800"
                             autoPlay
@@ -132,7 +132,7 @@ export default function ExperienceHeroVideos() {
                             playsInline
                             preload="auto"
                         />
-                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto lg:h-[20.25rem]" alt="" />
+                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto " alt="" />
                         <div className="font-general-sans font-medium text-24 lg:text-base -tracking-[0.01em]  absolute bottom-[2rem] lg:bottom-0 left-1/2 -translate-x-1/2">
                             Surface
                         </div>
@@ -143,7 +143,7 @@ export default function ExperienceHeroVideos() {
                     <div className="relative">
                         <video
                             src={space}
-                            className={`absolute w-[55rem] top-[5rem] left-[3.5rem] z-[-1]  h-auto  lg:top-[2.5rem] lg:left-[1.9rem] lg:w-[27.25rem] `}
+                            className={`absolute w-[55rem] lg:w-[21rem] top-[5rem] lg:top-[2rem] left-[3.5rem] lg:left-[1.2rem] z-[-1]  h-auto `}
                             width="1200"
                             height="800"
                             autoPlay
@@ -152,7 +152,7 @@ export default function ExperienceHeroVideos() {
                             playsInline
                             preload="auto"
                         />
-                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto lg:h-[20.25rem]" alt="" />
+                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto " alt="" />
 
                         <div className="font-general-sans font-medium text-24 lg:text-base -tracking-[0.01em] absolute bottom-[2rem] lg:bottom-0 left-1/2 -translate-x-1/2">
                             Space

@@ -86,7 +86,7 @@ export default function HorizontalGallery({
             window.removeEventListener('resize', handleResize)
         }
     }, [horizontalPin])
-    return <div className="gallery z-[8] relative min-h-full lg:min-h-[100vw]  overflow-visible max-w-[100vw]">
+    return <div className="gallery z-[8] relative min-h-full lg:min-h-[75vw]  overflow-visible max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[1.25rem]">
                 {images.map((image, index) => (

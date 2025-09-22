@@ -7,6 +7,7 @@ import softwareMinds from "@/assets/v3/software_minds.png"
 import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.png";
 import mobileRoad2 from '@/assets/v3/mobile_road_2.png';
+import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";
 // Helper function to interpolate between two colors
 
 export default function SimpleSetupSection() {
@@ -93,8 +94,16 @@ export default function SimpleSetupSection() {
     }, [startMotionPath])
     return (
         <section id="simple-setup" className="" aria-label="Simple setup process for Right Property platform">
+            <div className="w-[100vw] h-[25.6875rem] overflow-hidden hidden lg:block">
+                <div className="relative w-full max-w-[343px] mx-auto overflow-visible">
+                    <div className="absolute -top-[3rem] -right-[3.75rem]">
+                        <SimpleSetupMobileGradient />
+                    </div>
+                </div>
+
+            </div>
             <div className="rp-container lg:h-auto!" style={{ height: "108.375rem" }}>
-                <img src={mobileRoad2} className="hidden lg:block w-full h-auto" alt="" />
+
                 <div className="flex justify-start gap-[8.4375rem] w-[41.875rem] lg:w-full">
                     <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[1]' src={gRoad} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="1680" height="1734" />
                     <div className="absolute top-[25rem] right-[12rem]" ref={(el) => {
@@ -105,7 +114,8 @@ export default function SimpleSetupSection() {
                     }}>
                         <SimpleSetupGradientPath />
                     </div>
-                    <div ref={gradientRef} style={{ background: "radial-gradient(50% 50% at 50% 50%, #DBE8FF 0%, #E8F4FF 25.96%, rgba(255, 255, 255, 0) 100%)" }} className="absolute -top-[12rem] -right-[31rem] w-[1425.84px] h-[1425.84px]"></div>
+                    <div ref={gradientRef} style={{ background: "radial-gradient(50% 50% at 50% 50%, #DBE8FF 0%, #E8F4FF 25.96%, rgba(255, 255, 255, 0) 100%)" }} className="absolute -top-[12rem] -right-[31rem] w-[1425.84px] h-[1425.84px] lg:hidden"></div>
+
                     <div className="absolute left-[35rem] bottom-[16.875rem] lg:hidden">
                         <BinarySection subHeader="Did you know?" title="Built by software minds" description="No visuals or assets? Our team can produce what’s needed." image={<BinaryBlockImage path={softwareMinds} />} />
                     </div>
