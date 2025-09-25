@@ -1,6 +1,5 @@
 import purpleCheck from "@/assets/v3/purple_check.png";
 import immersiveMobile from '@/assets/v3/experience/immersive_mobile.png';
-import experienceSpaceIllustration from "@/assets/v3/experience/experience_space_illustration.png";
 export default function ExperienceImmersiveSection() {
     const items = [
         {

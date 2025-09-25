@@ -1,6 +1,5 @@
 import MarketingPowerhouseSection from "../components/marketing/marketing-powehouse-section";
 import { TitleBig } from "../components/ui/title";
-import macbookImage from "@/assets/v3/marketing/macbook_pro.png";
 import TwoColumnTextImageBlock from "../components/ui/two-column-text-image-block";
 import automated from "@/assets/v3/automated.png"
 import BinarySection, { BinaryBlockImage } from "../components/binary-section";
@@ -11,10 +10,11 @@ import whatBuyerSeeVideo from "@/assets/v3/marketing/what-buyer-see.webm";
 import readyMadeTemplatesVideo from "@/assets/v3/marketing/ready-made-templates.webm";
 import emailVideo from "@/assets/v3/marketing/email-video.webm";
 import { MarketingSplitTextSection } from "../components/marketing/marketing-splittext-section";
+import MarketingHeroSection from "../components/marketing/marketing-hero-section";
 export default function MarketingPage() {
     return <main id="sales-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center">
         <TitleBig className="w-[54.5rem] lg:w-full lg:px-4 mb-[3.75rem] lg:mb-[1.875rem] mx-auto text-center">Marketing That Connects Directly to Sales.</TitleBig>
-        <img src={macbookImage} className="w-[62.5rem] h-auto mb-[19.5rem] lg:w-full lg:px-4 mx-auto" alt="apple pro xdr" />
+        <MarketingHeroSection />
         <MarketingSplitTextSection />
         <MarketingPowerhouseSection />
         <TwoColumnTextImageBlock className="pb-[24.1875rem]" title="What Buyers See in Person, They See Online." description="Bring your immersive presentations to the web. From site plans to media galleries, the website reflects your project in a professional, interactive format—ready to convert." image={<TheySeeOnlineImage />} variant={"image-left"} />
