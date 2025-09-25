@@ -22,8 +22,8 @@ export default function MarketingEverythingConnects() {
     ]
 
     return (
-        <div className="mb-[12.5rem] lg:mb-[3rem]">
-            <section className="rp-container lg:bg-none! lg:bg-[#EEF1F7] lg:h-auto! relative" style={{ width: "100%",height:"auto", backgroundImage: `url(${everythingConnectsBg})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}>
+        <div className="mb-[12.5rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] lg:h-auto relative z-[20]">
+            <section className="rp-container lg:bg-none! lg:h-auto! relative" style={{ width: "100%",height:"auto", backgroundImage: `url(${everythingConnectsBg})`, backgroundSize: "contain", backgroundRepeat: "no-repeat" }}>
                 <img src={everythingConnectsMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-start lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
@@ -32,10 +32,11 @@ export default function MarketingEverythingConnects() {
                         </div>
                     </Parallax>
                 </div>
-                <div className="hidden lg:block absolute bottom-0 w-full h-[15rem] bg-white z-[-1]">
+                
+            </section>
+            <div className="hidden lg:block absolute bottom-0 w-full h-[15rem] bg-white z-[-1]">
 
                 </div>
-            </section>
         </div>
 
 

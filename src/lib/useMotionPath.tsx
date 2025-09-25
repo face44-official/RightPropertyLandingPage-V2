@@ -32,24 +32,24 @@ export const useMotionPath = ({
     const mousePosition = useRef({ x: 0, y: 0 })
     const currentPosition = useRef({ x: 0, y: 0 })
     const inertiaAnimation = useRef<gsap.core.Tween | null>(null)
-    
+
     // Function to calculate responsive offsets
     const calculateOffsets = useCallback(() => {
         if (!divRef.current || !pathRef.current) return { offsetX: 550, offsetY: 350 }
-        
+
         const containerRect = divRef.current.getBoundingClientRect()
         const svgContainer = pathRef.current.closest('svg')
         if (!svgContainer) return { offsetX: 550, offsetY: 350 }
-        
+
         const svgParent = svgContainer.parentElement
         if (!svgParent) return { offsetX: 550, offsetY: 350 }
-        
+
         const parentRect = svgParent.getBoundingClientRect()
-        
+
         // Calculate offsets relative to the container
         const offsetX = parentRect.left - containerRect.left
         const offsetY = parentRect.top - containerRect.top
-        
+
         return { offsetX, offsetY }
     }, [])
 
@@ -81,14 +81,17 @@ export const useMotionPath = ({
 
     // Mouse move handler for mask following
     const handleMouseMove = useCallback((e: MouseEvent) => {
-        if (divRef.current) {
-            const { left, top } = divRef.current.getBoundingClientRect()
-            mousePosition.current.x = e.clientX - left
-            mousePosition.current.y = e.clientY - top
-            
-            // Start GSAP inertia animation to new target position
-            startInertiaAnimation()
-        }
+        const mm = gsap.matchMedia()
+        mm.add('(min-width: 769px)', () => {
+            if (divRef.current) {
+                const { left, top } = divRef.current.getBoundingClientRect()
+                mousePosition.current.x = e.clientX - left
+                mousePosition.current.y = e.clientY - top
+
+                // Start GSAP inertia animation to new target position
+                startInertiaAnimation()
+            }
+        })
     }, [startInertiaAnimation])
 
     // Start motion path animation
@@ -98,10 +101,10 @@ export const useMotionPath = ({
             if (motionTimeline.current) {
                 motionTimeline.current.kill()
             }
-            
+
             // Calculate responsive offsets
             const { offsetX, offsetY } = calculateOffsets()
-            
+
             motionTimeline.current = gsap.timeline({
                 paused: true,
                 scrollTrigger: {
@@ -113,7 +116,7 @@ export const useMotionPath = ({
                     invalidateOnRefresh: true // This helps with responsiveness
                 }
             })
-            
+
             // Create a dummy object to animate along the path
             const follower = { x: 0, y: 0 }
             motionTimeline.current.to(follower, {
@@ -121,7 +124,7 @@ export const useMotionPath = ({
                 motionPath: {
                     path: pathRef.current,
                     offsetX: offsetX,
-                    offsetY: offsetY-80,
+                    offsetY: offsetY - 80,
                     autoRotate: false
                 },
                 onUpdate: function () {
@@ -138,7 +141,7 @@ export const useMotionPath = ({
     const moveToInitialPosition = useCallback(() => {
         if (divRef.current && pathRef.current) {
             window.removeEventListener('mousemove', handleMouseMove)
-            
+
             // Stop GSAP inertia animation
             if (inertiaAnimation.current) {
                 inertiaAnimation.current.kill()
@@ -147,7 +150,7 @@ export const useMotionPath = ({
 
             // Calculate responsive offsets
             const { offsetX, offsetY } = calculateOffsets()
-            
+
             // Get the initial position of the path (first point + offsets)
             const initialPoint = pathRef.current.getPointAtLength(0)
             const initialX = initialPoint.x + offsetX
@@ -186,7 +189,7 @@ export const useMotionPath = ({
         } else {
             $passedTrigger.current = false
             window.addEventListener('mousemove', handleMouseMove)
-            
+
             // Initialize current position for smooth transition back to mouse tracking
             if (divRef.current) {
                 const currentX = parseFloat(getComputedStyle(divRef.current).getPropertyValue('--mask-x')) || 0
@@ -199,21 +202,23 @@ export const useMotionPath = ({
 
     // Initialize motion path
     const initializeMotionPath = useCallback(() => {
-        setTimeout(() => {
-            startMotionPath()
-            if (maskRadius) {
-                const mask = document.getElementsByClassName('mask')[0] as HTMLDivElement
-                if (mask) {
-                    mask.style.setProperty('--mask-r', `${maskRadius}px`)
+        const mm = gsap.matchMedia()
+        mm.add('(min-width: 769px)', () => {
+            setTimeout(() => {
+                startMotionPath()
+                if (maskRadius) {
+                    const mask = document.getElementsByClassName('mask')[0] as HTMLDivElement
+                    if (mask) {
+                        mask.style.setProperty('--mask-r', `${maskRadius}px`)
+                    }
                 }
-            }
-        }, 10)
+            }, 10)
+        })
     }, [startMotionPath])
 
     // Handle window resize to recalculate motion path
     useEffect(() => {
         let resizeTimeout: NodeJS.Timeout
-        
         const handleResize = () => {
             // Debounce resize to avoid excessive recalculations
             clearTimeout(resizeTimeout)
@@ -227,12 +232,12 @@ export const useMotionPath = ({
 
         window.addEventListener('resize', handleResize)
         window.addEventListener('mousemove', handleMouseMove)
-        
+
         return () => {
             window.removeEventListener('resize', handleResize)
             window.removeEventListener('mousemove', handleMouseMove)
             clearTimeout(resizeTimeout)
-            
+
             // Clean up GSAP animation
             if (inertiaAnimation.current) {
                 inertiaAnimation.current.kill()

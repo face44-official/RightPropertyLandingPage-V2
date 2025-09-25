@@ -10,20 +10,18 @@ import ExperienceSurfaceSection from "../components/experience/experience-surfac
 import ExperienceFlippingCardsSection from "../components/experience/experience-flipping-cards-section";
 import ExperienceCarousel from "../components/experience/experience-carousel";
 import ScheduleADemoSection from "../components/schedule-a-demo/section";
-import mobileHeroRoad1 from "@/assets/v3/experience/mobile_hero_road_1.png";
-import mobileHeroRoad2 from "@/assets/v3/experience/mobile_hero_road_2.png";
 import HeroSubPagesRoad from "../components/hero/hero-sub-pages-road";
 import { ExperienceSplitTextSection } from "../components/experience/experience-splittext-section";
 import ExperienceHeroVideos from "../components/experience/experience-hero-videos";
+import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-road";
 export default function ExperiencePage() {
 
-    
+
     return <main>
         <HeroSubPagesRoad />
-        <div id="experience-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center">
+        <HeroSubPagesMobileRoad />
+        <div id="experience-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center overflow-hidden">
 
-            <img src={mobileHeroRoad1} alt="experience bg" className="absolute top-[14rem] -right-[3.25rem] w-[15rem] h-auto hidden lg:block" />
-            <img src={mobileHeroRoad2} alt="experience bg" className="absolute top-[50.9375rem] -left-[3.25rem] w-[15rem] h-[15rem] object-cover hidden lg:block" />
             <div className="flex flex-col items-center justify-center">
                 <TitleBig className="mb-[2rem] flex flex-col items-center justify-center">
                     <div>Present Smarter.</div>

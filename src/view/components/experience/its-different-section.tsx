@@ -5,7 +5,7 @@ import { Parallax } from "../parallax"
 import startIcon from '@/assets/v3/star_icon.png';
 import spaceIcon from '@/assets/v3/space_icon.png';
 export default function ItsDifferentSection() {
-    
+
     const items = [
         {
             title: "Flexible Navigation",
@@ -21,7 +21,7 @@ export default function ItsDifferentSection() {
 
     return (
         <div className="mb-[12.5rem] lg:mb-[3rem] bg-[#EEF1F7]">
-            <section className="rp-container lg:bg-none!  lg:h-auto! relative" style={{ width: "100%",height:"auto", backgroundImage: `url(${itsDifferentBg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+            <section className="rp-container lg:bg-none!  lg:h-auto! relative" style={{ width: "100%", height: "auto", backgroundImage: `url(${itsDifferentBg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
                 <img src={itsDifferentBgMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
@@ -30,8 +30,10 @@ export default function ItsDifferentSection() {
                         </div>
                     </Parallax>
                 </div>
-                <div className="hidden lg:block absolute bottom-0 w-full h-[15rem] bg-white z-[-1]">
+                <div className="p-4 hidden lg:block absolute bottom-0  z-[-1]">
+                    <div className="w-full h-[15rem] bg-white ">
 
+                    </div>
                 </div>
             </section>
         </div>

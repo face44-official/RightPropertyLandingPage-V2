@@ -1,7 +1,7 @@
 import BookADemoButton from "../book-a-demo-button";
 import representive from "@/assets/v3/representive.png";
 export default function ScheduleADemoSection() {
-    return <section className="relative h-[100vh] lg:h-auto lg:min-h-[100vh] flex items-center justify-center py-[7.5rem] lg:pt-[3.75rem] lg:px-4 max-w-[100vw]  " aria-label="Schedule a demo meeting with Right Property team">
+    return <section className="relative h-[100vh] lg:h-auto lg:min-h-[100vh] flex items-center justify-center py-[7.5rem] px-[5rem] lg:pt-[3.75rem] lg:px-4 max-w-[100vw]  " aria-label="Schedule a demo meeting with Right Property team">
         <div className="relative w-[1011px] overflow-hidden bg-white p-[3.75rem] lg:pb-[1.5rem] lg:pt-[1rem] lg:w-full  lg:px-0" style={{ boxShadow: '3px 32px 58.5px rgba(134, 101, 177, 0.1)' }}>
             <img src={representive} alt="Representative" className="absolute top-[2.3125rem] -right-[1rem] w-[18.625rem]  lg:w-[13.75rem] lg:static object-contain h-auto lg:scale-x-[-1] lg:top-0" />
 

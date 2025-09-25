@@ -20,7 +20,7 @@ export default function ExperienceSurfaceSection() {
                 </div>
             </div>
             <LayoutWrapper>
-                <BodyText className="rp-container w-[52.625rem] lg:w-full ">
+                <BodyText className="lg:rp-container w-[52.625rem] lg:w-full ">
                     Start presenting in as little as 48 hours. Surface uses your existing 2D materials—renders, brochures, floor plans, availability lists—and gives you a dynamic, non-linear interface built for big screens and fast sales cycles.
                 </BodyText>
             </LayoutWrapper>
