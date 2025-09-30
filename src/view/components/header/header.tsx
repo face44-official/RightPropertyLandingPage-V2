@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type Lenis from "lenis";
 import { useLenis } from 'lenis/react'
 import { cn } from "@/lib/utils";
@@ -6,10 +6,14 @@ import BuiltForDevelopers from "./built-for-developers";
 import NavigationItems from "./navigation-items";
 import gsap from "gsap";
 import Logo from "./logo";
+import MobileMenu from "./mobile-menu";
+import HamburgerButton from "./hamburger-button";
 export default function Header() {
+
     const [hideHeader, setHideHeader] = useState(false);
     const $progress = useRef(0);
     const $prevProgress = useRef(0);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
     const lenisHandler = (lenis: Lenis) => {
         $progress.current = lenis.progress;
         if ($progress.current >= 0.01) {
@@ -21,27 +25,58 @@ export default function Header() {
             } else {
                 setHideHeader(false);
             }
-        }else{
+        } else {
             gsap.set('#header-parent', {
                 backgroundColor: 'transparent'
             })
         }
         $prevProgress.current = $progress.current;
     }
-    useLenis(lenisHandler, []);
+    const lenis = useLenis(lenisHandler, []);
     const onClick = () => {
         window.location.href = '/';
     }
+    const hideMenu = () => {
+        gsap.to("#mobile-menu", {
+            x: "100%",
+            duration: 0.5,
+            ease: "power2.inOut"
+        })
+        setShowMobileMenu(false);
+    }
+    const showMenu = () => {
+        gsap.to("#mobile-menu", {
+            x: "0%",
+            duration: 0.5,
+            ease: "power2.inOut"
+        })
+        setShowMobileMenu(true);
+    }
+    useEffect(() => {
+        if (showMobileMenu) {
+            showMenu();
+            lenis?.stop();
+        } else {
+            hideMenu();
+            lenis?.start();
+        }
+    }, [showMobileMenu,lenis]);
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
+
     return (
-        <div id="header-parent" className={headerClass}>
-            <div className="rp-container flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
-                <div className="flex items-center gap-[5.52rem]">
-                    <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" onClick={onClick} />
-                    <BuiltForDevelopers />
+        <>
+            <div id="header-parent" className={headerClass}>
+                <div className="rp-container flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
+                    <div className="flex items-center gap-[5.52rem] lg:gap-[2.06rem]">
+                        <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" onClick={onClick} />
+                        <BuiltForDevelopers />
+                    </div>
+                    <HamburgerButton isShowMobileMenu={showMobileMenu} onClick={() => setShowMobileMenu(prev => !prev)} />
+                    <NavigationItems />
                 </div>
-                <NavigationItems />
             </div>
-        </div>
+            <MobileMenu onItemClick={() => setShowMobileMenu(false)} />
+        </>
+
     )
 }

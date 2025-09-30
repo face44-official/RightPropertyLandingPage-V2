@@ -71,7 +71,8 @@ function App() {
       return <SalesPage />;
     } else if (pathname === "/marketing") {
       return <MarketingPage />;
-    } else {
+    }
+    else {
       return <LazyNotFoundPage />;
     }
   }, [pathname]);

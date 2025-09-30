@@ -1,9 +1,9 @@
 // Use public URLs for LCP images to match preloads
 
 import BookADemoButton from '@/view/components/book-a-demo-button'
-import BlueExploreButton from '../blue-explore-button';
 import mobileRoad1 from '@/assets/v3/mobile_road_1.png';
 import HeroVideoContainer from './hero-video-container';
+import { BlueExploreButtonLink } from '../blue-explore-button';
 
 export default function EnhancedPresentationsSection() {
     return (
@@ -19,7 +19,7 @@ export default function EnhancedPresentationsSection() {
                         The digital suite that maximises your off-plan project sales and marketing efforts.
                     </div>
                     <div className="flex lg:flex-col lg:w-full lg:gap-[0.75rem] gap-30">
-                        <BlueExploreButton href="meet-right-property" title="Explore" />
+                        <BlueExploreButtonLink href="meet-right-property" title="Explore" />
                         <BookADemoButton className="lg:w-full" />
                     </div>
                 </div>

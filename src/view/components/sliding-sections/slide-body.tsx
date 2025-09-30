@@ -1,4 +1,4 @@
-import BlueExploreButton from "../blue-explore-button"
+import { BlueExploreButtonLink } from "../blue-explore-button"
 import BookADemoButton from "../book-a-demo-button"
 
 export default function SlideBody({ caption, title, description, buttonType, useButton = true }: { caption?: string, title: string, description: string, buttonType?: string, useButton?: boolean }) {
@@ -9,7 +9,7 @@ export default function SlideBody({ caption, title, description, buttonType, use
             case "book":
                 return <BookADemoButton />
             default:
-                return <BlueExploreButton className="uppercase" href="meet-right-property" title="Learn More" />
+                return <BlueExploreButtonLink className="uppercase" href="meet-right-property" title="Learn More" />
         }
     }
 

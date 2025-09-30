@@ -22,6 +22,7 @@ export default function AnchorLink({ href, children }: AnchorLinkProps) {
     return <a
         href={`#${href}`}
         onClick={e => {
+            lenis?.start();
             e.preventDefault();
             const section = document.getElementById(href);
             if (!section || !lenis) return;
