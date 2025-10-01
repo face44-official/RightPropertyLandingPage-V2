@@ -12,7 +12,7 @@ export default function ChoosePresentationSection() {
                     </h2>
                 </div>
 
-                <div className="flex w-full  lg:flex-col lg:gap-0">
+                <div className="flex w-full  lg:flex-col lg:gap-0 mobile-rp-container lg:m-auto">
                     <div className="group relative grow basis-[100%] overflow-hidden">
                         <img src={surfaceImage} alt="surface" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
                         <div style={{ background: "linear-gradient(360deg, rgba(255, 255, 255, 0) -6.49%, #F1F1F1 86.98%)" }} className="z-[1] absolute top-0 left-0 w-full h-[16.825rem]"></div>

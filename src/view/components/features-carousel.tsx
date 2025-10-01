@@ -67,6 +67,7 @@ export default function FeaturesCarousel() {
                     paddingTop: "10rem",
                     paddingBottom: "1.5rem",
                 }}
+                className="rp-container"
             >
                 {carouselContents.map((content, index) => (
                     <SwiperSlide key={index}>

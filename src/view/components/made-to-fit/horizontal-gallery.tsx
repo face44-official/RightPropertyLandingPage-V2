@@ -24,9 +24,10 @@ export default function HorizontalGallery({
         const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
 
         if (!inner || items.length === 0) return;
-
-        const offsetStep = window.innerWidth <= 768 ? 31 : 96; // pixels each one starts lower than the last
-        const gapStep = window.innerWidth <= 768 ? 60 : 20; // gap between items
+        const mobileOffsetStep = window.innerWidth/12;
+        const mobileElementWidth = window.innerWidth * 0.68;
+        const offsetStep = window.innerWidth <= 768 ? mobileOffsetStep : 96; // pixels each one starts lower than the last
+        const gapStep = window.innerWidth <= 768 ? 60 : window.innerWidth * 0.053; // gap between items
 
         // 1) set up initial vertical offsets
         items.forEach((el, i) => {
@@ -34,7 +35,7 @@ export default function HorizontalGallery({
         });
 
         // Calculate scroll distance more precisely
-        const scrollDistance = window.innerWidth <= 768 ? (221 * (items.length - 2) + gapStep * (items.length - 2)) : (680 * (items.length - 2.8) + gapStep * (items.length - 2.8));
+        const scrollDistance = window.innerWidth <= 768 ? (mobileElementWidth * (items.length - 1.5) + gapStep * (items.length - 1.5)) : (680 * (items.length - 2.8) + gapStep * (items.length - 2.8));
         const slideDuration = 1
         // timeline length = one chunk per slide
         const totalDuration = slideDuration * (items.length + 1)
@@ -88,9 +89,9 @@ export default function HorizontalGallery({
     }, [horizontalPin])
     return <div className="gallery z-[8] relative min-h-full lg:min-h-[75vw]  overflow-visible max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
-            <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[1.25rem]">
+            <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5.3vw]">
                 {images.map((image, index) => (
-                    <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] lg:w-[13.875rem] lg:h-[13.875rem] object-cover relative" />
+                    <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] lg:w-[68vw] lg:h-[68vw] object-cover relative" />
                 ))}
             </div>
         </div>

@@ -23,7 +23,7 @@ export default function ConvertMoreLeadsSection() {
 
             <section className="">
                 <div className="relative hidden lg:block">
-                    <img src={convertMoreLeadsMobile} alt="convert more leads" className="z-[-1] w-full h-auto " />
+                    <img src={convertMoreLeadsMobile} alt="convert more leads" className="z-[-1] w-full h-auto rp-container" />
                     <div className="absolute right-0 bottom-[0] w-[375px] h-[68px]" style={{ background: "linear-gradient(180deg, rgba(238, 241, 247, 0) 0%, #EEF1F7 100%)" }} />
                 </div>
                 <div className="rp-container lg:bg-none! lg:h-auto! relative z-[8] flex p-[7.5rem] justify-start lg:p-4">

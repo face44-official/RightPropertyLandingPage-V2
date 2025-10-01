@@ -18,7 +18,7 @@ export default function MobileMenu({ onItemClick }: { onItemClick: () => void })
     }
     return (
         <div id="mobile-menu" className="fixed top-[5rem] h-full w-[100vw] hidden lg:block z-[999] bg-white px-4 pt-[2rem] pb-[6.25rem]">
-            <ul className="flex flex-col gap-6">
+            <ul className="flex flex-col gap-6 rp-container px-4 ">
                 <li onClick={onNavigate}>
                     <NavigationItem href="presentation">Presentation</NavigationItem>
                 </li>
