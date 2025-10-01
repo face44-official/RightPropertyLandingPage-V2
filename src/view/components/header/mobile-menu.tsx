@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AnchorLink from "../anchor-link"
 import gsap from "gsap";
+import { Link, useLocation } from "wouter";
 
 
 
 export default function MobileMenu({ onItemClick }: { onItemClick: () => void }) {
-    const [pathname, setPathname] = useState(window.location.pathname);
-    useEffect(() => {
-        setPathname(window.location.pathname);
-    }, []);
+    const [location] = useLocation();
 
     useEffect(() => {
         gsap.set("#mobile-menu", {
@@ -30,7 +28,7 @@ export default function MobileMenu({ onItemClick }: { onItemClick: () => void })
                 <li onClick={onNavigate}>
                     <NavigationItem href="sales">Sales</NavigationItem>
                 </li>
-                {pathname == "/" && <li onClick={onNavigate}>
+                {location == "/" && <li onClick={onNavigate}>
                     <AnchorItem href="faqs">FAQs</AnchorItem>
                 </li>
                 }
@@ -49,13 +47,11 @@ const ElementItem = ({ children }: { children: React.ReactNode }) => {
 }
 const NavigationItem = ({ children, href }: { children: React.ReactNode, href: string }) => {
     return (
-        <div
-            onClick={() => {
-                window.location.href = href;
-            }}
+        <Link
+            href={href}
             className="">
             <ElementItem>{children}</ElementItem>
-        </div>
+        </Link>
     )
 }
 
