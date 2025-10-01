@@ -8,8 +8,9 @@ import gsap from "gsap";
 import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
 import HamburgerButton from "./hamburger-button";
+import { Link, useLocation } from "wouter";
 export default function Header() {
-
+    const [location] = useLocation();
     const [hideHeader, setHideHeader] = useState(false);
     const $progress = useRef(0);
     const $prevProgress = useRef(0);
@@ -33,9 +34,7 @@ export default function Header() {
         $prevProgress.current = $progress.current;
     }
     const lenis = useLenis(lenisHandler, []);
-    const onClick = () => {
-        window.location.href = '/';
-    }
+
     const hideMenu = () => {
         gsap.to("#mobile-menu", {
             x: "100%",
@@ -60,7 +59,13 @@ export default function Header() {
             hideMenu();
             lenis?.start();
         }
-    }, [showMobileMenu,lenis]);
+    }, [showMobileMenu, lenis]);
+    useEffect(() => {
+        lenis?.scrollTo(0,{
+            duration:0,
+            lerp:0
+        });
+    }, [location, lenis]);
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
 
     return (
@@ -68,7 +73,9 @@ export default function Header() {
             <div id="header-parent" className={headerClass}>
                 <div className="rp-container flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
                     <div className="flex items-center gap-[5.52rem] lg:gap-[2.06rem]">
-                        <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" onClick={onClick} />
+                        <Link href="/">
+                            <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" />
+                        </Link>
                         <BuiltForDevelopers />
                     </div>
                     <HamburgerButton isShowMobileMenu={showMobileMenu} onClick={() => setShowMobileMenu(prev => !prev)} />

@@ -1,24 +1,18 @@
 import ReactLenis from 'lenis/react';
 import './styles/index.css'
 
-import HomePage from './view/pages/home-page';
-import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import ReactGA from 'react-ga4';
 import Header from './view/components/header/header.tsx';
 import WindowSizeProvider from './view/components/providers/window-size-provider.tsx';
-import ExperiencePage from './view/pages/experience-page.tsx';
-import SalesPage from './view/pages/sales.tsx';
-import MarketingPage from './view/pages/marketing-page.tsx';
+import Router from './view/components/router.tsx';
 
 
 // Lazy load non-critical components and GSAP
 const LazyFooter = lazy(() => import('./view/components/footer/section'));
 const LazyGSAP = lazy(() => import('./lib/gsap.tsx').then(module => ({ default: module.default })));
-const LazyNotFoundPage = lazy(() => import('./view/pages/404'));
-const LazyPrivacyPolicy = lazy(() => import('./view/pages/privacy-policy'));
 
 function App() {
-  const [pathname, setPathname] = useState<string>();
   const [gsapLoaded, setGsapLoaded] = useState(false);
   const [_, setLenisOptions] = useState({ lerp: 0, duration: 0 });
   useEffect(() => {
@@ -27,7 +21,6 @@ function App() {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [])
   useEffect(() => {
-    setPathname(window.location.pathname);
 
     // Defer GSAP loading until after initial render
     const gsapTimer = setTimeout(() => {
@@ -60,24 +53,7 @@ function App() {
     };
   }, []);
 
-  const getPage = useCallback(() => {
-    if (pathname === "/" || pathname === undefined) {
-      return <HomePage />;
-    } else if (pathname === "/privacy-policy") {
-      return <LazyPrivacyPolicy />;
-    } else if (pathname === "/presentation") {
-      return <ExperiencePage />;
-    } else if (pathname === "/sales") {
-      return <SalesPage />;
-    } else if (pathname === "/marketing") {
-      return <MarketingPage />;
-    }
-    else {
-      return <LazyNotFoundPage />;
-    }
-  }, [pathname]);
 
-  const page = getPage();
 
   return (
     <WindowSizeProvider>
@@ -89,7 +65,7 @@ function App() {
         )}
         <Header />
         <div className=''>
-          {page}
+          <Router />
           <Suspense fallback={<div style={{ height: '200px' }} />}>
             <LazyFooter />
           </Suspense>
