@@ -233,6 +233,8 @@ body {
   }
   .mobile-rp-container {
     max-width: 540px;
+    margin: 0 auto;
+
   }
   .rp-container {
     max-width: 540px;
