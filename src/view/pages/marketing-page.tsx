@@ -11,30 +11,34 @@ import readyMadeTemplatesVideo from "@/assets/v3/marketing/ready-made-templates.
 import emailVideo from "@/assets/v3/marketing/email-video.webm";
 import { MarketingSplitTextSection } from "../components/marketing/marketing-splittext-section";
 import MarketingHeroSection from "../components/marketing/marketing-hero-section";
+import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-road";
 export default function MarketingPage() {
-    return <main id="sales-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center">
-        <TitleBig className="w-[54.5rem] lg:w-full lg:px-4 mb-[3.75rem] lg:mb-[1.875rem] mx-auto text-center">Marketing That Connects Directly to Sales.</TitleBig>
-        <MarketingHeroSection />
-        <MarketingSplitTextSection />
-        <MarketingPowerhouseSection />
-        <TwoColumnTextImageBlock className="pb-[24.1875rem]" title="What Buyers See in Person, They See Online." description="Bring your immersive presentations to the web. From site plans to media galleries, the website reflects your project in a professional, interactive format—ready to convert." image={<TheySeeOnlineImage />} variant={"image-left"} />
-        <OneColumnTitleImageDescription className="pb-[32.8125rem] lg:pb-[16.25rem]" title="Ready-Made Templates. Full Creative Control." description="Choose from ready-to-use templates or fully customize your campaign pages with a powerful but intuitive CMS. Keep your brand consistent and your setup hassle-free." image={<ReadyMadeTemplatesVideo />} />
-        <TwoColumnTextImageBlock className="lg:pb-[7.5rem]" title="Create and Send Campaigns Without Leaving the Platform." description="Engage prospects with beautifully designed emails and automation tools—all built in. Whether launching a campaign or nurturing leads, you’re in control." image={<EmailVideo />} variant={"image-right"} />
-        <div className="lg:px-4 relative rp-container py-[25.75rem] lg:pt-0 lg:py-[7.5rem]">
-            <BinarySection className="" subHeader="Did you know?" title="Automated where it matters" description="We simplify the complex. Many steps you'd expect to handle manually are fully automated behind the scenes." image={<BinaryBlockImage path={automated} />} />
-            <svg className="absolute lg:hidden left-1/2 z-[-1]" width="1445" height="1049" viewBox="0 0 1445 1049" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="722.5" cy="524.14" rx="722.5" ry="524.14" fill="url(#paint0_radial_1312_2947)" />
-                <defs>
-                    <radialGradient id="paint0_radial_1312_2947" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(722.5 524.14) rotate(90) scale(524.14 722.5)">
-                        <stop stop-color="#E7DFF2" />
-                        <stop offset="1" stop-color="white" stop-opacity="0" />
-                    </radialGradient>
-                </defs>
-            </svg>
+    return <main className="overflow-x-hidden">
+        <HeroSubPagesMobileRoad firstMaskTop="2rem" secondMaskTop="0rem" />
+        <main id="sales-page" className="relative z-[20] pt-[14.56rem] lg:pt-[12.25rem] flex flex-col justify-center">
+            <TitleBig className="w-[54.5rem] lg:w-full lg:px-4 !mb-[3.75rem] lg:!mb-[1.875rem] rp-container text-center">Marketing That Connects Directly to Sales.</TitleBig>
+            <MarketingHeroSection />
+            <MarketingSplitTextSection />
+            <MarketingPowerhouseSection />
+            <TwoColumnTextImageBlock className="pb-[24.1875rem]" title="What Buyers See in Person, They See Online." description="Bring your immersive presentations to the web. From site plans to media galleries, the website reflects your project in a professional, interactive format—ready to convert." image={<TheySeeOnlineImage />} variant={"image-left"} />
+            <OneColumnTitleImageDescription className="pb-[32.8125rem] lg:pb-[16.25rem]" title="Ready-Made Templates. Full Creative Control." description="Choose from ready-to-use templates or fully customize your campaign pages with a powerful but intuitive CMS. Keep your brand consistent and your setup hassle-free." image={<ReadyMadeTemplatesVideo />} />
+            <TwoColumnTextImageBlock className="lg:pb-[7.5rem]" title="Create and Send Campaigns Without Leaving the Platform." description="Engage prospects with beautifully designed emails and automation tools—all built in. Whether launching a campaign or nurturing leads, you’re in control." image={<EmailVideo />} variant={"image-right"} />
+            <div className="lg:px-4 relative rp-container py-[25.75rem] lg:pt-0 lg:py-[7.5rem]">
+                <BinarySection className="" subHeader="Did you know?" title="Automated where it matters" description="We simplify the complex. Many steps you'd expect to handle manually are fully automated behind the scenes." image={<BinaryBlockImage path={automated} />} />
+                <svg className="absolute lg:hidden left-1/2 z-[-1]" width="1445" height="1049" viewBox="0 0 1445 1049" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="722.5" cy="524.14" rx="722.5" ry="524.14" fill="url(#paint0_radial_1312_2947)" />
+                    <defs>
+                        <radialGradient id="paint0_radial_1312_2947" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(722.5 524.14) rotate(90) scale(524.14 722.5)">
+                            <stop stop-color="#E7DFF2" />
+                            <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
 
-        </div>
-        <MarketingEverythingConnects />
-        <ScheduleADemoSection />
+            </div>
+            <MarketingEverythingConnects />
+            <ScheduleADemoSection />
+        </main>
     </main>
 }
 

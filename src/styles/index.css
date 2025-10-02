@@ -159,13 +159,11 @@ body {
 }
 
 .mobile-sub-pages-mask {
-  width: 100%;
-  height: 100%;
   /* left: 187.5px;
   top: 126px; */
 
   mask-image: radial-gradient(
-    circle var(--mask-r, 240px) at var(--mask-x, 187.5px) var(--mask-y, 224.5px),
+    circle var(--mask-r, 62.8vw) at var(--mask-x, 46%) var(--mask-y, 6%),
     white 0%,
     white 50%,
     transparent 100%
@@ -176,11 +174,10 @@ body {
   mask-position: 0px 0px;
 }
 .mobile-sub-pages-second-mask {
-  width: 100%;
-  height: 100%;
+
 
   mask-image: radial-gradient(
-    circle var(--mask-r, 240px) at var(--mask-x, -53.5px) var(--mask-y, 500px),
+    circle var(--mask-r,  62.8vw) at var(--mask-x, -9%) var(--mask-y, 50%),
     white 0%,
     white 50%,
     transparent 100%

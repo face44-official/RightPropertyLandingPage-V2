@@ -17,7 +17,7 @@ import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-roa
 export default function ExperiencePage() {
 
 
-    return <main>
+    return <main className="overflow-x-hidden">
         <HeroSubPagesRoad />
         <HeroSubPagesMobileRoad />
         <div id="experience-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center overflow-hidden">

@@ -117,13 +117,13 @@ export default function ExperienceHeroVideos() {
         highlightRightImage();
     }
     return (
-        <div className="flex justify-center overflow-hidden mb-[14.5625rem]">
-            <div className="rp-container max-w-[1680px] w-[100vw]  mb-[14.5625rem] min-h-[70vh]  justify-center lg:flex-col">
+        <div className="flex justify-center overflow-hidden mb-[14.5625rem] lg:mb-[15.3125rem]">
+            <div className="rp-container max-w-[1680px] w-[100vw]  mb-[14.5625rem] min-h-[70vh] lg:min-h-[unset]  justify-center lg:flex-col">
                 <div ref={leftImageRef} onMouseEnter={leftOnMouseEnter} onMouseLeave={leftOnMouseLeave} className="absolute lg:relative  w-[62.25rem] lg:w-full ">
                     <div className="relative">
                         <video
                             src={surface}
-                            className={`absolute w-[55rem] lg:w-[21rem] top-[5rem] lg:top-[2rem] left-[3.5rem] lg:left-[1.2rem] z-[-1]  h-auto  `}
+                            className={`absolute w-[55rem] lg:w-[88%] top-[5rem] lg:top-[13%] left-[3.5rem] lg:left-[6%] z-[-1]  h-auto  `}
                             width="1200"
                             height="800"
                             autoPlay
@@ -143,7 +143,7 @@ export default function ExperienceHeroVideos() {
                     <div className="relative">
                         <video
                             src={space}
-                            className={`absolute w-[55rem] lg:w-[21rem] top-[5rem] lg:top-[2rem] left-[3.5rem] lg:left-[1.2rem] z-[-1]  h-auto `}
+                            className={`absolute w-[55rem] lg:w-[88%] top-[5rem] lg:top-[13%] left-[3.5rem] lg:left-[6%] z-[-1]  h-auto `}
                             width="1200"
                             height="800"
                             autoPlay
