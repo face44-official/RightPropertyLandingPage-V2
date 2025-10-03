@@ -13,7 +13,7 @@ import { MarketingSplitTextSection } from "../components/marketing/marketing-spl
 import MarketingHeroSection from "../components/marketing/marketing-hero-section";
 import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-road";
 export default function MarketingPage() {
-    return <main className="overflow-x-hidden">
+    return <main className="overflow-hidden">
         <HeroSubPagesMobileRoad firstMaskTop="2rem" secondMaskTop="0rem" />
         <main id="sales-page" className="relative z-[20] pt-[14.56rem] lg:pt-[12.25rem] flex flex-col justify-center">
             <TitleBig className="w-[54.5rem] lg:w-full lg:px-4 !mb-[3.75rem] lg:!mb-[1.875rem] rp-container text-center">Marketing That Connects Directly to Sales.</TitleBig>
