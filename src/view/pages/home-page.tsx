@@ -57,7 +57,7 @@ export default function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="highlight content-visiblity-auto"></div>
+                            <div className="highlight"></div>
                         </div>
 
                         <div className="relative z-[10]">
