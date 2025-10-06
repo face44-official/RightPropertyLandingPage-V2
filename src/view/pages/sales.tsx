@@ -3,7 +3,7 @@ import { SalesSplitTextSection } from "../components/sales/sales-splittext-secti
 import SalesPurposeBuiltCrmSection from "../components/sales/sales-purpose-built-crm";
 import TwoColumnTextImageBlock from "../components/ui/two-column-text-image-block";
 import OneColumnTitleImageDescription from "../components/ui/one-column-title-image-description";
-import trackPerformanceDesktop from "@/assets/v3/sales/track_performance_desktop.png";
+import trackPerformanceDesktop from "@/assets/v3/sales/track_performance_desktop.webp";
 import ScheduleADemoSection from "../components/schedule-a-demo/section";
 import buyerIntentMedia from "@/assets/v3/sales/buyer-intent.webm";
 import { PerspectiveTransform, type Points } from 'react-perspective-transform';

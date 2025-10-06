@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import space from "@/assets/v3/experience/space.webm";
 import surface from "@/assets/v3/experience/surface.webm";
 
-import heroFrame from '@/assets/v3/hero-frame.png';
+import heroFrame from '@/assets/v3/hero-frame.webp';
 
 import gsap from "gsap";
 export default function ExperienceHeroVideos() {
@@ -132,7 +132,7 @@ export default function ExperienceHeroVideos() {
                             playsInline
                             preload="auto"
                         />
-                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto " alt="" />
+                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto " alt="Right Property Surface presentation interface frame" />
                         <div className="font-general-sans font-medium text-24 lg:text-base -tracking-[0.01em]  absolute bottom-[2rem] lg:bottom-0 left-1/2 -translate-x-1/2">
                             Surface
                         </div>
@@ -152,7 +152,7 @@ export default function ExperienceHeroVideos() {
                             playsInline
                             preload="auto"
                         />
-                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto " alt="" />
+                        <img src={heroFrame} fetchPriority='high' className="w-[62.21rem] max-w-[1200px] h-auto lg:max-w-full lg:w-auto " alt="Right Property Space presentation interface frame" />
 
                         <div className="font-general-sans font-medium text-24 lg:text-base -tracking-[0.01em] absolute bottom-[2rem] lg:bottom-0 left-1/2 -translate-x-1/2">
                             Space

@@ -1,18 +1,18 @@
 import SlideElement from "../sliding-sections/slide-element";
 import SlideBody from "../sliding-sections/slide-body";
-import smartBehindImage from "@/assets/v3/experience/smart_mobile.png"
-import storytellingImage from "@/assets/v3/experience/storytelling_mobile.png"
+import smartBehindImage from "@/assets/v3/experience/smart_mobile.webp"
+import storytellingImage from "@/assets/v3/experience/storytelling_mobile.webp"
 const carouselContents = [
     {
         title: "Storytelling that Sells",
         description: "Forget static presentations. With Right Property, salespeople guide each conversation fluidly—opening site plans, maps, galleries, unit details, videos, and even virtual tours at the right moment. It’s non-linear, intuitive, and powerful.",
         useButton: false,
-        image: <img src={smartBehindImage} className="w-full h-auto object-cover" alt="smart behind image" />
+        image: <img src={smartBehindImage} className="w-full h-auto object-cover" alt="Right Property storytelling presentation interface" />
     },
     {
         title: "Smart Behind the Scenes",
         description: "As buyers engage with your project, Right Property logs meaningful moments—from what they view to what they ask. Each interaction builds a richer profile, while sales rep activity is logged for performance insights and KPI tracking.",
-        image: <img src={storytellingImage} className="w-full h-auto object-cover" alt="storytelling image" />
+        image: <img src={storytellingImage} className="w-full h-auto object-cover" alt="Right Property smart analytics behind the scenes interface" />
     }
 ]
 export default function ExperienceCarousel() {

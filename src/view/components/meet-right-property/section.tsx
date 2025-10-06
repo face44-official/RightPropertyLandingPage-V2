@@ -22,10 +22,11 @@ const MeetRightPropertySection = ({ ref }: Props) => {
                         <h2 className="mb-[2rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                             Meet Right Property
                         </h2>
-                        <p
+                        <div
                             data-bg-color="#C4C4C4"
                             data-fg-color="#000000"
-                            className="reveal-type mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">
+                            className="reveal-type mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text"
+                            role="paragraph">
                             Property sales require more than just listings, 3D models and
                             brochures - it's about
                             <span className="block lg:hidden"></span>
@@ -56,7 +57,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
                                 3
                             </CircleNumber>
                             turning interest into action.
-                        </p>
+                        </div>
                         <p className='mb-[5rem] lg:mb-[2rem] font-geist font-normal text-24 leading-[140%] -tracking-[0.01em] lg:leading-[130%]'>
                             Right Property gives you precisely what you need to make your sales and marketing efforts truly count.
                         </p>

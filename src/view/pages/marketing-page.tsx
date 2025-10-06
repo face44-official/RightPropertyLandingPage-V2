@@ -1,7 +1,7 @@
 import MarketingPowerhouseSection from "../components/marketing/marketing-powehouse-section";
 import { TitleBig } from "../components/ui/title";
 import TwoColumnTextImageBlock from "../components/ui/two-column-text-image-block";
-import automated from "@/assets/v3/automated.png"
+import automated from "@/assets/v3/automated.webp"
 import BinarySection, { BinaryBlockImage } from "../components/binary-section";
 import ScheduleADemoSection from "../components/schedule-a-demo/section";
 import MarketingEverythingConnects from "../components/marketing/marketing-everything-connects";

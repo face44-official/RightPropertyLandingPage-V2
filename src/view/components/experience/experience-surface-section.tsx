@@ -1,7 +1,7 @@
 import BodyText from "../ui/body-text";
 import Caption from "../ui/caption";
 import { TitleMedium } from "../ui/title";
-import surfaceFullImage from "@/assets/v3/experience/surface_full.png";
+import surfaceFullImage from "@/assets/v3/experience/surface_full.webp";
 export default function ExperienceSurfaceSection() {
     return (
         <section id="experience-surface" className=" !mb-[20.375rem] lg:!mb-[3.75rem]" aria-label="Choose the experience">
@@ -12,7 +12,7 @@ export default function ExperienceSurfaceSection() {
 
             <div className="group relative mb-[2.5rem] max-w-[1650px] mx-auto lg:max-w-full">
                 <div className="w-full h-auto overflow-hidden">
-                    <img src={surfaceFullImage} alt="surface full" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
+                    <img src={surfaceFullImage} alt="Right Property Surface 2D presentation interface full view" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
                 </div>
                 <div className="absolute left-[5rem] top-[4rem] lg:top-6 lg:left-6">
                     <TitleMedium>Surface</TitleMedium>

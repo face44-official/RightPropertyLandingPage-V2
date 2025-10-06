@@ -1,19 +1,19 @@
-import purpleCheck from "@/assets/v3/purple_check.png";
-import immersiveMobile from '@/assets/v3/experience/immersive_mobile.png';
+import purpleCheck from "@/assets/v3/purple_check.webp";
+import immersiveMobile from '@/assets/v3/experience/immersive_mobile.webp';
 export default function ExperienceImmersiveSection() {
     const items = [
         {
-            icon: <img src={purpleCheck} alt="check-circle" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for 3D site plans feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "3D site plans & navigation",
             description: "Explore buildings, units, and layouts in real time with interactive controls.",
         },
         {
-            icon: <img src={purpleCheck} alt="check-circle" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for virtual tours feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "Virtual tours & walkthroughs",
             description: "Guide buyers through spaces as if they’re already there—visually rich and intuitive.",
         },
         {
-            icon: <img src={purpleCheck} alt="check-circle" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for high impact setup feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "High impact, higher setup",
             description: "Takes more time to build, but creates your most unforgettable buyer experience.",
         }

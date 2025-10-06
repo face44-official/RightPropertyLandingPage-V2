@@ -1,11 +1,11 @@
-import gRoad from "@/assets/v3/g_road.png";
+import gRoad from "@/assets/v3/g_road.webp";
 import SimpleSetupGradientPath from "./simple-setup-gradient-path";
 import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
-import softwareMinds from "@/assets/v3/software_minds.png"
+import softwareMinds from "@/assets/v3/software_minds.webp"
 import { interpolateColor } from "@/lib/utils";
-import purpleCheck from "@/assets/v3/purple_check.png";
+import purpleCheck from "@/assets/v3/purple_check.webp";
 import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";
 // Helper function to interpolate between two colors
 
@@ -15,17 +15,17 @@ export default function SimpleSetupSection() {
     const motionTimeline = useRef<GSAPTimeline>(null)
     const items: { icon: React.ReactNode, title: string, description: string }[] = [
         {
-            icon: <img src={purpleCheck} alt="checkmark icon for simple setup feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for plug in content feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "Plug in your content",
             description: "Upload floor plans, renders, brochures, videos, and even 3D tour.",
         },
         {
-            icon: <img src={purpleCheck} alt="checkmark icon for support feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for team support feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "We’ve got you covered",
             description: "No visuals or assets? Our team can produce what’s needed.",
         },
         {
-            icon: <img src={purpleCheck} alt="checkmark icon for easy updates feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for easy updates feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "Easy to update anytime",
             description: "Need to make changes?Just a few clicks. No waiting, no developers.",
         }
@@ -104,7 +104,7 @@ export default function SimpleSetupSection() {
             <div className="rp-container lg:h-auto!" style={{ height: "108.375rem" }}>
 
                 <div className="flex justify-start gap-[8.4375rem] w-[41.875rem] lg:w-full">
-                    <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[1]' src={gRoad} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="1680" height="1734" />
+                    <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[1]' src={gRoad} alt="Right Property simple setup process visualization with animated path" loading="lazy" decoding="async" width="1680" height="1734" />
                     <div className="absolute top-[25rem] right-[12rem]" ref={(el) => {
                         if (el) {
                             const path = el.querySelector('path')

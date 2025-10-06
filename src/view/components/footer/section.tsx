@@ -1,7 +1,7 @@
-import footerBg from "@/assets/v3/footer_bg.png"
-import footerLevitate from "@/assets/v3/footer_levitate.png"
-import mobileFooterBg from "@/assets/v3/mobile_right_footer.png"
-import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.png"
+import footerBg from "@/assets/v3/footer_bg.webp"
+import footerLevitate from "@/assets/v3/footer_levitate.webp"
+import mobileFooterBg from "@/assets/v3/mobile_right_footer.webp"
+import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.webp"
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import Logo from "../header/logo"
@@ -92,8 +92,8 @@ export default function FooterSection() {
     }, [])
     return <div ref={$footerContainer} className="rp-container">
         <div className="relative h-[45.3125rem] lg:h-auto lg:p-0 px-[5rem] pt-[7.125rem] lg:w-full">
-            <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0] lg:hidden" alt="" />
-            <img src={footerBg} className="absolute bottom-0 left-0 w-[105rem] h-full object-cover z-[-1] lg:hidden" alt="" />
+            <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0] lg:hidden" alt="Right Property footer floating decoration element" />
+            <img src={footerBg} className="absolute bottom-0 left-0 w-[105rem] h-full object-cover z-[-1] lg:hidden" alt="Right Property footer background design" />
 
             <div className="flex justify-between lg:flex-col">
                 <div className="flex flex-[0.5_1_30%] lg:flex-[1_0_100%] lg:items-start flex-col gap-2">
@@ -119,12 +119,12 @@ export default function FooterSection() {
                 <CopyRight className="hidden lg:block lg:px-4 mb-[4rem]" />
             </div>
             <div className="relative">
-                <img src={mobileFooterBg} className="w-full h-auto object-cover z-[-1] hidden lg:block" alt="" />
-                <img ref={$mobileFooterLevitate} src={mobileFooterLevitate} className="absolute left-[8.148125rem] top-[5.375rem] w-[4.6418rem] h-auto object-contain z-[0] hidden lg:block" alt="" />
+                <img src={mobileFooterBg} className="w-full h-auto object-cover z-[-1] hidden lg:block" alt="Right Property mobile footer background design" />
+                <img ref={$mobileFooterLevitate} src={mobileFooterLevitate} className="absolute left-[8.148125rem] top-[5.375rem] w-[4.6418rem] h-auto object-contain z-[0] hidden lg:block" alt="Right Property mobile footer floating decoration element" />
 
             </div>
         </div>
-        <img src="https://tracker.metricool.com/c3po.jpg?hash=c1206165890c83c3d25bd64940ffc24b"/>
+        <img src="https://tracker.metricool.com/c3po.jpg?hash=c1206165890c83c3d25bd64940ffc24b" alt="Metricool analytics tracking pixel" />
     </div>
 }
 

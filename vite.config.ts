@@ -22,12 +22,6 @@ export default defineConfig({
       }
     ),
     tailwindcss(),
-    // viteImagemin({
-    //   gifsicle: { optimizationLevel: 7 },
-    //   mozjpeg: { quality: 85 },
-    //   pngquant: { quality: [0.7, 0.85] },
-    //   webp: { quality: 85 }
-    // })
   ],
   build: {
     rollupOptions: {

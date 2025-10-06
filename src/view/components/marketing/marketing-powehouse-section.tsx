@@ -1,30 +1,30 @@
 
 import Accessibility from "@/view/components/accessiblity"
 
-import presentSmarterBg from "@/assets/v3/marketing/marketing_powerhouse_bg.png"
-import presentSmarterBgMobile from "@/assets/v3/marketing/powerhouse_mobile.png"
+import presentSmarterBg from "@/assets/v3/marketing/marketing_powerhouse_bg.webp"
+import presentSmarterBgMobile from "@/assets/v3/marketing/powerhouse_mobile.webp"
 import { Parallax } from "../parallax"
-import startIcon from '@/assets/v3/star_icon.png';
-import spaceIcon from '@/assets/v3/space_icon.png';
+import startIcon from '@/assets/v3/star_icon.webp';
+import spaceIcon from '@/assets/v3/space_icon.webp';
 export default function MarketingPowerhouseSection() {
 
     const items = [
         {
             title: "One-Click Website Launch",
             description: "Spin up a full project website with a single click using the same assets from your Surface or Space setup.",
-            icon: <img src={startIcon} alt="interactive storytelling icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
+            icon: <img src={startIcon} alt="One-click website launch feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         },
         {
             title: "Complete Marketing Platform",
             description: "More than a simple page—it’s a complete marketing platform, seamlessly connected to your built-in CRM.",
-            icon: <img src={spaceIcon} alt="responsive design icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
+            icon: <img src={spaceIcon} alt="Complete marketing platform feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         }
     ]
 
     return (
         <div className="mb-[12.5rem] lg:mb-[3rem] bg-[#EEF1F7] relative">
             <section className="rp-container lg:bg-none! lg:h-auto! relative z-[8]" style={{ width: "100%", height: "auto", backgroundImage: `url(${presentSmarterBg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
-                <img src={presentSmarterBgMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
+                <img src={presentSmarterBgMobile} alt="Marketing powerhouse mobile background" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
                         <div className="w-[49.375rem] lg:w-full">

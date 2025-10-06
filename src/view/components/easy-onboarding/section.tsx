@@ -1,10 +1,10 @@
-import easyOnboarding from "@/assets/v3/easy_onboarding_desktop.png"
+import easyOnboarding from "@/assets/v3/easy_onboarding_desktop.webp"
 import EasyOnboardingPath from "./easy-onboarding-path"
 import { useCallback, useEffect, useRef } from "react"
 import BinarySection, { BinaryBlockImage } from "../binary-section"
-import automated from "@/assets/v3/automated.png"
+import automated from "@/assets/v3/automated.webp"
 import { interpolateColor } from "@/lib/utils"
-import purpleCheck from "@/assets/v3/purple_check.png";
+import purpleCheck from "@/assets/v3/purple_check.webp";
 import gsap from "gsap"
 import mobileRoad3 from '@/assets/v3/mobile_road_3.webp';
 export default function EasyOnboardingSection() {
@@ -13,17 +13,17 @@ export default function EasyOnboardingSection() {
     const motionTimeline = useRef<GSAPTimeline>(null)
     const items = [
         {
-            icon: <img src={purpleCheck} alt="check-circle" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for 48 hour launch feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "Live in 48 hours",
             description: "Launch your 2D setup in as little as two days. No delays, no complex handovers.",
         },
         {
-            icon: <img src={purpleCheck} alt="check-circle" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for transparent pricing feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "Transparent pricing, always",
             description: "No hidden costs, no vague estimates.What you see is what you pay.",
         },
         {
-            icon: <img src={purpleCheck} alt="check-circle" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="Checkmark icon for scalable growth feature" className="w-[2.5rem] lg:w-6 h-auto object-contain" />,
             title: "Built to grow with you",
             description: "Whether you’re showcasing 10 units or 300,The experience stays the same.",
         }
@@ -91,18 +91,18 @@ export default function EasyOnboardingSection() {
     return (
         <section id="easy-onboarding" className="content-visibility-auto">
             {/* <div className="w-[100vw] h-[24.125rem] relative hidden lg:block ">
-                <img src={mobileRoad3} className="absolute w-max h-auto object-contain" alt="" />
+                <img src={mobileRoad3} className="absolute w-max h-auto object-contain" alt="Right Property onboarding process mobile visualization (commented out)" />
 
             </div> */}
             <div className="hidden lg:block relative w-full h-[24.125rem] mx-auto overflow-visible">
                 <div className="absolute -bottom-[125px]">
-                    <img src={mobileRoad3} className="w-[701px] h-[739px] object-cover" alt="" />
+                    <img src={mobileRoad3} className="w-[701px] h-[739px] object-cover" alt="Right Property onboarding process mobile visualization" />
                 </div>
             </div>
 
             <div className="rp-container  lg:h-auto!" style={{ height: "98.75rem" }}>
 
-                <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[-1]' src={easyOnboarding} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="1680" height="1734" />
+                <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[-1]' src={easyOnboarding} alt="Right Property easy onboarding process visualization with animated path" loading="lazy" decoding="async" width="1680" height="1734" />
                 <div className="absolute top-[43.3125rem] left-[40.75rem]" ref={(el) => {
                     if (el) {
                         const path = el.querySelector('path')

@@ -1,5 +1,5 @@
 import BookADemoButton from "../book-a-demo-button";
-import representive from "@/assets/v3/representive.png";
+import representive from "@/assets/v3/representive.webp";
 export default function ScheduleADemoSection() {
     return <section className="relative h-[100vh] lg:h-auto lg:min-h-[100vh] flex items-center justify-center py-[7.5rem] px-[5rem] lg:pt-[3.75rem] lg:px-4 max-w-[100vw]  content-visibility-auto" aria-label="Schedule a demo meeting with Right Property team">
         <div className="relative rp-container w-[1011px] overflow-hidden bg-white p-[3.75rem] lg:pb-[1.5rem] lg:pt-[1rem] lg:w-full  lg:px-0" style={{ boxShadow: '3px 32px 58.5px rgba(134, 101, 177, 0.1)' }}>

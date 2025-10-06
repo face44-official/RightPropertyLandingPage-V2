@@ -14,12 +14,13 @@ const SalesSplitText = ({ ref }: { ref?: React.Ref<HTMLDivElement>; }) => {
                         <h2 className="mb-[2rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                             SALES
                         </h2>
-                        <p
+                        <div
                             data-bg-color="#C4C4C4"
                             data-fg-color="#000000"
-                            className='reveal-type text-[#D7D7D7] mb-[2.5rem] font-general-sans font-medium text-40 lg:text-28 lg:text-[#232323] leading-[140%] -tracking-[0.01em] experience-splittext-section-text'>
+                            className='reveal-type text-[#D7D7D7] mb-[2.5rem] font-general-sans font-medium text-40 lg:text-28 lg:text-[#232323] leading-[140%] -tracking-[0.01em] experience-splittext-section-text'
+                            role="paragraph">
                             Right Property gives you everything you need to sell smarter: track buyer engagement, monitor rep performance, and close deals with clarity. All with a built-in CRM designed for your team—not for IT departments.
-                        </p>
+                        </div>
                         <h3 className="font-geist-mono font-normal text-16 leading-[150%] tracking-[0.04em] uppercase text-squid-ink">
                             Trusted by <span className="hidden lg:inline"><br />
                             </span> <span className="font-semibold">forward-thinking developers</span>

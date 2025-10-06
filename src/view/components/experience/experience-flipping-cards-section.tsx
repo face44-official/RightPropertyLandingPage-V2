@@ -4,8 +4,8 @@ import FlippingCardContent from "../revealing-items/flipping-card-content";
 import RevealItemsIndicator from "../revealing-items/reveal-items-indicator";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
-import revealItem1Overlay from "@/assets/v3/experience/experience_video_overlay_1.png"
-import revealItem2Overlay from "@/assets/v3/experience/experience_video_overlay_2.png"
+import revealItem1Overlay from "@/assets/v3/experience/experience_video_overlay_1.webp"
+import revealItem2Overlay from "@/assets/v3/experience/experience_video_overlay_2.webp"
 import storytelling from "@/assets/v3/experience/storytelling.webm"
 import behindthescenes from "@/assets/v3/experience/behind_the_scenes.webm"
 import { cn } from "@/lib/utils";
@@ -104,10 +104,10 @@ export default function ExperienceFlippingCardsSection() {
         </div>
         <div className="rp-container">
             <VideoContainer sectionRef={$cardSectionRef1} videoUrl={storytelling}>
-                <img src={revealItem1Overlay} className=" absolute -top-[4.8125rem] left-[4.8125rem] w-[32.25rem] h-auto object-contain" />
+                <img src={revealItem1Overlay} className=" absolute -top-[4.8125rem] left-[4.8125rem] w-[32.25rem] h-auto object-contain" alt="Storytelling video overlay decoration" />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef2} videoUrl={behindthescenes}>
-                <img src={revealItem2Overlay} className=" absolute -top-[3.625rem] left-[3.3125rem] w-[9.625rem] h-auto object-contain" />
+                <img src={revealItem2Overlay} className=" absolute -top-[3.625rem] left-[3.3125rem] w-[9.625rem] h-auto object-contain" alt="Behind the scenes video overlay decoration" />
             </VideoContainer>
         </div>
 

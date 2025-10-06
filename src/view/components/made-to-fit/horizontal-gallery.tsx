@@ -91,7 +91,7 @@ export default function HorizontalGallery({
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5.3vw]">
                 {images.map((image, index) => (
-                    <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] lg:w-[68vw] lg:h-[68vw] object-cover relative" />
+                    <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] lg:w-[68vw] lg:h-[68vw] object-cover relative" alt={`Right Property gallery image ${index + 1} of ${images.length}`} />
                 ))}
             </div>
         </div>

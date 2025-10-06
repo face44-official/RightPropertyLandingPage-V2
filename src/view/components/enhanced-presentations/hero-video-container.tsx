@@ -7,7 +7,7 @@ export default function HeroVideoContainer() {
     }
     return (
         <div className="relative">
-            <img src="/hero_first_frame.webp" fetchPriority='high' className="absolute w-[62rem] top-[6.3rem] left-[4.3rem] z-[-1]  h-auto  lg:top-[13%] lg:left-[6%] lg:w-[88%]" />
+            <img src="/hero_first_frame.webp" fetchPriority='high' className="absolute w-[62rem] top-[6.3rem] left-[4.3rem] z-[-1]  h-auto  lg:top-[13%] lg:left-[6%] lg:w-[88%]" alt="Right Property platform hero video preview frame" />
             <video
                 src={heroVideo}
                 className={`absolute w-[62rem] top-[6.3rem] left-[4.3rem] z-[-1]  h-auto  lg:top-[13%] lg:left-[6%] lg:w-[88%] ${showVideo ? 'block' : 'hidden'}`}
@@ -20,7 +20,7 @@ export default function HeroVideoContainer() {
                 preload="auto"
                 onLoadedData={onVideoLoaded}
             />
-            <img src={"/hero-frame.png"} fetchPriority='high' className="w-[70.21rem] max-w-[1200px] h-auto lg:w-[120vw] object-contain" alt="" />
+            <img src={"/hero-frame.webp"} fetchPriority='high' className="w-[70.21rem] max-w-[1200px] h-auto lg:w-[120vw] object-contain" alt="Right Property platform interface frame" />
         </div>
     )
 }

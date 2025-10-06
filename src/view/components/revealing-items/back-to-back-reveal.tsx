@@ -5,16 +5,16 @@ import FlippingCardContent from "./flipping-card-content";
 import RevealItemsIndicator from "./reveal-items-indicator";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
-import revealItem1Overlay from "@/assets/v3/reveal_item_1_overlay.png"
-import revealItem2Overlay from "@/assets/v3/reveal_item_2_overlay.png"
-import revealItem3Overlay from "@/assets/v3/reveal_item_3_overlay.png"
-import revealItem4Overlay from "@/assets/v3/reveal_item_4_overlay.png"
-import revealItem5Overlay from "@/assets/v3/reveal_item_5_overlay.png"
-import revealItem6Overlay from "@/assets/v3/reveal_item_6_overlay.png"
-import revealItem1Road from "@/assets/v3/reveal_item_1_road.png"
-import revealItem2Road from "@/assets/v3/reveal_item_2_road.png"
-import revealItem3Road from "@/assets/v3/reveal_item_3_road.png"
-import revealItem5Road from "@/assets/v3/reveal_item_5_road.png"
+import revealItem1Overlay from "@/assets/v3/reveal_item_1_overlay.webp"
+import revealItem2Overlay from "@/assets/v3/reveal_item_2_overlay.webp"
+import revealItem3Overlay from "@/assets/v3/reveal_item_3_overlay.webp"
+import revealItem4Overlay from "@/assets/v3/reveal_item_4_overlay.webp"
+import revealItem5Overlay from "@/assets/v3/reveal_item_5_overlay.webp"
+import revealItem6Overlay from "@/assets/v3/reveal_item_6_overlay.webp"
+import revealItem1Road from "@/assets/v3/reveal_item_1_road.webp"
+import revealItem2Road from "@/assets/v3/reveal_item_2_road.webp"
+import revealItem3Road from "@/assets/v3/reveal_item_3_road.webp"
+import revealItem5Road from "@/assets/v3/reveal_item_5_road.webp"
 import cmsVideo from "@/assets/v3/cms.webm"
 import emailMarketingVideo from "@/assets/v3/email_marketing.webm"
 import interactiveVideo from "@/assets/v3/interactive_website.webm"
@@ -131,31 +131,31 @@ export default function BackToBackReveal() {
         </div>
         <div className="rp-container">
             <VideoContainer sectionRef={$cardSectionRef1} videoUrl={marketingOption1} road={revealItem1Road}>
-                <img src={revealItem1Overlay} className=" absolute -top-[7.375rem] left-[3rem] w-[41.9375rem] h-auto object-contain" />
+                <img src={revealItem1Overlay} className=" absolute -top-[7.375rem] left-[3rem] w-[41.9375rem] h-auto object-contain" alt="Marketing feature overlay decoration" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef2} videoUrl={interactiveVideo} road={revealItem2Road}>
-                <img src={revealItem2Overlay} className="absolute -top-[13.625rem] left-[5.625rem] w-[41rem] h-auto object-contain" />
+                <img src={revealItem2Overlay} className="absolute -top-[13.625rem] left-[5.625rem] w-[41rem] h-auto object-contain" alt="Interactive website feature overlay decoration" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef3} videoUrl={websiteTemplates} road={revealItem3Road}>
-                <img src={revealItem3Overlay} className="absolute left-[13.75rem] -top-[1.25rem] -translate-y-full w-[24.375rem] h-auto object-contain" />
+                <img src={revealItem3Overlay} className="absolute left-[13.75rem] -top-[1.25rem] -translate-y-full w-[24.375rem] h-auto object-contain" alt="Website templates feature overlay decoration" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef4} videoUrl={cmsVideo}>
-                <img src={revealItem4Overlay} className="absolute top-[15.75rem] left-[3.75rem] w-[11.5625rem] h-auto object-contain" />
+                <img src={revealItem4Overlay} className="absolute top-[15.75rem] left-[3.75rem] w-[11.5625rem] h-auto object-contain" alt="CMS feature overlay decoration" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef5} videoUrl={emailMarketingVideo} road={revealItem5Road}>
-                <img src={revealItem5Overlay} className="absolute -top-[21.25rem] left-[13.75rem] w-[24.0625rem] h-auto object-contain`" />
+                <img src={revealItem5Overlay} className="absolute -top-[21.25rem] left-[13.75rem] w-[24.0625rem] h-auto object-contain`" alt="Email marketing feature overlay decoration" />
                 <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef6} videoUrl={seoVideo}>
-                <img src={revealItem6Overlay} className="absolute top-[20.75rem] left-[3.75rem] w-[33.375rem] h-auto object-contain" />
+                <img src={revealItem6Overlay} className="absolute top-[20.75rem] left-[3.75rem] w-[33.375rem] h-auto object-contain" alt="SEO feature overlay decoration" />
                 <BlueGradient />
             </VideoContainer>
         </div>
@@ -184,7 +184,7 @@ export const VideoContainer = ({
     road?: string
 }) => {
     return <div ref={sectionRef} className="relative w-full h-[100vh] flex items-center justify-end pr-[6.875rem]">
-        <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" />
+        <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" alt="Right Property feature section background road decoration" />
 
         <div className="relative">
             <video src={videoUrl} autoPlay muted loop playsInline className=" w-[40.1875rem] h-[26.75rem] object-cover" />

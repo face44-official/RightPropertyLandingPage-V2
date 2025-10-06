@@ -1,5 +1,5 @@
-import surfaceImage from '@/assets/v3/surface.png'
-import spaceImage from '@/assets/v3/space.png'
+import surfaceImage from '@/assets/v3/surface.webp'
+import spaceImage from '@/assets/v3/space.webp'
 
 export default function ChoosePresentationSection() {
     return (
@@ -14,7 +14,7 @@ export default function ChoosePresentationSection() {
 
                 <div className="flex w-full  lg:flex-col lg:gap-0 mobile-rp-container lg:m-auto">
                     <div className="group relative grow basis-[100%] overflow-hidden">
-                        <img src={surfaceImage} alt="surface" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
+                        <img src={surfaceImage} alt="Right Property Surface 2D presentation mode interface" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
                         <div style={{ background: "linear-gradient(360deg, rgba(255, 255, 255, 0) -6.49%, #F1F1F1 86.98%)" }} className="z-[1] absolute top-0 left-0 w-full h-[16.825rem]"></div>
                         <div className='absolute left-[5rem] top-[4.0625rem] lg:top-6 lg:left-6'>
                             <h3 className="mb-3 font-general-sans font-light text-46 lg:text-36 lg:px-0 leading-[100%] text-squid-ink relative z-[2]">
@@ -27,7 +27,7 @@ export default function ChoosePresentationSection() {
 
                     </div>
                     <div className="group relative grow basis-[100%] overflow-hidden">
-                        <img src={spaceImage} alt="space" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
+                        <img src={spaceImage} alt="Right Property Space 3D presentation mode interface" className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out" />
                         <div style={{ background: "linear-gradient(360deg, rgba(0, 0, 0, 0) -6.49%, #000000 86.98%)" }} className="z-[1] absolute top-0 left-0 w-full h-[16.825rem]"></div>
                         <div className='absolute left-[5rem] top-[4.0625rem] lg:top-6 lg:left-6'>
                             <h3 className="mb-3 font-general-sans font-light text-46 lg:text-36 lg:px-0 leading-[100%] text-white relative z-[2]">

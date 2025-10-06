@@ -1,10 +1,10 @@
-import galleryitem0 from "@/assets/v3/experience/gallery_item_0.png";
-import galleryitem1 from "@/assets/v3/experience/gallery_item_1.png";
-import galleryitem2 from "@/assets/v3/experience/gallery_item_2.png";
-import galleryitem3 from "@/assets/v3/experience/gallery_item_3.png";
-import galleryitem4 from "@/assets/v3/experience/gallery_item_4.png";
-import galleryitem5 from "@/assets/v3/experience/gallery_item_5.png";
-import galleryitem6 from "@/assets/v3/experience/gallery_item_6.png";
+import galleryitem0 from "@/assets/v3/experience/gallery_item_0.webp";
+import galleryitem1 from "@/assets/v3/experience/gallery_item_1.webp";
+import galleryitem2 from "@/assets/v3/experience/gallery_item_2.webp";
+import galleryitem3 from "@/assets/v3/experience/gallery_item_3.webp";
+import galleryitem4 from "@/assets/v3/experience/gallery_item_4.webp";
+import galleryitem5 from "@/assets/v3/experience/gallery_item_5.webp";
+import galleryitem6 from "@/assets/v3/experience/gallery_item_6.webp";
 import HorizontalGallery from "../made-to-fit/horizontal-gallery";
 import BodyText from "../ui/body-text";
 import { TitleMedium } from "../ui/title";

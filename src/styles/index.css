@@ -198,8 +198,8 @@ body {
   --mask-pos: 50% 50%; /* default center position */
 
   /* apply your exported PNG-alpha mask via a CSS variable */
-  mask: url("mask.png") var(--mask-pos) / contain no-repeat;
-  -webkit-mask: url("mask.png") var(--mask-pos) / contain no-repeat;
+  mask: url("mask.webp") var(--mask-pos) / contain no-repeat;
+  -webkit-mask: url("mask.webp") var(--mask-pos) / contain no-repeat;
 }
 
 .photo-mask img {
