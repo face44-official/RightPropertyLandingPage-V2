@@ -2,6 +2,9 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
+// If you use ScrollTrigger elsewhere, remember to register it:
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 export function withRevealText<T extends object>(
   WrappedComponent: React.ComponentType<T & { ref?: React.Ref<HTMLElement> }>,
@@ -11,15 +14,46 @@ export function withRevealText<T extends object>(
 
     useGSAP(() => {
       let ctx: gsap.Context | undefined;
-      // Wait for fonts to load before initializing SplitText & animations
+
       document.fonts.ready.then(() => {
         ctx = gsap.context(() => {
           const revealEls = gsap.utils.toArray(".reveal-type") as HTMLElement[];
-          revealEls.forEach((el) => {
+
+          revealEls.forEach((el, i) => {
+            // 1) Capture the original text BEFORE SplitText mutates the DOM
+            const originalText =
+              (el.getAttribute("data-sr-text") ||
+                el.textContent ||
+                el.getAttribute("aria-label") ||
+                "").replace(/\s+/g, " ").trim();
+
+            // Guard: if there’s nothing meaningful, skip
+            if (!originalText) return;
+
+            // 2) Inject a screen-reader-only node with the full sentence
+            //    Tailwind's `sr-only` works out-of-the-box. If you don't use Tailwind,
+            //    add your own .sr-only utility CSS.
+            const srId = el.id || `reveal-sr-${i}-${Math.random().toString(36).slice(2)}`;
+            if (!el.previousElementSibling || el.previousElementSibling.getAttribute("data-reveal-sr") !== srId) {
+              const sr = document.createElement("p");
+              sr.textContent = originalText;
+              sr.className = "sr-only";
+              sr.id = srId;
+              sr.setAttribute("data-reveal-sr", srId);
+              el.insertAdjacentElement("beforebegin", sr);
+            }
+
+            // 3) Make the animated node purely decorative
+            el.setAttribute("aria-hidden", "true");
+            el.removeAttribute("aria-label"); // Strip prohibited name
+            el.removeAttribute("aria-labelledby");
+
+            // 4) Now run SplitText only on the decorative node
+            const split = new SplitText(el, { type: "words,chars" });
+
+            // --- your existing animation code ---
             const bg = el.dataset.bgColor;
             const fg = el.dataset.fgColor;
-
-            const split = new SplitText(el, { type: "words,chars" });
 
             const circleMap = [
               { word: "about", circle: 1, fill: "#E4D6F6" },
@@ -53,7 +87,7 @@ export function withRevealText<T extends object>(
                 const lastCharIndex = split.chars.findLastIndex((char: Element) =>
                   split.words[wordIndex].contains(char),
                 );
-                const timing = lastCharIndex * 0.02;
+                const timing = Math.max(0, lastCharIndex) * 0.02;
 
                 const targetCircle = el.querySelector<HTMLElement>(
                   `.circle-fill[data-circle="${circle}"]`,
@@ -63,23 +97,19 @@ export function withRevealText<T extends object>(
                   tl.fromTo(
                     targetCircle,
                     { backgroundColor: "transparent", color: fill },
-                    {
-                      backgroundColor: fill,
-                      color: "#fff",
-                      duration: 0.3,
-                      ease: "power2.out",
-                    },
+                    { backgroundColor: fill, color: "#fff", duration: 0.3, ease: "power2.out" },
                     timing,
                   );
                 }
               }
             });
+            // --- end existing animation code ---
           });
         }, containerRef);
       });
 
       return () => ctx?.revert();
-    }, {});
+    }, []);
 
     return (
       <WrappedComponent
@@ -88,9 +118,8 @@ export function withRevealText<T extends object>(
           containerRef.current = node as HTMLElement;
           if (typeof props.ref === "function") {
             props.ref(node as HTMLElement);
-          } else if (props.ref && "current" in props.ref) {
-            (props.ref as React.RefObject<HTMLElement>).current =
-              node as HTMLElement;
+          } else if (props.ref && "current" in (props.ref as any)) {
+            (props.ref as React.RefObject<HTMLElement>).current = node as HTMLElement;
           }
         }}
       />

@@ -184,7 +184,7 @@ export const VideoContainer = ({
     road?: string
 }) => {
     return <div ref={sectionRef} className="relative w-full h-[100vh] flex items-center justify-end pr-[6.875rem]">
-        <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" alt="Right Property feature section background road decoration" />
+       {road && <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" alt="Right Property feature section background road decoration" />}
 
         <div className="relative">
             <video src={videoUrl} autoPlay muted loop playsInline className=" w-[40.1875rem] h-[26.75rem] object-cover" />

@@ -25,8 +25,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
                         <div
                             data-bg-color="#C4C4C4"
                             data-fg-color="#000000"
-                            className="reveal-type mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text"
-                            role="paragraph">
+                            className="reveal-type mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">
                             Property sales require more than just listings, 3D models and
                             brochures - it's about
                             <span className="block lg:hidden"></span>
