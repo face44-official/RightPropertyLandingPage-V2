@@ -2,16 +2,16 @@ import { Helmet } from "react-helmet"
 import { useEffect } from "react"
 import  { MeetRightProperty } from "../components/meet-right-property/section"
 import EnhancedPresentationsSection from "../components/enhanced-presentations/section"
-// import BackToBackReveal from "../components/revealing-items/back-to-back-reveal"
-// import ChoosePresentationSection from "../components/choose-presentation/section"
-// import ConvertMoreLeadsSection from "../components/convert-more-leads/section"
-// import EasyOnboardingSection from "../components/easy-onboarding/section"
-// import FaqSection from "../components/faq/section"
-// import FeaturesCarousel from "../components/features-carousel"
-// import MadeToFit from "../components/made-to-fit/section"
-// import PresentSmarterSection from "../components/present-smarter/section"
-// import ScheduleADemoSection from "../components/schedule-a-demo/section"
-// import SimpleSetupSection from "../components/simple-setup/section"
+import BackToBackReveal from "../components/revealing-items/back-to-back-reveal"
+import ChoosePresentationSection from "../components/choose-presentation/section"
+import ConvertMoreLeadsSection from "../components/convert-more-leads/section"
+import EasyOnboardingSection from "../components/easy-onboarding/section"
+import FaqSection from "../components/faq/section"
+import FeaturesCarousel from "../components/features-carousel"
+import MadeToFit from "../components/made-to-fit/section"
+import PresentSmarterSection from "../components/present-smarter/section"
+import ScheduleADemoSection from "../components/schedule-a-demo/section"
+import SimpleSetupSection from "../components/simple-setup/section"
 import MaskPath from "../components/enhanced-presentations/mask-path"
 import { useMotionPath } from "../../lib/useMotionPath"
 import HeroRoad from "../components/common/hero-road"
@@ -66,7 +66,7 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    {/* <PresentSmarterSection />
+                    <PresentSmarterSection />
                     <ChoosePresentationSection />
                     <SimpleSetupSection />
                     <ConvertMoreLeadsSection />
@@ -75,7 +75,7 @@ export default function HomePage() {
                     <BackToBackReveal />
                     <MadeToFit />
                     <FaqSection />
-                    <ScheduleADemoSection /> */}
+                    <ScheduleADemoSection />
                 </div>
 
             </main>
