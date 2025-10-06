@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import useIsomorphicLayoutEffect from './use-isomorphic-layout-effect'
-import useEventListener from './use-event-listener'
-
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 interface WindowSize {
   width: number
@@ -13,21 +10,41 @@ function useWindowSize(): WindowSize {
     width: 0,
     height: 0,
   })
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const timeoutRef = useRef<any>(null)
 
-  const handleSize = () => {
+  const handleSize = useCallback(() => {
+    // Debounce resize events to reduce performance impact
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+    
+    timeoutRef.current = setTimeout(() => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }, 100) // 100ms debounce
+  }, [])
+
+  useEffect(() => {
+    // Set initial size asynchronously (non-blocking)
     setWindowSize({
       width: window.innerWidth,
       height: window.innerHeight,
     })
-  }
 
-  useEventListener('resize', handleSize)
+    // Add resize listener
+    window.addEventListener('resize', handleSize, { passive: true })
 
-  // Set size at the first client-side load
-  useIsomorphicLayoutEffect(() => {
-    handleSize()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    return () => {
+      window.removeEventListener('resize', handleSize)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [handleSize])
 
   return windowSize
 }
