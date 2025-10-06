@@ -16,7 +16,7 @@ export default function MadeToFit() {
 
 
     return (
-        <section id="made-to-fit" className="bg-black min-h-full overflow-hidden  text-white pt-[7.5rem] px-[5rem] pb-[9rem] lg:p-4" aria-label="Right Property platform adaptability showcase">
+        <section id="made-to-fit" className="bg-black min-h-full overflow-hidden  text-white pt-[7.5rem] px-[5rem] pb-[9rem] lg:p-4 content-visibility-auto" aria-label="Right Property platform adaptability showcase">
             <div className="rp-container relative z-[10] lg:px-0 lg:pt-[3.75rem] lg:pb-[2.5rem]" style={{ height: "auto" }}>
                 <p className="mb-8 font-geist-mono text-base lg:font-sm font-medium leading-[140%] text-[#E2E2E2] tracking-[0.02em] uppercase">
                     An experience that matters

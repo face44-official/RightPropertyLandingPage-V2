@@ -41,7 +41,7 @@ export default function HomePage() {
                 <div className="relative z-[20]">
                     <div id="first-two">
                         <div ref={divRef} className="lg:hidden transition-colors duration-300 z-[8] absolute top-0 left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden">
-                            <div className="rp-container relative">
+                            <div className="rp-container relative content-visiblity-auto">
                                 <HeroRoad className="w-[62.37rem] h-auto trigger -translate-y-[2.5rem] translate-x-[2.5rem] " />
                                 {/* <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" /> */}
                                 <div className="z-[8] absolute top-[23.4375rem] left-[8.5rem]">
@@ -57,7 +57,7 @@ export default function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="highlight"></div>
+                            <div className="highlight content-visiblity-auto"></div>
                         </div>
 
                         <div className="relative z-[10]">

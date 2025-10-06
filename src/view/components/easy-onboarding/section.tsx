@@ -89,7 +89,7 @@ export default function EasyOnboardingSection() {
         })
     }, [startMotionPath])
     return (
-        <section id="easy-onboarding" className="">
+        <section id="easy-onboarding" className="content-visibility-auto">
             {/* <div className="w-[100vw] h-[24.125rem] relative hidden lg:block ">
                 <img src={mobileRoad3} className="absolute w-max h-auto object-contain" alt="" />
 

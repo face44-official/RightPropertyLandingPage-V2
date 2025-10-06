@@ -25,38 +25,6 @@ export default function FooterSection() {
 
             ]
         },
-        // {
-        //     label: "Product",
-        //     items: [
-        //         {
-        //             label: "Presentation",
-        //             href: "/"
-        //         },
-        //         {
-        //             label: "Pricing",
-        //             href: "/"
-        //         },
-        //         {
-        //             label: "Features",
-        //             href: "/"
-        //         },
-
-        //     ]
-        // },
-        // {
-        //     label: 'Company',
-        //     items: [
-        //         {
-        //             label: "About",
-        //             href: "/"
-        //         },
-        //         {
-        //             label: "Blog",
-        //             href: "/"
-        //         },
-
-        //     ]
-        // },
         {
             label: "Follow us On",
             items: [

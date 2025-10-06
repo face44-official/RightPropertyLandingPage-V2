@@ -46,7 +46,7 @@ const carouselContents = [
 export default function FeaturesCarousel() {
 
     return (
-        <section className="hidden lg:block px-4 relative  overflow-hidden pb-[7.5rem]">
+        <section className="hidden lg:block px-4 relative  overflow-hidden pb-[7.5rem] content-visibility-auto">
             <div className="z-[-1] absolute top-1/2 w-[2205px] h-[2205px] -translate-y-1/2 left-1/2 -translate-x-[30%]" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(197, 230, 255, 0.72) 0%, rgba(200, 229, 255, 0.72) 25.96%, rgba(255, 255, 255, 0) 100%)" }}>
 
             </div>

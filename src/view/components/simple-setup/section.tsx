@@ -92,7 +92,7 @@ export default function SimpleSetupSection() {
         })
     }, [startMotionPath])
     return (
-        <section id="simple-setup" className="" aria-label="Simple setup process for Right Property platform">
+        <section id="simple-setup" className="content-visibility-auto" aria-label="Simple setup process for Right Property platform">
             <div className="w-[100vw] h-[25.6875rem] overflow-hidden hidden lg:block">
                 <div className="relative w-full max-w-[343px] mx-auto overflow-visible">
                     <div className="absolute -top-[3rem] -right-[3.75rem]">

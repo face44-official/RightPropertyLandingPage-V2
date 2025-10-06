@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import viteImagemin from 'vite-plugin-imagemin'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,14 +14,20 @@ export default defineConfig({
     host: true
   },
   plugins: [
-    react(),
+    react(
+      {
+        babel: {
+          plugins: ['babel-plugin-react-compiler'],
+        },
+      }
+    ),
     tailwindcss(),
-    viteImagemin({
-      gifsicle: { optimizationLevel: 7 },
-      mozjpeg: { quality: 85 },
-      pngquant: { quality: [0.7, 0.85] },
-      webp: { quality: 85 }
-    })
+    // viteImagemin({
+    //   gifsicle: { optimizationLevel: 7 },
+    //   mozjpeg: { quality: 85 },
+    //   pngquant: { quality: [0.7, 0.85] },
+    //   webp: { quality: 85 }
+    // })
   ],
   build: {
     rollupOptions: {

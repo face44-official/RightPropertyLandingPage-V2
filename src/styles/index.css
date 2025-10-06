@@ -88,6 +88,11 @@ body {
     font-size: 9px;
   }
 }
+
+.content-visiblity-auto{
+  content-visibility: auto;
+}
+
 .mask {
   position: absolute;
   width: 100%; /* match your artboard */

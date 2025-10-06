@@ -20,7 +20,7 @@ export default function PresentSmarterSection() {
     ]
 
     return (
-        <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative">
+        <div className="mb-[30rem] lg:mb-[3rem] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative content-visibility-auto">
             <section className="">
                 <img src={presentSmarterBgMobile} alt="present smarter" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem] rp-container" />
                 <div className="rp-container lg:bg-none! lg:h-auto! relative z-[8] flex p-[7.5rem] justify-end lg:p-4">
