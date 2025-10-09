@@ -5,7 +5,7 @@ import gsap from "gsap";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
 import softwareMinds from "@/assets/v3/software_minds.webp"
 import { interpolateColor } from "@/lib/utils";
-import purpleCheck from "@/assets/v3/purple_check.webp";
+import purpleCheck from "@/assets/v3/purple_check.svg";
 import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";
 // Helper function to interpolate between two colors
 

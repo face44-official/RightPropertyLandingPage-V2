@@ -28,7 +28,7 @@ export default function ExperiencePage() {
                     <div>Your Way.</div>
 
                 </TitleBig>
-                <BodyText className="w-[46.75rem] lg:w-[21.4375rem] lg:text-center font-normal">
+                <BodyText className="w-[46.75rem] lg:w-[21.4375rem] text-center font-normal">
                     Showcase your project with impact—through Surface or Space, built for modern property sales.
                 </BodyText>
 
@@ -46,6 +46,7 @@ export default function ExperiencePage() {
 
             <ExperienceFlippingCardsSection />
             <ExperienceCarousel />
+            
             <ScheduleADemoSection />
 
         </div>

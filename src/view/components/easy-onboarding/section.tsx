@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react"
 import BinarySection, { BinaryBlockImage } from "../binary-section"
 import automated from "@/assets/v3/automated.webp"
 import { interpolateColor } from "@/lib/utils"
-import purpleCheck from "@/assets/v3/purple_check.webp";
+import purpleCheck from "@/assets/v3/purple_check.svg";
 import gsap from "gsap"
 import mobileRoad3 from '@/assets/v3/mobile_road_3.webp';
 export default function EasyOnboardingSection() {

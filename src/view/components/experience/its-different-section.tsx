@@ -2,18 +2,18 @@ import itsDifferentBg from "@/assets/v3/experience/its_different_bg.webp"
 import itsDifferentBgMobile from "@/assets/v3/experience/its-different-mobile.webp"
 import Accessibility from "@/view/components/accessiblity"
 import { Parallax } from "../parallax"
-import startIcon from '@/assets/v3/star_icon.webp';
-import spaceIcon from '@/assets/v3/space_icon.webp';
+import startIcon from '@/assets/v3/star_icon.svg';
+import spaceIcon from '@/assets/v3/space_icon.svg';
 export default function ItsDifferentSection() {
 
     const items = [
         {
-            title: "Flexible Navigation",
+            title: <span>Flexible<br/>Navigation</span>,
             description: "Open any section at any time. Showcase site plans, compare units, or revisit highlights as questions arise—no forced sequence.",
             icon: <img src={startIcon} alt="Flexible navigation feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         },
         {
-            title: "Built for Real Conversations",
+            title: <span>Built for<br/>Real Conversations</span>,
             description: "Switch from structured to spontaneous. Whether it’s zooming into floor plans or jumping into a virtual tour, you’re always presentation-ready.",
             icon: <img src={spaceIcon} alt="Real conversations feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         }

@@ -3,8 +3,8 @@ import Accessibility from "@/view/components/accessiblity"
 import crmBg from "@/assets/v3/sales/a_crm_bg_desktop.webp"
 import crmBgMobile from "@/assets/v3/sales/a_crm_mobile.webp"
 import { Parallax } from "../parallax"
-import startIcon from '@/assets/v3/star_icon.webp';
-import spaceIcon from '@/assets/v3/space_icon.webp';
+import startIcon from '@/assets/v3/star_icon.svg';
+import spaceIcon from '@/assets/v3/space_icon.svg';
 export default function SalesPurposeBuiltCrmSection() {
 
     const items = [

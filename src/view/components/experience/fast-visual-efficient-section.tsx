@@ -1,6 +1,6 @@
 import fastRoad from "@/assets/v3/experience/fast_efficient_illustration.webp";
 import { useRef } from "react";
-import purpleCheck from "@/assets/v3/purple_check.webp";
+import purpleCheck from "@/assets/v3/purple_check.svg";
 import efficientMobile from '@/assets/v3/experience/efficient_mobile.webp';
 // Helper function to interpolate between two colors
 

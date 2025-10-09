@@ -1,8 +1,8 @@
 import Accessibility from "@/view/components/accessiblity";
 import convertMoreLeads from "@/assets/v3/convert_more_leads_desktop.webp"
 import convertMoreLeadsMobile from "@/assets/v3/mobile_insights.webp"
-import startIcon from '@/assets/v3/star_icon.webp';
-import spaceIcon from '@/assets/v3/space_icon.webp';
+import startIcon from '@/assets/v3/star_icon.svg';
+import spaceIcon from '@/assets/v3/space_icon.svg';
 import { Parallax } from "../parallax";
 export default function ConvertMoreLeadsSection() {
     const items = [

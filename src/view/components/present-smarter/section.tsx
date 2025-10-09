@@ -2,8 +2,8 @@ import presentSmarterBg from "@/assets/v3/present_smarter_desktop.webp"
 import presentSmarterBgMobile from "@/assets/v3/mobile_present_smarter.webp"
 import Accessibility from "@/view/components/accessiblity"
 import { Parallax } from "../parallax"
-import startIcon from '@/assets/v3/star_icon.webp';
-import spaceIcon from '@/assets/v3/space_icon.webp';
+import startIcon from '@/assets/v3/star_icon.svg';
+import spaceIcon from '@/assets/v3/space_icon.svg';
 export default function PresentSmarterSection() {
 
     const items = [

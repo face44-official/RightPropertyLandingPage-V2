@@ -4,8 +4,8 @@ import Accessibility from "@/view/components/accessiblity"
 import presentSmarterBg from "@/assets/v3/marketing/marketing_powerhouse_bg.webp"
 import presentSmarterBgMobile from "@/assets/v3/marketing/powerhouse_mobile.webp"
 import { Parallax } from "../parallax"
-import startIcon from '@/assets/v3/star_icon.webp';
-import spaceIcon from '@/assets/v3/space_icon.webp';
+import startIcon from '@/assets/v3/star_icon.svg';
+import spaceIcon from '@/assets/v3/space_icon.svg';
 export default function MarketingPowerhouseSection() {
 
     const items = [

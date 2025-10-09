@@ -1,4 +1,4 @@
-import purpleCheck from "@/assets/v3/purple_check.webp";
+import purpleCheck from "@/assets/v3/purple_check.svg";
 import immersiveMobile from '@/assets/v3/experience/immersive_mobile.webp';
 export default function ExperienceImmersiveSection() {
     const items = [

@@ -48,7 +48,7 @@ export default function ExperienceFlippingCardsSection() {
                 id: "experience-flipping-cards",
             },
         })
-        const tlList = Array.from({ length:2 }, (_, index) => {
+        const tlList = Array.from({ length: 2 }, (_, index) => {
             const use_index = index + 0;
             return gsap.timeline({
                 scrollTrigger: {
@@ -85,15 +85,16 @@ export default function ExperienceFlippingCardsSection() {
             }
         };
     }, [])
-   
+
     return <section id="experience-flipping-cards" ref={$ref} className="relative h-[200vh]  lg:hidden" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)" }}>
         {/* <BlueGradient className="left-[11.375rem] top-[62.1875rem]" />
         <BlueGradient className="-left-[26.425rem] top-[7.0625rem] w-[137.8125rem] h-[137.8125rem]" /> */}
+        <div className="absolute bottom-0 left-0 right-0 h-[20rem] bg-gradient-to-b from-transparent to-white z-[1]"></div>
         <div className="max-w-[1680px] mx-auto w-full relative z-[50]">
             <div ref={$pinRef} className="absolute top-[215px] left-[109px]" >
                 <div ref={$cardRef} className="card quickflip relative w-[48.9375rem] h-[561px]" style={{ perspective: "800px", transformStyle: "preserve-3d" }}>
                     <div className="qf-card card-front relative top-0 left-0 w-full h-full backface-hidden transform-3d origin-center">
-                        <FlippingCardContent {...cardContents[currentItem]}  />
+                        <FlippingCardContent {...cardContents[currentItem]} />
                     </div>
                 </div>
 

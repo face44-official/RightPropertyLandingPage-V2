@@ -32,7 +32,7 @@ export default function ExperienceHeroVideos() {
                 duration: 1,
                 ease: "power2.inOut",
                 zIndex: 10,
-                scale: 1.15,
+                scale: 1,
             })
             gsap.set(rightImageRef.current, { zIndex: 0 })
         }
