@@ -104,7 +104,7 @@ export default function SimpleSetupSection() {
             <div className="rp-container lg:h-auto!" style={{ height: "108.375rem" }}>
 
                 <div className="flex justify-start gap-[8.4375rem] w-[41.875rem] lg:w-full">
-                    <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[1]' src={gRoad} alt="Right Property simple setup process visualization with animated path" loading="lazy" decoding="async" width="1680" height="1734" />
+                    <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[-1]' src={gRoad} alt="Right Property simple setup process visualization with animated path" loading="lazy" decoding="async" width="1680" height="1734" />
                     <div className="absolute top-[25rem] right-[12rem]" ref={(el) => {
                         if (el) {
                             const path = el.querySelector('path')
@@ -113,7 +113,7 @@ export default function SimpleSetupSection() {
                     }}>
                         <SimpleSetupGradientPath />
                     </div>
-                    <div ref={gradientRef} style={{ background: "radial-gradient(50% 50% at 50% 50%, #DBE8FF 0%, #E8F4FF 25.96%, rgba(255, 255, 255, 0) 100%)" }} className="absolute -top-[12rem] -right-[31rem] w-[1425.84px] h-[1425.84px] lg:hidden"></div>
+                    <div ref={gradientRef} style={{ background: "radial-gradient(50% 50% at 50% 50%, #DBE8FF 0%, #E8F4FF 25.96%, rgba(255, 255, 255, 0) 100%)" }} className="absolute -top-[12rem] -right-[31rem] w-[1425.84px] h-[1425.84px] lg:hidden z-[-2]"></div>
 
                     <div className="absolute left-[35rem] bottom-[16.875rem] lg:hidden">
                         <BinarySection subHeader="Did you know?" title="Built by software minds" description="No visuals or assets? Our team can produce what’s needed." image={<BinaryBlockImage path={softwareMinds} />} />
@@ -145,7 +145,7 @@ export default function SimpleSetupSection() {
                                 </div>
                             ))}
                         </div>
-                        <div className="hidden lg:block py-[7.5rem] ">
+                        <div className="hidden lg:block py-[7.5rem] relative ">
                             <BinarySection subHeader="Did you know?" title="Built by software minds" description="No visuals or assets? Our team can produce what’s needed." image={<BinaryBlockImage path={softwareMinds} />} />
                         </div>
                     </div>
