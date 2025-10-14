@@ -159,7 +159,7 @@ const ReadyMadeTemplatesVideo = () => {
     )
 }
 
-const EmailVideo = ({ gradientRef, gradientPathRef }: { gradientRef: RefObject<HTMLDivElement>, gradientPathRef: RefObject<SVGPathElement> }) => {
+const EmailVideo = ({ gradientRef, gradientPathRef }: { gradientRef: RefObject<HTMLDivElement | null>, gradientPathRef: RefObject<SVGPathElement | null> }) => {
     return (
         <div id="email-video" className="relative overflow-visible">
             <div ref={gradientRef} className="z-[-1] w-[1521px] lg:w-[807px] h-[1521px] lg:h-[715px] -left-[761px] lg:-left-[372px] -top-[351px] lg:-top-[240px] absolute" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(197, 230, 255, 0.72) 0%, rgba(200, 229, 255, 0.72) 25.96%, rgba(255, 255, 255, 0) 100%)" }}>
