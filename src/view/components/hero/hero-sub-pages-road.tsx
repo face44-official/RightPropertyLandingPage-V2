@@ -1,15 +1,15 @@
-import road from "@/assets/v3/common/reverse_road.webp";
 import { useEffect } from "react";
 import HeroSubPageHighlightPath from "./hero-sub-page-highlight-path";
 import { useMotionPath } from "@/lib/useMotionPath";
+import { cn } from "@/lib/utils";
 
-export default function HeroSubPagesRoad() {
+export default function HeroSubPagesRoad({svgPath = '/presentation_roads.svg',svgClassName}: {svgPath?: string,svgClassName?: string}) {
 
     const { divRef, pathRef, initializeMotionPath } = useMotionPath({
         trigger: ".trigger-road",
         startOffset: "top top",
         endOffset: "+=100%",
-        scrollScrub: true,
+        scrollScrub: 1,
         markers: false,
         maskRadius: 350
     })
@@ -43,18 +43,16 @@ export default function HeroSubPagesRoad() {
     //         window.removeEventListener('mousemove', handleMouseMove)
     //     }
     // }, [handleMouseMove,])
-
+    const svgClassNameFinal = cn("trigger-road absolute w-[89.75rem] h-[121.125rem] top-[9.5rem] left-[10.625rem] z-[-1]", svgClassName)
     return (
         <div ref={divRef} className="lg:hidden w-[100vw] overflow-hidden h-[139.625rem]! mask left-1/2 -translate-x-1/2">
             <div className="rp-container ">
-                <img src={road} className="trigger-road absolute w-[47.8125rem] h-[95.25rem] top-[5.6956rem] left-[46.0456rem] z-[-1]" alt="Hero Sub Pages Road" />
-                <img src={road} className="absolute w-[47.8125rem] h-[95.25rem] top-[44.4243rem] left-[8.7962rem] z-[-1]" alt="Hero Sub Pages Road" />
+                <div className={svgClassNameFinal}>
+                <img src={svgPath} className="w-full h-full" alt="Hero Sub Pages Road" />
+
+                </div>
                 <div className=" absolute top-[22rem] left-[17.65625rem]">
-
-
                     <div className="rp-container">
-
-
                         <div ref={(el) => {
                             if (el) {
                                 const path = el.querySelector('path')

@@ -4,7 +4,7 @@ import surface from "@/assets/v3/experience/surface.webm";
 
 import heroFrame from '@/assets/v3/hero-frame.webp';
 
-import gsap from "gsap";
+import {gsap} from "gsap";
 export default function ExperienceHeroVideos() {
     const leftImageRef = useRef<HTMLImageElement>(null);
     const rightImageRef = useRef<HTMLImageElement>(null);

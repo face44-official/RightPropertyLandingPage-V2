@@ -5,25 +5,30 @@ import TwoColumnTextImageBlock from "../components/ui/two-column-text-image-bloc
 import OneColumnTitleImageDescription from "../components/ui/one-column-title-image-description";
 import trackPerformanceDesktop from "@/assets/v3/sales/track_performance_desktop.webp";
 import ScheduleADemoSection from "../components/schedule-a-demo/section";
-import buyerIntentMedia from "@/assets/v3/sales/buyer-intent.webm";
+import buyerIntentMedia from "@/assets/v3/sales/sales_buyer_intent.webm";
 import { PerspectiveTransform, type Points } from 'react-perspective-transform';
 import trackVideo from "@/assets/v3/sales/track.webm";
-import salesSyncVideo from "@/assets/v3/sales/sales-sync.webm";
+import salesSyncVideo from "@/assets/v3/sales/sales_sync_video.webm";
 import { useEffect, useRef, useState } from "react";
 import SalesHeroSection from "../components/sales/sales-hero-section";
 import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-road";
+import HeroSubPagesRoad from "../components/hero/hero-sub-pages-road";
+import sales_road_illustration from "@/assets/v3/sales/sales_road_illustration.svg";
+import SalesDynamicGradient from "../components/sales/sales-dynamic-gradient";
 export default function SalesPage() {
-    return <main className="overflow-hidden">
+    return <main>
+        <HeroSubPagesRoad svgPath={sales_road_illustration} svgClassName="w-[89.75rem] h-[121.125rem] top-[10.125rem] left-[10.5625rem]" />
         <HeroSubPagesMobileRoad firstMaskTop="2rem" secondMaskTop="3rem" />
+        <SalesDynamicGradient/>
         <div id="sales-page" className="relative z-[20] pt-[14.56rem] lg:pt-[9rem] flex flex-col justify-center">
-            <TitleBig className="w-[49.75rem] lg:w-full lg:!px-4 mb-[4rem] lg:!mb-[1.875rem] rp-container text-center">Sales Tools Built for Real Estate, Not for Complexity</TitleBig>
+            <TitleBig className="w-[49.75rem] lg:w-full lg:!px-4 !mb-[4rem] lg:!mb-[1.875rem] rp-container text-center">Sales Tools Built for Real Estate, Not for Complexity</TitleBig>
             <SalesHeroSection />
             <SalesSplitTextSection />
             <SalesPurposeBuiltCrmSection />
-            <TwoColumnTextImageBlock className="pt-[22.5rem] lg:pt-[10rem] pb-[31.25rem] lg:pb-[10rem]" title={<div>Understand Buyer<br className="hidden lg:inline" /> Intent <br className="lg:hidden" />with Every Click.</div>} description="Right Property keeps track of every action during presentations and online visits. From unit views to video watches, Right Property creates a timeline of interest—so you know exactly when and how to follow up." image={<BuyerIntentMedia />} variant="image-right" />
+            <TwoColumnTextImageBlock id="buyer-intent-section" className="pt-[22.5rem] lg:pt-[10rem] pb-[31.25rem] lg:pb-[10rem]" title={<div>Understand Buyer<br className="hidden lg:inline" /> Intent <br className="lg:hidden" />with Every Click.</div>} description="Right Property keeps track of every action during presentations and online visits. From unit views to video watches, Right Property creates a timeline of interest—so you know exactly when and how to follow up." image={<BuyerIntentMedia />} variant="image-right" />
             <OneColumnTitleImageDescription className="pb-[31.25rem] lg:pb-[10rem]" title="Track Performance. Improve Strategy." description={<div className="w-[46.75rem] lg:w-full">Keep track of your team's performance with detailed analytics. Right Property shows you who's engaging, who's not, and what's working—so you can support your reps and close more deals.</div>} image={<TrackPerformanceImproveStrategy />} />
             <TwoColumnTextImageBlock className="" title={<div>Your Sales and <br className="hidden lg:inline" />Marketing, <br className="lg:hidden" />Finally in Sync.</div>} description="Lead behavior on your website reflects instantly in the CRM. Campaign insights turn into qualified conversations. Sales and marketing work together—for real." image={<SalesSyncVideo />} variant="image-right" />
-            <ScheduleADemoSection />
+            <ScheduleADemoSection displayGradient={false} />
         </div>
     </main>
 }
@@ -43,18 +48,6 @@ const SalesSyncVideo = () => {
                 </linearGradient>
             </defs>
         </svg>
-
-        <svg className="absolute z-[-1] -left-[53.125rem] -top-[19rem]" width="1441" height="1441" viewBox="0 0 1441 1441" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="720.5" cy="720.5" r="720.5" fill="url(#paint0_radial_1282_2399)" fill-opacity="0.72" />
-            <defs>
-                <radialGradient id="paint0_radial_1282_2399" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720.5 720.5) rotate(90) scale(720.5)">
-                    <stop stop-color="#C5E6FF" />
-                    <stop offset="0.259615" stop-color="#C8E5FF" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
-                </radialGradient>
-            </defs>
-        </svg>
-
         <video src={salesSyncVideo} className="w-[46.625rem] lg:w-full h-auto" autoPlay muted loop playsInline />
     </div>
 }
@@ -96,17 +89,6 @@ const TrackPerformanceImproveStrategy = () => {
             </PerspectiveTransform>
 
         </div>
-        <svg className="absolute z-[-1] left-[11.25rem] top-[15.625rem]" width="1423" height="1441" viewBox="0 0 1423 1441" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="720.5" cy="720.5" r="720.5" fill="url(#paint0_radial_1282_2402)" fill-opacity="0.72" />
-            <defs>
-                <radialGradient id="paint0_radial_1282_2402" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720.5 720.5) rotate(90) scale(720.5)">
-                    <stop stop-color="#C5E6FF" />
-                    <stop offset="0.259615" stop-color="#C8E5FF" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
-                </radialGradient>
-            </defs>
-        </svg>
-
         <svg className="left-[4.625rem] top-[26.3125rem] absolute z-[-1]" width="1527" height="1483" viewBox="0 0 1527 1483" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M933.239 1C1004.91 4.42753 1193.57 58.1347 1228.88 171.395C1274.22 316.817 1007.71 500.922 856.813 585.629L1.00015 1095" stroke="url(#paint0_linear_1996_6279)" />
             <path d="M1990.63 389.493C1743.23 289.992 809.234 44.4927 1341.23 1481.99" stroke="url(#paint1_linear_1996_6279)" />
@@ -268,17 +250,6 @@ const TrackPerformanceImproveStrategy = () => {
 
 const BuyerIntentMedia = () => {
     return <div className="relative">
-        <svg className="absolute z-[-1] -left-[49.375rem] -top-[26.4372rem]" width="1441" height="1441" viewBox="0 0 1441 1441" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="720.5" cy="720.5" r="720.5" fill="url(#paint0_radial_1282_2434)" fill-opacity="0.72" />
-            <defs>
-                <radialGradient id="paint0_radial_1282_2434" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720.5 720.5) rotate(90) scale(720.5)">
-                    <stop stop-color="#C5E6FF" />
-                    <stop offset="0.259615" stop-color="#C8E5FF" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
-                </radialGradient>
-            </defs>
-        </svg>
-
         <svg className="absolute -left-[56.25rem] -top-[12.5rem] z-[-1]" width="1680" height="1491" viewBox="0 0 1680 1491" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1080.85 548.867L-44 1231.06" stroke="url(#paint0_linear_1993_6278)" />
             <path d="M1188.54 607.867C1048.59 710.707 552.371 1011.7 352 1234.79" stroke="url(#paint1_linear_1993_6278)" />

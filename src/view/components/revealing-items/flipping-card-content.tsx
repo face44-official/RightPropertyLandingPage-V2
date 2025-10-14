@@ -2,7 +2,7 @@ import BookADemoButton from "../book-a-demo-button";
 import ShowBookingHoc from "../show-booking-hoc";
 import LearnMoreButton from "./learn-more-button";
 import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);

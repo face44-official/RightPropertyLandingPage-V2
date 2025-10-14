@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 import FlippingCardContent from "../revealing-items/flipping-card-content";
 import RevealItemsIndicator from "../revealing-items/reveal-items-indicator";
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { Flip } from "gsap/Flip";
 import revealItem1Overlay from "@/assets/v3/experience/experience_video_overlay_1.webp"
 import revealItem2Overlay from "@/assets/v3/experience/experience_video_overlay_2.webp"

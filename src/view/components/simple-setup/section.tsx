@@ -1,7 +1,7 @@
-import gRoad from "@/assets/v3/g_road.webp";
+import gRoad from "@/assets/v3/g_road.svg";
 import SimpleSetupGradientPath from "./simple-setup-gradient-path";
 import { useCallback, useEffect, useRef } from "react";
-import gsap from "gsap";
+import {gsap} from "gsap";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
 import softwareMinds from "@/assets/v3/software_minds.webp"
 import { interpolateColor } from "@/lib/utils";
@@ -42,7 +42,7 @@ export default function SimpleSetupSection() {
                     start: "center-=20% center",
                     end: 'center top',
                     // end: '+=' + ((window.innerHeight * 3) + 50),
-                    scrub: 0,
+                    scrub: 1,
                 }
             });
             // Create a dummy object to animate along the path
@@ -56,7 +56,7 @@ export default function SimpleSetupSection() {
                     offsetY: -180, // Container offset
                     autoRotate: true,
                     start: 1,
-                    end: 0
+                    end: 0,
                 },
                 onUpdate: function () {
                     const progress = this.progress()
@@ -68,11 +68,33 @@ export default function SimpleSetupSection() {
                         const blueToGreenProgress = progress // 0 to 1
                         const startColor = interpolateColor('#DBE8FF', '#E7DFF2', blueToGreenProgress)
                         // Keep middle color opaque by interpolating to a light purple instead of transparent
-                        const middleColor = interpolateColor('#E8F4FF', '#F5F2F9', blueToGreenProgress)
+                        const middleColor = interpolateColor('#E8F4FF', '#E7DFF2', blueToGreenProgress)
 
                         gradientRef.current.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${middleColor} 25.96%, rgba(255, 255, 255, 0) 100%)`
                         console.log(progress)
                     }
+                    /* gradient */
+
+// position: absolute;
+// width: 1425.84px;
+// height: 1425.84px;
+// left: 761.51px;
+// top: calc(50% - 1425.84px/2 - 359.08px);
+
+// background: radial-gradient(50% 50% at 50% 50%, #DBE8FF 0%, #E8F4FF 25.96%, rgba(255, 255, 255, 0) 100%);
+
+
+// /* purple */
+
+// position: absolute;
+// width: 1445px;
+// height: 1048.28px;
+// left: 256.11px;
+// top: calc(50% - 1048.28px/2 + 330.14px);
+
+// background: radial-gradient(50% 50% at 50% 50%, #E7DFF2 0%, rgba(255, 255, 255, 0) 100%);
+
+
                 }
             })
             const anim = gsap.to(gradientRef.current, {
@@ -101,10 +123,14 @@ export default function SimpleSetupSection() {
                 </div>
 
             </div>
-            <div className="rp-container lg:h-auto!" style={{ height: "108.375rem" }}>
+            <div className="rp-container lg:h-auto! relative z-[-1]" style={{ height: "108.375rem" }}>
 
                 <div className="flex justify-start gap-[8.4375rem] w-[41.875rem] lg:w-full">
-                    <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[-1]' src={gRoad} alt="Right Property simple setup process visualization with animated path" loading="lazy" decoding="async" width="1680" height="1734" />
+                    <div className="absolute -top-[32.5rem] -left-[2.5rem] z-[-1]">
+                        <div className=' w-[133.8125rem] h-[176rem]  lg:hidden '  >
+                            <img className="w-full h-full" src={gRoad} alt="Right Property simple setup process visualization with animated path" loading="lazy" decoding="async" />
+                        </div>
+                    </div>
                     <div className="absolute top-[25rem] right-[12rem]" ref={(el) => {
                         if (el) {
                             const path = el.querySelector('path')

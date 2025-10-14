@@ -3,7 +3,7 @@ import footerLevitate from "@/assets/v3/footer_levitate.webp"
 import mobileFooterBg from "@/assets/v3/mobile_right_footer.webp"
 import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.webp"
 import { useEffect, useRef } from "react"
-import gsap from "gsap"
+import {gsap} from "gsap"
 import Logo from "../header/logo"
 export default function FooterSection() {
     const $levitateItem = useRef<HTMLImageElement>(null)
@@ -90,7 +90,7 @@ export default function FooterSection() {
             })
         })
     }, [])
-    return <div ref={$footerContainer} className="rp-container">
+    return <div ref={$footerContainer} className="rp-container relative z-[-1]">
         <div className="relative h-[45.3125rem] lg:h-auto lg:p-0 px-[5rem] pt-[7.125rem] lg:w-full">
             <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0] lg:hidden" alt="Right Property footer floating decoration element" />
             <img src={footerBg} className="absolute bottom-0 left-0 w-[105rem] h-full object-cover z-[-1] lg:hidden" alt="Right Property footer background design" />

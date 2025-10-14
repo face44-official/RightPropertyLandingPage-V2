@@ -10,12 +10,12 @@ export default function MarketingPowerhouseSection() {
 
     const items = [
         {
-            title: "One-Click Website Launch",
+            title: <span>One-Click<br/>Website Launch</span>,
             description: "Spin up a full project website with a single click using the same assets from your Surface or Space setup.",
             icon: <img src={startIcon} alt="One-click website launch feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         },
         {
-            title: "Complete Marketing Platform",
+            title: <span>Complete<br/>Marketing Platform</span>,
             description: "More than a simple page—it’s a complete marketing platform, seamlessly connected to your built-in CRM.",
             icon: <img src={spaceIcon} alt="Complete marketing platform feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         }

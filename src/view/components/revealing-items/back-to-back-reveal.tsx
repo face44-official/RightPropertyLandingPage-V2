@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 import { flippingCardContents } from "./flipping-card-contents";
 import FlippingCardContent from "./flipping-card-content";
 import RevealItemsIndicator from "./reveal-items-indicator";
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { Flip } from "gsap/Flip";
 import revealItem1Overlay from "@/assets/v3/reveal_item_1_overlay.webp"
 import revealItem2Overlay from "@/assets/v3/reveal_item_2_overlay.webp"
@@ -11,16 +11,17 @@ import revealItem3Overlay from "@/assets/v3/reveal_item_3_overlay.webp"
 import revealItem4Overlay from "@/assets/v3/reveal_item_4_overlay.webp"
 import revealItem5Overlay from "@/assets/v3/reveal_item_5_overlay.webp"
 import revealItem6Overlay from "@/assets/v3/reveal_item_6_overlay.webp"
-import revealItem1Road from "@/assets/v3/reveal_item_1_road.webp"
-import revealItem2Road from "@/assets/v3/reveal_item_2_road.webp"
-import revealItem3Road from "@/assets/v3/reveal_item_3_road.webp"
-import revealItem5Road from "@/assets/v3/reveal_item_5_road.webp"
+import revealItem1Road from "@/assets/v3/reveal_item_1_road.svg"
+import revealItem2Road from "@/assets/v3/reveal_item_2_road.svg"
+import revealItem3Road from "@/assets/v3/reveal_item_3_road.svg"
+import revealItem5Road from "@/assets/v3/reveal_item_5_road.svg"
 import cmsVideo from "@/assets/v3/cms.webm"
 import emailMarketingVideo from "@/assets/v3/email_marketing.webm"
 import interactiveVideo from "@/assets/v3/interactive_website.webm"
 import marketingOption1 from "@/assets/v3/marketing_option1.webm"
 import websiteTemplates from "@/assets/v3/website_templates.webm";
 import seoVideo from "@/assets/v3/seo.webm";
+import { cn } from "@/lib/utils";
 gsap.registerPlugin(ScrollTrigger, Flip);
 export default function BackToBackReveal() {
     const $ref = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ export default function BackToBackReveal() {
         $cardSectionRef5,
         $cardSectionRef6
     ];
-   
+
     useEffect(() => {
         if ($direction.current !== null) {
             // queueFlipAnimation($direction.current, currentItem);
@@ -130,29 +131,37 @@ export default function BackToBackReveal() {
             </div>
         </div>
         <div className="rp-container">
-            <VideoContainer sectionRef={$cardSectionRef1} videoUrl={marketingOption1} road={revealItem1Road}>
+            <VideoContainer sectionRef={$cardSectionRef1} videoUrl={marketingOption1} >
+                <div className="absolute w-[109.25rem] h-[93.125rem] -left-[53.125rem] -top-[30.75rem] z-[-1]">
+                    <img src={revealItem1Road} className="h-full w-full" />
+                </div>
                 <img src={revealItem1Overlay} className=" absolute -top-[7.375rem] left-[3rem] w-[41.9375rem] h-auto object-contain" alt="Marketing feature overlay decoration" />
-                <GreenGradient />
-                <BlueGradient />
             </VideoContainer>
-            <VideoContainer sectionRef={$cardSectionRef2} videoUrl={interactiveVideo} road={revealItem2Road}>
+            <VideoContainer sectionRef={$cardSectionRef2} videoUrl={interactiveVideo}>
+                <div className="absolute w-[108.75rem] h-[93.125rem] -left-[57.875rem] -top-[30.75rem] z-[-1]">
+                    <img src={revealItem2Road} className="h-full w-full" />
+                </div>
                 <img src={revealItem2Overlay} className="absolute -top-[13.625rem] left-[5.625rem] w-[41rem] h-auto object-contain" alt="Interactive website feature overlay decoration" />
-                <GreenGradient />
-                <BlueGradient />
             </VideoContainer>
-            <VideoContainer sectionRef={$cardSectionRef3} videoUrl={websiteTemplates} road={revealItem3Road}>
+            <VideoContainer sectionRef={$cardSectionRef3} videoUrl={websiteTemplates}>
+                <div className="absolute w-[108.75rem] h-[93.125rem] -right-[10.675rem] -bottom-[36.25rem] z-[-1]">
+                    <img src={revealItem3Road} className="h-full w-full" />
+                </div>
                 <img src={revealItem3Overlay} className="absolute left-[13.75rem] -top-[1.25rem] -translate-y-full w-[24.375rem] h-auto object-contain" alt="Website templates feature overlay decoration" />
-                <GreenGradient />
-                <BlueGradient />
+
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef4} videoUrl={cmsVideo}>
                 <img src={revealItem4Overlay} className="absolute top-[15.75rem] left-[3.75rem] w-[11.5625rem] h-auto object-contain" alt="CMS feature overlay decoration" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer sectionRef={$cardSectionRef5} videoUrl={emailMarketingVideo} road={revealItem5Road}>
+            <VideoContainer sectionRef={$cardSectionRef5} videoUrl={emailMarketingVideo}>
+            <BlueGradient />
+
+                <div className="absolute w-[105.0625rem] h-[93.125rem] -left-[57.9375rem] -top-[30.125rem] z-[-1]">
+                    <img src={revealItem5Road} className="h-full w-full" />
+                </div>
                 <img src={revealItem5Overlay} className="absolute -top-[21.25rem] left-[13.75rem] w-[24.0625rem] h-auto object-contain`" alt="Email marketing feature overlay decoration" />
-                <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef6} videoUrl={seoVideo}>
                 <img src={revealItem6Overlay} className="absolute top-[20.75rem] left-[3.75rem] w-[33.375rem] h-auto object-contain" alt="SEO feature overlay decoration" />
@@ -175,16 +184,18 @@ export const BlueGradient = () => {
 export const VideoContainer = ({
     children,
     road,
+    roadClass,
     videoUrl,
     sectionRef
 }: {
     sectionRef: React.RefObject<HTMLDivElement | null>,
     videoUrl: string
     children: React.ReactNode,
-    road?: string
+    road?: string,
+    roadClass?: string
 }) => {
     return <div ref={sectionRef} className="relative w-full h-[100vh] flex items-center justify-end pr-[6.875rem]">
-       {road && <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" alt="Right Property feature section background road decoration" />}
+        {road && <img src={road} alt="Right Property feature section background road decoration" className={cn("absolute left-0 top-0 w-full h-auto object-contain", roadClass)} />}
 
         <div className="relative">
             <video src={videoUrl} autoPlay muted loop playsInline className=" w-[40.1875rem] h-[26.75rem] object-cover" />

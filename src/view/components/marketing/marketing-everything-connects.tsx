@@ -10,12 +10,12 @@ export default function MarketingEverythingConnects() {
     
     const items = [
         {
-            title: "Understand Every Buyer Move",
+            title: <span>Understand Every<br/>Buyer Move</span>,
             description: "Capture each interaction as it happens and feed it into your CRM for a complete picture of buyer intent.",
             icon: <img src={startIcon} alt="Buyer tracking feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         },
         {
-            title: "Close Deals Faster & Smarter",
+            title: <span>Close Deals<br/>Faster & Smarter</span>,
             description: "Turn real-time insights into decisive action, guiding every prospect seamlessly from first click to close.",
             icon: <img src={spaceIcon} alt="Deal closing feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         }

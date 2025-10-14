@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react"
 import { useLenis } from 'lenis/react'
-import gsap from "gsap"
+import {gsap} from "gsap"
 import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import type Lenis from "lenis"
@@ -12,7 +12,7 @@ interface UseMotionPathProps {
     trigger?: string
     startOffset?: string
     endOffset?: string
-    scrollScrub?: boolean
+    scrollScrub?: boolean | number
     markers?: boolean,
     maskRadius?: number
 }

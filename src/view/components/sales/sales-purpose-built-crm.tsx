@@ -9,12 +9,12 @@ export default function SalesPurposeBuiltCrmSection() {
 
     const items = [
         {
-            title: "Smart & Simplified Lead Tracking",
+            title: <span>Smart & Simplified<br/>Lead Tracking</span>,
             description: "Log every inquiry instantly and never lose sight of a potential deal opportunity. Track prospects from first contact to successful close.",
             icon: <img src={startIcon} alt="Lead tracking feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         },
         {
-            title: "Clear & Seamless Team Alignment",
+            title: <span>Clear & Seamless<br/>Team Alignment</span>,
             description: "Keep everyone on the same page with shared notes, updates, and detailed progress tracking—no extra tools needed.",
             icon: <img src={spaceIcon} alt="Team alignment feature icon" className="w-[5rem] lg:w-[3.5rem] h-auto object-contain" />
         }

@@ -12,8 +12,79 @@ import emailVideo from "@/assets/v3/marketing/email-video.webm";
 import { MarketingSplitTextSection } from "../components/marketing/marketing-splittext-section";
 import MarketingHeroSection from "../components/marketing/marketing-hero-section";
 import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-road";
+import HeroSubPagesRoad from "../components/hero/hero-sub-pages-road";
+import marketing_road_illustration from "@/assets/v3/marketing/marketing_road_illustration.svg";
+import { useCallback, useEffect, useRef, type RefObject } from "react";
+import { interpolateColor } from "@/lib/utils";
+import { gsap } from "gsap";
 export default function MarketingPage() {
-    return <main className="overflow-hidden">
+    const gradientPathRef = useRef<SVGPathElement>(null);
+    const gradientRef = useRef<HTMLDivElement>(null)
+    const motionTimeline = useRef<GSAPTimeline>(null)
+    const startMotionPath = useCallback(() => {
+        if (gradientRef.current && gradientPathRef.current) {
+            // Stop any existing motion path animation
+            if (motionTimeline.current) {
+                motionTimeline.current.kill()
+            }
+            motionTimeline.current = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#email-video",
+                    start: "center+=50% center",
+                    end: 'center top',
+                    markers: false,
+                    // end: '+=' + ((window.innerHeight * 3) + 50),
+                    scrub: 1.2,
+                }
+            });
+            // Create a dummy object to animate along the path
+            const follower = { x: 0, y: 0 }
+
+            const moveAnim = gsap.to(follower, {
+                ease: "power3.out",
+                motionPath: {
+                    path: gradientPathRef.current,
+                    offsetX: -750, // Container offset
+                    offsetY: -350, // Container offset
+                    autoRotate: true,
+                    start: 1,
+                    end: 0,
+                },
+                onUpdate: function () {
+                    const progress = this.progress()
+                    if (gradientRef.current) {
+                        gradientRef.current.style.setProperty('left', `${follower.x}px`)
+                        gradientRef.current.style.setProperty('top', `${follower.y}px`)
+
+                        // Animate gradient colors based on scroll progress
+                        const blueToGreenProgress = progress // 0 to 1
+                        const startColor = interpolateColor('#DBE8FF', '#E7DFF2', blueToGreenProgress)
+                        // Keep middle color opaque by interpolating to a light purple instead of transparent
+                        const middleColor = interpolateColor('#E8F4FF', '#E7DFF2', blueToGreenProgress)
+
+                        gradientRef.current.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${middleColor} 25.96%, rgba(255, 255, 255, 0) 100%)`
+                        console.log(progress)
+                    }
+                }
+            })
+            // const anim = gsap.to(gradientRef.current, {
+            //     width: "1445px",
+            //     height: "1048px",
+            // })
+            motionTimeline.current.add(moveAnim, 0)
+            // motionTimeline.current.add(anim, 0)
+        }
+    }, [gradientRef, gradientPathRef])
+    useEffect(() => {
+        const mm = gsap.matchMedia();
+        mm.add('(min-width: 769px)', () => {
+            setTimeout(() => {
+                startMotionPath()
+            }, 300)
+        })
+    }, [startMotionPath])
+    return <main >
+        <HeroSubPagesRoad svgPath={marketing_road_illustration} svgClassName="w-[152.125rem] h-[155.8125rem] top-[10.125rem] -left-[39.325rem]" />
         <HeroSubPagesMobileRoad firstMaskTop="2rem" secondMaskTop="0rem" />
         <main id="sales-page" className="relative z-[20] pt-[14.56rem] lg:pt-[12.25rem] flex flex-col justify-center">
             <TitleBig className="w-[54.5rem] lg:w-full lg:px-4 !mb-[3.75rem] lg:!mb-[1.875rem] rp-container text-center">Marketing That Connects Directly to Sales.</TitleBig>
@@ -21,20 +92,10 @@ export default function MarketingPage() {
             <MarketingSplitTextSection />
             <MarketingPowerhouseSection />
             <TwoColumnTextImageBlock className="pb-[24.1875rem]" title="What Buyers See in Person, They See Online." description="Bring your immersive presentations to the web. From site plans to media galleries, the website reflects your project in a professional, interactive format—ready to convert." image={<TheySeeOnlineImage />} variant={"image-left"} />
-            <OneColumnTitleImageDescription className="pb-[32.8125rem] lg:pb-[16.25rem]" title="Ready-Made Templates. Full Creative Control." description="Choose from ready-to-use templates or fully customize your campaign pages with a powerful but intuitive CMS. Keep your brand consistent and your setup hassle-free." image={<ReadyMadeTemplatesVideo />} />
-            <TwoColumnTextImageBlock className="lg:pb-[7.5rem]" title="Create and Send Campaigns Without Leaving the Platform." description="Engage prospects with beautifully designed emails and automation tools—all built in. Whether launching a campaign or nurturing leads, you’re in control." image={<EmailVideo />} variant={"image-right"} />
+            <OneColumnTitleImageDescription className="pb-[32.8125rem] lg:pb-[16.25rem]" title="Ready-Made Templates. Full Creative Control." description={<div className="w-[54.8125rem] lg:w-full">Choose from ready-to-use templates or fully customize your campaign pages with a powerful but intuitive CMS. Keep your brand consistent and your setup hassle-free.</div>} image={<ReadyMadeTemplatesVideo />} />
+            <TwoColumnTextImageBlock id="create-and-send-campaigns" className="lg:pb-[7.5rem]" title="Create and Send Campaigns Without Leaving the Platform." description="Engage prospects with beautifully designed emails and automation tools—all built in. Whether launching a campaign or nurturing leads, you’re in control." image={<EmailVideo gradientRef={gradientRef} gradientPathRef={gradientPathRef} />} variant={"image-right"} />
             <div className="lg:px-4 relative rp-container py-[25.75rem] lg:pt-0 lg:py-[7.5rem]">
                 <BinarySection className="" subHeader="Did you know?" title="Automated where it matters" description="We simplify the complex. Many steps you'd expect to handle manually are fully automated behind the scenes." image={<BinaryBlockImage path={automated} />} />
-                <svg className="absolute lg:hidden left-1/2 z-[-1]" width="1445" height="1049" viewBox="0 0 1445 1049" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="722.5" cy="524.14" rx="722.5" ry="524.14" fill="url(#paint0_radial_1312_2947)" />
-                    <defs>
-                        <radialGradient id="paint0_radial_1312_2947" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(722.5 524.14) rotate(90) scale(524.14 722.5)">
-                            <stop stop-color="#E7DFF2" />
-                            <stop offset="1" stop-color="white" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                </svg>
-
             </div>
             <MarketingEverythingConnects />
             <ScheduleADemoSection />
@@ -98,10 +159,10 @@ const ReadyMadeTemplatesVideo = () => {
     )
 }
 
-const EmailVideo = () => {
+const EmailVideo = ({ gradientRef, gradientPathRef }: { gradientRef: RefObject<HTMLDivElement>, gradientPathRef: RefObject<SVGPathElement> }) => {
     return (
-        <div className="relative overflow-visible">
-            <div className="z-[-1] w-[1521px] lg:w-[807px] h-[1521px] lg:h-[715px] -left-[761px] lg:-left-[372px] -top-[351px] lg:-top-[240px] absolute" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(197, 230, 255, 0.72) 0%, rgba(200, 229, 255, 0.72) 25.96%, rgba(255, 255, 255, 0) 100%)" }}>
+        <div id="email-video" className="relative overflow-visible">
+            <div ref={gradientRef} className="z-[-1] w-[1521px] lg:w-[807px] h-[1521px] lg:h-[715px] -left-[761px] lg:-left-[372px] -top-[351px] lg:-top-[240px] absolute" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(197, 230, 255, 0.72) 0%, rgba(200, 229, 255, 0.72) 25.96%, rgba(255, 255, 255, 0) 100%)" }}>
 
             </div>
             <svg className="lg:w-[50.4375rem] lg:h-auto -left-[80rem] lg:-left-[23.25rem] lg:-top-[15.375rem] -top-[18rem] absolute z-[-1]" width="2249" height="1757" viewBox="0 0 2249 1757" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -645,7 +706,11 @@ const EmailVideo = () => {
                     </clipPath>
                 </defs>
             </svg>
-
+            <div className="relative">
+                <svg className="absolute top-[25.25rem] -left-[4.375rem] w-[6.5625rem] h-auto" viewBox="0 0 105 701" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path ref={gradientPathRef} d="M1 700C129.351 615.112 140.951 214.69 19.5 0.5"  />
+                </svg>
+            </div>
             <video autoPlay muted loop playsInline src={emailVideo} className="w-[46.625rem] h-auto object-cover" />
         </div>
     )

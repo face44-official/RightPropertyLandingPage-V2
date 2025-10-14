@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import {gsap} from "gsap";
 export default function HamburgerButton({ isShowMobileMenu,onClick }: { isShowMobileMenu: boolean,onClick: () => void }) {
     const $menuToggle = useRef<gsap.core.Timeline>(null);
     useEffect(() => {

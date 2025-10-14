@@ -1,11 +1,11 @@
-import easyOnboarding from "@/assets/v3/easy_onboarding_desktop.webp"
+import easyOnboarding from "@/assets/v3/easy_onboarding_desktop.svg"
 import EasyOnboardingPath from "./easy-onboarding-path"
 import { useCallback, useEffect, useRef } from "react"
 import BinarySection, { BinaryBlockImage } from "../binary-section"
 import automated from "@/assets/v3/automated.webp"
 import { interpolateColor } from "@/lib/utils"
 import purpleCheck from "@/assets/v3/purple_check.svg";
-import gsap from "gsap"
+import {gsap} from "gsap"
 import mobileRoad3 from '@/assets/v3/mobile_road_3.webp';
 export default function EasyOnboardingSection() {
     const pathRef = useRef<SVGPathElement>(null)
@@ -40,7 +40,7 @@ export default function EasyOnboardingSection() {
                     start: "center-=20% center",
                     end: 'center top',
                     // end: '+=' + ((window.innerHeight * 3) + 50),
-                    scrub: 0,
+                    scrub: 1,
                 }
             });
             // Create a dummy object to animate along the path
@@ -102,7 +102,7 @@ export default function EasyOnboardingSection() {
 
             <div className="rp-container  lg:h-auto!" style={{ height: "98.75rem" }}>
 
-                <img className='absolute top-0 left-0 w-full h-auto lg:hidden z-[-1]' src={easyOnboarding} alt="Right Property easy onboarding process visualization with animated path" loading="lazy" decoding="async" width="1680" height="1734" />
+                <img className='absolute top-[5rem] -left-[4.375rem] w-[61.6875rem] h-[80.375rem] lg:hidden z-[-1]' src={easyOnboarding} alt="Right Property easy onboarding process visualization with animated path" loading="lazy" decoding="async" width="987" height="1286" />
                 <div className="absolute top-[43.3125rem] left-[40.75rem]" ref={(el) => {
                     if (el) {
                         const path = el.querySelector('path')

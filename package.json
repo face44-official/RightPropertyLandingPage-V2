@@ -47,6 +47,7 @@
     "globals": "^16.0.0",
     "imagemin-pngquant": "^10.0.0",
     "imagemin-webp": "^8.0.0",
+    "rollup-plugin-critical": "^1.0.15",
     "sass-embedded": "^1.89.0",
     "sharp": "^0.34.2",
     "terser": "^5.40.0",

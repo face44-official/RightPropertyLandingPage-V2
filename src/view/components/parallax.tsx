@@ -1,6 +1,6 @@
 import { useWindowSize } from "hamo";
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 export function Parallax({ className, children, speed = 1, id = "parallax" }: { className?: string, children: React.ReactNode, speed?: number, id?: string }) {
     const trigger = useRef<HTMLDivElement>(null);

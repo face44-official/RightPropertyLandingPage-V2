@@ -4,7 +4,7 @@ import { useLenis } from 'lenis/react'
 import { cn } from "@/lib/utils";
 import BuiltForDevelopers from "./built-for-developers";
 import NavigationItems from "./navigation-items";
-import gsap from "gsap";
+import {gsap} from "gsap";
 import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
 import HamburgerButton from "./hamburger-button";

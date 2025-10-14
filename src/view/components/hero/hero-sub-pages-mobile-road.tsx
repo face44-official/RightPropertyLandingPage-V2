@@ -5,7 +5,7 @@ interface HeroSubPagesMobileRoadProps {
 }
 export default function HeroSubPagesMobileRoad({ firstMaskTop = "10.1875rem", secondMaskTop = "15rem" }: HeroSubPagesMobileRoadProps) {
     return (
-        <div className="hidden lg:block relative">
+        <div className="hidden lg:block relative overflow-x-hidden">
             <div className="relative">
                 <SubPageHeroRoad className={`mobile-sub-pages-mask absolute top-[${firstMaskTop}] -left-[1.65375rem] w-[125.6vw] h-auto `} />
                 <div style={{

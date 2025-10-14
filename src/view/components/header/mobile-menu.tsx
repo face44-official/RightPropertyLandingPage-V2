@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import AnchorLink from "../anchor-link"
-import gsap from "gsap";
+import {gsap} from "gsap";
 import { Link, useLocation } from "wouter";
 
 

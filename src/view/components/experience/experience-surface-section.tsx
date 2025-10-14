@@ -4,7 +4,7 @@ import { TitleMedium } from "../ui/title";
 import surfaceFullImage from "@/assets/v3/experience/surface_full.webp";
 export default function ExperienceSurfaceSection() {
     return (
-        <section id="experience-surface" className=" !mb-[20.375rem] lg:!mb-[3.75rem]" aria-label="Choose the experience">
+        <section id="experience-surface" className="lg:!mb-[3.75rem]" aria-label="Choose the experience">
             <LayoutWrapper>
                 <Caption className=" uppercase mb-[2rem]">choose the presentation experience</Caption>
                 <TitleMedium className="w-[40.8125rem] lg:w-full mb-[2.5rem]">Right Property offers two powerful ways to present</TitleMedium>

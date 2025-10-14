@@ -3,7 +3,7 @@ import { TitleMedium } from "../ui/title";
 import spaceFullImage from "@/assets/v3/experience/experience_space_bg.webp";
 export default function ExperienceSpaceSection() {
     return (
-        <div className="bg-black  pb-[9.375rem] lg:pb-[3.75rem]">
+        <div className="bg-black  pb-[9.375rem] lg:pb-[3.75rem] relative z-[7]">
             <section id="experience-space" aria-label="Choose the experience">
                 <div className="group relative mt-[7.5rem] lg:mt-[4rem] mb-[2.5rem] max-w-[1650px] mx-auto lg:max-w-full">
                     <div className="w-full h-auto overflow-hidden">

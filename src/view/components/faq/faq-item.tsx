@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import {gsap} from "gsap";
 export default function FaqItem({ question, answer }: { question: string | React.ReactNode, answer: React.ReactNode }) {
 
     const [isOpen, setIsOpen] = useState(false);
