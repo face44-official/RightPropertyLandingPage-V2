@@ -61,8 +61,8 @@ export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => g
         masterTl.add(nextTimeline(), '>')
 
         return () => {
-            masterTl.refresh();
-            tl.refresh();
+            masterTl.kill();
+            tl.kill();
         };
 
     }, [nextTimeline])

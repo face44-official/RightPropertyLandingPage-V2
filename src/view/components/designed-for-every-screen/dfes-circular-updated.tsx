@@ -104,7 +104,7 @@ const DfesCircularUpdated = () => {
     }, [])
 
     // Entrance animation
-    const playEntranceAnimation = useCallback(() => {
+    const playEntranceAnimation = () => {
         if (!stageRef.current || !nodesRef.current || hasAnimated.current) return;
         hasAnimated.current = true;
 
@@ -215,10 +215,10 @@ const DfesCircularUpdated = () => {
             }, CONFIG.entranceDuration - 1.5);
 
         return tl;
-    }, []);
+    }
 
     // Zoom animation - scale up and position to show only first node
-    const playZoomAnimation = useCallback(() => {
+    const playZoomAnimation = () => {
         if (!stageRef.current) return;
 
         const tl = gsap.timeline({
@@ -265,11 +265,11 @@ const DfesCircularUpdated = () => {
             }, "<");
 
         return tl;
-    }, []);
+    };
 
 
     // Switch to line mode animation
-    const switchLineMode = useCallback(() => {
+    const switchLineMode = () => {
         if (!stageRef.current || !wiresRef.current) return;
         
         const mainTl = gsap.timeline({
@@ -355,7 +355,7 @@ const DfesCircularUpdated = () => {
         
         mainTl.add(tl, 0);
         return mainTl;
-    }, []);
+    }
 
     // Main layout function
     const layout = useCallback(() => {
@@ -366,7 +366,7 @@ const DfesCircularUpdated = () => {
 
     }, []);
 
-    const moveHorizontalAnimation = useCallback(() => {
+    const moveHorizontalAnimation = () => {
         let lineWidth = 0;
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -380,7 +380,6 @@ const DfesCircularUpdated = () => {
                     const currentProgress = self.progress;
                     const direction = self.direction;
                     const imageIndex = Math.floor((currentProgress * 0.9) * 6);
-                    console.log(currentProgress)
                     setImageIndex(imageIndex);
                     // Update wires to follow nodes
                     if (wiresRef.current) {
@@ -478,9 +477,9 @@ const DfesCircularUpdated = () => {
             ease: "none"
         },0)
         return tl;
-    }, [])
+    }
 
-    const masterTimeline = useCallback(() => {
+    const masterTimeline = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#dfes-content-container",
@@ -503,7 +502,7 @@ const DfesCircularUpdated = () => {
         tl.add(switchLineMode()!,">")
         tl.add(moveHorizontalAnimation()!,">")
         return tl;
-    }, [])
+    }
 
 
 
@@ -523,7 +522,7 @@ const DfesCircularUpdated = () => {
     }, [layout]);
  
     return (
-        <div id="dfes-content-container" className="relative w-full py-[10rem]  bg-gray-50">
+        <div id="dfes-content-container" className="relative w-full py-[10rem] max-w-screen overflow-hidden">
             <DfesZoomImages nextTimeline={masterTimeline} />
             <DesignForEveryScreenContent currentImage={imageIndex} isVisible={isContentVisible} />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-general-sans font-semibold -tracking-[0.01em] text-60 leading-[130%] text-raisin-black">

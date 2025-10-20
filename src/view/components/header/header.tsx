@@ -4,7 +4,7 @@ import { useLenis } from 'lenis/react'
 import { cn } from "@/lib/utils";
 import BuiltForDevelopers from "./built-for-developers";
 import NavigationItems from "./navigation-items";
-import { gsap } from "gsap";
+import {gsap} from "gsap";
 import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
 import HamburgerButton from "./hamburger-button";
@@ -16,17 +16,15 @@ export default function Header() {
     const $prevProgress = useRef(0);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const lenisHandler = (lenis: Lenis) => {
-        $progress.current =lenis.progress;
+        $progress.current = lenis.progress;
         if ($progress.current >= 0.01) {
             gsap.set('#header-parent', {
                 backgroundColor: 'white'
             })
-            if ($progress.current - ($prevProgress.current ?? 0) < 0 ) {
-
-                setHideHeader(false);
-            } else {
-
+            if (($prevProgress.current ?? 0) < $progress.current) {
                 setHideHeader(true);
+            } else {
+                setHideHeader(false);
             }
         } else {
             gsap.set('#header-parent', {
@@ -63,9 +61,9 @@ export default function Header() {
         }
     }, [showMobileMenu, lenis]);
     useEffect(() => {
-        lenis?.scrollTo(0, {
-            duration: 0,
-            lerp: 0
+        lenis?.scrollTo(0,{
+            duration:0,
+            lerp:0
         });
     }, [location, lenis]);
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
