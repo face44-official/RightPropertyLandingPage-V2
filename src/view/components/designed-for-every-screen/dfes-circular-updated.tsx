@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import {
     CONFIG,
@@ -278,7 +278,7 @@ const DfesCircularUpdated = () => {
         const tl = gsap.timeline({ delay: 0.5 });
         
         // Defer position calculations until just before animation starts
-        let targetPositions: [] = [];
+        const targetPositions:{index:number,x:number,y:number}[] = [];
         let gap = 0;
         const curvatureState = { factor: 1 };
         
@@ -307,7 +307,9 @@ const DfesCircularUpdated = () => {
                 centerIndex
             );
             
-            targetPositions = result.targetPositions;
+            result.targetPositions.forEach(target => {
+                targetPositions.push(target);
+            });
             gap = result.gap;
             
             arcDirections.current = calculateArcDirections(targetPositions, gap, wiresRef.current!);
@@ -316,7 +318,7 @@ const DfesCircularUpdated = () => {
         // Animate nodes to their target positions
         nodeRefs.current.forEach((node, nodeIndex) => {
             if (!node) return;
-            
+            // @ts-expect-error targetPositions
             tl.to(node, {
                 x: () => {
                     const target = targetPositions.find(t => t.index === nodeIndex);
