@@ -14,6 +14,7 @@ import HeroSubPagesRoad from "../components/hero/hero-sub-pages-road";
 import { ExperienceSplitTextSection } from "../components/experience/experience-splittext-section";
 import ExperienceHeroVideos from "../components/experience/experience-hero-videos";
 import HeroSubPagesMobileRoad from "../components/hero/hero-sub-pages-mobile-road";
+import DfesCircularUpdated from "../components/designed-for-every-screen/dfes-circular-updated";
 export default function ExperiencePage() {
 
 
@@ -42,11 +43,17 @@ export default function ExperiencePage() {
             <FastVisualEfficientSection />
             <ExperienceSpaceSection />
             <ExperienceImmersiveSection />
-            <ExperienceDesignedForEveryScreenSection />
+            <div className="lg:hidden">
+                <DfesCircularUpdated />
+            </div>
+            <div className="hidden lg:block">
+                <ExperienceDesignedForEveryScreenSection />
+
+            </div>
 
             <ExperienceFlippingCardsSection />
             <ExperienceCarousel />
-            
+
             <ScheduleADemoSection />
 
         </div>

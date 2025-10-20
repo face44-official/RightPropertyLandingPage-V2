@@ -5,6 +5,7 @@ import PrivacyPolicy from "../pages/privacy-policy";
 import ExperiencePage from "../pages/experience-page";
 import SalesPage from "../pages/sales";
 import MarketingPage from "../pages/marketing-page";
+import TestPage from "../pages/test-page";
 
 export default function Router() {
     return <Switch>
@@ -18,7 +19,7 @@ export default function Router() {
 
         <Route path="/marketing" component={MarketingPage} />
 
-
+        <Route path="/test" component={TestPage} />
         {/* Default route in a switch */}
         <Route><NotFoundPage /></Route>
     </Switch>

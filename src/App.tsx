@@ -14,7 +14,6 @@ const LazyGSAP = lazy(() => import('./lib/gsap.tsx').then(module => ({ default: 
 
 function App() {
   const [gsapLoaded, setGsapLoaded] = useState(false);
-  const [_, setLenisOptions] = useState({ lerp: 0, duration: 0 });
   useEffect(() => {
     ReactGA.initialize('G-D169WBQW9L');
     // Send pageview with a custom path
@@ -43,10 +42,7 @@ function App() {
 
     loadSwiper();
 
-    // Enable smooth scrolling after load
-    setTimeout(() => {
-      setLenisOptions({ lerp: 1.08, duration: 12 });
-    }, 1000);
+
 
     return () => {
       clearTimeout(gsapTimer);
@@ -56,8 +52,9 @@ function App() {
 
 
   return (
-    <WindowSizeProvider>
-      <ReactLenis root>
+    <ReactLenis root >
+      <WindowSizeProvider>
+
         {gsapLoaded && (
           <Suspense fallback={null}>
             <LazyGSAP />
@@ -70,8 +67,9 @@ function App() {
             <LazyFooter />
           </Suspense>
         </div>
-      </ReactLenis>
-    </WindowSizeProvider>
+
+      </WindowSizeProvider>
+    </ReactLenis>
   )
 }
 

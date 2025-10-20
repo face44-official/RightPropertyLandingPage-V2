@@ -413,3 +413,38 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+:root{
+  --dfes-circlegrah-size: 0;
+  --dfes-circlegraph-circle-size: 0;
+}
+
+
+.ciclegraph {
+	position: relative;
+  width: var(--dfes-circlegrah-size);
+  height: var(--dfes-circlegrah-size);
+  margin: calc(var(--dfes-circlegraph-circle-size) / 2 + 0px);
+  border-radius: 50%;
+  border: 1px solid #77C5F2;
+
+}
+
+/* .ciclegraph:before {
+	content: "";
+	position: absolute;
+	top: 0; left: 0;
+  border: 1px solid #77C5F2;
+  width: calc( 100% - 2px * 2);
+  height: calc( 100% - 2px * 2 );
+  border-radius: 50%;
+} */
+
+.ciclegraph .circle {
+	position: absolute;
+	top: 50%; left: 50%;
+  width: var(--dfes-circlegraph-circle-size);
+  height: var(--dfes-circlegraph-circle-size);
+  margin: calc( calc(var(--dfes-circlegraph-circle-size) / 2) * -1 );
+  border-radius: 50%;
+}
