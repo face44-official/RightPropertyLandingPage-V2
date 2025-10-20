@@ -19,8 +19,6 @@ export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => g
                 end: "+=1000",
                 scrub: 0,
                 pin: true,
-                invalidateOnRefresh: true,
-                anticipatePin: 1,
             }
         })
         tl.to("#desktop-zoom-visual", {
@@ -39,10 +37,10 @@ export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => g
             ease: "power3.In"
         }, "0.3")
         tl.to("#laptop-zoom-visual", {
-            z: 600,
+            z: 1200,
             duration: 1,
             ease: "power3.In"
-        }, "0.20")
+        }, "0.1")
         tl.to("#kiosk-zoom-visual", {
             z: 600,
             duration: 1,

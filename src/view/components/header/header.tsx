@@ -25,7 +25,6 @@ export default function Header() {
 
                 setHideHeader(false);
             } else {
-                console.log(`show header prev: ${$prevProgress.current}, current: ${$progress.current}`);
 
                 setHideHeader(true);
             }

@@ -372,6 +372,7 @@ const DfesCircularUpdated = () => {
                 start: "center+=2 center",
                 end: "+=2000",
                 scrub: 0,
+                
                 pin: true,
                 onUpdate : (self) => {
                     const currentProgress = self.progress;
@@ -485,8 +486,7 @@ const DfesCircularUpdated = () => {
                 end: "+=2000",
                 scrub: 0,
                 pin: true,
-                invalidateOnRefresh: true,
-                anticipatePin: 1,
+
                 onLeave :()=>{
                     setIsContentVisible(true)
                 },
@@ -521,10 +521,10 @@ const DfesCircularUpdated = () => {
     }, [layout]);
  
     return (
-        <div id="dfes-content-container" className="relative w-full  bg-gray-50">
+        <div id="dfes-content-container" className="relative w-full py-[10rem]  bg-gray-50">
             <DfesZoomImages nextTimeline={masterTimeline} />
             <DesignForEveryScreenContent currentImage={imageIndex} isVisible={isContentVisible} />
-            <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-general-sans font-semibold -tracking-[0.01em] text-60 leading-[130%] text-raisin-black">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-general-sans font-semibold -tracking-[0.01em] text-60 leading-[130%] text-raisin-black">
                 <div className="title-first-group inline-block">Designed for </div>{" "}<div className="inline-block title-second-group">Every Screen</div>
             </div>
             <div
