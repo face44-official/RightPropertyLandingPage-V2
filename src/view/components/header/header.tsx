@@ -63,11 +63,11 @@ export default function Header() {
     useLayoutEffect(() => {
 
         // Now scroll to top
-        window.scrollTo({
-            top: 0,
-            behavior: 'instant'
+        lenis?.scrollTo(0, {
+            duration: 0,
+            immediate: true
         });
-    }, [pathname]);
+    }, [pathname,lenis]);
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
 
     return (
