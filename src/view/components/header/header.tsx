@@ -8,9 +8,9 @@ import { gsap } from "gsap";
 import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
 import HamburgerButton from "./hamburger-button";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation } from "react-router";
 export default function Header() {
-    const [location] = useLocation();
+    const { pathname } = useLocation();
     const [hideHeader, setHideHeader] = useState(false);
     const $progress = useRef(0);
     const $prevProgress = useRef(0);
@@ -62,20 +62,12 @@ export default function Header() {
     }, [showMobileMenu, lenis]);
     useLayoutEffect(() => {
 
-        setTimeout(() => {
-            // Now scroll to top
-            lenis?.scrollTo(0, {
-                duration: 0,
-                lerp: 0,
-                immediate: true
-            });
-
-        }, 300);
-
-        if (location === '/presentation') {
-            console.log("presentation scroll", lenis?.scrollTo);
-        }
-    }, [location, lenis]);
+        // Now scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant'
+        });
+    }, [pathname]);
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
 
     return (
@@ -83,7 +75,7 @@ export default function Header() {
             <div id="header-parent" className={headerClass}>
                 <div className="rp-container h-full flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
                     <div className="flex items-center gap-[5.52rem] lg:gap-[2.06rem]">
-                        <Link href="/" aria-label="Right Property logo. Click to navigate to the home page">
+                        <Link to="/" aria-label="Right Property logo. Click to navigate to the home page">
                             <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" />
                         </Link>
                         <BuiltForDevelopers />

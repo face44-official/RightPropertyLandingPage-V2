@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import AnchorLink from "../anchor-link"
 import {gsap} from "gsap";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation } from "react-router";
 
 
 
 export default function MobileMenu({ onItemClick }: { onItemClick: () => void }) {
-    const [location] = useLocation();
+    const {pathname} = useLocation();
 
     useEffect(() => {
         gsap.set("#mobile-menu", {
@@ -28,7 +28,7 @@ export default function MobileMenu({ onItemClick }: { onItemClick: () => void })
                 <li onClick={onNavigate}>
                     <NavigationItem href="sales">Sales</NavigationItem>
                 </li>
-                {location == "/" && <li onClick={onNavigate}>
+                {pathname == "/" && <li onClick={onNavigate}>
                     <AnchorItem href="faqs">FAQs</AnchorItem>
                 </li>
                 }

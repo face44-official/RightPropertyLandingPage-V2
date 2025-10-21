@@ -513,10 +513,7 @@ const DfesCircularUpdated = () => {
         
         // Wait for scroll position to settle after navigation
         const initTimer = setTimeout(() => {
-            // Ensure scroll is at top before calculating positions
-            window.scrollTo(0, 0);
             
-            // Additional delay to ensure layout is settled
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     const all = ScrollTrigger.getAll();

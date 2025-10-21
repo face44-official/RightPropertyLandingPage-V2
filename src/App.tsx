@@ -7,6 +7,7 @@ import Header from './view/components/header/header.tsx';
 import WindowSizeProvider from './view/components/providers/window-size-provider.tsx';
 import Router from './view/components/router.tsx';
 import GSAP from './lib/gsap.tsx';
+import { BrowserRouter } from "react-router";
 
 // Lazy load non-critical components and GSAP
 const LazyFooter = lazy(() => import('./view/components/footer/section'));
@@ -36,12 +37,14 @@ function App() {
     <ReactLenis root >
       <WindowSizeProvider>
         <GSAP />
-        <Header />
         <div className=''>
-          <Router />
-          <Suspense fallback={<div style={{ height: '200px' }} />}>
-            <LazyFooter />
-          </Suspense>
+          <BrowserRouter>
+            <Header />
+            <Router />
+            <Suspense fallback={<div style={{ height: '200px' }} />}>
+              <LazyFooter />
+            </Suspense>
+          </BrowserRouter>
         </div>
 
       </WindowSizeProvider>
