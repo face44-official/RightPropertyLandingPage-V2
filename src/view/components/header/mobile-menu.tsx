@@ -48,7 +48,7 @@ const ElementItem = ({ children }: { children: React.ReactNode }) => {
 const NavigationItem = ({ children, href }: { children: React.ReactNode, href: string }) => {
     return (
         <Link
-            href={href}
+            to={href}
             className="">
             <ElementItem>{children}</ElementItem>
         </Link>
