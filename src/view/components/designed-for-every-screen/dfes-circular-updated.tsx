@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import {
     CONFIG,
@@ -22,7 +22,7 @@ import kioskIcon from "@/assets/v3/experience/dfes/icons/kiosk.svg";
 import ellipseIcon from "@/assets/v3/experience/dfes/icons/ellipse.svg";
 import { DesignForEveryScreenContent } from "./design-for-every-screen-content";
 import DfesZoomImages from "./dfes-zoom-images";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const environments = [
     { icon: kioskIcon, width: 6 },
@@ -489,7 +489,7 @@ const DfesCircularUpdated = () => {
         return tl;
     }
 
-    const masterTimeline = () => {
+    const masterTimeline = useCallback(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#dfes-content-container",
@@ -514,13 +514,13 @@ const DfesCircularUpdated = () => {
         tl.add(moveHorizontalAnimation()!, ">")
         masterTlRef.current = tl;
         return tl;
-    }
+    }, [playTextAnimation])
 
 
 
 
     // Resize handlers
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleResize = () => layout();
         const handleOrient = () => setTimeout(layout, 60);
 
@@ -533,8 +533,22 @@ const DfesCircularUpdated = () => {
         };
     }, [layout]);
 
+    // Initialize master timeline
+    useLayoutEffect(() => {
+        if (!stageRef.current || !nodesRef.current) return;
+        const all = ScrollTrigger.getAll();
+        all.forEach(trigger => {
+            trigger.refresh();
+        });
+        const ctx = gsap.context(() => {
+            masterTimeline();
+        });
+        
+        return () => ctx.revert();
+    }, [masterTimeline]);
+
     // Cleanup timeline on unmount
-    useEffect(() => {
+    useLayoutEffect(() => {
         return () => {
             if (masterTlRef.current) {
                 masterTlRef.current.kill();
@@ -545,7 +559,7 @@ const DfesCircularUpdated = () => {
 
     return (
         <div id="dfes-content-container" className="relative w-full  py-[10rem]   max-w-screen overflow-hidden">
-            <DfesZoomImages nextTimeline={masterTimeline} />
+            <DfesZoomImages />
             <DesignForEveryScreenContent currentImage={imageIndex} isVisible={isContentVisible} />
             <div className="absolute top-0 left-0 w-full h-full">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-general-sans font-semibold -tracking-[0.01em] text-60 leading-[130%] text-raisin-black">
@@ -574,7 +588,7 @@ const DfesCircularUpdated = () => {
                             <div ref={(el) => {
                                 if (el) imageRefs.current[i] = el;
 
-                            }} style={{ width: `${environments[i].width}rem` }} className={`h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
+                            }} style={{ width: `${environments[i].width}rem`, transform: "translate(-50%, -50%)" }} className={`h-auto absolute top-1/2 left-1/2`}>
                                 <img
 
                                     src={environments[i].icon}

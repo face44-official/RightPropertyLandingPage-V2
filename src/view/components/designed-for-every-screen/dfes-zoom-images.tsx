@@ -5,17 +5,13 @@ import kiosksVisual from "@/assets/v3/experience/dfes/kiosk.webp";
 import laptopsVisual from "@/assets/v3/experience/dfes/laptops.webp";
 import tvVisual from "@/assets/v3/experience/dfes/tv.webp";
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
-export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => gsap.core.Timeline }) {
-    // const lenis = useLenis();
-    const masterTl = useRef<gsap.core.Timeline>(null)
+export default function DfesZoomImages() {
     const tl = useRef<gsap.core.Timeline>(null)
-    useEffect(() => {
-        setTimeout(() => {
-            masterTl.current = gsap.timeline()
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
             tl.current = gsap.timeline({
-
                 scrollTrigger: {
                     trigger: "#dfes-content-container",
                     start: "center center",
@@ -62,17 +58,11 @@ export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => g
                 duration: 0.1,
                 ease: "power3.In"
             }), "1")
-            masterTl.current.add(tl.current, 0)
-            masterTl.current.add(nextTimeline(), '>')
-        }, 10);
-
-
+        })
         return () => {
-            masterTl.current?.kill();
-            tl.current?.kill();
+            ctx.revert()
         }
-
-    }, [nextTimeline])
+    }, [])
     return (
         <div className="absolute left-1/2 -translate-x-1/2 w-[1680px] min-h-[1000px] perspective-[100svh]">
 
