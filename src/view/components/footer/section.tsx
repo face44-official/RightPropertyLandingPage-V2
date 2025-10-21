@@ -2,9 +2,10 @@ import footerBg from "@/assets/v3/footer_bg.webp"
 import footerLevitate from "@/assets/v3/footer_levitate.webp"
 import mobileFooterBg from "@/assets/v3/mobile_right_footer.webp"
 import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.webp"
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import {gsap} from "gsap"
 import Logo from "../header/logo"
+import { useGSAP } from "@gsap/react"
 export default function FooterSection() {
     const $levitateItem = useRef<HTMLImageElement>(null)
     const $mobileFooterLevitate = useRef<HTMLImageElement>(null)
@@ -54,7 +55,7 @@ export default function FooterSection() {
             }
         }
     }
-    useEffect(() => {
+    useGSAP(() => {
         let tl: GSAPTimeline | null = null;
         const mm = gsap.matchMedia();
         mm.add('(min-width: 769px)', () => {
@@ -90,12 +91,7 @@ export default function FooterSection() {
                 ease: "power2.inOut"
             })
         })
-        return () => {
-            if (tl && tl.kill) {
-                tl.kill();
-            }
-        }
-    }, [])
+    })
     return <div ref={$footerContainer} className="rp-container relative z-[-1]">
         <div className="relative h-[45.3125rem] lg:h-auto lg:p-0 px-[5rem] pt-[7.125rem] lg:w-full">
             <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0] lg:hidden" alt="Right Property footer floating decoration element" />

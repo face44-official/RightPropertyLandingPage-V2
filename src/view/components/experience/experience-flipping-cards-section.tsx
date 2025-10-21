@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FlippingCardContent from "../revealing-items/flipping-card-content";
 import RevealItemsIndicator from "../revealing-items/reveal-items-indicator";
@@ -9,6 +9,7 @@ import revealItem2Overlay from "@/assets/v3/experience/experience_video_overlay_
 import storytelling from "@/assets/v3/experience/storytelling.webm"
 import behindthescenes from "@/assets/v3/experience/behind_the_scenes.webm"
 import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, Flip);
 
 const flippingCardContents = [
@@ -32,9 +33,8 @@ export default function ExperienceFlippingCardsSection() {
     const $cardSectionRef1 = useRef<HTMLDivElement>(null);
     const $cardSectionRef2 = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        let pinTl: GSAPTimeline | null = null;
-        pinTl = gsap.timeline({
+    useGSAP(() => {
+        return gsap.timeline({
             scrollTrigger: {
                 trigger: '#experience-flipping-cards',
                 start: "top top",
@@ -52,12 +52,7 @@ export default function ExperienceFlippingCardsSection() {
             },
         })
 
-        return () => {
-            if (pinTl && pinTl.kill) {
-                pinTl.kill();
-            }
-        };
-    }, [])
+    })
 
     return <section id="experience-flipping-cards" ref={$ref} className="relative h-[200vh]  lg:hidden" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)" }}>
         {/* <BlueGradient className="left-[11.375rem] top-[62.1875rem]" />
