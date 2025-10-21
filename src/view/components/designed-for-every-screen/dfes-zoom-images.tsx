@@ -12,6 +12,7 @@ export default function DfesZoomImages() {
     const tl = useRef<gsap.core.Timeline>(null)
     useGSAP(() => {
         console.log('initializing dfes zoom images');
+        setTimeout(() => {
         tl.current = gsap.timeline({
             scrollTrigger: {
                 trigger: "#dfes-content-container",
@@ -59,6 +60,7 @@ export default function DfesZoomImages() {
             duration: 0.1,
             ease: "power3.In"
         }), "1")
+        }, 1000)
     })
     return (
         <div className="absolute left-1/2 -translate-x-1/2 w-[1680px] min-h-[1000px] perspective-[100svh]">

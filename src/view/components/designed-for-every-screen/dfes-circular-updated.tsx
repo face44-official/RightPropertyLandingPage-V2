@@ -549,7 +549,7 @@ const DfesCircularUpdated = () => {
                     masterTlRef.current = ctx;
                 });
             });
-        }, 400); // Wait slightly longer than header's scroll reset (300ms)
+        }, 1000); // Wait slightly longer than header's scroll reset (300ms)
         
         return () => {
             clearTimeout(initTimer);
