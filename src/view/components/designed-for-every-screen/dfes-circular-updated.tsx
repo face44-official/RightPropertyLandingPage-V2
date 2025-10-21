@@ -287,7 +287,7 @@ const DfesCircularUpdated = () => {
         tl.call(() => {
             // Guard against unmounted component
             if (!wiresRef.current) return;
-            
+
             // Read positions just before animation starts
             const lineOrder = buildLineOrder();
             const centerIndex = lineOrder.indexOf(0);
@@ -349,7 +349,7 @@ const DfesCircularUpdated = () => {
         tl.eventCallback("onUpdate", () => {
             // Guard against unmounted component
             if (!wiresRef.current || !nodesRef.current) return;
-            
+
             if (wiresRef.current) {
                 updateArcsFollowingNodes(
                     wiresRef.current,
@@ -382,12 +382,12 @@ const DfesCircularUpdated = () => {
                 start: "center+=2 center",
                 end: "+=2000",
                 scrub: 0,
-                pinSpacing:true,
+                pinSpacing: true,
                 pin: true,
                 onUpdate: (self) => {
                     // Guard against unmounted component
                     if (!wiresRef.current || !nodesRef.current) return;
-                    
+
                     const currentProgress = self.progress;
                     const direction = self.direction;
                     const imageIndex = Math.floor((currentProgress * 0.9) * 6);
@@ -490,7 +490,7 @@ const DfesCircularUpdated = () => {
         return tl;
     }
 
-    
+
 
 
     // Resize handlers
@@ -510,18 +510,65 @@ const DfesCircularUpdated = () => {
     // Initialize master timeline
     useLayoutEffect(() => {
         if (!stageRef.current || !nodesRef.current) return;
-        
+
         // Wait for scroll position to settle after navigation
         const initTimer = setTimeout(() => {
-            
+
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     const all = ScrollTrigger.getAll();
                     all.forEach(trigger => {
                         trigger.refresh();
                     });
-                    
+
                     const ctx = gsap.context(() => {
+                        const firstTl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: "#dfes-content-container",
+                                start: "center center",
+                                end: "+=1000",
+                                scrub: 0,
+                                pin: true,
+                                invalidateOnRefresh: true,
+                                pinSpacing: true
+                            }
+                        })
+                        firstTl.to("#desktop-zoom-visual", {
+                            z: 600,
+                            duration: 1,
+                            ease: "power3.In"
+                        })
+                        firstTl.to("#tablet-zoom-visual", {
+                            z: 600,
+                            duration: 0.4,
+                            ease: "power3.In"
+                        }, "0")
+                        firstTl.to("#phone-zoom-visual", {
+                            z: 600,
+                            duration: 0.75,
+                            ease: "power3.In"
+                        }, "0.3")
+                        firstTl.to("#laptop-zoom-visual", {
+                            z: 1200,
+                            duration: 1,
+                            ease: "power3.In"
+                        }, "0.1")
+                        firstTl.to("#kiosk-zoom-visual", {
+                            z: 600,
+                            duration: 1,
+                            ease: "power3.In"
+                        }, "0.15")
+                        firstTl.to("#tv-zoom-visual", {
+                            z: 600,
+                            duration: 1,
+                            ease: "power3.In"
+                        }, "0.2")
+
+                        firstTl.add(gsap.to(".visual-element", {
+                            opacity: 0,
+                            duration: 0.1,
+                            ease: "power3.In"
+                        }), "1")
                         const tl = gsap.timeline({
                             scrollTrigger: {
                                 trigger: "#dfes-content-container",
@@ -530,7 +577,7 @@ const DfesCircularUpdated = () => {
                                 scrub: 0,
                                 pin: true,
                                 invalidateOnRefresh: true,
-                                pinSpacing:true,
+                                pinSpacing: true,
                                 onLeave: () => {
                                     setIsContentVisible(true)
                                 },
@@ -545,12 +592,12 @@ const DfesCircularUpdated = () => {
                         tl.add(switchLineMode()!, ">")
                         tl.add(moveHorizontalAnimation()!, ">")
                     });
-                    
+
                     masterTlRef.current = ctx;
                 });
             });
         }, 1000); // Wait slightly longer than header's scroll reset (300ms)
-        
+
         return () => {
             clearTimeout(initTimer);
             if (masterTlRef.current) {

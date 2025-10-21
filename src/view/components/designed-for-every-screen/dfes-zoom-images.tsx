@@ -4,64 +4,10 @@ import phonesVisual from "@/assets/v3/experience/dfes/phones.webp";
 import kiosksVisual from "@/assets/v3/experience/dfes/kiosk.webp";
 import laptopsVisual from "@/assets/v3/experience/dfes/laptops.webp";
 import tvVisual from "@/assets/v3/experience/dfes/tv.webp";
-import { gsap } from "gsap";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+
 
 export default function DfesZoomImages() {
-    const tl = useRef<gsap.core.Timeline>(null)
-    useGSAP(() => {
-        console.log('initializing dfes zoom images');
-        setTimeout(() => {
-        tl.current = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#dfes-content-container",
-                start: "center center",
-                end: "+=1000",
-                scrub: 0,
-                pin: true,
-                invalidateOnRefresh: true,
-                pinSpacing: true
-            }
-        })
-        tl.current.to("#desktop-zoom-visual", {
-            z: 600,
-            duration: 1,
-            ease: "power3.In"
-        })
-        tl.current.to("#tablet-zoom-visual", {
-            z: 600,
-            duration: 0.4,
-            ease: "power3.In"
-        }, "0")
-        tl.current.to("#phone-zoom-visual", {
-            z: 600,
-            duration: 0.75,
-            ease: "power3.In"
-        }, "0.3")
-        tl.current.to("#laptop-zoom-visual", {
-            z: 1200,
-            duration: 1,
-            ease: "power3.In"
-        }, "0.1")
-        tl.current.to("#kiosk-zoom-visual", {
-            z: 600,
-            duration: 1,
-            ease: "power3.In"
-        }, "0.15")
-        tl.current.to("#tv-zoom-visual", {
-            z: 600,
-            duration: 1,
-            ease: "power3.In"
-        }, "0.2")
-
-        tl.current.add(gsap.to(".visual-element", {
-            opacity: 0,
-            duration: 0.1,
-            ease: "power3.In"
-        }), "1")
-        }, 1000)
-    })
+ 
     return (
         <div className="absolute left-1/2 -translate-x-1/2 w-[1680px] min-h-[1000px] perspective-[100svh]">
 
