@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import BuiltForDevelopers from "./built-for-developers";
 import NavigationItems from "./navigation-items";
 import {gsap} from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from "./logo";
 import MobileMenu from "./mobile-menu";
 import HamburgerButton from "./hamburger-button";
@@ -61,10 +62,22 @@ export default function Header() {
         }
     }, [showMobileMenu, lenis]);
     useEffect(() => {
-        lenis?.scrollTo(0,{
-            duration:0,
-            lerp:0
+        // Kill all ScrollTriggers from previous page
+        ScrollTrigger.getAll().forEach(st => st.kill());
+        
+        // Refresh ScrollTrigger to recalculate scroll positions
+        ScrollTrigger.refresh();
+        
+        // Now scroll to top
+        lenis?.scrollTo(0, {
+            duration: 0,
+            lerp: 0,
+            immediate: true
         });
+        
+        if(location === '/presentation'){
+            console.log("presentation scroll");
+        }
     }, [location, lenis]);
     const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
 

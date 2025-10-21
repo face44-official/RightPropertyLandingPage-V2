@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { flippingCardContents } from "./flipping-card-contents";
 import FlippingCardContent from "./flipping-card-content";
 import RevealItemsIndicator from "./reveal-items-indicator";
-import {gsap} from "gsap";
+import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 import revealItem1Overlay from "@/assets/v3/reveal_item_1_overlay.webp"
 import revealItem2Overlay from "@/assets/v3/reveal_item_2_overlay.webp"
@@ -40,14 +40,7 @@ export default function BackToBackReveal() {
     const $cardSectionRef4 = useRef<HTMLDivElement>(null);
     const $cardSectionRef5 = useRef<HTMLDivElement>(null);
     const $cardSectionRef6 = useRef<HTMLDivElement>(null);
-    const refList = [
-        $cardSectionRef1,
-        $cardSectionRef2,
-        $cardSectionRef3,
-        $cardSectionRef4,
-        $cardSectionRef5,
-        $cardSectionRef6
-    ];
+ 
 
     useEffect(() => {
         if ($direction.current !== null) {
@@ -55,51 +48,63 @@ export default function BackToBackReveal() {
         }
     }, [currentItem])
     useEffect(() => {
-        const pinTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '#why-right-property',
-                start: "top top",
-                pin: $pinRef.current,
-                end: "bottom bottom",
-                scrub: true,
-                id: "back-to-back-reveal",
-            },
-        })
-        const tlList = Array.from({ length: 6 }, (_, index) => {
-            const use_index = index + 0;
-            return gsap.timeline({
+        let pinTl: GSAPTimeline | null = null;
+        let tlList: GSAPTimeline[] = [];
+        const refList = [
+            $cardSectionRef1,
+            $cardSectionRef2,
+            $cardSectionRef3,
+            $cardSectionRef4,
+            $cardSectionRef5,
+            $cardSectionRef6
+        ];
+        setTimeout(() => {
+            pinTl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: refList[use_index].current,
-                    start: "top top+=25%",
+                    trigger: '#why-right-property',
+                    start: "top top",
+                    pin: $pinRef.current,
                     end: "bottom bottom",
-                    id: `back-to-back-reveal-${use_index}`,
-                    refreshPriority: 5 + index,
                     scrub: true,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1,
-                    onEnter: (self) => {
-                        $direction.current = self.direction as 1 | -1;
-                        setCurrentItem(use_index);
-                        $previousIndexRef.current = index;
-                    },
-                    onLeaveBack: () => {
-                        if (use_index == 0) return;
-                        $direction.current = -1;
-                        setCurrentItem(use_index - 1);
-                        $previousIndexRef.current = index;
-                    },
-                    // onUpdate: (self) => {
-                    //     console.log(clampedIndex);
-                    //     if (clampedIndex !== $previousIndexRef.current) {
-                    //         console.log(progress)
-                    //         $direction.current = self.direction as 1 | -1;
-                    //         setCurrentItem(clampedIndex);
+                    id: "back-to-back-reveal",
+                },
+            })
+            tlList = Array.from({ length: 6 }, (_, index) => {
+                const use_index = index + 0;
+                return gsap.timeline({
+                    scrollTrigger: {
+                        trigger: refList[use_index].current,
+                        start: "top top+=25%",
+                        end: "bottom bottom",
+                        id: `back-to-back-reveal-${use_index}`,
+                        refreshPriority: 5 + index,
+                        scrub: true,
+                        invalidateOnRefresh: true,
+                        anticipatePin: 1,
+                        onEnter: (self) => {
+                            $direction.current = self.direction as 1 | -1;
+                            setCurrentItem(use_index);
+                            $previousIndexRef.current = index;
+                        },
+                        onLeaveBack: () => {
+                            if (use_index == 0) return;
+                            $direction.current = -1;
+                            setCurrentItem(use_index - 1);
+                            $previousIndexRef.current = index;
+                        },
+                        // onUpdate: (self) => {
+                        //     console.log(clampedIndex);
+                        //     if (clampedIndex !== $previousIndexRef.current) {
+                        //         console.log(progress)
+                        //         $direction.current = self.direction as 1 | -1;
+                        //         setCurrentItem(clampedIndex);
 
-                    //     }
-                    // }
-                }
-            });
-        })
+                        //     }
+                        // }
+                    }
+                });
+            })
+        }, 100);
 
 
         return () => {
@@ -159,7 +164,7 @@ export default function BackToBackReveal() {
                 <BlueGradient />
             </VideoContainer>
             <VideoContainer sectionRef={$cardSectionRef5} videoUrl={emailMarketingVideo}>
-            <BlueGradient />
+                <BlueGradient />
 
                 <div className="absolute w-[105.0625rem] h-[93.125rem] -left-[57.9375rem] -top-[30.125rem] z-[-1]">
                     <img src={revealItem5Road} className="h-full w-full" />

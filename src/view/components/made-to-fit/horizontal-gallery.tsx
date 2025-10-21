@@ -1,5 +1,5 @@
-import { useCallback, useLayoutEffect, useRef } from "react"
-import {gsap} from "gsap";
+import { useCallback, useEffect,  useRef } from "react"
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +24,7 @@ export default function HorizontalGallery({
         const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
 
         if (!inner || items.length === 0) return;
-        const mobileOffsetStep = window.innerWidth/12;
+        const mobileOffsetStep = window.innerWidth / 12;
         const mobileElementWidth = window.innerWidth * 0.68;
         const offsetStep = window.innerWidth <= 768 ? mobileOffsetStep : 96; // pixels each one starts lower than the last
         const gapStep = window.innerWidth <= 768 ? 60 : window.innerWidth * 0.053; // gap between items
@@ -62,9 +62,11 @@ export default function HorizontalGallery({
             duration: totalDuration
         }, 'start+=0');
     }, [galleryInnerSelector, pinId, pinSelector])
-    useLayoutEffect(() => {
-        // Wait for DOM to be ready
-        horizontalPin();
+    useEffect(() => {
+        setTimeout(() => {
+            // Wait for DOM to be ready
+            horizontalPin();
+        }, 100);
         return () => {
 
             // Clean up any ScrollTriggers for this component
@@ -74,7 +76,7 @@ export default function HorizontalGallery({
             }
         };
     }, [images, horizontalPin])
-    useLayoutEffect(() => {
+    useEffect(() => {
         const handleResize = () => {
             // Debounce resize to avoid excessive recalculations
             horizontalPinTl.current?.scrollTrigger?.refresh();
