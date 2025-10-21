@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FlippingCardContent from "../revealing-items/flipping-card-content";
 import RevealItemsIndicator from "../revealing-items/reveal-items-indicator";
-import {gsap} from "gsap";
+import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 import revealItem1Overlay from "@/assets/v3/experience/experience_video_overlay_1.webp"
 import revealItem2Overlay from "@/assets/v3/experience/experience_video_overlay_2.webp"
@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger, Flip);
 
 const flippingCardContents = [
     {
-        title: "Storytelling  that Sells",
+        title: "Storytelling that Sells",
         description: "Forget static presentations. With Right Property, salespeople guide each conversation fluidly—opening site plans, maps, galleries, unit details, videos, and even virtual tours at the right moment. It’s non-linear, intuitive, and powerful.",
         useButton: false,
     },
@@ -29,16 +29,12 @@ export default function ExperienceFlippingCardsSection() {
     const $cardRef = useRef<HTMLDivElement>(null);
     const cardContents = flippingCardContents;
     const [currentItem, setCurrentItem] = useState(0);
-    const $flipTl = useRef<GSAPTimeline>(null);
     const $cardSectionRef1 = useRef<HTMLDivElement>(null);
     const $cardSectionRef2 = useRef<HTMLDivElement>(null);
-    const refList = [
-        $cardSectionRef1,
-        $cardSectionRef2,
-    ];
 
     useEffect(() => {
-        gsap.timeline({
+        let pinTl: GSAPTimeline | null = null;
+        pinTl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#experience-flipping-cards',
                 start: "top top",
@@ -46,42 +42,20 @@ export default function ExperienceFlippingCardsSection() {
                 end: "bottom bottom",
                 scrub: true,
                 id: "experience-flipping-cards",
+                onUpdate: (self) => {
+                    console.log(self.progress);
+                    if (self.progress > 0.5) {
+                        setCurrentItem(1);
+                    } else {
+                        setCurrentItem(0);
+                    }
+                },
             },
         })
-        const tlList = Array.from({ length: 2 }, (_, index) => {
-            const use_index = index + 0;
-            return gsap.timeline({
-                scrollTrigger: {
-                    trigger: refList[use_index].current,
-                    start: "top top+=25%",
-                    end: "bottom bottom",
-                    id: `experience-flipping-cards-${use_index}`,
-                    refreshPriority: 2,
-                    scrub: true,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1,
-                    pinSpacing: true,
-                    onEnter: () => {
-                        setCurrentItem(use_index);
-                    },
-                    onLeaveBack: () => {
-                        if (use_index == 0) return;
-                        setCurrentItem(use_index - 1);
-                    },
-                }
-            });
-        })
-
 
         return () => {
-            // Clean up timeline and ScrollTrigger
-            tlList.forEach(tl => {
-                tl.kill();
-            });
-            // Clear animation queue
-            // Clean up any remaining flip timelines
-            if ($flipTl.current) {
-                $flipTl.current.kill();
+            if (pinTl && pinTl.kill) {
+                pinTl.kill();
             }
         };
     }, [])
@@ -94,12 +68,12 @@ export default function ExperienceFlippingCardsSection() {
             <div ref={$pinRef} className="absolute top-[215px] left-[109px]" >
                 <div ref={$cardRef} className="card quickflip relative w-[48.9375rem] h-[561px]" style={{ perspective: "800px", transformStyle: "preserve-3d" }}>
                     <div className="qf-card card-front relative top-0 left-0 w-full h-full backface-hidden transform-3d origin-center">
-                        <FlippingCardContent {...cardContents[currentItem]} />
+                        <FlippingCardContent key={currentItem} {...cardContents[currentItem]} />
                     </div>
                 </div>
 
                 <div className="absolute top-[7.8125rem] -left-[4.375rem]">
-                    <RevealItemsIndicator items={cardContents.length} currentItem={currentItem} />
+                    <RevealItemsIndicator key={currentItem} items={cardContents.length} currentItem={currentItem} />
                 </div>
             </div>
         </div>

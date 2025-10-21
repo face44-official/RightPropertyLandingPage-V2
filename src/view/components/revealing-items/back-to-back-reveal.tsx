@@ -55,7 +55,7 @@ export default function BackToBackReveal() {
         }
     }, [currentItem])
     useEffect(() => {
-        gsap.timeline({
+        const pinTl = gsap.timeline({
             scrollTrigger: {
                 trigger: '#why-right-property',
                 start: "top top",
@@ -114,6 +114,9 @@ export default function BackToBackReveal() {
             if ($flipTl.current) {
                 $flipTl.current.kill();
             }
+            if (pinTl) {
+                pinTl.kill();
+            }
         };
     }, [])
     return <section id="why-right-property" ref={$ref} className="relative h-[600vh] mt-[13.4375rem] lg:hidden content-visibility-auto" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)" }}>
@@ -121,7 +124,7 @@ export default function BackToBackReveal() {
             <div ref={$pinRef} className="absolute top-[215px] left-[109px]" >
                 <div ref={$cardRef} className="card quickflip relative w-[48.9375rem] h-[561px]" style={{ perspective: "800px", transformStyle: "preserve-3d" }}>
                     <div className="qf-card card-front relative top-0 left-0 w-full h-full backface-hidden transform-3d origin-center">
-                        <FlippingCardContent {...cardContents[currentItem]} />
+                        <FlippingCardContent key={`flipping-card-content-${currentItem}`} {...cardContents[currentItem]} />
                     </div>
                 </div>
 

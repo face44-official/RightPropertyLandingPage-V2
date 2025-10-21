@@ -8,7 +8,7 @@ import {gsap} from "gsap";
 export default function ExperienceHeroVideos() {
     const leftImageRef = useRef<HTMLImageElement>(null);
     const rightImageRef = useRef<HTMLImageElement>(null);
-
+    const $isAnimating = useRef(false);
     const setInitialPositions = () => {
         if (window.innerWidth < 769) {
             return;
@@ -21,11 +21,15 @@ export default function ExperienceHeroVideos() {
     useEffect(() => {
         setInitialPositions();
     }, []);
+    const setIsAnimating = (value: boolean) => {
+        $isAnimating.current = value;
+    }
     const highlightLeftImage = () => {
         if (window.innerWidth < 769) {
             return;
         }
-        if (leftImageRef.current) {
+     
+        if (leftImageRef.current && !$isAnimating.current) {
             gsap.to(leftImageRef.current, {
                 left: '50%',
                 transform: 'translateX(-50%)',
@@ -33,8 +37,17 @@ export default function ExperienceHeroVideos() {
                 ease: "power2.inOut",
                 zIndex: 10,
                 scale: 1,
+                onStart: () => {
+                    setIsAnimating(true);
+                },
+                onComplete: () => {
+                    setIsAnimating(false);
+                }
             })
             gsap.set(rightImageRef.current, { zIndex: 0 })
+        }
+        if($isAnimating.current) {
+            return;
         }
         gsap.to(rightImageRef.current, {
             scale: 0.65,
@@ -47,17 +60,27 @@ export default function ExperienceHeroVideos() {
         if (window.innerWidth < 769) {
             return;
         }
-        if (rightImageRef.current) {
+        
+        if (rightImageRef.current && !$isAnimating.current) {
             gsap.to(rightImageRef.current, {
                 right: '50%',
                 transform: 'translateX(50%)',
                 duration: 1,
-                scale: 1.15,
+                scale: 1,
                 ease: "power2.inOut",
                 zIndex: 10,
+                onStart: () => {
+                    setIsAnimating(true);
+                },
+                onComplete: () => {
+                    setIsAnimating(false);
+                }
             })
             gsap.set(leftImageRef.current, { zIndex: 0 })
 
+        }
+        if($isAnimating.current) {
+            return;
         }
         gsap.to(leftImageRef.current, {
             scale: 0.65,
@@ -73,7 +96,7 @@ export default function ExperienceHeroVideos() {
         highlightLeftImage();
     }
     const leftOnMouseLeave = () => {
-        if (window.innerWidth < 769) {
+        if (window.innerWidth < 769 ) {
             return;
         }
         gsap.to(leftImageRef.current, {
@@ -95,6 +118,7 @@ export default function ExperienceHeroVideos() {
         if (window.innerWidth < 769) {
             return;
         }
+        console.log('rightOnMouseLeave');
         gsap.to(rightImageRef.current, {
             right: '-7.8125rem',
             transform: 'translateX(0%)',
@@ -123,7 +147,7 @@ export default function ExperienceHeroVideos() {
                     <div className="relative">
                         <video
                             src={surface}
-                            className={`absolute w-[55rem] lg:w-[88%] top-[5rem] lg:top-[13%] left-[3.5rem] lg:left-[6%] z-[-1]  h-auto  `}
+                            className={`absolute w-[55.4rem] lg:w-[88%] top-[5rem] lg:top-[13%] left-[3.5rem] lg:left-[6%] z-[-1]  h-auto  `}
                             width="1200"
                             height="800"
                             autoPlay
@@ -143,7 +167,7 @@ export default function ExperienceHeroVideos() {
                     <div className="relative">
                         <video
                             src={space}
-                            className={`absolute w-[55rem] lg:w-[88%] top-[5rem] lg:top-[13%] left-[3.5rem] lg:left-[6%] z-[-1]  h-auto `}
+                            className={`absolute w-[55.4rem] lg:w-[88%] top-[5rem] lg:top-[13%] left-[3.5rem] lg:left-[6%] z-[-1]  h-auto `}
                             width="1200"
                             height="800"
                             autoPlay

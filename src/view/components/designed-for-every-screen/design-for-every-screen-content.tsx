@@ -37,7 +37,7 @@ export const DesignForEveryScreenContent = ({ currentImage, isVisible }: { curre
         });
     }, [currentImageSrc, isVisible])
     return (
-        <div className="flex gap-[4rem]">
+        <div className="flex gap-[4rem] rp-container py-[10rem]">
             <div ref={$contentRef} className="p-[5rem] opacity-0">
                 <div className="mb-[2rem] w-[43.3125rem] h-[31.25rem]">
                     <div className="font-general-sans font-semibold text-40 tracking-[0em] leading-[130%] text-raisin-black">

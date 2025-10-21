@@ -25,13 +25,13 @@ import DfesZoomImages from "./dfes-zoom-images";
 
 
 const environments = [
-    { icon: kioskIcon,width:6},
-    { icon: phoneIcon,width:5 },
-    { icon: tvIcon,width:10},
-    { icon: laptopIcon, width:12},
-    { icon: desktopIcon,width:9 },
-    { icon: tabletIcon,width:6 },
-    { icon: desktopIcon, width:9},
+    { icon: kioskIcon, width: 6 },
+    { icon: phoneIcon, width: 5 },
+    { icon: tvIcon, width: 10 },
+    { icon: laptopIcon, width: 12 },
+    { icon: desktopIcon, width: 9 },
+    { icon: tabletIcon, width: 6 },
+    { icon: desktopIcon, width: 9 },
 
 ];
 
@@ -66,11 +66,11 @@ const DfesCircularUpdated = () => {
         return { cx, cy, r, start, step };
     };
 
- 
+
 
     const playTextAnimation = useCallback(() => {
         const mainTl = gsap.timeline()
-    
+
         const textsFadeOut = gsap.timeline({
             duration: 1,
         })
@@ -98,8 +98,8 @@ const DfesCircularUpdated = () => {
             ease: "power3.Out"
         }, "<")
         tl.add(textsFadeOut, 1)
-        mainTl.add(tl,0)
-        mainTl.add(textsFadeOut,1)
+        mainTl.add(tl, 0)
+        mainTl.add(textsFadeOut, 1)
         return mainTl;
     }, [])
 
@@ -109,7 +109,7 @@ const DfesCircularUpdated = () => {
         hasAnimated.current = true;
 
         const tl = gsap.timeline({
-         
+
         });
 
         // Calculate center based on initial size
@@ -271,34 +271,34 @@ const DfesCircularUpdated = () => {
     // Switch to line mode animation
     const switchLineMode = () => {
         if (!stageRef.current || !wiresRef.current) return;
-        
+
         const mainTl = gsap.timeline({
-        
+
         });
         const tl = gsap.timeline({ delay: 0.5 });
-        
+
         // Defer position calculations until just before animation starts
-        const targetPositions:{index:number,x:number,y:number}[] = [];
+        const targetPositions: { index: number, x: number, y: number }[] = [];
         let gap = 0;
         const curvatureState = { factor: 1 };
-        
+
         tl.call(() => {
             // Read positions just before animation starts
             const lineOrder = buildLineOrder();
             const centerIndex = lineOrder.indexOf(0);
             const leftAdjacentNodeIndex = lineOrder[centerIndex - 1];
             const rightAdjacentNodeIndex = lineOrder[centerIndex + 1];
-            
+
             const leftAdjacentNode = nodeRefs.current[leftAdjacentNodeIndex];
             const rightAdjacentNode = nodeRefs.current[rightAdjacentNodeIndex];
-            
+
             if (!leftAdjacentNode || !rightAdjacentNode) return;
-            
+
             const leftAdjacentX = gsap.getProperty(leftAdjacentNode, "x") as number;
             const leftAdjacentY = gsap.getProperty(leftAdjacentNode, "y") as number;
             const rightAdjacentX = gsap.getProperty(rightAdjacentNode, "x") as number;
             const rightAdjacentY = gsap.getProperty(rightAdjacentNode, "y") as number;
-            
+
             const result = calculateLinePositions(
                 leftAdjacentX,
                 leftAdjacentY,
@@ -306,15 +306,15 @@ const DfesCircularUpdated = () => {
                 rightAdjacentY,
                 centerIndex
             );
-            
+
             result.targetPositions.forEach(target => {
                 targetPositions.push(target);
             });
             gap = result.gap;
-            
+
             arcDirections.current = calculateArcDirections(targetPositions, gap, wiresRef.current!);
         });
-        
+
         // Animate nodes to their target positions
         nodeRefs.current.forEach((node, nodeIndex) => {
             if (!node) return;
@@ -332,14 +332,14 @@ const DfesCircularUpdated = () => {
                 ease: "power2.inOut"
             }, 0.001);
         });
-        
+
         // Animate curvature factor
         tl.to(curvatureState, {
             factor: 0,
             duration: 0.5,
             ease: "power2.in",
         }, 0.001);
-        
+
         // Update arcs once per frame
         tl.eventCallback("onUpdate", () => {
             if (wiresRef.current) {
@@ -352,7 +352,7 @@ const DfesCircularUpdated = () => {
                 );
             }
         });
-        
+
         mainTl.add(tl, 0);
         return mainTl;
     }
@@ -374,9 +374,9 @@ const DfesCircularUpdated = () => {
                 start: "center+=2 center",
                 end: "+=2000",
                 scrub: 0,
-                
+                pinSpacing:true,
                 pin: true,
-                onUpdate : (self) => {
+                onUpdate: (self) => {
                     const currentProgress = self.progress;
                     const direction = self.direction;
                     const imageIndex = Math.floor((currentProgress * 0.9) * 6);
@@ -391,20 +391,20 @@ const DfesCircularUpdated = () => {
                             clonedNodes.current
                         );
                     }
-                    
+
                     // If scrolling backwards and clones exist
                     if (direction === -1 && currentProgress === 0 && clonedNodes.current.length > 0) {
                         // Remove extended wires
                         if (wiresRef.current) {
                             removeExtendedWires(wiresRef.current, clonedNodes.current.length);
                         }
-                        
+
                         // Remove clones
                         clonedNodes.current.forEach(clone => {
                             clone.remove();
                         });
                         clonedNodes.current = [];
-                        
+
                         // Remove extended arc directions
                         arcDirections.current = arcDirections.current.slice(0, CONFIG.nodeCount);
                     }
@@ -412,48 +412,48 @@ const DfesCircularUpdated = () => {
                     else if (direction === 1 && currentProgress > 0 && clonedNodes.current.length === 0 && nodesRef.current) {
                         const lineOrder = buildLineOrder(); // [4,5,6,0,1,2,3]
                         const firstTwoIndices = lineOrder.slice(0, 2); // [4, 5]
-                        
+
                         // Calculate gap between nodes
                         const firstNode = nodeRefs.current[lineOrder[0]];
                         const secondNode = nodeRefs.current[lineOrder[1]];
                         const firstX = gsap.getProperty(firstNode, "x") as number;
                         const secondX = gsap.getProperty(secondNode, "x") as number;
                         const gap = secondX - firstX;
-                        
+
                         firstTwoIndices.forEach((nodeIndex, idx) => {
                             const originalNode = nodeRefs.current[nodeIndex];
                             if (!originalNode) return;
-                            
+
                             const clone = originalNode.cloneNode(true) as HTMLDivElement;
                             clone.style.position = 'absolute';
-                            
+
                             // Get the last node's position
                             const lastNodeIndex = lineOrder[lineOrder.length - 1];
                             const lastNode = nodeRefs.current[lastNodeIndex];
                             const lastNodeX = gsap.getProperty(lastNode, "x") as number;
                             const lastNodeY = gsap.getProperty(lastNode, "y") as number;
-                            
+
                             // Calculate position for clone (continue the line)
                             const cloneOffset = (idx + 1) * gap;
                             gsap.set(clone, {
                                 x: lastNodeX + cloneOffset,
                                 y: lastNodeY
                             });
-                            
+
                             nodesRef.current?.appendChild(clone);
                             clonedNodes.current.push(clone);
                         });
-                        
+
                         // Extend wires for cloned nodes
                         if (wiresRef.current) {
                             extendWiresForClones(wiresRef.current, firstTwoIndices.length);
                         }
-                        
+
                         // Add arc directions for new connections (all downward = -1 for horizontal lines)
                         for (let i = 0; i < firstTwoIndices.length; i++) {
                             arcDirections.current.push(-1);
                         }
-                        
+
                         // Immediately update wires to connect to new clones
                         if (wiresRef.current) {
                             updateArcsFollowingNodes(
@@ -468,14 +468,14 @@ const DfesCircularUpdated = () => {
                 },
             }
         })
-        
+
         tl.to(stageRef.current, {
             x: () => {
                 lineWidth = wiresRef.current?.querySelector("path")?.getTotalLength() ?? 0;
                 return -(lineWidth * 9.5);
             },
             ease: "none"
-        },0)
+        }, 0)
         return tl;
     }
 
@@ -487,20 +487,21 @@ const DfesCircularUpdated = () => {
                 end: "+=2000",
                 scrub: 0,
                 pin: true,
-
-                onLeave :()=>{
+                invalidateOnRefresh: true,
+                pinSpacing:true,
+                onLeave: () => {
                     setIsContentVisible(true)
                 },
-                onEnterBack : () =>{
+                onEnterBack: () => {
                     setIsContentVisible(false)
                 }
             }
         })
         tl.add(playTextAnimation())
-        tl.add(playEntranceAnimation()!,">-=1")
-        tl.add(playZoomAnimation()!,">")
-        tl.add(switchLineMode()!,">")
-        tl.add(moveHorizontalAnimation()!,">")
+        tl.add(playEntranceAnimation()!, ">-=1")
+        tl.add(playZoomAnimation()!, ">")
+        tl.add(switchLineMode()!, ">")
+        tl.add(moveHorizontalAnimation()!, ">")
         return tl;
     }
 
@@ -520,14 +521,17 @@ const DfesCircularUpdated = () => {
             window.removeEventListener("orientationchange", handleOrient);
         };
     }, [layout]);
- 
+
     return (
-        <div id="dfes-content-container" className="relative w-full py-[10rem] max-w-screen overflow-hidden">
+        <div id="dfes-content-container" className="relative w-full  py-[10rem]   max-w-screen overflow-hidden">
             <DfesZoomImages nextTimeline={masterTimeline} />
             <DesignForEveryScreenContent currentImage={imageIndex} isVisible={isContentVisible} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-general-sans font-semibold -tracking-[0.01em] text-60 leading-[130%] text-raisin-black">
-                <div className="title-first-group inline-block">Designed for </div>{" "}<div className="inline-block title-second-group">Every Screen</div>
+            <div className="absolute top-0 left-0 w-full h-full">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-general-sans font-semibold -tracking-[0.01em] text-60 leading-[130%] text-raisin-black">
+                    <div className="title-first-group inline-block">Designed for </div>{" "}<div className="inline-block title-second-group">Every Screen</div>
+                </div>
             </div>
+
             <div
                 ref={stageRef}
                 className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-xl opacity-0"
@@ -548,8 +552,8 @@ const DfesCircularUpdated = () => {
                         >
                             <div ref={(el) => {
                                 if (el) imageRefs.current[i] = el;
-                                
-                            }} style={{width:`${environments[i].width}rem`}} className={`h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
+
+                            }} style={{ width: `${environments[i].width}rem` }} className={`h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
                                 <img
 
                                     src={environments[i].icon}

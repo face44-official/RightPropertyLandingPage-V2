@@ -55,9 +55,10 @@ export default function FooterSection() {
         }
     }
     useEffect(() => {
+        let tl: GSAPTimeline | null = null;
         const mm = gsap.matchMedia();
         mm.add('(min-width: 769px)', () => {
-            const tl = gsap.timeline({
+            tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: $footerContainer.current,
                     start: "bottom-=15% bottom",
@@ -74,7 +75,7 @@ export default function FooterSection() {
             })
         })
         mm.add('(max-width: 768px)', () => {
-            const tl = gsap.timeline({
+            tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: $footerContainer.current,
                     start: "bottom-=20% bottom",
@@ -89,6 +90,11 @@ export default function FooterSection() {
                 ease: "power2.inOut"
             })
         })
+        return () => {
+            if (tl && tl.kill) {
+                tl.kill();
+            }
+        }
     }, [])
     return <div ref={$footerContainer} className="rp-container relative z-[-1]">
         <div className="relative h-[45.3125rem] lg:h-auto lg:p-0 px-[5rem] pt-[7.125rem] lg:w-full">

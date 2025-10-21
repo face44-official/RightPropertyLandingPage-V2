@@ -87,6 +87,11 @@ export default function EasyOnboardingSection() {
                 startMotionPath()
             }, 300)
         })
+        return () => {
+                if (motionTimeline.current) {
+                motionTimeline.current.kill()
+            }
+        }
     }, [startMotionPath])
     return (
         <section id="easy-onboarding" className="content-visibility-auto">

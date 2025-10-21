@@ -112,6 +112,11 @@ export default function SimpleSetupSection() {
                 startMotionPath()
             }, 300)
         })
+        return () => {
+            if (motionTimeline.current) {
+                motionTimeline.current.kill()
+            }
+        }
     }, [startMotionPath])
     return (
         <section id="simple-setup" className="content-visibility-auto" aria-label="Simple setup process for Right Property platform">

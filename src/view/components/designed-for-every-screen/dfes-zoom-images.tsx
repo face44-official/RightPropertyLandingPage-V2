@@ -5,69 +5,77 @@ import kiosksVisual from "@/assets/v3/experience/dfes/kiosk.webp";
 import laptopsVisual from "@/assets/v3/experience/dfes/laptops.webp";
 import tvVisual from "@/assets/v3/experience/dfes/tv.webp";
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => gsap.core.Timeline }) {
-    // const lenis = useLenis();
+        // const lenis = useLenis();
+        const masterTl = useRef<gsap.core.Timeline>(null)
+        const tl = useRef<gsap.core.Timeline>(null)
     useEffect(() => {
-        const masterTl = gsap.timeline()
-        const tl = gsap.timeline({
+        setTimeout(() => {
+            masterTl.current = gsap.timeline()
+            tl.current = gsap.timeline({
 
-            scrollTrigger: {
-                trigger: "#dfes-content-container",
-                start: "center center",
-                end: "+=1000",
-                scrub: 0,
-                pin: true,
-            }
-        })
-        tl.to("#desktop-zoom-visual", {
-            z: 600,
-            duration: 1,
-            ease: "power3.In"
-        })
-        tl.to("#tablet-zoom-visual", {
-            z: 600,
-            duration: 0.4,
-            ease: "power3.In"
-        }, "0")
-        tl.to("#phone-zoom-visual", {
-            z: 600,
-            duration: 0.75,
-            ease: "power3.In"
-        }, "0.3")
-        tl.to("#laptop-zoom-visual", {
-            z: 1200,
-            duration: 1,
-            ease: "power3.In"
-        }, "0.1")
-        tl.to("#kiosk-zoom-visual", {
-            z: 600,
-            duration: 1,
-            ease: "power3.In"
-        }, "0.15")
-        tl.to("#tv-zoom-visual", {
-            z: 600,
-            duration: 1,
-            ease: "power3.In"
-        }, "0.2")
+                scrollTrigger: {
+                    trigger: "#dfes-content-container",
+                    start: "center center",
+                    end: "+=1000",
+                    scrub: 0,
+                    pin: true,
+                    invalidateOnRefresh: true,
+                    pinSpacing:true
+                }
+            })
+            tl.current.to("#desktop-zoom-visual", {
+                z: 600,
+                duration: 1,
+                ease: "power3.In"
+            })
+            tl.current.to("#tablet-zoom-visual", {
+                z: 600,
+                duration: 0.4,
+                ease: "power3.In"
+            }, "0")
+            tl.current.to("#phone-zoom-visual", {
+                z: 600,
+                duration: 0.75,
+                ease: "power3.In"
+            }, "0.3")
+            tl.current.to("#laptop-zoom-visual", {
+                z: 1200,
+                duration: 1,
+                ease: "power3.In"
+            }, "0.1")
+            tl.current.to("#kiosk-zoom-visual", {
+                z: 600,
+                duration: 1,
+                ease: "power3.In"
+            }, "0.15")
+            tl.current.to("#tv-zoom-visual", {
+                z: 600,
+                duration: 1,
+                ease: "power3.In"
+            }, "0.2")
 
-        tl.add(gsap.to(".visual-element", {
-            opacity: 0,
-            duration: 0.1,
-            ease: "power3.In"
-        }), "1")
-        masterTl.add(tl, 0)
-        masterTl.add(nextTimeline(), '>')
+            tl.current.add(gsap.to(".visual-element", {
+                opacity: 0,
+                duration: 0.1,
+                ease: "power3.In"
+            }), "1")
+            masterTl.current.add(tl.current, 0)
+            masterTl.current.add(nextTimeline(), '>')
+        }, 300);
+
 
         return () => {
-            masterTl.kill();
-            tl.kill();
+            masterTl.current?.kill();
+            tl.current?.kill();
         };
 
     }, [nextTimeline])
     return (
-        <div className="absolute left-1/2 -translate-x-1/2 w-[1680px] h-screen perspective-[100svh]">
+        <div className="absolute left-1/2 -translate-x-1/2 w-[1680px] min-h-[1000px] perspective-[100svh]">
+            
             <img id="desktop-zoom-visual" className="visual-element transform-3d absolute left-[17.5rem] top-[41.4375rem] w-[14.68rem] h-auto object-contain" src={desktopVisual} alt="desktopVisual" />
             <img id="tablet-zoom-visual" className="visual-element absolute left-[56.25rem] top-[9.75rem] w-[13rem] h-auto object-contain " src={tabletsVisual} alt="tabletsVisual" />
             <img id="phone-zoom-visual" className="visual-element transform-3d absolute top-[37.5rem] left-[60.4375rem] w-[31.125rem] h-auto object-contain" src={phonesVisual} alt="phonesVisual" />

@@ -242,6 +242,7 @@ export const useMotionPath = ({
             if (inertiaAnimation.current) {
                 inertiaAnimation.current.kill()
                 inertiaAnimation.current = null
+                motionTimeline.current?.kill()
             }
         }
     }, [handleMouseMove, startMotionPath])
