@@ -1,9 +1,9 @@
 import Lenis from "lenis";
-import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 export default function GSAP() {
-    useLayoutEffect(() => {
+    useEffect(() => {
         // Initialize a new Lenis instance for smooth scrolling
         const lenis = new Lenis();
 
