@@ -46,7 +46,8 @@ const DfesCircularUpdated = () => {
     const hasAnimated = useRef(false);
     const clonedNodes = useRef<HTMLDivElement[]>([]);
     const [imageIndex, setImageIndex] = useState(0);
-    const masterTlRef = useRef<gsap.core.Timeline | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const masterTlRef = useRef<any>(null);
 
     // Store the perpendicular direction for each arc (1 for counterclockwise, -1 for clockwise)
     // This ensures curves don't flip during animation
@@ -69,7 +70,7 @@ const DfesCircularUpdated = () => {
 
 
 
-    const playTextAnimation = useCallback(() => {
+    const playTextAnimation = () => {
         const mainTl = gsap.timeline()
 
         const textsFadeOut = gsap.timeline({
@@ -102,7 +103,7 @@ const DfesCircularUpdated = () => {
         mainTl.add(tl, 0)
         mainTl.add(textsFadeOut, 1)
         return mainTl;
-    }, [])
+    }
 
     // Entrance animation
     const playEntranceAnimation = () => {
@@ -489,34 +490,7 @@ const DfesCircularUpdated = () => {
         return tl;
     }
 
-    const masterTimeline = useCallback(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#dfes-content-container",
-                start: "center+=1 center",
-                end: "+=2000",
-                scrub: 0,
-                pin: true,
-                invalidateOnRefresh: true,
-                pinSpacing:true,
-                onLeave: () => {
-                    setIsContentVisible(true)
-                },
-                onEnterBack: () => {
-                    setIsContentVisible(false)
-                }
-            }
-        })
-        tl.add(playTextAnimation())
-        tl.add(playEntranceAnimation()!, ">-=1")
-        tl.add(playZoomAnimation()!, ">")
-        tl.add(switchLineMode()!, ">")
-        tl.add(moveHorizontalAnimation()!, ">")
-        masterTlRef.current = tl;
-        return tl;
-    }, [playTextAnimation])
-
-
+    
 
 
     // Resize handlers
@@ -536,22 +510,54 @@ const DfesCircularUpdated = () => {
     // Initialize master timeline
     useLayoutEffect(() => {
         if (!stageRef.current || !nodesRef.current) return;
-        const all = ScrollTrigger.getAll();
-        all.forEach(trigger => {
-            trigger.refresh();
-        });
-        const ctx = gsap.context(() => {
-            masterTimeline();
-        });
         
-        return () => ctx.revert();
-    }, [masterTimeline]);
-
-    // Cleanup timeline on unmount
-    useLayoutEffect(() => {
+        // Wait for scroll position to settle after navigation
+        const initTimer = setTimeout(() => {
+            // Ensure scroll is at top before calculating positions
+            window.scrollTo(0, 0);
+            
+            // Additional delay to ensure layout is settled
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const all = ScrollTrigger.getAll();
+                    all.forEach(trigger => {
+                        trigger.refresh();
+                    });
+                    
+                    const ctx = gsap.context(() => {
+                        const tl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: "#dfes-content-container",
+                                start: "center+=1 center",
+                                end: "+=2000",
+                                scrub: 0,
+                                pin: true,
+                                invalidateOnRefresh: true,
+                                pinSpacing:true,
+                                onLeave: () => {
+                                    setIsContentVisible(true)
+                                },
+                                onEnterBack: () => {
+                                    setIsContentVisible(false)
+                                }
+                            }
+                        })
+                        tl.add(playTextAnimation())
+                        tl.add(playEntranceAnimation()!, ">-=1")
+                        tl.add(playZoomAnimation()!, ">")
+                        tl.add(switchLineMode()!, ">")
+                        tl.add(moveHorizontalAnimation()!, ">")
+                    });
+                    
+                    masterTlRef.current = ctx;
+                });
+            });
+        }, 400); // Wait slightly longer than header's scroll reset (300ms)
+        
         return () => {
+            clearTimeout(initTimer);
             if (masterTlRef.current) {
-                masterTlRef.current.kill();
+                masterTlRef.current.revert();
                 masterTlRef.current = null;
             }
         };
