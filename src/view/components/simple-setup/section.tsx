@@ -71,7 +71,6 @@ export default function SimpleSetupSection() {
                         const middleColor = interpolateColor('#E8F4FF', '#E7DFF2', blueToGreenProgress)
 
                         gradientRef.current.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${middleColor} 25.96%, rgba(255, 255, 255, 0) 100%)`
-                        console.log(progress)
                     }
                     /* gradient */
 

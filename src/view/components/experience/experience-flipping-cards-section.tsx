@@ -43,7 +43,6 @@ export default function ExperienceFlippingCardsSection() {
                 scrub: true,
                 id: "experience-flipping-cards",
                 onUpdate: (self) => {
-                    console.log(self.progress);
                     if (self.progress > 0.5) {
                         setCurrentItem(1);
                     } else {

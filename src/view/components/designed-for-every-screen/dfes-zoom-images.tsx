@@ -8,9 +8,9 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
 export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => gsap.core.Timeline }) {
-        // const lenis = useLenis();
-        const masterTl = useRef<gsap.core.Timeline>(null)
-        const tl = useRef<gsap.core.Timeline>(null)
+    // const lenis = useLenis();
+    const masterTl = useRef<gsap.core.Timeline>(null)
+    const tl = useRef<gsap.core.Timeline>(null)
     useEffect(() => {
         setTimeout(() => {
             masterTl.current = gsap.timeline()
@@ -23,7 +23,7 @@ export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => g
                     scrub: 0,
                     pin: true,
                     invalidateOnRefresh: true,
-                    pinSpacing:true
+                    pinSpacing: true
                 }
             })
             tl.current.to("#desktop-zoom-visual", {
@@ -70,12 +70,12 @@ export default function DfesZoomImages({ nextTimeline }: { nextTimeline: () => g
         return () => {
             masterTl.current?.kill();
             tl.current?.kill();
-        };
+        }
 
     }, [nextTimeline])
     return (
         <div className="absolute left-1/2 -translate-x-1/2 w-[1680px] min-h-[1000px] perspective-[100svh]">
-            
+
             <img id="desktop-zoom-visual" className="visual-element transform-3d absolute left-[17.5rem] top-[41.4375rem] w-[14.68rem] h-auto object-contain" src={desktopVisual} alt="desktopVisual" />
             <img id="tablet-zoom-visual" className="visual-element absolute left-[56.25rem] top-[9.75rem] w-[13rem] h-auto object-contain " src={tabletsVisual} alt="tabletsVisual" />
             <img id="phone-zoom-visual" className="visual-element transform-3d absolute top-[37.5rem] left-[60.4375rem] w-[31.125rem] h-auto object-contain" src={phonesVisual} alt="phonesVisual" />

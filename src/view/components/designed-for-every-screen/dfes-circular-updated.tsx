@@ -46,6 +46,7 @@ const DfesCircularUpdated = () => {
     const hasAnimated = useRef(false);
     const clonedNodes = useRef<HTMLDivElement[]>([]);
     const [imageIndex, setImageIndex] = useState(0);
+    const masterTlRef = useRef<gsap.core.Timeline | null>(null);
 
     // Store the perpendicular direction for each arc (1 for counterclockwise, -1 for clockwise)
     // This ensures curves don't flip during animation
@@ -283,6 +284,9 @@ const DfesCircularUpdated = () => {
         const curvatureState = { factor: 1 };
 
         tl.call(() => {
+            // Guard against unmounted component
+            if (!wiresRef.current) return;
+            
             // Read positions just before animation starts
             const lineOrder = buildLineOrder();
             const centerIndex = lineOrder.indexOf(0);
@@ -312,7 +316,7 @@ const DfesCircularUpdated = () => {
             });
             gap = result.gap;
 
-            arcDirections.current = calculateArcDirections(targetPositions, gap, wiresRef.current!);
+            arcDirections.current = calculateArcDirections(targetPositions, gap, wiresRef.current);
         });
 
         // Animate nodes to their target positions
@@ -342,6 +346,9 @@ const DfesCircularUpdated = () => {
 
         // Update arcs once per frame
         tl.eventCallback("onUpdate", () => {
+            // Guard against unmounted component
+            if (!wiresRef.current || !nodesRef.current) return;
+            
             if (wiresRef.current) {
                 updateArcsFollowingNodes(
                     wiresRef.current,
@@ -377,6 +384,9 @@ const DfesCircularUpdated = () => {
                 pinSpacing:true,
                 pin: true,
                 onUpdate: (self) => {
+                    // Guard against unmounted component
+                    if (!wiresRef.current || !nodesRef.current) return;
+                    
                     const currentProgress = self.progress;
                     const direction = self.direction;
                     const imageIndex = Math.floor((currentProgress * 0.9) * 6);
@@ -502,6 +512,7 @@ const DfesCircularUpdated = () => {
         tl.add(playZoomAnimation()!, ">")
         tl.add(switchLineMode()!, ">")
         tl.add(moveHorizontalAnimation()!, ">")
+        masterTlRef.current = tl;
         return tl;
     }
 
@@ -521,6 +532,16 @@ const DfesCircularUpdated = () => {
             window.removeEventListener("orientationchange", handleOrient);
         };
     }, [layout]);
+
+    // Cleanup timeline on unmount
+    useEffect(() => {
+        return () => {
+            if (masterTlRef.current) {
+                masterTlRef.current.kill();
+                masterTlRef.current = null;
+            }
+        };
+    }, []);
 
     return (
         <div id="dfes-content-container" className="relative w-full  py-[10rem]   max-w-screen overflow-hidden">

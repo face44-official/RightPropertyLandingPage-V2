@@ -77,7 +77,6 @@ export default function HorizontalGallery({
     useLayoutEffect(() => {
         const handleResize = () => {
             // Debounce resize to avoid excessive recalculations
-            horizontalPinTl.current?.refresh();
             horizontalPinTl.current?.scrollTrigger?.refresh();
         }
 
