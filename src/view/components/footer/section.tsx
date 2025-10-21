@@ -6,7 +6,9 @@ import { useRef } from "react"
 import {gsap} from "gsap"
 import Logo from "../header/logo"
 import { useGSAP } from "@gsap/react"
+import { useLocation } from "react-router"
 export default function FooterSection() {
+    const {pathname} = useLocation()
     const $levitateItem = useRef<HTMLImageElement>(null)
     const $mobileFooterLevitate = useRef<HTMLImageElement>(null)
     const $footerContainer = useRef<HTMLDivElement>(null)
@@ -66,6 +68,7 @@ export default function FooterSection() {
                     end: "bottom-=15% bottom-=5%",
                     scrub: false,
                     toggleActions: "play none none reset",
+                    invalidateOnRefresh: true,
                 }
             },)
             tl.to($levitateItem.current, {
@@ -83,6 +86,7 @@ export default function FooterSection() {
                     end: "bottom-=20% bottom-=5%",
                     scrub: false,
                     toggleActions: "play none none reset",
+                    invalidateOnRefresh: true,
                 }
             },)
             tl.to($mobileFooterLevitate.current, {
@@ -91,7 +95,7 @@ export default function FooterSection() {
                 ease: "power2.inOut"
             })
         })
-    })
+    },{revertOnUpdate:true, dependencies: [pathname]})
     return <div ref={$footerContainer} className="rp-container relative z-[-1]">
         <div className="relative h-[45.3125rem] lg:h-auto lg:p-0 px-[5rem] pt-[7.125rem] lg:w-full">
             <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0] lg:hidden" alt="Right Property footer floating decoration element" />
