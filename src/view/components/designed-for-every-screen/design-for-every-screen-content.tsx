@@ -10,8 +10,8 @@ const images = [
     kiosksVisual,
     phonesVisual,
     tvVisual,
-    desktopVisual,
     laptopsVisual,
+    desktopVisual,
     tabletsVisual,
 
 ]
