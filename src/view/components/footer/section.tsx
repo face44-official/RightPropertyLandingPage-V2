@@ -96,7 +96,7 @@ export default function FooterSection() {
             })
         })
     },{revertOnUpdate:true, dependencies: [pathname]})
-    return <div ref={$footerContainer} className="rp-container relative z-[10] mix-blend-multiply">
+    return <div ref={$footerContainer} className="rp-container relative z-[10]">
         <div className="relative h-[45.3125rem] lg:h-auto lg:p-0 px-[5rem] pt-[7.125rem] lg:w-full">
             <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0] lg:hidden" alt="Right Property footer floating decoration element" />
             <img src={footerBg} className="absolute bottom-0 left-0 w-[105rem] h-full object-cover z-[-1] lg:hidden" alt="Right Property footer background design" />

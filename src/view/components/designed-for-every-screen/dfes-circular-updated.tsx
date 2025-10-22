@@ -367,6 +367,7 @@ const DfesCircularUpdated = () => {
 
     // Main layout function
     const layout = useCallback(() => {
+        if(window.innerWidth < 768) return;
         if (!stageRef.current || !wiresRef.current) return;
         resizeSvg(stageRef.current, wiresRef.current);
         const geom = positionCircle();
@@ -495,6 +496,7 @@ const DfesCircularUpdated = () => {
 
     // Resize handlers
     useLayoutEffect(() => {
+        
         const handleResize = () => layout();
         const handleOrient = () => setTimeout(layout, 60);
 
@@ -510,10 +512,11 @@ const DfesCircularUpdated = () => {
     // Initialize master timeline
     useLayoutEffect(() => {
         if (!stageRef.current || !nodesRef.current) return;
-
+        const mm = gsap.matchMedia();
+        let initTimer: ReturnType<typeof setTimeout> | null = null;
         // Wait for scroll position to settle after navigation
-        const initTimer = setTimeout(() => {
-
+        mm.add('(min-width: 769px)', () => {
+        initTimer = setTimeout(() => {
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     const all = ScrollTrigger.getAll();
@@ -597,9 +600,11 @@ const DfesCircularUpdated = () => {
                 });
             });
         }, 1000); // Wait slightly longer than header's scroll reset (300ms)
-
+        })
         return () => {
-            clearTimeout(initTimer);
+            if (initTimer) {
+                clearTimeout(initTimer);
+            }
             if (masterTlRef.current) {
                 masterTlRef.current.revert();
                 masterTlRef.current = null;

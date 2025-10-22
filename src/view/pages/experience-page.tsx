@@ -18,9 +18,9 @@ import DfesCircularUpdated from "../components/designed-for-every-screen/dfes-ci
 export default function ExperiencePage() {
 
 
-    return <main className="relative z-[10]">
+    return <main className="relative z-[10] overflow-x-hidden">
         <HeroSubPagesRoad />
-        <HeroSubPagesMobileRoad />
+        <HeroSubPagesMobileRoad secondMaskTop="20.1875rem" />
         <div id="experience-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center">
 
             <div className="flex flex-col items-center justify-center">
@@ -48,7 +48,6 @@ export default function ExperiencePage() {
             </div>
             <div className="hidden lg:block">
                 <ExperienceDesignedForEveryScreenSection />
-
             </div>
 
             <ExperienceFlippingCardsSection />

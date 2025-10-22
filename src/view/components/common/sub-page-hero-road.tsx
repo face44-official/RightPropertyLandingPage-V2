@@ -1,6 +1,6 @@
-export default function SubPageHeroRoad({ className }: { className: string }) {
+export default function SubPageHeroRoad({ className, style }: { className: string, style?: React.CSSProperties }) {
     return (
-        <svg className={className} viewBox="0 0 460 916" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} style={style} viewBox="0 0 460 916" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_1336_5737)">
                 <path d="M130.108 767.019H131.787V773.3H130.108V767.019Z" fill="#955441" />
                 <path d="M132.894 755.89L130.871 749.979L133.583 753.984L132.894 755.89Z" fill="#77D86C" />
