@@ -1,12 +1,14 @@
-import SubPageHeroRoad from "../common/sub-page-hero-road";
+import subPageHeroRoad from "@/assets/v3/common/sub_page_hero_road.svg";
 interface HeroSubPagesMobileRoadProps {
     firstMaskTop?: string;
     secondMaskTop?: string;
 }
 export default function HeroSubPagesMobileRoad({ firstMaskTop = "10.1875rem", secondMaskTop = "15rem" }: HeroSubPagesMobileRoadProps) {
     return (
-        <div className="hidden lg:block relative">
-            <SubPageHeroRoad style={{ top: `${firstMaskTop}` }} className={`mobile-sub-pages-mask absolute -left-[1.65375rem] w-[125.6vw] h-auto `}  />
+        <div className="hidden lg:block absolute top-0 left-0 w-full overflow-hidden h-[300vh]">
+            <div style={{ top: `${firstMaskTop}` }} className={`mobile-sub-pages-mask absolute -left-[1.65375rem] w-[125.6vw] h-auto `}  >
+                <img src={subPageHeroRoad} className="w-full h-full" alt="" />
+            </div>
             <div style={{
                 position: 'absolute',
                 width: '607.56px',
@@ -19,7 +21,9 @@ export default function HeroSubPagesMobileRoad({ firstMaskTop = "10.1875rem", se
             </div>
             <div className={`absolute top-[${secondMaskTop}] -left-[0.65rem]`} style={{ top: `${secondMaskTop}` }}>
                 <div className=" relative ">
-                    <SubPageHeroRoad className="mobile-sub-pages-second-mask  w-[122.6vw] h-auto" />
+                    <div className="mobile-sub-pages-second-mask  w-[122.6vw] h-auto">
+                        <img src={subPageHeroRoad} className="w-full h-full" alt="" />
+                    </div>
                     <div style={{
                         position: 'absolute',
                         width: '161vw',

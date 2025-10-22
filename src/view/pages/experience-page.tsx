@@ -18,7 +18,7 @@ import DfesCircularUpdated from "../components/designed-for-every-screen/dfes-ci
 export default function ExperiencePage() {
 
 
-    return <main className="relative z-[10] overflow-x-hidden">
+    return <main className="relative z-[10]">
         <HeroSubPagesRoad />
         <HeroSubPagesMobileRoad secondMaskTop="20.1875rem" />
         <div id="experience-page" className="relative z-[20] pt-[14.56rem] lg:pt-[6rem] flex flex-col justify-center">
