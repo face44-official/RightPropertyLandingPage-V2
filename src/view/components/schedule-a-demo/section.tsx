@@ -19,8 +19,25 @@ export default function ScheduleADemoSection({ displayGradient = true }: { displ
             </div>
 
         </div>
-        {displayGradient && <div className="absolute w-[121rem] max-w-[95vw] lg:w-[60rem] lg:h-[40rem] h-[88rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" style={{ background: 'radial-gradient(50% 50% at 50% 50%, #E7DFF2 0%, rgba(255, 255, 255, 0) 100%)' }}>
-
-        </div>}
+        {displayGradient && <svg className="lg:hidden absolute z-[-1]" width="1680" height="1411" viewBox="0 0 1680 1411" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="929.5" cy="705.5" rx="972.5" ry="705.5" fill="url(#paint0_radial_1824_4589)" />
+            <defs>
+                <radialGradient id="paint0_radial_1824_4589" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(929.5 705.5) rotate(90) scale(705.5 972.5)">
+                    <stop stop-color="#E7DFF2" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                </radialGradient>
+            </defs>
+        </svg>
+        }
+        {displayGradient && <svg className="hidden lg:block absolute z-[-1]" viewBox="0 0 375 1536" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="187.5" cy="768" rx="1058.5" ry="768" fill="url(#paint0_radial_767_7640)" />
+            <defs>
+                <radialGradient id="paint0_radial_767_7640" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(187.5 768) rotate(90) scale(768 1058.5)">
+                    <stop stop-color="#E7DFF2" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                </radialGradient>
+            </defs>
+        </svg>
+        }
     </section>
 }
