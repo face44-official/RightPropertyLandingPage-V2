@@ -1,8 +1,8 @@
 export default function PrivacyPolicy() {
     return (
-      <div className="privacy  p-5 lg:p-7.5  justify-center rp-container grow bg-secondLayer">
+      <div className="privacy  px-[5rem] lg:px-4 pt-[6.25rem] lg:p-7.5  justify-center rp-container grow bg-secondLayer">
         <>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 1. Introduction and General Terms
@@ -140,7 +140,7 @@ export default function PrivacyPolicy() {
               party websites and your use of them is at your own risk.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">2. Who are we?</span>
             </strong>
@@ -196,7 +196,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
   
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 3. What information will Right Property collect about me?
@@ -213,7 +213,7 @@ export default function PrivacyPolicy() {
               address, telephone or mobile number.`}
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 4. How will Right Property use the information it collects about
@@ -284,7 +284,7 @@ export default function PrivacyPolicy() {
               section 18 for details.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 5. Your Right Property Contact Request
@@ -316,7 +316,7 @@ export default function PrivacyPolicy() {
             </a>
             <span className="privacy-text-small">&nbsp;.</span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 6. When will Right Property contact me?
@@ -361,7 +361,7 @@ export default function PrivacyPolicy() {
               </p>
             </li>
           </ul>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 7. Will I be contacted for marketing purposes?
@@ -391,7 +391,7 @@ export default function PrivacyPolicy() {
               Snapchat and X).
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 8. Will Right Property share my personal information with anyone
@@ -436,7 +436,7 @@ export default function PrivacyPolicy() {
               personal information in that way.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 9. Offensive or inappropriate content on Right Property websites
@@ -463,7 +463,7 @@ export default function PrivacyPolicy() {
               protection regulations.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 10. What if I am a user aged under 18?
@@ -477,7 +477,7 @@ export default function PrivacyPolicy() {
               Property.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 11. How long will Right Property keep my information?
@@ -491,7 +491,7 @@ export default function PrivacyPolicy() {
               contract you hold with Right Property.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">12. Can I delete my data?</span>
             </strong>
@@ -518,7 +518,7 @@ export default function PrivacyPolicy() {
               </em>
             </strong>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 13. Can I find out what personal information Right Property holds
@@ -552,7 +552,7 @@ export default function PrivacyPolicy() {
             </strong>
             <span className="privacy-text-small">)</span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">14. Web browser cookies</span>
             </strong>
@@ -765,7 +765,7 @@ export default function PrivacyPolicy() {
               </em>
             </strong>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 15. Do Not Track (DNT) browser setting
@@ -780,7 +780,7 @@ export default function PrivacyPolicy() {
               companies. This website does not currently respond to DNT requests.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 16. Right Property Developed Apps
@@ -1116,7 +1116,7 @@ export default function PrivacyPolicy() {
               share.
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 17. Changes to Right Property’s Privacy and Cookies Policy
@@ -1137,7 +1137,7 @@ export default function PrivacyPolicy() {
               Privacy Policy changes).
             </span>
           </p>
-          <h3 style={{}}>
+          <h3 className="privacy-policy-title">
             <strong>
               <span className="privacy-text-medium">
                 18. Contacting Right Property about this Privacy and Cookies
