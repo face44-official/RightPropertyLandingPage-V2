@@ -9,7 +9,7 @@ export default function EnhancedPresentationsSection() {
         <section className=" w-full h-[auto] lg:pb-[0] relative max-w-[100vw] overflow-hidden content-visibility-auto" aria-label="Enhanced presentations hero section">
             <div className="relative desktop-rp-container flex items-center justify-between lg:flex-col lg:items-start pt-[8.5rem] lg:pt-[3.5rem] ">
                 <div className="mobile-rp-container pl-[5rem] lg:px-4 lg:w-full flex flex-col items-start justify-center  font-general-sans min-h-[40rem] lg:min-h-0 lg:order-2">
-                    <h1 className="mb-[2.0625rem] lg:mb-[0.875rem] font-general-sans font-semibold text-60 lg:text-40 leading-[100%] tracking-[0%] text-raisin-black">
+                    <h1 className="mb-[2.0625rem] lg:mb-[0.875rem] font-font-general-sans font-semibold text-60 lg:text-40 leading-[100%] tracking-[0%] text-raisin-black">
                         Enhanced <br />Presentations. <br />
                         Smarter Sales.
                     </h1>

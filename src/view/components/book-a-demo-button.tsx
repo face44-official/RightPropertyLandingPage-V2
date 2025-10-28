@@ -7,7 +7,7 @@ export default function BookADemoButton({ className }: { className?: string }) {
     return (
         <ShowBookingHoc>
             <button onClick={() => { }} className={cnClass}>
-                <span className="z-[10] relative  transition-all duration-300 ease-in-out ">
+                <span className="z-[10] relative  transition-all duration-300 ease-in-out text-primary-black">
                     Book a demo
                 </span>
                 <div className=" z-[8] group-hover:w-[10.875rem] transition-all duration-300 ease-in-out  w-[3.5rem] h-[3.375rem] lg:w-[2.463125rem] lg:h-[2.375rem] absolute bg-[#EF716E] rounded-full flex items-center justify-center top-[5px] right-[5px]">

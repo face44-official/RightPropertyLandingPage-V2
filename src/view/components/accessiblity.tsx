@@ -59,13 +59,13 @@ export default function Accessibility({ subHeading, title, description, items }:
     const itemColors = ['#E4D6F6', '#FAD9BF'];
     return (
         <div className="bg-white p-[3.35rem] lg:p-[1.5rem]">
-            <p className="mb-8 font-geist-mono font-normal text-16 lg:text-14 lg:mb-4 leading-[150%] tracking-[0.04em] uppercase text-squid-ink">
+            <p className="mb-8 font-geist-mono font-normal text-16 lg:text-14 lg:mb-4 leading-[150%] tracking-[0.04em] uppercase text-primary-black">
                 {subHeading}
             </p>
-            <h2 className="mb-8 font-general-sans font-semibold text-40 lg:mb-[1.5rem] lg:text-32 tracking-[0em] leading-[130%] text-squid-ink">
+            <h2 className="mb-8 font-general-sans font-semibold text-40 lg:mb-[1.5rem] lg:text-32 tracking-[0em] leading-[130%] text-primary-black">
                 {title}
             </h2>
-            <p className="mb-[2.5rem] font-geist font-normal text-32 lg:mb-[2rem] lg:text-24 tracking-[0em] leading-[140%] text-squid-ink">
+            <p className="mb-[2.5rem] font-geist font-normal text-32 lg:mb-[2rem] lg:text-24 tracking-[0em] leading-[140%] text-dark-gray">
                 {description}
             </p>
             <div className="">
@@ -79,11 +79,11 @@ export default function Accessibility({ subHeading, title, description, items }:
                         <div className="flex items-center gap-8 lg:flex-col lg:gap-4 lg:items-start">
                             {item.icon}
 
-                            <h3 className="mb-1 font-geist font-medium lg:mb-0 text-28 lg:text-20 -tracking-[0.02em] leading-[140%] text-squid-ink">
+                            <h3 className="mb-1 font-geist font-medium lg:mb-0 text-28 lg:text-20 -tracking-[0.02em] leading-[140%] text-primary-black">
                                 {item.title}
                             </h3>
                         </div>
-                        <p className="font-geist font-normal text-24 lg:text-base -tracking-[0.01em] leading-[140%] text-squid-ink pr-[1.6rem]">
+                        <p className="font-geist font-normal text-24 lg:text-base -tracking-[0.01em] leading-[140%] text-primary-black pr-[1.6rem]">
                             {item.description}
                         </p>
 
