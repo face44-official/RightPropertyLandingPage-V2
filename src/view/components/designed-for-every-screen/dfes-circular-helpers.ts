@@ -121,7 +121,7 @@ export const drawArcWires = (
     g.setAttribute("fill", "none");
     g.setAttribute("stroke", CONFIG.stroke);
     g.setAttribute("stroke-opacity", String(CONFIG.strokeOpacity));
-    g.setAttribute("stroke-width", String(CONFIG.strokeWidth));
+    g.setAttribute("strokeWidth", String(CONFIG.strokeWidth));
 
     // Create separate path for each segment using quadratic Bézier curve
     for (let i = 0; i < count; i++) {

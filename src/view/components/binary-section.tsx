@@ -5,13 +5,13 @@ export default function BinarySection({ subHeader, title, description, image, cl
 <section className={cn(" relative", className)} aria-label="Company values and technology focus" style={{boxShadow: '3px 32px 58.5px rgba(134, 101, 177, 0.1)'}}>
             <div className='w-fit mx-auto bg-white p-[2.5rem] gap-[3.75rem] lg:gap-[2rem] flex items-center justify-center lg:p-6 lg:flex-col-reverse '>
                 <div className="flex-flex-col w-[26.25rem] lg:w-full">
-                    <p className='mb-6 lg:mb-4 font-geist-mono font-medium text-16 lg:text-sm leading-[150%] tracking-[0.04em] uppercase text-[#8D98A5]'>
+                    <p className='mb-6 lg:mb-6 font-geist-mono font-medium text-16 lg:text-sm leading-[150%] tracking-[0.04em] uppercase text-primary-black'>
                         {subHeader}
                     </p>
-                    <h3 className='mb-[1rem] lg:mg-[0.75rem] font-general-sans font-semibold text-24 lg:text-20 leading-[100%] text-squid-ink'>
+                    <h3 className='mb-[1.2rem] lg:mg-[0.75rem] font-general-sans font-semibold text-24 lg:text-24 leading-[100%] text-primary-black'>
                         {title}
                     </h3>
-                    <p className='font-geist font-normal text-24 lg:text-base leading-[140%] text-squid-ink'>
+                    <p className='font-geist font-normal text-24 lg:text-base leading-[140%] text-primary-black'>
                         {description}
                     </p>
                 </div>

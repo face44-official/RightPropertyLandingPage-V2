@@ -29,7 +29,7 @@ export default function HamburgerButton({ isShowMobileMenu,onClick }: { isShowMo
     return (
         <svg  id="burger" width="30" className="openmenu hidden lg:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" onClick={onClick}>
             <path className="top" d="M0 9h30v2H0z" />
-            <line className="mid" x1="0" y1="15" x2="30" y2="15" stroke="black" stroke-width="2" vector-effect="non-scaling-stroke" />
+            <line className="mid" x1="0" y1="15" x2="30" y2="15" stroke="black" strokeWidth="2" vectorEffect="non-scaling-stroke" />
             <path className="bot" d="M0 19h30v2H0z" />
         </svg>
     )

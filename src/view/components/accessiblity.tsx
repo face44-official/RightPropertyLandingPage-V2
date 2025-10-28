@@ -83,7 +83,7 @@ export default function Accessibility({ subHeading, title, description, items }:
                                 {item.title}
                             </h3>
                         </div>
-                        <p className="font-geist font-normal text-24 lg:text-base -tracking-[0.01em] leading-[140%] text-primary-black pr-[1.6rem]">
+                        <p className="font-geist font-normal text-24 lg:text-base -tracking-[0.01em] leading-[140%] text-primary-black pr-[1rem]">
                             {item.description}
                         </p>
 

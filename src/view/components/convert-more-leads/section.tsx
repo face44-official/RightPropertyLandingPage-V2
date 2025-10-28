@@ -18,7 +18,7 @@ export default function ConvertMoreLeadsSection() {
         }
     ]
     return (
-        <div className="mb-[30rem] lg:mb-[0] bg-[#EEF1F7] h-[63.25rem] lg:h-auto overflow-visible relative content-visibility-auto">
+        <div className="mb-[30rem] lg:mb-[0] bg-[#EEF1F7] h-[45.25rem] lg:h-auto overflow-visible relative content-visibility-auto">
 
 
             <section className="">

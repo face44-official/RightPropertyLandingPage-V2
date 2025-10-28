@@ -45,8 +45,8 @@ export default function FaqItem({ question, answer }: { question: string | React
             <h3 className="font-geist text-24 lg:text-base font-medium leading-[140%] -tracking-[0.02em]">{question}</h3>
             <div className="shrink-0 w-[64px] h-[64px] lg:w-[2.5rem] lg:h-[2.5rem] rounded-full border border-[#FF947E] flex items-center justify-center">
                 <svg ref={iconRef} className="w-[1.5rem] h-[1.5rem]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path  d="M0 12.0039L24 12.0039" stroke="#EF716E" stroke-width="2" />
-                    <path ref={horizontalRef} d="M12.0078 23.998L12.0078 -0.00195441" stroke="#EF716E" stroke-width="2" />
+                    <path  d="M0 12.0039L24 12.0039" stroke="#EF716E" strokeWidth="2" />
+                    <path ref={horizontalRef} d="M12.0078 23.998L12.0078 -0.00195441" stroke="#EF716E" strokeWidth="2" />
                 </svg>
             </div>
         </div>

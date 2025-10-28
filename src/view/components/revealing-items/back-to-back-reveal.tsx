@@ -133,7 +133,7 @@ export default function BackToBackReveal() {
                     </div>
                 </div>
 
-                <div className="absolute top-[7.8125rem] -left-[4.375rem]">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[4.375rem]">
                     <RevealItemsIndicator items={cardContents.length} currentItem={currentItem} />
                 </div>
             </div>

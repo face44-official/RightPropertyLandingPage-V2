@@ -124,13 +124,13 @@ export default function EasyOnboardingSection() {
                 </div>
                 <div className="flex justify-end pr-[10rem] pt-[10rem] lg:p-4 relative z-[10]">
                     <div className="w-[41.875rem] lg:w-full lg:p-4">
-                        <p className="mb-8 lg:mb-[1.5rem] font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.02em] uppercase text-squid-ink">
+                        <p className="mb-8 lg:mb-[1.5rem] font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.02em] uppercase text-primary-black">
                             Presentation
                         </p>
-                        <h2 className="mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-40 lg:text-32 -tracking-[0.01em] leading-[130%] text-squid-ink">
+                        <h2 className="mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-40 lg:text-32 -tracking-[0.01em] leading-[130%] text-primary-black">
                             Easy Onboarding
                         </h2>
-                        <p className="mb-[5rem] lg:mb-[2rem] font-geist font-normal text-32 lg:text-24 -tracking-[0.01em] leading-[140%] text-squid-ink">
+                        <p className="mb-[5rem] lg:mb-[2rem] font-geist font-normal text-32 lg:text-24 -tracking-[0.01em] leading-[140%] text-dark-gray">
                             Get started in hours, scale on your terms, and pay only for what you need—no surprises.
                         </p>
 
@@ -139,10 +139,10 @@ export default function EasyOnboardingSection() {
                                 <div className="flex gap-6 lg:gap-[0.75rem] items-start">
                                     {item.icon}
                                     <div>
-                                        <h3 className='font-geist font-medium text-28 lg:text-20 leading-[140%] text-squid-ink'>
+                                        <h3 className='font-geist mb-2 font-medium text-28 lg:text-20 leading-[140%] text-primary-black'>
                                             {item.title}
                                         </h3>
-                                        <p className='font-geist font-normal text-24 lg:text-base leading-[140%] text-squid-ink'>
+                                        <p className='font-geist font-normal text-24 lg:text-base leading-[140%] text-primary-black'>
                                             {item.description}
                                         </p>
                                     </div>
