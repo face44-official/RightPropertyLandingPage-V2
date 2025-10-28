@@ -1,4 +1,3 @@
-import presentSmarterBg from "@/assets/v3/present_smarter_desktop.webp";
 import presentSmarterBgMobile from "@/assets/v3/mobile_present_smarter.webp";
 import presentSmarterBg1 from "@/assets/v3/presentation-img1.webp";
 import presentSmarterBg2 from "@/assets/v3/presentation-img2.webp";
@@ -56,12 +55,6 @@ export default function PresentSmarterSection() {
           className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem] rp-container"
         />
         <div className="lg:bg-none! lg:h-auto! relative z-[8] flex p-[7.5rem] pl-[48vw] justify-start lg:p-4">
-          {/* <img
-            src={presentSmarterBg}
-            alt="present smarter"
-            className="absolute left-0 top-0 w-[50vw] object-cover h-[80vh] object-top lg:hidden"
-          /> */}
-
           <div className="absolute left-0 top-0 w-[50vw] object-cover h-[80vh] object-top lg:hidden">
             <div className="w-full">
               <img
