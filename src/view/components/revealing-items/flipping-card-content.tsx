@@ -115,7 +115,7 @@ export default function FlippingCardContent({
         {subHeading && (
           <p
             ref={subHeadingRef}
-            className="mb-8 font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.04em] uppercase text-squid-ink overflow-hidden"
+            className="mb-8 font-geist-mono font-normal text-16 leading-[150%] tracking-[0.04em] uppercase text-primary-black overflow-hidden"
           >
             {subHeading}
           </p>
@@ -123,14 +123,14 @@ export default function FlippingCardContent({
 
         <h2
           ref={titleRef}
-          className="mb-8 lg:mb-6 font-general-sans font-semibold text-40 lg:text-40 tracking-[0em] leading-[130%] text-squid-ink overflow-hidden"
+          className="mb-8 lg:mb-6 font-general-sans font-semibold text-40 lg:text-40 tracking-[0em] leading-[130%] text-primary-black overflow-hidden pr-16"
         >
           {title}
         </h2>
 
         <p
           ref={descriptionRef}
-          className="mb-[2.5rem] font-geist font-normal text-32 lg:text-18 tracking-[0em] leading-[140%] text-squid-ink overflow-hidden"
+          className="mb-[2.5rem] font-geist font-normal text-32 lg:text-18 tracking-[0em] leading-[140%] text-dark-gray overflow-hidden"
         >
           {description}
         </p>
