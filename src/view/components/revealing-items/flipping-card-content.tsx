@@ -2,7 +2,7 @@ import BookADemoButton from "../book-a-demo-button";
 import ShowBookingHoc from "../show-booking-hoc";
 import LearnMoreButton from "./learn-more-button";
 import { useLayoutEffect, useRef } from "react";
-import {gsap} from "gsap";
+import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText);
@@ -31,38 +31,34 @@ export default function FlippingCardContent({
   useLayoutEffect(() => {
     if (!containerRef.current) return;
 
-    const targets = [subHeadingRef.current, titleRef.current, descriptionRef.current].filter(
-      Boolean,
-    ) as HTMLElement[];
+    const targets = [
+      subHeadingRef.current,
+      titleRef.current,
+      descriptionRef.current,
+    ].filter(Boolean) as HTMLElement[];
 
     const splits: SplitText[] = [];
     const srs: HTMLElement[] = [];
 
-    // helper: inject an sr-only semantic twin and mark animated node decorative
     const ensureAccessibleTwin = (el: HTMLElement, idx: number) => {
-      // Capture clean text before SplitText mutates DOM
       const text = (el.textContent || "").replace(/\s+/g, " ").trim();
       if (!text) return;
 
-      // Avoid duplicates if effect re-runs
       const existingId = el.getAttribute("data-sr-id");
       if (!existingId) {
         const srId = `sr-${el.tagName.toLowerCase()}-${idx}-${Math.random()
           .toString(36)
           .slice(2)}`;
 
-        // Create a same-tag semantic twin (<p>→<p>, <h2>→<h2>)
         const sr = document.createElement(el.tagName.toLowerCase());
         sr.id = srId;
         sr.textContent = text;
-        sr.className = "sr-only"; // Tailwind; if not using Tailwind, add your own visually-hidden class.
+        sr.className = "sr-only";
         sr.setAttribute("data-injected-sr", "true");
 
-        // Insert immediately before the animated node
         el.insertAdjacentElement("beforebegin", sr);
         srs.push(sr);
 
-        // Mark animated node as decorative and strip any names
         el.setAttribute("aria-hidden", "true");
         el.removeAttribute("aria-label");
         el.removeAttribute("aria-labelledby");
@@ -70,10 +66,8 @@ export default function FlippingCardContent({
       }
     };
 
-    // Build SR twins first, then animate decorative nodes
     targets.forEach((el, i) => ensureAccessibleTwin(el, i));
 
-    // Now apply SplitText to the decorative nodes
     targets.forEach((el) => {
       const split = new SplitText(el, { type: "lines,chars" });
       splits.push(split);
@@ -93,15 +87,12 @@ export default function FlippingCardContent({
       gsap.fromTo(
         buttonRef.current,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, delay: 0 },
+        { opacity: 1, y: 0, duration: 0.8, delay: 0 }
       );
     }
 
-    // Cleanup on unmount/re-render: revert SplitText wrappers but keep sr-only twins
     return () => {
       splits.forEach((s) => s.revert());
-      // (We keep the SR twins; they’re harmless and avoid flicker. If you prefer, remove them here.)
-      // srs.forEach((sr) => sr.remove());
       targets.forEach((el) => {
         el.removeAttribute("aria-hidden");
         el.removeAttribute("data-sr-id");
@@ -110,12 +101,22 @@ export default function FlippingCardContent({
   }, [subHeading, title, description, useBookButton, useButton]);
 
   return (
-    <div ref={containerRef} className="p-[3.75rem] bg-white w-[48.9375rem]">
+    <div
+      ref={containerRef}
+      className="
+        p-[3.75rem] bg-white w-[48.9375rem]
+        4k:w-[60rem] 4k:p-[4.5rem] 4k:rounded-[20px]
+      "
+    >
       <div className="card-content">
         {subHeading && (
           <p
             ref={subHeadingRef}
-            className="mb-8 font-geist-mono font-normal text-16 leading-[150%] tracking-[0.04em] uppercase text-primary-black overflow-hidden"
+            className="
+              mb-8 font-geist-mono font-normal uppercase text-primary-black overflow-hidden
+              text-16 leading-[150%] tracking-[0.04em]
+              4k:mb-[2rem] 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)]
+            "
           >
             {subHeading}
           </p>
@@ -123,21 +124,36 @@ export default function FlippingCardContent({
 
         <h2
           ref={titleRef}
-          className="mb-8 lg:mb-6 font-general-sans font-semibold text-40 lg:text-40 tracking-[0em] leading-[130%] text-primary-black overflow-hidden pr-16"
+          className="
+            mb-8 lg:mb-6 font-general-sans font-semibold tracking-[0em] text-primary-black overflow-hidden pr-16
+            text-40 lg:text-40 leading-[130%]
+            4k:mb-[2rem] 4k:pr-[5rem] 4k:text-[clamp(2.5rem,1.6vw+1rem,5rem)]
+          "
         >
           {title}
         </h2>
 
         <p
           ref={descriptionRef}
-          className="mb-[2.5rem] font-geist font-normal text-32 lg:text-18 tracking-[0em] leading-[140%] text-dark-gray overflow-hidden"
+          className="
+            mb-[2.5rem] font-geist font-normal text-dark-gray overflow-hidden
+            text-32 lg:text-18 tracking-[0em] leading-[140%]
+            4k:mb-[3rem] 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] 4k:leading-[150%]
+          "
         >
           {description}
         </p>
 
         {useButton && (
           <div ref={buttonRef} className="lg:hidden">
-            {useBookButton ? <BookADemoButton /> : <ShowBookingHoc><LearnMoreButton /></ShowBookingHoc>}
+            {" "}
+            {useBookButton ? (
+              <BookADemoButton />
+            ) : (
+              <ShowBookingHoc>
+                <LearnMoreButton />
+              </ShowBookingHoc>
+            )}{" "}
           </div>
         )}
       </div>

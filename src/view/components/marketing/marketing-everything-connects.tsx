@@ -27,7 +27,7 @@ export default function MarketingEverythingConnects() {
                 <img src={everythingConnectsMobile} alt="CRM connection insights mobile background" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-start lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
-                        <div className="w-[49.375rem] lg:w-full">
+                        <div className="w-[49.375rem] lg:w-full 4k:w-[60rem]">
                             <Accessibility title="From Click to Close—Everything Connects." subHeading="CRM-Connected Tracking" description="Website behavior flows directly into your CRM. No disconnected tools. Just real-time insight into what buyers want—and how to turn that into action." items={items} />
                         </div>
                     </Parallax>

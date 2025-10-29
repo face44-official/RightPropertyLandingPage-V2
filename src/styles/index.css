@@ -3,6 +3,7 @@
   --breakpoint-*: initial;
 }
 
+@custom-variant 4k (@media (min-width: 2000px));
 @custom-variant 2xl (@media (max-width: 1535px));
 @custom-variant xl (@media (max-width: 1279px));
 @custom-variant lg (@media (max-width: 767px));
@@ -93,6 +94,13 @@ body {
 @media (min-width: 768px) and (max-width: 1023px) {
   html {
     font-size: 9px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .desktop-rp-container,
+  .rp-container {
+    max-width: 90%!important;
   }
 }
 
@@ -418,6 +426,21 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  @media (min-width: 2000px) {
+    html {
+      font-size: 110%; /* scales all rem/em-based sizes up 10% */
+    }
+
+    .desktop-rp-container {
+      max-width: 90%;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
   }
 }
 

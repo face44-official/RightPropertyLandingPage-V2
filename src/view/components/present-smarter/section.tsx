@@ -80,7 +80,7 @@ export default function PresentSmarterSection() {
           </div>
 
           <Parallax id="present-smarter-section" speed={1.3}>
-            <div className="w-[49.375rem] lg:w-full">
+            <div className="w-[49.375rem] lg:w-full 4k:w-[60rem]">
               <Accessibility
                 title="Present smarter, your way"
                 subHeading="Presentation"

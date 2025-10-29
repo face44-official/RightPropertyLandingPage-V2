@@ -25,7 +25,7 @@ export default function ItsDifferentSection() {
                 <img src={itsDifferentBgMobile} alt="Right Property natural presentation experience mobile background" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
-                        <div className="w-[49.375rem] lg:w-full">
+                        <div className="w-[49.375rem] lg:w-full 4k:w-[60rem]">
                             <Accessibility title="It’s Different but Feels Natural" subHeading="Presentation" description="Forget static slides and rigid scripts. Right Property gives you full control to explore, compare, and present content on your terms—without breaking the flow." items={items} />
                         </div>
                     </Parallax>

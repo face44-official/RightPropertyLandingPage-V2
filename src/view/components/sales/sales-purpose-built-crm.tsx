@@ -26,7 +26,7 @@ export default function SalesPurposeBuiltCrmSection() {
                 <img src={crmBgMobile} alt="Right Property CRM platform mobile background" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
-                        <div className="w-[49.375rem] lg:w-full">
+                        <div className="w-[49.375rem] lg:w-full 4k:w-[60rem]">
                             <Accessibility title="A CRM You’ll Actually Want to Use" subHeading="Purpose-Built CRM" description="Forget bloated systems that no one touches. Right Property’s built-in CRM is made for real estate sales—intuitive, lightweight, and focused on the data that truly matters. Log every lead, follow up faster, and keep your team aligned effortlessly." items={items} />
                         </div>
                     </Parallax>

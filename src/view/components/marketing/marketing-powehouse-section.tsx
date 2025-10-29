@@ -27,7 +27,7 @@ export default function MarketingPowerhouseSection() {
                 <img src={presentSmarterBgMobile} alt="Marketing powerhouse mobile background" className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem]" />
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
-                        <div className="w-[49.375rem] lg:w-full">
+                        <div className="w-[49.375rem] lg:w-full 4k:w-[60rem]">
                             <Accessibility title="More than a Website— A Marketing Powerhouse." subHeading="One-Click Website Launch" description="With just one click, you can launch a full project website using the same assets from your Surface or Space setup. It’s not a basic landing page—it’s a complete marketing platform, seamlessly linked to your built-in CRM." items={items} />
                         </div>
                     </Parallax>

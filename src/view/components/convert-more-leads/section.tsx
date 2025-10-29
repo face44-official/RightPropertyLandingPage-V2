@@ -30,7 +30,7 @@ export default function ConvertMoreLeadsSection() {
                     <img src={convertMoreLeads} alt="Right Property lead conversion insights desktop background" className="z-[-1] h-[63.25rem] absolute top-0 left-0 w-full lg:hidden" />
 
                     <Parallax id="convert-more-leads-section" speed={1.3}>
-                        <div className="w-[49.375rem] lg:w-full">
+                        <div className="w-[49.375rem] lg:w-full 4k:w-[60rem]">
 
                             <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
                         </div>
