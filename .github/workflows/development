@@ -1,0 +1,55 @@
+name: CI/CD - RightProperty V2 (Dev)
+
+on:
+  push:
+    branches: [ development ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: dev
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Build locally (test build)
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy and restart PM2 app
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST_DEV }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            set -e
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            nvm install 24
+            nvm use 24
+
+            cd /opt/face44/RightPropertyLandingPage-V2
+            git fetch origin development
+            git checkout development
+
+            if [ -f package-lock.json ]; then
+              npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+            else
+              npm install --legacy-peer-deps
+            fi
+
+            npm run build
+
+            pm2 restart rightpropertyv2
