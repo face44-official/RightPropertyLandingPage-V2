@@ -71,6 +71,13 @@ body {
   color: var(--color-squid-ink);
 }
 
+
+@media (max-width: 2000px) {
+  :root, html, body {
+    font-size: 90%;
+  }
+}
+
 @media (min-width: 1280px) and (max-width: 1440px) {
   html {
     font-size: 14px;
