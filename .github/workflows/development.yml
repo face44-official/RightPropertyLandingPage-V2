@@ -38,6 +38,7 @@ jobs:
             cd /opt/face44/RightPropertyLandingPage-V2
             git fetch origin development
             git checkout development
+            git pull
 
             if [ -f package-lock.json ]; then
               npm ci --legacy-peer-deps || npm install --legacy-peer-deps
