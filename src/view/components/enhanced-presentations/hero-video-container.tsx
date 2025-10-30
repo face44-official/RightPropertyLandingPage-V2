@@ -16,7 +16,7 @@ export default function HeroVideoContainer() {
       }}
     >
       {/* video or first-frame image inside the frame */}
-      <div className="absolute inset-[2.6rem_4rem_0_4.5rem] overflow-hidden">
+      <div className="absolute inset-[2.6rem_4.5rem_0_4.5rem] 4k:inset-[6%_6%_0%_6.5%] overflow-hidden">
         {!showVideo && (
           <img
             src="/hero_first_frame.webp"
