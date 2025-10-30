@@ -15,7 +15,7 @@ export default function ChoosePresentationSection() {
             Choose the Presentation Experience
           </p>
 
-          <h2 className="w-[46.875rem] lg:w-full pl-[5rem] mb-[2.5rem] lg:mb-[2rem] font-geist font-semibold text-40 lg:text-32 lg:px-4 leading-[130%] text-primary-black 4k:w-[60rem] 4k:text-[clamp(2.5rem,1.5vw+1rem,4rem)] 4k:pl-[6rem] 4k:mb-[3rem]">
+          <h2 className="w-[46.875rem] lg:w-full pl-[5rem] mb-[2.5rem] lg:mb-[2rem] font-geist font-semibold text-40 lg:text-32 lg:px-4 leading-[130%] text-primary-black 4k:w-[60rem] 4k:text-[clamp(2.5rem,1.5vw+1rem,5rem)] 4k:pl-[6rem] 4k:mb-[3rem]">
             Right Property offers two powerful ways to present
           </h2>
         </div>

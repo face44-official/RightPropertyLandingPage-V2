@@ -81,32 +81,70 @@ export default function FaqSection() {
             </ul>
         },
     ]
-    return <div id="faqs" className="bg-[#000000] content-visibility-auto">
-        <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-4 lg:pb-[5rem] lg:pt-[2rem]" aria-label="Frequently asked questions about Right Property platform">
-            <p className="mb-8 lg:mb-6 font-geist-mono text-base lg:text-sm font-medium leading-[140%] lg:leading-[148%] text-[#E2E2E2] tracking-[0.02em] uppercase">
-            Have a question?            </p>
-            <h2 className="mb-[3.75rem] lg:mb-[2.5rem] text-[#E2E2E2] font-general-sans text-40 lg:text-[2rem]  font-semibold leading-[140%] lg:leading-[130%] -tracking-[0.01em] lg:-tracking-[0.04em]">
-            Most Frequent<br/>
-            Questions and Answers
-            </h2>
-            <div className="flex gap-6 lg:flex-col lg:gap-2">
-                <div className="flex-1 space-y-6 lg:space-y-2">
-                    {faqData.slice(0, 5).map((item, index) => (
-                        <div className="">
-                            <FaqItem key={index} question={item.question} answer={item.answer} />
-                        </div>
-                    ))}
-                </div>
-                <div className="flex-1 space-y-6 lg:space-y-2">
-                    {faqData.slice(5).map((item, index) => (
-                        <div className="">
-                            <FaqItem key={index} question={item.question} answer={item.answer} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    </div >
+     return (
+    <div id="faqs" className="bg-[#000000] content-visibility-auto">
+      <section
+        className="
+          rp-container
+          py-[7.5rem] px-[11.75rem]
+          4k:py-[10rem] 4k:px-[15rem]
+          lg:px-4 lg:pb-[5rem] lg:pt-[2rem]
+          max-w-[1680px] 4k:max-w-[1920px] mx-auto
+        "
+        aria-label='Frequently asked questions about Right Property platform'
+      >
+        {/* Subtitle */}
+        <p
+          className="
+            mb-8 lg:mb-6 font-geist-mono
+            text-base lg:text-sm 4k:text-[1.25rem]
+            font-medium leading-[140%]
+            lg:leading-[148%] text-[#E2E2E2] tracking-[0.02em]
+            uppercase
+          "
+        >
+          Have a question?
+        </p>
 
+        {/* Heading */}
+        <h2
+          className="
+            mb-[3.75rem] lg:mb-[2.5rem]
+            text-[#E2E2E2] font-general-sans font-semibold
+            text-40 lg:text-[2rem]
+            4k:text-[clamp(2.75rem,3.5vw,4.5rem)]
+            leading-[140%] lg:leading-[130%] 4k:leading-[125%]
+            -tracking-[0.01em] lg:-tracking-[0.04em]
+          "
+        >
+          Most Frequent
+          <br />
+          Questions and Answers
+        </h2>
 
+        {/* FAQ Grid */}
+        <div className="flex gap-6 lg:flex-col lg:gap-2 4k:gap-10">
+          <div className="flex-1 space-y-6 lg:space-y-2 4k:space-y-10">
+            {faqData.slice(0, 5).map((item, index) => (
+              <FaqItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+              />
+            ))}
+          </div>
+
+          <div className="flex-1 space-y-6 lg:space-y-2 4k:space-y-10">
+            {faqData.slice(5).map((item, index) => (
+              <FaqItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }

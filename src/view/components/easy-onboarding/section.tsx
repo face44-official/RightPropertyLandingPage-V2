@@ -167,7 +167,7 @@ export default function EasyOnboardingSection() {
         ></div>
 
         {/* Right-side binary block */}
-        <div className="absolute left-[35rem] bottom-[7.125rem] lg:hidden 4k:left-[42rem] 4k:bottom-[9rem]">
+        <div className="absolute left-[35rem] bottom-[7.125rem] lg:hidden 4k:left-[42rem] 4k:bottom-[0rem]">
           <BinarySection
             subHeader="Did you know?"
             title="Built by software minds"

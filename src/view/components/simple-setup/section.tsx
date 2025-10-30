@@ -211,7 +211,7 @@ export default function SimpleSetupSection() {
               Presentation
             </p>
 
-            <h2 className="mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-40 lg:text-32 -tracking-[0.01em] leading-[130%] text-primary-black 4k:text-[clamp(2.5rem,1.5vw+1rem,4rem)] 4k:mb-[2rem]">
+            <h2 className="mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-40 lg:text-32 -tracking-[0.01em] leading-[130%] text-primary-black 4k:text-[clamp(2.5rem,1.5vw+1rem,5rem)] 4k:mb-[2rem]">
               Simple Setup
             </h2>
 
