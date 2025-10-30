@@ -59,37 +59,73 @@ export default function Accessibility({ subHeading, title, description, items }:
     const itemColors = ['#E4D6F6', '#FAD9BF'];
     return (
         <div className="bg-white p-[3.35rem] lg:p-[1.5rem] 4k:p-[5rem]">
-            <p className="mb-8 font-geist-mono font-normal text-16 lg:text-14 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)] lg:mb-4 leading-[150%] tracking-[0.04em] uppercase text-primary-black">
+            <p className="mb-8 font-geist-mono font-normal text-16 text-2k-4k lg:text-14 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)] lg:mb-4 leading-[150%] tracking-[0.04em] uppercase text-primary-black">
                 {subHeading}
             </p>
-            <h2 className="mb-8 font-general-sans font-semibold text-40 4k:text-[clamp(2.5rem,1.5vw+1rem,5rem)]  lg:mb-[1.5rem] lg:text-32 tracking-[0em] leading-[130%] 4k:leading-[110%] text-primary-black">
+            <h2 className="mb-8 4k:mb-[4rem] font-general-sans font-semibold text-40 lg:mb-[1.5rem] lg:text-32 tracking-[0em] leading-[130%] text-primary-black 4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]">
                 {title}
             </h2>
-            <p className="mb-[2.5rem] font-geist font-normal text-32 lg:mb-[2rem] lg:text-24 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] tracking-[0em] leading-[140%] text-dark-gray">
+            <p className="mb-[2.5rem] font-geist font-normal text-32 lg:mb-[2rem] lg:text-24 4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)] 4k:mb-[5rem] tracking-[0em] leading-[140%] text-dark-gray">
                 {description}
             </p>
             <div className="">
                 <BookADemoButton />
             </div>
-            <div className="mb-[3.75rem] lg:mb-[2rem]">
-            </div>
-            <div className="flex flex-col gap-[1.9375rem] 4k:gap-[3rem] lg:w-full">
-                {items.map((item, index) => (
-                    <div className="flex flex-col gap-[2.5rem] p-[2.5rem] 4k:p-[3rem] lg:p-[1.5rem] lg:gap-[1.5rem] items-start rounded-[20px] 4k:rounded-[24px]" style={{ border: `1px solid ${itemColors[index]}` }}>
-                        <div className="flex items-center gap-8 lg:flex-col lg:gap-4 4k:gap-[2.5rem] lg:items-start">
-                            {item.icon}
+            <div className="mb-[3.75rem] lg:mb-[2rem]"></div>
 
-                            <h3 className="mb-1 font-geist font-medium lg:mb-0 text-28 lg:text-20 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] -tracking-[0.02em] leading-[140%] text-primary-black">
-                                {item.title}
-                            </h3>
-                        </div>
-                        <p className="font-geist font-normal text-24 lg:text-base 4k:text-[clamp(1.5rem,0.9vw+0.5rem,2rem)] -tracking-[0.01em] leading-[140%] text-primary-black pr-[1rem]">
-                            {item.description}
-                        </p>
+<div className="
+  flex flex-col 
+  gap-[1.9375rem] 
+  4k:[gap:clamp(1.9375rem,calc(1.9375rem+((100vw-2000px)/2000px)*1.0625rem),3rem)] 
+  lg:w-full
+">
+  {items.map((item, index) => (
+    <div
+      key={index}
+      className="
+        flex flex-col 
+        items-start
+        gap-[2.5rem] 
+        4k:[gap:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*1.5rem),4rem)]
+        p-[2.5rem] 
+        4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*1.5rem),4rem)]
+        lg:p-[1.5rem] lg:gap-[1.5rem]
+        rounded-[20px] 4k:[border-radius:clamp(20px,calc(20px+((100vw-2000px)/2000px)*4px),24px)]
+      "
+      style={{ border: `1px solid ${itemColors[index]}` }}
+    >
+      <div className="
+        flex items-center gap-8 
+        lg:flex-col lg:gap-4 lg:items-start
+        4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*1rem),3rem)]
+      ">
+        {item.icon}
 
-                    </div>
-                ))}
-            </div>
+        <h3
+          className="
+            mb-1 font-geist font-medium text-primary-black
+            -tracking-[0.02em] leading-[140%]
+            text-[28px] lg:text-[20px]
+            4k:[font-size:clamp(1.75rem,calc(1.75rem+((100vw-2000px)/2000px)*1rem),2.75rem)]
+          "
+        >
+          {item.title}
+        </h3>
+      </div>
+
+      <p
+        className="
+          font-geist font-normal text-primary-black
+          -tracking-[0.01em] leading-[140%] pr-[1rem]
+          text-[24px] lg:text-base
+          4k:[font-size:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1rem),2.5rem)]
+        "
+      >
+        {item.description}
+      </p>
+    </div>
+  ))}
+</div>
            
         </div>
     )

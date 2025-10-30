@@ -105,7 +105,7 @@ export default function FlippingCardContent({
       ref={containerRef}
       className="
         p-[3.75rem] bg-white w-[48.9375rem]
-        4k:w-[60rem] 4k:p-[4.5rem] 4k:rounded-[20px]
+        4k:w-[60rem] 4k:p-[4.5rem] 4k:rounded-[20px] 4k:h-full
       "
     >
       <div className="card-content">

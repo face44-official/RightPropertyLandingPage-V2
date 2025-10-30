@@ -2,11 +2,14 @@ import gRoad from "@/assets/v3/g_road.svg";
 import SimpleSetupGradientPath from "./simple-setup-gradient-path";
 import { useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
 import softwareMinds from "@/assets/v3/software_minds.webp";
 import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.svg";
 import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function SimpleSetupSection() {
   const pathRef = useRef<SVGPathElement>(null);
@@ -24,7 +27,7 @@ export default function SimpleSetupSection() {
       ),
       title: "Plug in your content",
       description:
-        "Upload floor plans, renders, brochures, videos, and even 3D tour.",
+        "Upload floor plans, renders, brochures, videos, and even 3D tours.",
     },
     {
       icon: (
@@ -47,26 +50,22 @@ export default function SimpleSetupSection() {
       ),
       title: "Easy to update anytime",
       description:
-        "Need to make changes? Just a few clicks. No waiting, no developers.",
+        "Need to make changes? Just a few clicks — no waiting, no developers.",
     },
   ];
 
   const startMotionPath = useCallback(() => {
     if (!gradientRef.current || !pathRef.current) return;
-
-    // Kill any running timeline
     motionTimeline.current?.kill();
 
-    // Responsive config
     const is4k = window.matchMedia("(min-width: 2000px)").matches;
-
     const CONFIG = is4k
       ? {
-          offsetX: 240, // was 200
-          offsetY: -220, // was -180
-          xBias: 16, // subtle horizontal nudge
-          yBias: 64, // subtle vertical nudge (move glow lower)
-          sizeTo: { w: 1600, h: 1600 }, // was ~1445/1048
+          offsetX: 240,
+          offsetY: -220,
+          xBias: 16,
+          yBias: 64,
+          sizeTo: { w: 1600, h: 1600 },
         }
       : {
           offsetX: 200,
@@ -76,7 +75,6 @@ export default function SimpleSetupSection() {
           sizeTo: { w: 1445, h: 1048 },
         };
 
-    // Optional: ensure a sane starting size before the tween
     gsap.set(gradientRef.current, {
       width: is4k ? 1400 : 1200,
       height: is4k ? 1400 : 1200,
@@ -109,14 +107,12 @@ export default function SimpleSetupSection() {
         const el = gradientRef.current;
         if (!el) return;
 
-        // Position follow (with small 4k bias)
         el.style.left = `${follower.x + CONFIG.xBias}px`;
         el.style.top = `${follower.y + CONFIG.yBias}px`;
 
-        // Color interpolation
         const startColor = interpolateColor("#DBE8FF", "#E7DFF2", progress);
-        const middleColor = interpolateColor("#E8F4FF", "#E7DFF2", progress);
-        el.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${middleColor} 25.96%, rgba(255, 255, 255, 0) 100%)`;
+        const midColor = interpolateColor("#E8F4FF", "#E7DFF2", progress);
+        el.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${midColor} 25.96%, rgba(255,255,255,0) 100%)`;
       },
     });
 
@@ -130,14 +126,23 @@ export default function SimpleSetupSection() {
   }, []);
 
   useEffect(() => {
-    const mm = gsap.matchMedia();
-    mm.add("(min-width: 769px)", () => {
-      setTimeout(() => startMotionPath(), 300);
-    });
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 769px)", () => {
+    setTimeout(() => startMotionPath(), 300);
     return () => {
-      if (motionTimeline.current) motionTimeline.current.kill();
+      // Cleanup for this specific media query
+      motionTimeline.current?.kill();
     };
-  }, [startMotionPath]);
+  });
+
+  // Cleanup for the matchMedia instance itself
+  return () => {
+    mm.revert(); // 👈 properly revert gsap.matchMedia
+    motionTimeline.current?.kill();
+  };
+}, [startMotionPath]);
+
 
   return (
     <section
@@ -156,13 +161,30 @@ export default function SimpleSetupSection() {
 
       {/* DESKTOP */}
       <div
-        className="rp-container lg:h-auto! relative z-[-1] 4k:h-[130rem]!"
-        style={{ height: "108.375rem" }}
+        className="
+          rp-container relative z-[-1]
+          lg:h-auto!
+          [height:108.375rem]
+          4k:[height:clamp(108.375rem,calc(108.375rem+((100vw-2000px)/2000px)*21.625rem),130rem)]
+        "
       >
-        <div className="flex justify-start gap-[8.4375rem] w-[41.875rem] lg:w-full 4k:w-[55rem] 4k:gap-[10rem]">
-          {/* Background */}
-          <div className="absolute -top-[32.5rem] -left-[2.5rem] z-[-1] 4k:-top-[40rem] 4k:-left-[4rem]">
-            <div className="w-[133.8125rem] h-[176rem] lg:hidden 4k:w-[150rem] 4k:h-[200rem]">
+        <div className="
+          flex justify-start gap-[8.4375rem] w-[41.875rem]
+          lg:w-full
+          4k:w-[55rem]
+          4k:[gap:clamp(8.4375rem,calc(8.4375rem+((100vw-2000px)/2000px)*1.5625rem),10rem)]
+        ">
+          {/* BACKGROUND */}
+          <div className="
+            absolute -top-[32.5rem] -left-[2.5rem] z-[-1]
+            4k:[top:clamp(-32.5rem,calc(-32.5rem-((100vw-2000px)/2000px)*7.5rem),-40rem)]
+            4k:[left:clamp(-2.5rem,calc(-2.5rem-((100vw-2000px)/2000px)*1.5rem),-4rem)]
+          ">
+            <div className="
+              w-[133.8125rem] h-[176rem] lg:hidden
+              4k:[width:clamp(133.8125rem,calc(133.8125rem+((100vw-2000px)/2000px)*16.1875rem),150rem)]
+              4k:[height:clamp(176rem,calc(176rem+((100vw-2000px)/2000px)*24rem),200rem)]
+            ">
               <img
                 className="w-full h-full"
                 src={gRoad}
@@ -173,9 +195,13 @@ export default function SimpleSetupSection() {
             </div>
           </div>
 
-          {/* Path + Gradient */}
+          {/* PATH + GRADIENT */}
           <div
-            className="absolute top-[25rem] right-[12rem] 4k:top-[30rem] 4k:right-[15rem]"
+            className="
+              absolute top-[25rem] right-[12rem]
+              4k:[top:clamp(25rem,calc(25rem+((100vw-2000px)/2000px)*5rem),30rem)]
+              4k:[right:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*3rem),15rem)]
+            "
             ref={(el) => {
               if (el) {
                 const path = el.querySelector("path");
@@ -192,11 +218,22 @@ export default function SimpleSetupSection() {
               background:
                 "radial-gradient(50% 50% at 50% 50%, #DBE8FF 0%, #E8F4FF 25.96%, rgba(255,255,255,0) 100%)",
             }}
-            className="absolute -top-[12rem] -right-[31rem] w-[1425.84px] h-[1425.84px] lg:hidden z-[-2] 4k:w-[1600px] 4k:h-[1600px] 4k:-top-[14rem] 4k:-right-[35rem]"
+            className="
+              absolute -top-[12rem] -right-[31rem] w-[1425.84px] h-[1425.84px]
+              lg:hidden z-[-2]
+              4k:[width:clamp(1425.84px,calc(1425.84px+((100vw-2000px)/2000px)*174.16px),1600px)]
+              4k:[height:clamp(1425.84px,calc(1425.84px+((100vw-2000px)/2000px)*174.16px),1600px)]
+              4k:[top:clamp(-12rem,calc(-12rem-((100vw-2000px)/2000px)*2rem),-14rem)]
+              4k:[right:clamp(-31rem,calc(-31rem-((100vw-2000px)/2000px)*4rem),-35rem)]
+            "
           ></div>
 
-          {/* Binary Block */}
-          <div className="absolute left-[35rem] bottom-[16.875rem] lg:hidden 4k:left-[42rem] 4k:bottom-[20rem]">
+          {/* BINARY BLOCK */}
+          <div className="
+            absolute left-[35rem] bottom-[16.875rem] lg:hidden
+            4k:[left:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*7rem),42rem)]
+            4k:[bottom:clamp(16.875rem,calc(16.875rem+((100vw-2000px)/2000px)*3.125rem),20rem)]
+          ">
             <BinarySection
               subHeader="Did you know?"
               title="Built by software minds"
@@ -205,34 +242,71 @@ export default function SimpleSetupSection() {
             />
           </div>
 
-          {/* Text Content */}
-          <div className="pt-[10rem] pl-[5rem] lg:p-4 4k:pt-[12rem] 4k:pl-[7rem]">
-            <p className="mb-8 lg:mb-[1.5rem] font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.02em] uppercase text-primary-black 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)]">
+          {/* TEXT CONTENT */}
+          <div className="
+            pt-[10rem] pl-[5rem] lg:p-4
+            4k:[padding-top:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*2rem),12rem)]
+            4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*2rem),7rem)]
+          ">
+            <p className="
+              mb-8 lg:mb-[1.5rem]
+              font-geist-mono font-normal uppercase text-primary-black
+              leading-[150%] tracking-[0.02em]
+              text-[16px] lg:text-[14px]
+              4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*0.5rem),1.5rem)]
+            ">
               Presentation
             </p>
 
-            <h2 className="mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-40 lg:text-32 -tracking-[0.01em] leading-[130%] text-primary-black 4k:text-[clamp(2.5rem,1.5vw+1rem,5rem)] 4k:mb-[2rem]">
+            <h2 className="
+              mb-8 lg:mb-[1.5rem]
+              font-general-sans font-semibold text-primary-black
+              leading-[130%] -tracking-[0.01em]
+              text-[40px] lg:text-[32px]
+              4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
+              4k:mb-[2rem] 4k:leading-[120%]
+            ">
               Simple Setup
             </h2>
 
-            <p className="mb-[5rem] lg:mb-[2rem] font-geist font-normal text-32 lg:text-24 -tracking-[0.01em] leading-[140%] text-dark-gray 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] 4k:mb-[6rem]">
-              The process is straightforward, flexible, and built to get you
-              moving fast.
+            <p className="
+              mb-[5rem] lg:mb-[2rem]
+              font-geist font-normal text-dark-gray
+              leading-[140%] -tracking-[0.01em]
+              text-[32px] lg:text-[24px]
+              4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+              4k:mb-[6rem]
+            ">
+              The process is straightforward, flexible, and built to get you moving fast.
             </p>
 
-            {/* Items */}
-            <div className="flex flex-col gap-8 4k:gap-[2.5rem]">
+            {/* ITEMS */}
+            <div className="flex flex-col gap-8 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*0.5rem),2.5rem)]">
               {items.map((item, i) => (
                 <div
                   key={i}
-                  className="flex gap-6 lg:gap-[0.75rem] items-start 4k:gap-[1.5rem]"
+                  className="
+                    flex gap-6 items-start
+                    lg:gap-[0.75rem]
+                    4k:[gap:clamp(1.25rem,calc(1.25rem+((100vw-2000px)/2000px)*0.25rem),1.5rem)]
+                  "
                 >
                   {item.icon}
                   <div>
-                    <h3 className="font-geist font-medium text-28 lg:text-20 leading-[140%] text-primary-black 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)]">
+                    <h3 className="
+                      font-geist font-medium text-primary-black
+                      leading-[140%]
+                      text-[28px] lg:text-[20px]
+                      4k:[font-size:clamp(1.75rem,calc(1.75rem+((100vw-2000px)/2000px)*1rem),2.75rem)]
+                    ">
                       {item.title}
                     </h3>
-                    <p className="font-geist font-normal text-24 lg:text-base leading-[140%] text-primary-black 4k:text-[clamp(1.5rem,0.9vw+0.5rem,2rem)]">
+                    <p className="
+                      font-geist font-normal text-primary-black
+                      leading-[140%]
+                      text-[24px] lg:text-base
+                      4k:[font-size:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1rem),2.5rem)]
+                    ">
                       {item.description}
                     </p>
                   </div>
@@ -240,7 +314,7 @@ export default function SimpleSetupSection() {
               ))}
             </div>
 
-            {/* Mobile Binary */}
+            {/* MOBILE BINARY */}
             <div className="hidden lg:block py-[7.5rem] relative">
               <BinarySection
                 subHeader="Did you know?"

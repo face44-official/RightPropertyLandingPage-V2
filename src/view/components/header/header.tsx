@@ -68,7 +68,7 @@ export default function Header() {
             immediate: true
         });
     }, [pathname,lenis]);
-    const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
+    const headerClass = cn('fixed top-0 left-0 z-50 bg-white w-full transition-all duration-[500ms] ease-out [height:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*3.25rem),9rem)]', hideHeader ? '-translate-y-full' : '');
 
     return (
         <>
@@ -76,7 +76,7 @@ export default function Header() {
                 <div className="rp-container h-full flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
                     <div className="flex items-center gap-[5.52rem] lg:gap-[2.06rem]">
                         <Link to="/" aria-label="Right Property logo. Click to navigate to the home page">
-                            <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" />
+                            <Logo className="[width:clamp(6.4rem,calc(4.25rem+((100vw-2000px)/2000px)*3.75rem),9rem)]"  />
                         </Link>
                         <BuiltForDevelopers />
                     </div>

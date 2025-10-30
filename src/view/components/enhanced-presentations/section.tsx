@@ -7,14 +7,14 @@ import { BlueExploreButtonLink } from '../blue-explore-button';
 export default function EnhancedPresentationsSection() {
     return (
         <section className=" w-full h-[auto] lg:pb-[0] relative max-w-[100vw] overflow-hidden content-visibility-auto" aria-label="Enhanced presentations hero section">
-            <div className="relative desktop-rp-container flex items-center justify-between lg:flex-col lg:items-start pt-[8.5rem] lg:pt-[3.5rem] ">
+            <div className="relative desktop-rp-container flex items-center justify-between lg:flex-col lg:items-start pt-[15rem] lg:pt-[8.5rem] 4k:[padding-top:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*15rem),25rem)]">
                 <div className="mobile-rp-container pl-[5rem] lg:px-4 lg:w-full flex flex-col items-start justify-center  font-general-sans min-h-[40rem] lg:min-h-0 lg:order-2">
-                    <h1 className="mb-[2.0625rem] lg:mb-[0.875rem] font-font-general-sans font-semibold text-60 lg:text-40 4k:text-[clamp(2rem,4vw,8rem)] leading-[100%] tracking-[0%] text-raisin-black">
+                    <h1 className="mb-[2.0625rem] lg:mb-[0.875rem] font-font-general-sans font-semibold text-60 lg:text-40 4k:[font-size:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)] leading-[100%] tracking-[0%] text-raisin-black">
                         Enhanced <br />Presentations. <br />
                         Smarter Sales.
                     </h1>
 
-                    <div className="mb-[2.5625rem] lg:mb-[1.5rem] w-[28.875rem] lg:w-full 4k:w-[60rem] font-geist font-normal text-32 lg:text-24 4k:text-[clamp(2rem,1vw,2.5rem)] leading-[130%] -tracking-[0.01em] text-tundora">
+                    <div className="mb-[2.5625rem] lg:mb-[1.5rem] w-[28.875rem] lg:w-full 4k:w-[60rem] font-geist font-normal text-32 lg:text-24 4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)] leading-[130%] -tracking-[0.01em] text-tundora">
                         The digital suite that maximises your off-plan project sales and marketing efforts.
                     </div>
                     <div className="flex lg:flex-col lg:w-full lg:gap-[0.75rem] gap-30">
@@ -22,7 +22,7 @@ export default function EnhancedPresentationsSection() {
                         <BookADemoButton className="lg:w-full" />
                     </div>
                 </div>
-                <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:w-1/2">
+                <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:-mr-[30rem] 4k:w-[55%]">
 
                     <HeroVideoContainer />
                     {/* <video

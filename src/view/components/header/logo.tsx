@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 export default function Logo({className, onClick}: {className?: string, onClick?: () => void}) {
     return (
-        <svg className={cn('w-[6rem] h-auto lg:w-[4.25rem] cursor-pointer', className)} viewBox="0 0 91 55" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={onClick}>
+        <svg className={cn('cursor-pointer', className)} viewBox="0 0 91 55" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={onClick}>
             <rect x="0.875" y="35.9474" width="89.6017" height="5.47742" fill="#E4E5E6" />
             <path d="M19.5816 7.22218C16.2757 3.92059 20.9247 -1.54769 24.6438 1.54756C28.7763 5.05551 22.9909 10.5238 19.5816 7.22218Z" fill="#144566" />
             <path d="M7.08227 13.5168C8.01207 12.3819 9.14849 11.3501 10.5948 10.8342C11.2805 10.5897 12.2478 10.3184 12.4544 10.3184H15.1405V16.4057H12.0412C9.66504 16.4057 7.3922 19.9136 7.3922 22.0803V29.9216H1.29688V10.3184H7.08227V13.5168Z" fill="#144566" />

@@ -6,7 +6,7 @@ export default function BookADemoButton({ className }: { className?: string }) {
     // Base styles
     "group will-change-transform transition-all duration-300 overflow-hidden ease-in-out cursor-pointer text-left pl-[2.25rem] hover:pl-[5.25rem] w-[14.5625rem] lg:w-full lg:pl-0 lg:flex lg:items-center lg:justify-center h-[4rem] lg:h-[3rem] lg:text-sm rounded-[65px] bg-[#FF9985] font-geist font-semibold text-base leading-[130%] tracking-[0%] uppercase relative",
     // Scale everything on 4K screens
-    "4k:text-lg 4k:h-[4.5rem] 4k:w-[16rem] 4k:pl-[2.75rem] 4k:hover:pl-[6rem] 4k:tracking-[0.03em]",
+    "4k:text-lg 4k:h-[4.5rem] 4k:w-[16rem] 4k:pl-[2.75rem] 4k:hover:pl-[6rem] 4k:tracking-[0.03em] 4k:[font-size:clamp(var(--minSize),calc(var(--minSize)+((100vw-var(--minVw))/(var(--maxVw)-var(--minVw)))*(var(--maxSize)-var(--minSize))),var(--maxSize))]",
     className
   );
 

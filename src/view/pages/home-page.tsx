@@ -22,7 +22,8 @@ export default function HomePage() {
         startOffset: "top+=250px top",
         endOffset: "+=100%",
         scrollScrub: true,
-        markers: false
+        markers: false,
+        responsiveScale: true
     })
 
     useEffect(() => {
@@ -37,14 +38,14 @@ export default function HomePage() {
             </Helmet>
 
 
-            <main role="main" className="relative z-[10]" aria-label="Right Property homepage content">
+            <main role="main" className="relative z-[10] 4k:max-w-[100vw] 4k:overflow-x-hidden" aria-label="Right Property homepage content">
                 <div className="relative z-[20]">
                     <div id="first-two">
-                        <div ref={divRef} className="lg:hidden transition-colors duration-300 z-[8] absolute top-0 left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden">
+                        <div ref={divRef} className="lg:hidden transition-colors duration-300 z-[8] absolute top-0 left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden 4k:scale-[1.1]">
                             <div className="rp-container relative content-visiblity-auto">
-                                <HeroRoad className="w-[62.37rem] h-auto trigger -translate-y-[2.5rem] translate-x-[2.5rem] " />
+                                <HeroRoad className="w-[62.37rem] h-auto trigger -translate-y-[2.5rem] translate-x-[2.5rem] 4k:w-[70rem] 4k:translate-x-[18.5rem] 4k:-translate-y-[3rem]" />
                                 {/* <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" /> */}
-                                <div className="z-[8] absolute top-[23.4375rem] left-[8.5rem]">
+                                <div className="z-[8] absolute top-[23.4375rem] left-[8.5rem] 4k:top-[30rem] 4k:left-[12rem]">
                                     <div className="rp-container ">
                                         <div ref={(el) => {
                                             if (el) {

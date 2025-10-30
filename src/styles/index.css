@@ -311,6 +311,10 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --minVw: 2000px;      /* start scaling at 2K */
+  --maxVw: 4000px;      /* stop at 4K */
+  --minSize: 1rem;      /* size at 2K */
+  --maxSize: 2rem;
 }
 .text-fill {
   background: linear-gradient(
@@ -440,6 +444,23 @@ body {
     video {
       max-width: 100%;
       height: auto;
+    }
+  }
+}
+
+@layer utilities {
+  .text-2k-4k {
+    font-size: 16px;
+    @media (min-width: 2000px) {
+      font-size: clamp(
+    var(--minSize),
+    calc(
+      var(--minSize) +
+      ((100vw - var(--minVw)) / (var(--maxVw) - var(--minVw))) *
+      (var(--maxSize) - var(--minSize))
+    ),
+    var(--maxSize)
+  );
     }
   }
 }

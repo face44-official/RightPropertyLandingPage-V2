@@ -23,7 +23,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
         content-visibility-auto rp-container
         pb-[19.75rem] pt-[13.75rem]
         flex gap-[3.25rem] items-start justify-center
-        lg:gap-0 lg:flex-col lg:py-0 lg:pb-[10rem]
+        lg:gap-0 lg:flex-col lg:py-0 lg:pb-[0rem]
         4k:pb-[24rem] 4k:pt-[16rem] 4k:gap-[4rem]
       "
     >
@@ -36,7 +36,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
               mb-[2rem] font-geist-mono font-normal uppercase text-squid-ink
               text-16 leading-[150%] tracking-[4%]
               lg:text-16 lg:mb-[1.25rem]
-              4k:text-[clamp(1.25rem,0.8vw+0.5rem,1.5rem)] 4k:mb-[2.5rem]
+              text-2k-4k
             ">
               Meet Right Property
             </h2>
@@ -49,7 +49,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
                 reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black
                 mb-[2.5rem] lg:mb-[2rem]
                 text-40 leading-[120%] -tracking-[0.01em] lg:text-28
-                4k:text-[clamp(2.5rem,1.8vw+1rem,4rem)] 4k:leading-[130%] 4k:mb-[3rem]
+                4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)] 4k:leading-[130%] 4k:mb-[3rem]
                 meet-right-property-text
               "
             >
@@ -88,7 +88,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <p className="
               mb-[2.5rem] font-geist font-normal text-32 leading-[140%] -tracking-[0.01em]
               lg:mb-[2rem] lg:leading-[130%] lg:text-24
-              4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] 4k:leading-[150%] 4k:mb-[3rem]
+              4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)] 4k:mb-[3rem]
             ">
               Right Property gives you precisely what you need to make your sales and marketing efforts truly count.
             </p>
@@ -97,7 +97,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <h3 className="
               font-geist-mono font-normal uppercase text-squid-ink text-16 tracking-[0.04em]
               leading-[150%] lg:text-14
-              4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)] 4k:leading-[150%]
+              text-2k-4k
             ">
               Trusted by <span className="hidden lg:inline"><br/></span>
               <span className="font-semibold">forward-thinking developers</span>

@@ -7,7 +7,7 @@ export default function HeroVideoContainer() {
     }
     return (
         <div
-      className="relative w-[70.21rem] 4k:w-[100%] max-w-[1200px] 4k:max-w-[100%] lg:w-[120vw] aspect-[16/9] mx-auto"
+      className="mb-0 lg:mb-12 relative w-[70.21rem] 4k:w-[100%] max-w-[1200px] 4k:max-w-[100%] lg:w-[120vw] aspect-[16/9] mx-auto"
       style={{
         backgroundImage: "url('/hero-frame.webp')",
         backgroundSize: "cover",
@@ -16,7 +16,7 @@ export default function HeroVideoContainer() {
       }}
     >
       {/* video or first-frame image inside the frame */}
-      <div className="absolute inset-[2.6rem_4.5rem_0_4.5rem] 4k:inset-[6%_6%_0%_6.5%] overflow-hidden">
+      <div className="absolute inset-[2.6rem_4.5rem_0_4.5rem] lg:inset-[1.9rem_3.5rem_0_3.5rem] 4k:inset-[6%_6%_0%_6.5%] overflow-hidden">
         {!showVideo && (
           <img
             src="/hero_first_frame.webp"
