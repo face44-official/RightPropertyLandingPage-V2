@@ -56,8 +56,9 @@ export default function FaqItem({
       onClick={handleClick}
       className="
         text-[#E2E2E2] cursor-pointer flex flex-col
-        p-[2.5rem] lg:p-6 4k:p-[3.5rem]
-        transition-all duration-300
+        p-[2.5rem] lg:p-6
+        4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
+        transition-all duration-300 ease-in-out
         hover:bg-[rgba(187,135,255,0.15)]
       "
       style={{ background: "rgba(187, 135, 255, 0.1)" }}
@@ -66,14 +67,17 @@ export default function FaqItem({
       <div
         className="
           flex items-center justify-between
-          gap-[5.625rem] lg:gap-6 4k:gap-[7rem]
+          gap-[5.625rem] lg:gap-6
+          4k:[gap:clamp(5.625rem,calc(5.625rem+((100vw-2000px)/2000px)*3.375rem),9rem)]
         "
       >
         <h3
           className="
             font-geist font-medium
-            text-24 lg:text-base 4k:text-[clamp(1.75rem,2vw,2rem)]
+            text-24 lg:text-base
             leading-[140%] -tracking-[0.02em]
+            text-2k-4k-24
+            4k:[line-height:clamp(140%,calc(140%+((100vw-2000px)/2000px)*10%),150%)]
           "
         >
           {question}
@@ -81,17 +85,22 @@ export default function FaqItem({
 
         <div
           className="
-            shrink-0
-            w-[64px] h-[64px]
-            lg:w-[2.5rem] lg:h-[2.5rem]
-            4k:w-[80px] 4k:h-[80px]
+            shrink-0 flex items-center justify-center
+            w-[64px] h-[64px] lg:w-[2.5rem] lg:h-[2.5rem]
+            4k:[width:clamp(64px,calc(64px+((100vw-2000px)/2000px)*64px),128px)]
+            4k:[height:clamp(64px,calc(64px+((100vw-2000px)/2000px)*64px),128px)]
             rounded-full border border-[#FF947E]
-            flex items-center justify-center
+            transition-all duration-300
           "
         >
           <svg
             ref={iconRef}
-            className="w-[1.5rem] h-[1.5rem] 4k:w-[2rem] 4k:h-[2rem] transition-transform"
+            className="
+              w-[1.5rem] h-[1.5rem]
+              4k:[width:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+              4k:[height:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+              transition-transform
+            "
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +122,8 @@ export default function FaqItem({
         className="
           h-0 overflow-hidden mt-[0.75rem]
           font-geist font-normal
-          text-18 lg:text-base 4k:text-[1.3rem]
+          text-18 lg:text-base text-2k-4k-18
+          4k:[margin-top:clamp(0.75rem,calc(0.75rem+((100vw-2000px)/2000px)*0.75rem),1.5rem)]
           leading-[140%] tracking-[0%]
         "
       >

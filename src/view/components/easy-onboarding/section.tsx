@@ -83,11 +83,7 @@ export default function EasyOnboardingSection() {
             gradientRef.current.style.setProperty("left", `${follower.x}px`);
             gradientRef.current.style.setProperty("top", `${follower.y}px`);
 
-            const startColor = interpolateColor(
-              "#C4EEE3",
-              "#E7DFF2",
-              progress
-            );
+            const startColor = interpolateColor("#C4EEE3", "#E7DFF2", progress);
             const middleColor = interpolateColor(
               "#EFF9FF",
               "#F5F2F9",
@@ -120,54 +116,100 @@ export default function EasyOnboardingSection() {
 
   return (
     <section id="easy-onboarding" className="content-visibility-auto">
-      {/* mobile background */}
-      <div className="hidden lg:block relative w-full h-[24.125rem] mx-auto overflow-visible 4k:h-[30rem]">
-        <div className="absolute -bottom-[125px] 4k:-bottom-[150px]">
+      {/* MOBILE BACKGROUND */}
+      <div
+        className="
+      hidden lg:block relative w-full mx-auto overflow-visible
+      h-[24.125rem]
+      4k:[height:clamp(24.125rem,calc(24.125rem+((100vw-2000px)/2000px)*24.125rem),48.25rem)]
+    "
+      >
+        <div
+          className="
+        absolute -bottom-[125px]
+        4k:[bottom:clamp(-125px,calc(-125px-((100vw-2000px)/2000px)*125px),-250px)]
+      "
+        >
           <img
             src={mobileRoad3}
-            className="w-[701px] h-[739px] object-cover 4k:w-[850px] 4k:h-[880px]"
             alt="Right Property onboarding process mobile visualization"
+            className="
+          object-cover
+          w-[701px] h-[739px]
+          4k:[width:clamp(701px,calc(701px+((100vw-2000px)/2000px)*701px),1402px)]
+          4k:[height:clamp(739px,calc(739px+((100vw-2000px)/2000px)*739px),1478px)]
+        "
           />
         </div>
       </div>
 
+      {/* DESKTOP LAYOUT */}
       <div
-        className="rp-container relative lg:h-auto"
-        style={{ height: "98.75rem" }}
+        className="
+      rp-container relative lg:h-auto
+      [height:98.75rem]
+      4k:[height:clamp(98.75rem,calc(98.75rem+((100vw-2000px)/2000px)*98.75rem),197.5rem)]
+    "
       >
-        {/* path & gradient visuals */}
+        {/* PATH IMAGE */}
         <img
-          className="absolute top-[5rem] -left-[4.375rem] w-[61.6875rem] h-[80.375rem] lg:hidden z-[-1] 4k:w-[72rem] 4k:h-[95rem] 4k:top-[6rem] 4k:-left-[5rem]"
           src={easyOnboarding}
-          alt="Right Property easy onboarding process visualization with animated path"
+          alt="Right Property easy onboarding process visualization"
           loading="lazy"
           decoding="async"
           width="987"
           height="1286"
+          className="
+        absolute lg:hidden z-[-1]
+        top-[5rem] -left-[4.375rem] w-[61.6875rem] h-[80.375rem]
+        4k:[width:clamp(61.6875rem,calc(61.6875rem+((100vw-2000px)/2000px)*61.6875rem),123.375rem)]
+        4k:[height:clamp(80.375rem,calc(80.375rem+((100vw-2000px)/2000px)*80.375rem),160.75rem)]
+        4k:[top:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+        4k:[left:clamp(-4.375rem,calc(-4.375rem-((100vw-2000px)/2000px)*4.375rem),-8.75rem)]
+      "
         />
+
+        {/* SVG PATH */}
         <div
-          className="absolute top-[43.3125rem] left-[40.75rem] 4k:top-[50rem] 4k:left-[48rem]"
+          className="
+        absolute top-[43.3125rem] left-[40.75rem]
+        4k:[top:clamp(43.3125rem,calc(43.3125rem+((100vw-2000px)/2000px)*43.3125rem),86.625rem)]
+        4k:[left:clamp(40.75rem,calc(40.75rem+((100vw-2000px)/2000px)*40.75rem),81.5rem)]
+      "
           ref={(el) => {
-            if (el) {
-              const path = el.querySelector("path");
-              if (path) pathRef.current = path;
-            }
+            const path = el?.querySelector("path");
+            if (path) pathRef.current = path;
           }}
         >
           <EasyOnboardingPath />
         </div>
 
+        {/* GRADIENT GLOW */}
         <div
           ref={gradientRef}
           style={{
             background:
-              "radial-gradient(50% 50% at 50% 50%, #C4EEE3 0%, #EFF9FF 50.13%, rgba(255, 255, 255, 0) 100%)",
+              "radial-gradient(50% 50% at 50% 50%, #C4EEE3 0%, #EFF9FF 50.13%, rgba(255,255,255,0) 100%)",
           }}
-          className="lg:hidden absolute z-[-2] top-[15.75rem] left-[10.625rem] w-[55.375rem] h-[55.375rem] 4k:w-[65rem] 4k:h-[65rem] 4k:top-[18rem] 4k:left-[12rem]"
+          className="
+        absolute lg:hidden z-[-2]
+        top-[15.75rem] left-[10.625rem] w-[55.375rem] h-[55.375rem]
+        4k:[width:clamp(55.375rem,calc(55.375rem+((100vw-2000px)/2000px)*55.375rem),110.75rem)]
+        4k:[height:clamp(55.375rem,calc(55.375rem+((100vw-2000px)/2000px)*55.375rem),110.75rem)]
+        4k:[top:clamp(15.75rem,calc(15.75rem+((100vw-2000px)/2000px)*15.75rem),31.5rem)]
+        4k:[left:clamp(10.625rem,calc(10.625rem+((100vw-2000px)/2000px)*10.625rem),21.25rem)]
+      "
         ></div>
 
-        {/* Right-side binary block */}
-        <div className="absolute left-[35rem] bottom-[7.125rem] lg:hidden 4k:left-[42rem] 4k:bottom-[0rem]">
+        {/* RIGHT BINARY BLOCK */}
+        <div
+          className="
+        absolute lg:hidden
+        left-[35rem] bottom-[7.125rem]
+        4k:[left:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*35rem),70rem)]
+        4k:[bottom:clamp(7.125rem,calc(7.125rem+((100vw-2000px)/2000px)*7.125rem),14.25rem)]
+      "
+        >
           <BinarySection
             subHeader="Did you know?"
             title="Built by software minds"
@@ -176,31 +218,84 @@ export default function EasyOnboardingSection() {
           />
         </div>
 
-        {/* Text and items */}
-        <div className="flex justify-end pr-[10rem] pt-[10rem] lg:p-4 relative z-[10] 4k:pr-[12rem] 4k:pt-[12rem]">
-          <div className="w-[41.875rem] lg:w-full lg:p-4 4k:w-[55rem]">
-            <p className="mb-8 lg:mb-[1.5rem] font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.02em] uppercase text-primary-black 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)] 4k:mb-[2rem]">
+        {/* TEXT CONTENT */}
+        <div
+          className="
+        flex justify-end relative z-[10] lg:p-4
+        pr-[10rem] pt-[10rem]
+        4k:[padding-right:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*10rem),20rem)]
+        4k:[padding-top:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*10rem),20rem)]
+      "
+        >
+          <div
+            className="
+          w-[41.875rem] lg:w-full
+          4k:[width:clamp(41.875rem,calc(41.875rem+((100vw-2000px)/2000px)*41.875rem),83.75rem)]
+        "
+          >
+            <p
+              className="
+            mb-8 font-geist-mono font-normal uppercase
+            text-16 lg:text-14 leading-[150%] tracking-[0.02em] text-primary-black
+            text-2k-4k
+            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+          "
+            >
               Presentation
             </p>
 
-            <h2 className="mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-40 lg:text-32 -tracking-[0.01em] leading-[130%] text-primary-black 4k:text-[clamp(2.5rem,1.5vw+1rem,4rem)] 4k:mb-[2rem]">
+            <h2
+              className="
+            mb-8 font-general-sans font-semibold text-primary-black
+            leading-[130%] -tracking-[0.01em] text-[40px]
+            text-fluid-4k-40
+            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+          "
+            >
               Easy Onboarding
             </h2>
 
-            <p className="mb-[5rem] lg:mb-[2rem] font-geist font-normal text-32 lg:text-24 -tracking-[0.01em] leading-[140%] text-dark-gray 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] 4k:mb-[6rem]">
-              Get started in hours, scale on your terms, and pay only for what you
-              need—no surprises.
+            <p
+              className="
+            mb-[5rem] font-geist font-normal text-dark-gray leading-[140%]
+            text-[32px]
+            text-fluid-4k-32
+            4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+          "
+            >
+              Get started in hours, scale on your terms, and pay only for what
+              you need—no surprises.
             </p>
 
-            <div className="flex flex-col gap-8 4k:gap-[2.5rem]">
+            {/* FEATURES LIST */}
+            <div className="flex flex-col gap-8 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
               {items.map((item, idx) => (
-                <div key={idx} className="flex gap-6 lg:gap-[0.75rem] items-start 4k:gap-[1.5rem]">
+                <div
+                  key={idx}
+                  className="
+                flex items-start gap-6 lg:gap-[0.75rem]
+                4k:[gap:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+              "
+                >
                   {item.icon}
                   <div>
-                    <h3 className="font-geist mb-2 font-medium text-28 lg:text-20 leading-[140%] text-primary-black 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)]">
+                    <h3
+                      className="
+                    mb-2 font-geist font-medium text-primary-black leading-[140%]
+                    text-[28px]
+                    text-fluid-4k-28
+                    4k:[margin-bottom:clamp(0.5rem,calc(0.5rem+((100vw-2000px)/2000px)*0.5rem),1rem)]
+                  "
+                    >
                       {item.title}
                     </h3>
-                    <p className="font-geist font-normal text-24 lg:text-base leading-[140%] text-primary-black 4k:text-[clamp(1.5rem,0.9vw+0.5rem,2rem)]">
+                    <p
+                      className="
+                    font-geist font-normal text-primary-black leading-[140%]
+                    text-[24px]
+                    text-2k-4k-24
+                  "
+                    >
                       {item.description}
                     </p>
                   </div>
@@ -208,7 +303,15 @@ export default function EasyOnboardingSection() {
               ))}
             </div>
 
-            <div className="hidden lg:block py-[7.5rem]">
+            {/* MOBILE BINARY */}
+            <div
+              className="
+            hidden lg:block relative
+            py-[7.5rem]
+            4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
+            4k:[padding-bottom:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
+          "
+            >
               <BinarySection
                 subHeader="Did you know?"
                 title="Automated where it matters"

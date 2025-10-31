@@ -17,8 +17,9 @@ export default function ChoosePresentationSection() {
               font-geist-mono font-medium uppercase text-primary-black
               text-[16px] leading-[150%] tracking-[0.04em]
               lg:px-4 lg:text-start lg:text-[14px]
-              4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*0.5rem),1.5rem)]
-              4k:pl-[6rem] 4k:mb-[2rem]
+              text-2k-4k
+              4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+              4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
             "
           >
             Choose the Presentation Experience
@@ -30,10 +31,11 @@ export default function ChoosePresentationSection() {
               mb-[2.5rem] lg:mb-[2rem] lg:px-4
               font-geist font-semibold text-primary-black
               text-[40px] lg:text-[32px] leading-[130%]
-              4k:w-[60rem]
-              4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
-              4k:pl-[6rem] 4k:mb-[3rem]
-              4k:leading-[120%]
+              text-fluid-4k-40
+              4k:[width:clamp(46.875rem,calc(46.875rem+((100vw-2000px)/2000px)*46.875rem),93.75rem)]
+              4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+              4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),5rem)]
+              4k:[line-height:clamp(130%,calc(130%+((100vw-2000px)/2000px)*0%),130%)]
             "
           >
             Right Property offers two powerful ways to present
@@ -43,29 +45,42 @@ export default function ChoosePresentationSection() {
         {/* Presentation options */}
         <div className="flex w-full lg:flex-col lg:gap-0 mobile-rp-container lg:m-auto">
           {/* Surface */}
-          <div className="group relative grow basis-[100%] overflow-hidden 4k:min-h-[45rem]">
+          <div
+            className="
+              group relative grow basis-[100%] overflow-hidden
+              4k:[min-height:clamp(45rem,calc(45rem+((100vw-2000px)/2000px)*15rem),60rem)]
+            "
+          >
             <img
               src={surfaceImage}
-              alt="Right Property Surface 2D presentation mode interface"
+              alt='Right Property Surface 2D presentation mode interface'
               className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out"
             />
 
             <div
               style={{
                 background:
-                  "linear-gradient(360deg, rgba(255, 255, 255, 0) -6.49%, #F1F1F1 86.98%)",
+                  "linear-gradient(360deg, rgba(255,255,255,0) -6.49%, #F1F1F1 86.98%)",
               }}
-              className="absolute top-0 left-0 z-[1] w-full h-[16.825rem] 4k:h-[20rem]"
+              className="
+                absolute top-0 left-0 z-[1] w-full h-[16.825rem]
+                4k:[height:clamp(16.825rem,calc(16.825rem+((100vw-2000px)/2000px)*8.175rem),25rem)]
+              "
             />
 
-            <div className="absolute left-[5rem] top-[4.0625rem] lg:left-6 lg:top-6 4k:left-[6rem] 4k:top-[5rem]">
+            <div
+              className="
+                absolute left-[5rem] top-[4.0625rem] lg:left-6 lg:top-6
+                4k:[left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*3rem),8rem)]
+                4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2000px)/2000px)*2.9375rem),7rem)]
+              "
+            >
               <h3
                 className="
                   mb-3 font-general-sans font-medium text-raisin-black relative z-[2]
-                  text-[40px] leading-[130%]
-                  lg:text-[32px]
-                  4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
-                  4k:mb-[2rem]
+                  text-[40px] leading-[130%] lg:text-[32px]
+                  text-fluid-4k-40
+                  4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 "
               >
                 Surface
@@ -74,9 +89,9 @@ export default function ChoosePresentationSection() {
                 className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-dark-gray relative z-[2]
-                  text-[22px] leading-[140%]
-                  lg:text-[18px]
-                  4k:[font-size:clamp(1.375rem,calc(1.375rem+((100vw-2000px)/2000px)*1.375rem),2.75rem)]
+                  text-[22px] leading-[140%] lg:text-[18px]
+                  text-2k-4k-22
+                  4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
                 "
               >
                 2D, fast, cost-effective, and easy to set up
@@ -85,29 +100,42 @@ export default function ChoosePresentationSection() {
           </div>
 
           {/* Space */}
-          <div className="group relative grow basis-[100%] overflow-hidden 4k:min-h-[45rem]">
+          <div
+            className="
+              group relative grow basis-[100%] overflow-hidden
+              4k:[min-height:clamp(45rem,calc(45rem+((100vw-2000px)/2000px)*15rem),60rem)]
+            "
+          >
             <img
               src={spaceImage}
-              alt="Right Property Space 3D presentation mode interface"
+              alt='Right Property Space 3D presentation mode interface'
               className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out"
             />
 
             <div
               style={{
                 background:
-                  "linear-gradient(360deg, rgba(0, 0, 0, 0) -6.49%, #000000 86.98%)",
+                  "linear-gradient(360deg, rgba(0,0,0,0) -6.49%, #000000 86.98%)",
               }}
-              className="absolute top-0 left-0 z-[1] w-full h-[16.825rem] 4k:h-[20rem]"
+              className="
+                absolute top-0 left-0 z-[1] w-full h-[16.825rem]
+                4k:[height:clamp(16.825rem,calc(16.825rem+((100vw-2000px)/2000px)*8.175rem),25rem)]
+              "
             />
 
-            <div className="absolute left-[5rem] top-[4.0625rem] lg:left-6 lg:top-6 4k:left-[6rem] 4k:top-[5rem]">
+            <div
+              className="
+                absolute left-[5rem] top-[4.0625rem] lg:left-6 lg:top-6
+                4k:[left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*3rem),8rem)]
+                4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2000px)/2000px)*2.9375rem),7rem)]
+              "
+            >
               <h3
                 className="
                   mb-3 font-general-sans font-medium text-white relative z-[2]
-                  text-[40px] leading-[130%]
-                  lg:text-[32px]
-                  4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
-                  4k:mb-[2rem]
+                  text-[40px] leading-[130%] lg:text-[32px]
+                  text-fluid-4k-40
+                  4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 "
               >
                 Space
@@ -116,12 +144,12 @@ export default function ChoosePresentationSection() {
                 className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-white relative z-[2]
-                  text-[22px] leading-[140%]
-                  lg:text-[18px]
-                  4k:[font-size:clamp(1.375rem,calc(1.375rem+((100vw-2000px)/2000px)*1.375rem),2.75rem)]
+                  text-[22px] leading-[140%] lg:text-[18px]
+                  text-2k-4k-22
+                  4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
                 "
               >
-                3D, stunning, immersive, interactive.
+                3D, stunning, immersive, interactive
               </p>
             </div>
           </div>

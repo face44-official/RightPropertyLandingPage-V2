@@ -45,7 +45,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <div
               data-bg-color="#C4C4C4"
               data-fg-color="#000000"
-              className="reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black mb-[2.5rem] lg:mb-[2rem] text-40 leading-[120%] -tracking-[0.01em] lg:text-28 4k:[font-size:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)] 4k:leading-[130%] 4k:mb-[3rem] meet-right-property-text
+              className="reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black mb-[2.5rem] lg:mb-[2rem] text-40 leading-[120%] -tracking-[0.01em] lg:text-28 text-fluid-4k-40 4k:leading-[130%] 4k:mb-[3rem] meet-right-property-text
               "
             >
               Property sales require more than just listings, 3D models and brochures – it's about

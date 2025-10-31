@@ -34,7 +34,9 @@ export default function BackToBackReveal() {
   const [currentItem, setCurrentItem] = useState(0);
   const $flipTl = useRef<GSAPTimeline>(null);
   const $direction = useRef<1 | -1>(null);
-  const animationQueue = useRef<Array<{ direction: 1 | -1; index: number }>>([]);
+  const animationQueue = useRef<Array<{ direction: 1 | -1; index: number }>>(
+    []
+  );
   const isAnimating = useRef(false);
 
   const $cardSectionRef1 = useRef<HTMLDivElement>(null);
@@ -111,7 +113,9 @@ export default function BackToBackReveal() {
         relative mt-[13.4375rem] lg:hidden content-visibility-auto
         h-[600vh] 4k:h-[650vh]
       "
-      style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)" }}
+      style={{
+        background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)",
+      }}
     >
       <div className="max-w-[1680px] mx-auto w-full relative z-[50]">
         {/* PINNED CARD AREA */}
@@ -127,7 +131,8 @@ export default function BackToBackReveal() {
             className="
               card quickflip relative
               w-[48.9375rem] h-[561px]
-              4k:w-[60rem] 4k:h-[640px]
+              4k:[width:clamp(48.9375rem,calc(48.9375rem+((100vw-2000px)/2000px)*48.9375rem),97.875rem)]
+              4k:[height:clamp(561px,calc(561px+((100vw-2000px)/2000px)*561px),1122px)]
             "
             style={{ perspective: "800px", transformStyle: "preserve-3d" }}
           >
@@ -140,14 +145,20 @@ export default function BackToBackReveal() {
           </div>
 
           <div className="absolute top-1/2 -translate-y-1/2 -left-[4.375rem] 4k:-left-[5.5rem]">
-            <RevealItemsIndicator items={cardContents.length} currentItem={currentItem} />
+            <RevealItemsIndicator
+              items={cardContents.length}
+              currentItem={currentItem}
+            />
           </div>
         </div>
       </div>
 
       {/* SECTIONS */}
       <div className="rp-container">
-        <VideoContainer sectionRef={$cardSectionRef1} videoUrl={marketingOption1}>
+        <VideoContainer
+          sectionRef={$cardSectionRef1}
+          videoUrl={marketingOption1}
+        >
           <div className="absolute w-[109.25rem] h-[93.125rem] -left-[53.125rem] -top-[30.75rem] z-[-1] 4k:w-[124rem] 4k:h-[106rem] 4k:-left-[60rem] 4k:-top-[35rem]">
             <img src={revealItem1Road} className="h-full w-full" alt="" />
           </div>
@@ -158,7 +169,10 @@ export default function BackToBackReveal() {
           />
         </VideoContainer>
 
-        <VideoContainer sectionRef={$cardSectionRef2} videoUrl={interactiveVideo}>
+        <VideoContainer
+          sectionRef={$cardSectionRef2}
+          videoUrl={interactiveVideo}
+        >
           <div className="absolute w-[108.75rem] h-[93.125rem] -left-[57.875rem] -top-[30.75rem] z-[-1] 4k:w-[124rem] 4k:h-[106rem] 4k:-left-[64rem] 4k:-top-[35rem]">
             <img src={revealItem2Road} className="h-full w-full" alt="" />
           </div>
@@ -169,7 +183,10 @@ export default function BackToBackReveal() {
           />
         </VideoContainer>
 
-        <VideoContainer sectionRef={$cardSectionRef3} videoUrl={websiteTemplates}>
+        <VideoContainer
+          sectionRef={$cardSectionRef3}
+          videoUrl={websiteTemplates}
+        >
           <div className="absolute w-[108.75rem] h-[93.125rem] -right-[10.675rem] -bottom-[36.25rem] z-[-1] 4k:w-[124rem] 4k:h-[106rem] 4k:-right-[12rem] 4k:-bottom-[42rem]">
             <img src={revealItem3Road} className="h-full w-full" alt="" />
           </div>
@@ -190,7 +207,10 @@ export default function BackToBackReveal() {
           <BlueGradient />
         </VideoContainer>
 
-        <VideoContainer sectionRef={$cardSectionRef5} videoUrl={emailMarketingVideo}>
+        <VideoContainer
+          sectionRef={$cardSectionRef5}
+          videoUrl={emailMarketingVideo}
+        >
           <BlueGradient />
           <div className="absolute w-[105.0625rem] h-[93.125rem] -left-[57.9375rem] -top-[30.125rem] z-[-1] 4k:w-[120rem] 4k:h-[106rem] 4k:-left-[64rem] 4k:-top-[35rem]">
             <img src={revealItem5Road} className="h-full w-full" alt="" />
@@ -262,12 +282,18 @@ export const VideoContainer = ({
   roadClass?: string;
 }) => {
   return (
-    <div className="relative w-full h-[100vh] 4k:h-[110vh] flex items-center justify-end pr-[6.875rem] 4k:pr-[8rem]" ref={sectionRef}>
+    <div
+      className="relative w-full h-[100vh] 4k:h-[110vh] flex items-center justify-end pr-[6.875rem] 4k:pr-[8rem]"
+      ref={sectionRef}
+    >
       {road && (
         <img
           src={road}
           alt="Right Property feature section background road decoration"
-          className={cn("absolute left-0 top-0 w-full h-auto object-contain", roadClass)}
+          className={cn(
+            "absolute left-0 top-0 w-full h-auto object-contain",
+            roadClass
+          )}
         />
       )}
 

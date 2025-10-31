@@ -43,38 +43,28 @@ export default function FlippingCardContent({
     const ensureAccessibleTwin = (el: HTMLElement, idx: number) => {
       const text = (el.textContent || "").replace(/\s+/g, " ").trim();
       if (!text) return;
-
       const existingId = el.getAttribute("data-sr-id");
       if (!existingId) {
         const srId = `sr-${el.tagName.toLowerCase()}-${idx}-${Math.random()
           .toString(36)
           .slice(2)}`;
-
         const sr = document.createElement(el.tagName.toLowerCase());
         sr.id = srId;
         sr.textContent = text;
         sr.className = "sr-only";
-        sr.setAttribute("data-injected-sr", "true");
-
         el.insertAdjacentElement("beforebegin", sr);
         srs.push(sr);
-
         el.setAttribute("aria-hidden", "true");
-        el.removeAttribute("aria-label");
-        el.removeAttribute("aria-labelledby");
         el.setAttribute("data-sr-id", srId);
       }
     };
 
     targets.forEach((el, i) => ensureAccessibleTwin(el, i));
-
     targets.forEach((el) => {
       const split = new SplitText(el, { type: "lines,chars" });
       splits.push(split);
-
       gsap.set(split.lines, { overflow: "hidden", lineHeight: "1.2em" });
       gsap.set(split.chars, { y: "200%" });
-
       gsap.to(split.chars, {
         y: "0%",
         duration: 1,
@@ -104,19 +94,23 @@ export default function FlippingCardContent({
     <div
       ref={containerRef}
       className="
-        p-[3.75rem] bg-white w-[48.9375rem]
-        4k:w-[60rem] 4k:p-[4.5rem] 4k:rounded-[20px] 4k:h-full
-      "
+    bg-white p-[3.75rem] w-[48.9375rem]
+    4k:h-full
+    4k:[width:clamp(48.9375rem,calc(48.9375rem+((100vw-2000px)/2000px)*48.9375rem),97.875rem)]
+    4k:[padding:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
+    4k:[border-radius:clamp(0px,calc(0px+((100vw-2000px)/2000px)*40px),40px)]
+  "
     >
       <div className="card-content">
         {subHeading && (
           <p
             ref={subHeadingRef}
             className="
-              mb-8 font-geist-mono font-normal uppercase text-primary-black overflow-hidden
-              text-16 leading-[150%] tracking-[0.04em]
-              4k:mb-[2rem] 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)]
-            "
+          mb-8 font-geist-mono font-normal uppercase text-primary-black overflow-hidden
+          text-16 leading-[150%] tracking-[0.04em]
+          4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+          text-2k-4k
+        "
           >
             {subHeading}
           </p>
@@ -125,10 +119,12 @@ export default function FlippingCardContent({
         <h2
           ref={titleRef}
           className="
-            mb-8 lg:mb-6 font-general-sans font-semibold tracking-[0em] text-primary-black overflow-hidden pr-16
-            text-40 lg:text-40 leading-[130%]
-            4k:mb-[2rem] 4k:pr-[5rem] 4k:text-[clamp(2.5rem,1.6vw+1rem,5rem)]
-          "
+        mb-8 lg:mb-6 font-general-sans font-semibold text-primary-black overflow-hidden pr-16
+        text-40 leading-[130%]
+        4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+        4k:[padding-right:clamp(4rem,calc(4rem+((100vw-2000px)/2000px)*4rem),8rem)]
+        text-fluid-4k-40
+      "
         >
           {title}
         </h2>
@@ -136,24 +132,25 @@ export default function FlippingCardContent({
         <p
           ref={descriptionRef}
           className="
-            mb-[2.5rem] font-geist font-normal text-dark-gray overflow-hidden
-            text-32 lg:text-18 tracking-[0em] leading-[140%]
-            4k:mb-[3rem] 4k:text-[clamp(1.75rem,1vw+0.5rem,2.25rem)] 4k:leading-[150%]
-          "
+        mb-[2.5rem] font-geist font-normal text-dark-gray overflow-hidden
+        text-32 tracking-[0em] leading-[140%]
+        4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),5rem)]
+        text-fluid-4k-32
+        4k:[line-height:clamp(140%,calc(140%+((100vw-2000px)/2000px)*10%),150%)]
+      "
         >
           {description}
         </p>
 
         {useButton && (
           <div ref={buttonRef} className="lg:hidden">
-            {" "}
             {useBookButton ? (
               <BookADemoButton />
             ) : (
               <ShowBookingHoc>
                 <LearnMoreButton />
               </ShowBookingHoc>
-            )}{" "}
+            )}
           </div>
         )}
       </div>

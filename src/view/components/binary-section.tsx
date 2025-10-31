@@ -25,19 +25,23 @@ export default function BinarySection({
           w-fit mx-auto bg-white flex items-center justify-center
           gap-[3.75rem] p-[2.5rem]
           lg:flex-col-reverse lg:p-6 lg:gap-[2rem]
-          4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*1.25rem),5rem)]
-          4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*1rem),3.5rem)]
+          4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
+          4k:[padding:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),5rem)]
         "
       >
-        {/* Text Column */}
-        <div className="flex flex-col w-[26.25rem] lg:w-full 4k:[width:clamp(26.25rem,calc(26.25rem+((100vw-2000px)/2000px)*5.75rem),32rem)]">
+        <div
+          className="
+          flex flex-col w-[26.25rem] lg:w-full
+          4k:[width:clamp(26.25rem,calc(26.25rem+((100vw-2000px)/2000px)*26.25rem),52.5rem)]
+        "
+        >
           <p
             className="
               mb-6 font-geist-mono font-medium uppercase text-primary-black
               leading-[150%] tracking-[0.04em]
               text-[16px] lg:text-sm
               text-2k-4k
-              4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*0.5rem),1.5rem)]
+              4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
             "
           >
             {subHeader}
@@ -48,8 +52,8 @@ export default function BinarySection({
               mb-[1.2rem] font-general-sans font-semibold text-primary-black
               leading-[110%]
               text-[24px] lg:text-[20px]
-              4k:[font-size:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1rem),2.5rem)]
-              4k:[margin-bottom:clamp(1.2rem,calc(1.2rem+((100vw-2000px)/2000px)*0.3rem),1.5rem)]
+              text-2k-4k-24
+              4k:[margin-bottom:clamp(1.2rem,calc(1.2rem+((100vw-2000px)/2000px)*1.2rem),2.4rem)]
             "
           >
             {title}
@@ -60,23 +64,24 @@ export default function BinarySection({
               font-geist font-normal text-primary-black
               leading-[140%]
               text-[24px] lg:text-base
-              4k:[font-size:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1rem),2.5rem)]
+              text-2k-4k-24
             "
           >
             {description}
           </p>
         </div>
 
+        {/* IMAGE */}
         {image}
 
-        {/* Background glow */}
+        {/* BACKGROUND GLOW */}
         <div
           className="
             hidden lg:block absolute z-[-1]
             left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
             w-[1467px] h-[1064px]
-            4k:[width:clamp(1467px,calc(1467px+((100vw-2000px)/2000px)*233px),1700px)]
-            4k:[height:clamp(1064px,calc(1064px+((100vw-2000px)/2000px)*186px),1250px)]
+            4k:[width:clamp(1467px,calc(1467px+((100vw-2000px)/2000px)*1467px),2934px)]
+            4k:[height:clamp(1064px,calc(1064px+((100vw-2000px)/2000px)*1064px),2128px)]
           "
           style={{
             background:
@@ -93,7 +98,7 @@ export const BinaryBlockImage = ({ path }: { path: string }) => (
     src={path}
     className="
       w-[13.125rem] lg:w-full h-auto
-      4k:[width:clamp(13.125rem,calc(13.125rem+((100vw-2000px)/2000px)*2.875rem),16rem)]
+      4k:[width:clamp(13.125rem,calc(13.125rem+((100vw-2000px)/2000px)*13.125rem),26.25rem)]
     "
     alt="binary code icon representing software development"
     loading="lazy"

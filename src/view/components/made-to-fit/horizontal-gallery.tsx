@@ -14,51 +14,54 @@ export default function HorizontalGallery({
   galleryInnerSelector?: string;
   pinSelector?: string;
 }) {
-  const horizontalPinTl = useRef<gsap.core.Timeline>(null);
+  const horizontalPinTl = useRef<gsap.core.Timeline | null>(null);
 
   const horizontalPin = useCallback(() => {
-    const inner = document?.querySelector(galleryInnerSelector);
-    const items = gsap.utils.toArray(
-      inner?.querySelectorAll(".item") || []
-    ) as HTMLElement[];
+    const inner = document.querySelector(galleryInnerSelector);
+    const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
 
     if (!inner || items.length === 0) return;
 
-    // ---------- Dynamic responsive parameters ----------
+    // --------- Responsive parameters ---------
     const isMobile = window.innerWidth <= 768;
-    const is4K = window.innerWidth >= 2000;
+    const is4K = window.innerWidth >= 3840; // proper 4K threshold
 
     const mobileOffsetStep = window.innerWidth / 12;
     const mobileElementWidth = window.innerWidth * 0.68;
 
-    // Offset and gap scaling
+    // Vertical offset between images
     const offsetStep = isMobile
       ? mobileOffsetStep
       : is4K
-      ? 140 // Slightly larger step for 4K
+      ? 180 // increased vertical separation for 4K
       : 96;
+
+    // Horizontal gap scaling
     const gapStep = isMobile
       ? 60
       : is4K
-      ? window.innerWidth * 0.035 // Slightly tighter gap ratio for wide view
+      ? window.innerWidth * 0.045 // visually balanced for 4K wide screens
       : window.innerWidth * 0.053;
 
-    // Initial vertical staggering
+    // Apply initial Y offset for stacked layout
     items.forEach((el, i) => {
       gsap.set(el, { y: offsetStep * i });
     });
 
-    // ---------- Scroll distance ----------
-    const scrollDistance = isMobile
-      ? mobileElementWidth * (items.length - 1.5) + gapStep * (items.length - 1.5)
+    // --------- Scroll distance ---------
+    const baseWidth = isMobile
+      ? mobileElementWidth
       : is4K
-      ? (880 * (items.length - 2.8) + gapStep * (items.length - 2.8)) // bigger cards need more scroll distance
-      : (680 * (items.length - 2.8) + gapStep * (items.length - 2.8));
+      ? 1100 // each image width on 4K
+      : 680;
+
+    const scrollDistance =
+      baseWidth * (items.length - 1.5) + gapStep * (items.length - 1.5);
 
     const slideDuration = 1;
     const totalDuration = slideDuration * (items.length + 1);
 
-    // ---------- Timeline setup ----------
+    // --------- Timeline setup ---------
     horizontalPinTl.current = gsap.timeline({
       scrollTrigger: {
         trigger: inner,
@@ -81,48 +84,48 @@ export default function HorizontalGallery({
         ease: "none",
         duration: totalDuration,
       },
-      "start+=0"
+      "start"
     );
   }, [galleryInnerSelector, pinId, pinSelector]);
 
-  // ---------- Mount ----------
+  // --------- Mount ---------
   useEffect(() => {
     setTimeout(() => {
       horizontalPin();
-    }, 100);
+    }, 150);
 
     return () => {
-      if (horizontalPinTl.current) {
-        horizontalPinTl.current?.scrollTrigger?.kill();
-        horizontalPinTl.current.kill();
-      }
+      horizontalPinTl.current?.scrollTrigger?.kill();
+      horizontalPinTl.current?.kill();
     };
   }, [images, horizontalPin]);
 
-  // ---------- Resize refresh ----------
+  // --------- Resize refresh ---------
   useEffect(() => {
     const handleResize = () => {
       horizontalPinTl.current?.scrollTrigger?.refresh();
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [horizontalPin]);
+  }, []);
 
   return (
-    <div className="gallery z-[8] relative min-h-full lg:min-h-[75vw] overflow-visible max-w-[100vw]">
-      <div className="max-w-[1680px] 4k:max-w-[1920px] mx-auto w-full">
-        <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5.3vw] 4k:gap-[6vw]">
+    <div className="gallery relative z-[8] overflow-visible min-h-full lg:min-h-[75vw] max-w-[100vw]">
+      <div className="max-w-[1680px] 4k:[max-width:clamp(1680px,calc(1680px+((100vw-2000px)/2000px)*520px),2200px)] mx-auto w-full">
+        <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5vw] 4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]">
           {images.map((image, index) => (
             <img
               src={image}
               key={index}
-              className="
-                item w-[42.375rem] h-[42.375rem]
-                lg:w-[68vw] lg:h-[68vw]
-                4k:w-[55rem] 4k:h-[55rem]
-                object-cover relative rounded-[1rem] 4k:rounded-[1.5rem]
-              "
               alt={`Right Property gallery image ${index + 1} of ${images.length}`}
+              className="
+                item relative object-cover rounded-[1rem]
+                w-[42.375rem] h-[42.375rem]
+                lg:w-[68vw] lg:h-[68vw]
+                4k:[width:clamp(42.375rem,calc(42.375rem+((100vw-2000px)/2000px)*42.375rem),84.75rem)]
+                4k:[height:clamp(42.375rem,calc(42.375rem+((100vw-2000px)/2000px)*42.375rem),84.75rem)]
+                4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+              "
             />
           ))}
         </div>

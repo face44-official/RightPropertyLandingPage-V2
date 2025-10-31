@@ -4,29 +4,60 @@ import lounge02 from "@/assets/gallery/lounge02_optimized.webp";
 import lounge03 from "@/assets/gallery/lounge03_optimized.webp";
 import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
 import HorizontalGallery from "./horizontal-gallery";
+
 export default function MadeToFit() {
+  const imagesSources = [laptopImage, lounge01, lounge02, lounge03, lounge04];
 
-    const imagesSources = [
-        laptopImage,
-        lounge01,
-        lounge02,
-        lounge03,
-        lounge04
-    ]
+  return (
+    <section
+      id="made-to-fit"
+      className="
+        bg-black text-white overflow-hidden content-visibility-auto
+        min-h-full
+        pt-[7.5rem] px-[5rem] pb-[9rem]
+        lg:p-4
+        4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
+        4k:[padding-bottom:clamp(9rem,calc(9rem+((100vw-2000px)/2000px)*9rem),18rem)]
+        4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+        4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+      "
+      aria-label="Right Property platform adaptability showcase"
+    >
+      <div
+        className="
+          rp-container relative z-[10]
+          lg:px-0 lg:pt-[3.75rem] lg:pb-[2.5rem]
+          4k:[max-width:clamp(1680px,calc(1680px+((100vw-2000px)/2000px)*420px),2100px)]
+        "
+        style={{ height: "auto" }}
+      >
+        <p
+          className="
+            mb-8 font-geist-mono font-medium uppercase text-[#E2E2E2]
+            text-base lg:text-sm leading-[140%] tracking-[0.02em]
+            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+            text-2k-4k
+          "
+        >
+          An experience that matters
+        </p>
 
+        <h2
+          className="
+            text-[#E2E2E2] font-general-sans font-semibold tracking-[0.01em]
+            text-40 lg:text-32 leading-[140%] lg:leading-[130%]
+            mb-[3.75rem] lg:mb-0
+            4k:[margin-bottom:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
+            text-fluid-4k-40
+          "
+        >
+          Made to Fit, Wherever
+          <br />
+          You Work
+        </h2>
+      </div>
 
-    return (
-        <section id="made-to-fit" className="bg-black min-h-full overflow-hidden  text-white pt-[7.5rem] px-[5rem] pb-[9rem] lg:p-4 content-visibility-auto 4k:pt-[10rem] 4k:px-[8rem] 4k:pb-[12rem]" aria-label="Right Property platform adaptability showcase">
-            <div className="rp-container relative z-[10] lg:px-0 lg:pt-[3.75rem] lg:pb-[2.5rem] 4k:max-w-[1800px" style={{ height: "auto" }}>
-                <p className="mb-8 font-geist-mono text-base lg:font-sm 4k:text-[clamp(1.125rem,0.8vw+0.5rem,1.5rem)] font-medium leading-[140%] text-[#E2E2E2] tracking-[0.02em] uppercase">
-                    An experience that matters
-                </p>
-                <h2 className="mb-[3.75rem] lg:mb-[0] 4k:mb-[7rem] text-[#E2E2E2] font-general-sans text-40 lg:text-32 4k:text-[clamp(2.5rem,1.5vw+1rem,5rem)] font-semibold leading-[140%] lg:leading-[130%] tracking-[0.01em]">
-                    Made to Fit, Wherever<br />You Work
-                </h2>
-            </div>
-            <HorizontalGallery images={imagesSources} />
-        </section>
-
-    )
+      <HorizontalGallery images={imagesSources} />
+    </section>
+  );
 }

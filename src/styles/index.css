@@ -72,9 +72,10 @@ body {
   color: var(--color-squid-ink);
 }
 
-
 @media (max-width: 2000px) {
-  :root, html, body {
+  :root,
+  html,
+  body {
     font-size: 90%;
   }
 }
@@ -100,11 +101,11 @@ body {
 @media (min-width: 2000px) {
   .desktop-rp-container,
   .rp-container {
-    max-width: 90%!important;
+    max-width: 90% !important;
   }
 }
 
-.content-visiblity-auto{
+.content-visiblity-auto {
   content-visibility: auto;
 }
 
@@ -194,10 +195,8 @@ body {
   mask-position: 0px 0px;
 }
 .mobile-sub-pages-second-mask {
-
-
   mask-image: radial-gradient(
-    circle var(--mask-r,  62.8vw) at var(--mask-x, -9%) var(--mask-y, 50%),
+    circle var(--mask-r, 62.8vw) at var(--mask-x, -9%) var(--mask-y, 50%),
     white 0%,
     white 50%,
     transparent 100%
@@ -251,7 +250,6 @@ body {
   .mobile-rp-container {
     max-width: 540px;
     margin: 0 auto;
-
   }
   .rp-container {
     max-width: 540px;
@@ -311,9 +309,9 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --minVw: 2000px;      /* start scaling at 2K */
-  --maxVw: 4000px;      /* stop at 4K */
-  --minSize: 1rem;      /* size at 2K */
+  --minVw: 2000px; /* start scaling at 2K */
+  --maxVw: 4000px; /* stop at 4K */
+  --minSize: 1rem; /* size at 2K */
   --maxSize: 2rem;
 }
 .text-fill {
@@ -450,35 +448,102 @@ body {
 
 @layer utilities {
   .text-2k-4k {
-    font-size: 16px;
     @media (min-width: 2000px) {
       font-size: clamp(
-    var(--minSize),
-    calc(
-      var(--minSize) +
-      ((100vw - var(--minVw)) / (var(--maxVw) - var(--minVw))) *
-      (var(--maxSize) - var(--minSize))
-    ),
-    var(--maxSize)
-  );
+        var(--minSize),
+        calc(
+          var(--minSize) +
+            ((100vw - var(--minVw)) / (var(--maxVw) - var(--minVw))) *
+            (var(--maxSize) - var(--minSize))
+        ),
+        var(--maxSize)
+      );
+    }
+  }
+
+  .text-fluid-4k-40 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        2.5rem,
+        calc(2.5rem + ((100vw - 2000px) / 2000px) * 5rem),
+        5rem
+      );
+    }
+  }
+
+  .text-fluid-4k-32 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        2rem,
+        calc(2rem + ((100vw - 2000px) / 2000px) * 2rem),
+        4rem
+      );
+    }
+  }
+
+  .text-fluid-4k-28 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        1.75rem,
+        calc(1.75rem + ((100vw - 2000px) / 2000px) * 1.75rem),
+        3.5rem
+      );
+    }
+  }
+
+  .text-2k-4k-24 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        1.5rem,
+        calc(1.5rem + ((100vw - 2000px) / 1840px) * 1.5rem),
+        3rem
+      );
+    }
+  }
+
+  .text-2k-4k-22 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        1.375rem,
+        calc(1.375rem + ((100vw - 2000px) / 2000px) * 1.375rem),
+        2.75rem
+      );
+    }
+  }
+
+  .text-2k-4k-20 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        20px,
+        calc(20px + ((100vw - 2000px) / 2000px) * 20px),
+        40px
+      );
+    }
+  }
+
+  @media (min-width: 2000px) {
+    .text-2k-4k-18 {
+      font-size: clamp(
+        1.125rem,
+        calc(1.125rem + ((100vw - 2000px) / 2000px) * 1.125rem),
+        2.25rem
+      );
     }
   }
 }
 
-:root{
+:root {
   --dfes-circlegrah-size: 0;
   --dfes-circlegraph-circle-size: 0;
 }
 
-
 .ciclegraph {
-	position: relative;
+  position: relative;
   width: var(--dfes-circlegrah-size);
   height: var(--dfes-circlegrah-size);
   margin: calc(var(--dfes-circlegraph-circle-size) / 2 + 0px);
   border-radius: 50%;
-  border: 1px solid #77C5F2;
-
+  border: 1px solid #77c5f2;
 }
 
 /* .ciclegraph:before {
@@ -492,10 +557,11 @@ body {
 } */
 
 .ciclegraph .circle {
-	position: absolute;
-	top: 50%; left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: var(--dfes-circlegraph-circle-size);
   height: var(--dfes-circlegraph-circle-size);
-  margin: calc( calc(var(--dfes-circlegraph-circle-size) / 2) * -1 );
+  margin: calc(calc(var(--dfes-circlegraph-circle-size) / 2) * -1);
   border-radius: 50%;
 }
