@@ -13,7 +13,6 @@ export default function BookADemoButton({ className }: { className?: string }) {
     w-[14.5625rem] h-[4rem]
     lg:w-full lg:h-[3rem] lg:pl-0 lg:flex lg:items-center lg:justify-center
     `,
-    // ✅ 4K scaling & hover translation
     `
     4k:[width:clamp(14.5625rem,calc(14.5625rem+((100vw-2000px)/2000px)*14.5625rem),29.125rem)]
     4k:[height:clamp(4rem,calc(4rem+((100vw-2000px)/2000px)*4rem),8rem)]
@@ -33,8 +32,6 @@ export default function BookADemoButton({ className }: { className?: string }) {
         <span className="relative z-[10] transition-all duration-300 ease-in-out">
           Book a demo
         </span>
-
-        {/* RIGHT EXPANDING CIRCLE */}
         <div
           className="
             absolute top-[5px] right-[5px]
@@ -50,11 +47,10 @@ export default function BookADemoButton({ className }: { className?: string }) {
             group-hover:4k:[width:clamp(10.875rem,calc(10.875rem+((100vw-2000px)/2000px)*10.875rem),21.75rem)]
           "
         >
-          {/* RIGHT ARROW (inside expanding circle) */}
           <svg
             className="transition-transform duration-300 ease-in-out group-hover:translate-x-[14em] 4k:group-hover:translate-x-[28em]
-                       4k:[width:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
-                       4k:[height:clamp(1.5625rem,calc(1.5625rem+((100vw-2000px)/2000px)*1.5625rem),3.125rem)]"
+                       4k:[width:clamp(24px,calc(24px+((100vw-2000px)/2000px)*24px),48px)]
+                       4k:[height:clamp(25px,calc(25px+((100vw-2000px)/2000px)*25px),50px)]"
             width="24"
             height="25"
             viewBox="0 0 24 25"
@@ -78,7 +74,6 @@ export default function BookADemoButton({ className }: { className?: string }) {
           </svg>
         </div>
 
-        {/* LEFT ARROW (slides in from outside) */}
         <svg
           className="
     absolute left-[1.125rem] top-1/2 -translate-y-1/2
@@ -86,8 +81,8 @@ export default function BookADemoButton({ className }: { className?: string }) {
     -translate-x-[5rem] group-hover:translate-x-0
     4k:[left:clamp(1.125rem,calc(1.125rem+((100vw-2000px)/2000px)*1.125rem),2.25rem)]
     4k:[-translate-x:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-    4k:[width:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
-    4k:[height:clamp(1.5625rem,calc(1.5625rem+((100vw-2000px)/2000px)*1.5625rem),3.125rem)]
+    4k:[width:clamp(24px,calc(24px+((100vw-2000px)/2000px)*24px),48px)]
+    4k:[height:clamp(25px,calc(25px+((100vw-2000px)/2000px)*25px),50px)]
   "
           width="24"
           height="25"
