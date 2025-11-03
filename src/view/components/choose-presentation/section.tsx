@@ -15,8 +15,8 @@ export default function ChoosePresentationSection() {
             className="
               pl-[5rem] mb-8 lg:mb-[1.5rem]
               font-geist-mono font-medium uppercase text-primary-black
-              text-[16px] leading-[150%] tracking-[0.04em]
-              lg:px-4 lg:text-start lg:text-[14px]
+              text-16 leading-[150%] tracking-[0.04em]
+              lg:px-4 lg:text-start lg:text-14
               text-2k-4k
               4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
               4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
@@ -30,7 +30,7 @@ export default function ChoosePresentationSection() {
               w-[46.875rem] lg:w-full pl-[5rem]
               mb-[2.5rem] lg:mb-[2rem] lg:px-4
               font-geist font-semibold text-primary-black
-              text-[40px] lg:text-[32px] leading-[130%]
+              text-40 lg:text-32 leading-[130%]
               text-fluid-4k-40
               4k:[width:clamp(46.875rem,calc(46.875rem+((100vw-2000px)/2000px)*46.875rem),93.75rem)]
               4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
@@ -78,7 +78,7 @@ export default function ChoosePresentationSection() {
               <h3
                 className="
                   mb-3 font-general-sans font-medium text-raisin-black relative z-[2]
-                  text-[40px] leading-[130%] lg:text-[32px]
+                  text-40 leading-[130%] lg:text-32
                   text-fluid-4k-40
                   4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 "
@@ -89,7 +89,7 @@ export default function ChoosePresentationSection() {
                 className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-dark-gray relative z-[2]
-                  text-[22px] leading-[140%] lg:text-[18px]
+                  text-22 leading-[140%]
                   text-2k-4k-22
                   4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
                 "
@@ -133,7 +133,7 @@ export default function ChoosePresentationSection() {
               <h3
                 className="
                   mb-3 font-general-sans font-medium text-white relative z-[2]
-                  text-[40px] leading-[130%] lg:text-[32px]
+                  text-40 leading-[130%] lg:text-32
                   text-fluid-4k-40
                   4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 "
@@ -144,7 +144,7 @@ export default function ChoosePresentationSection() {
                 className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-white relative z-[2]
-                  text-[22px] leading-[140%] lg:text-[18px]
+                  text-22 leading-[140%]
                   text-2k-4k-22
                   4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
                 "

@@ -39,7 +39,7 @@ export default function BinarySection({
             className="
               mb-6 font-geist-mono font-medium uppercase text-primary-black
               leading-[150%] tracking-[0.04em]
-              text-[16px] lg:text-sm
+              text-16 lg:text-sm
               text-2k-4k
               4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
             "
@@ -51,7 +51,7 @@ export default function BinarySection({
             className="
               mb-[1.2rem] font-general-sans font-semibold text-primary-black
               leading-[110%]
-              text-[24px] lg:text-[20px]
+              text-24 lg:text-20
               text-2k-4k-24
               4k:[margin-bottom:clamp(1.2rem,calc(1.2rem+((100vw-2000px)/2000px)*1.2rem),2.4rem)]
             "
@@ -63,7 +63,7 @@ export default function BinarySection({
             className="
               font-geist font-normal text-primary-black
               leading-[140%]
-              text-[24px] lg:text-base
+              text-24 lg:text-base
               text-2k-4k-24
             "
           >

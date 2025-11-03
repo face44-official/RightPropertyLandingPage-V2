@@ -21,12 +21,12 @@ const MeetRightPropertySection = ({ ref }: Props) => {
       aria-label="Meet Right Property features"
       className="
         content-visibility-auto rp-container
-        pb-[19.75rem] pt-[13.75rem]
+        pb-[12.75rem] pt-[8.75rem]
         flex gap-[3.25rem] items-start justify-center
         lg:gap-0 lg:flex-col lg:py-0 lg:pb-[0rem]
-        4k:[padding-bottom:clamp(19.75rem,calc(19.75rem+((100vw-2000px)/2000px)*19.75rem),39.5rem)]
-        4k:[padding-top:clamp(13.75rem,calc(13.75rem+((100vw-2000px)/2000px)*13.75rem),27.5rem)]
-        4k:[gap:clamp(3.25rem,calc(3.25rem+((100vw-2000px)/2000px)*3.25rem),6.5rem)]
+        4k:[padding-bottom:clamp(7.75rem,calc(7.75rem+((100vw-2000px)/2000px)*7.75rem),14.5rem)]
+        4k:[padding-top:clamp(7.75rem,calc(7.75rem+((100vw-2000px)/2000px)*7.75rem),14.5rem)]
+        4k:[gap:clamp(2.25rem,calc(2.25rem+((100vw-2000px)/2000px)*2.25rem),4.5rem)]
       "
     >
       <div className="max-w-[60rem] lg:max-w-full 4k:[max-width:clamp(60rem,calc(60rem+((100vw-2000px)/2000px)*60rem),107.5rem)]">
@@ -36,7 +36,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <h2
               className="
                 mb-[2rem] font-geist-mono font-normal uppercase text-squid-ink
-                text-[16px] leading-[150%] tracking-[0.04em]
+                text-16px leading-[150%] tracking-[0.04em]
                 lg:text-[16px] lg:mb-[1.25rem]
                 4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
@@ -52,7 +52,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
               className="
                 reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black
                 mb-[2.5rem] lg:mb-[2rem]
-                text-[40px] leading-[120%] -tracking-[0.01em]
+                text-40 leading-[120%] -tracking-[0.01em]
                 lg:text-[28px]
                 text-fluid-4k-40
                 4k:[line-height:clamp(120%,calc(120%+((100vw-2000px)/2000px)*10%),130%)]
@@ -94,8 +94,8 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             {/* Paragraph */}
             <p
               className="
-                mb-[2.5rem] font-geist font-normal text-[32px] leading-[140%] -tracking-[0.01em]
-                lg:mb-[2rem] lg:leading-[130%] lg:text-[24px]
+                mb-[2.5rem] font-geist font-normal text-32 leading-[140%] text-dark-gray -tracking-[0.01em]
+                lg:mb-[2rem] lg:leading-[130%] lg:text-24
                 4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
                 4k:[margin-bottom:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
               "
@@ -108,7 +108,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <h3
               className="
                 font-geist-mono font-normal uppercase text-squid-ink
-                text-[16px] tracking-[0.04em] leading-[150%]
+                text-16px tracking-[0.04em] leading-[150%]
                 lg:text-[14px]
                 4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 4k:[line-height:clamp(150%,calc(150%+((100vw-2000px)/2000px)*10%),160%)]

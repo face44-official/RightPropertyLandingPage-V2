@@ -125,7 +125,7 @@ export default function Accessibility({
       <p className="
         mb-8 lg:mb-4 font-geist-mono font-normal uppercase text-primary-black
         leading-[150%] tracking-[0.04em]
-        text-[16px] lg:text-[14px]
+        text16 lg:text-[14px]
         text-2k-4k
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
       ">
@@ -135,7 +135,7 @@ export default function Accessibility({
       <h2 className="
         mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
         leading-[130%] tracking-[0em]
-        text-[40px] lg:text-[32px]
+        text-40 lg:text-32
         text-fluid-4k-40
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
       ">
@@ -146,7 +146,7 @@ export default function Accessibility({
         mb-[2.5rem] lg:mb-[2rem]
         font-geist font-normal text-dark-gray
         leading-[140%] tracking-[0em]
-        text-[32px] lg:text-[24px]
+        text-32 lg:text-24
         text-fluid-4k-32
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),5rem)]
       ">
@@ -185,7 +185,7 @@ export default function Accessibility({
               <h3 className="
                 mb-1 font-geist font-medium text-primary-black
                 leading-[140%] tracking-[-0.02em]
-                text-[28px] lg:text-[20px]
+                text-28 lg:text-20
                 text-fluid-4k-28
               ">
                 {item.title}
@@ -195,7 +195,7 @@ export default function Accessibility({
             <p className="
               font-geist font-normal text-primary-black leading-[140%]
               tracking-[-0.01em] pr-[1rem]
-              text-[24px] lg:text-base
+              text-24 lg:text-base
               text-2k-4k-24
               4k:[padding-right:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
             ">

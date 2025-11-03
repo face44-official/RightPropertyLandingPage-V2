@@ -11,7 +11,7 @@ const SalesSplitText = ({ ref }: { ref?: React.Ref<HTMLDivElement>; }) => {
             <div id='splittext-pin' >
                 <section ref={ref} id="experience-splittext-section" className="rp-container flex items-center justify-center lg:px-4  " aria-label="Experience Features">
                     <div className='max-w-[57rem] lg:max-w-full'>
-                        <h2 className="mb-[2rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
+                        <h2 className="mb-[2rem] font-geist-mono font-normal leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                             SALES
                         </h2>
                         <div

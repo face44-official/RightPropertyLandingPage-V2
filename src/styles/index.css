@@ -72,13 +72,13 @@ body {
   color: var(--color-squid-ink);
 }
 
-@media (max-width: 2000px) {
+/* @media (min-width: 768px) {
   :root,
   html,
   body {
     font-size: 90%;
   }
-}
+} */
 
 @media (min-width: 1280px) and (max-width: 1440px) {
   html {
@@ -95,13 +95,6 @@ body {
 @media (min-width: 768px) and (max-width: 1023px) {
   html {
     font-size: 9px;
-  }
-}
-
-@media (min-width: 2000px) {
-  .desktop-rp-container,
-  .rp-container {
-    max-width: 90% !important;
   }
 }
 
@@ -447,6 +440,18 @@ body {
 }
 
 @layer utilities {
+
+  @media (min-width: 2000px) {
+      .desktop-rp-container,
+      .rp-container {
+         max-width: clamp(
+        1680px,
+        calc(1680px + (100vw - 2000px) * 0.84),
+        3360px
+      ) !important;
+      }
+    }
+
   .text-2k-4k {
     @media (min-width: 2000px) {
       font-size: clamp(

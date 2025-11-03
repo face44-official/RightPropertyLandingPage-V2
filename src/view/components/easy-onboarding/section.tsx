@@ -247,7 +247,7 @@ export default function EasyOnboardingSection() {
             <h2
               className="
             mb-8 font-general-sans font-semibold text-primary-black
-            leading-[130%] -tracking-[0.01em] text-[40px]
+            leading-[130%] -tracking-[0.01em] text-40
             text-fluid-4k-40
             4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
           "
@@ -258,7 +258,7 @@ export default function EasyOnboardingSection() {
             <p
               className="
             mb-[5rem] font-geist font-normal text-dark-gray leading-[140%]
-            text-[32px]
+            text-32
             text-fluid-4k-32
             4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
           "
@@ -282,7 +282,7 @@ export default function EasyOnboardingSection() {
                     <h3
                       className="
                     mb-2 font-geist font-medium text-primary-black leading-[140%]
-                    text-[28px]
+                    text-28
                     text-fluid-4k-28
                     4k:[margin-bottom:clamp(0.5rem,calc(0.5rem+((100vw-2000px)/2000px)*0.5rem),1rem)]
                   "
@@ -292,7 +292,7 @@ export default function EasyOnboardingSection() {
                     <p
                       className="
                     font-geist font-normal text-primary-black leading-[140%]
-                    text-[24px]
+                    text-24
                     text-2k-4k-24
                   "
                     >

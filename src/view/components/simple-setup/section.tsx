@@ -158,7 +158,7 @@ export default function SimpleSetupSection() {
           rp-container relative z-[-1]
           lg:h-auto!
           [height:108.375rem]
-          4k:[height:clamp(108.375rem,calc(108.375rem+((100vw-2000px)/2000px)*108.375rem),216.75rem)]
+          4k:[height:clamp(100.375rem,calc(100.375rem+((100vw-2000px)/2000px)*100.375rem),175.75rem)]
         "
       >
         <div
@@ -257,7 +257,7 @@ export default function SimpleSetupSection() {
                 mb-8 lg:mb-[1.5rem]
                 font-geist-mono font-normal uppercase text-primary-black
                 leading-[150%] tracking-[0.02em]
-                text-[16px] lg:text-[14px]
+                text-16 lg:text-14
                 4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
                 4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
               "
@@ -270,7 +270,7 @@ export default function SimpleSetupSection() {
                 mb-8 lg:mb-[1.5rem]
                 font-general-sans font-semibold text-primary-black
                 leading-[130%] -tracking-[0.01em]
-                text-[40px] lg:text-[32px]
+                text-40 lg:text-32
                 text-fluid-4k-40
                 4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
                 4k:leading-[120%]
@@ -284,7 +284,7 @@ export default function SimpleSetupSection() {
                 mb-[5rem] lg:mb-[2rem]
                 font-geist font-normal text-dark-gray
                 leading-[140%] -tracking-[0.01em]
-                text-[32px] lg:text-[24px]
+                text-32 lg:text-24
                 text-fluid-4k-32
                 4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
               "
@@ -308,7 +308,7 @@ export default function SimpleSetupSection() {
                     <h3
                       className="
                         font-geist font-medium text-primary-black leading-[140%]
-                        text-[28px] lg:text-[20px]
+                        text-28 lg:text-20
                         4k:[font-size:clamp(1.75rem,calc(1.75rem+((100vw-2000px)/2000px)*1.75rem),3.5rem)]
                       "
                     >
@@ -317,7 +317,7 @@ export default function SimpleSetupSection() {
                     <p
                       className="
                         font-geist font-normal text-primary-black leading-[140%]
-                        text-[24px] lg:text-base
+                        text-24 lg:text-base
                         4k:[font-size:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
                       "
                     >

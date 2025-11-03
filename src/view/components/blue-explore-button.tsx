@@ -27,22 +27,12 @@ function BlueExploreButton({
   onClick?: () => void;
 }) {
   const cnClass = cn(
-    `
-    pointer-events-auto cursor-pointer will-change-transform
-    transition-all duration-300 ease-in-out
-    font-geist font-semibold uppercase
-    bg-[#BADEF3] text-raisin-black hover:bg-darker-blue
-    rounded-[65px] leading-[130%] tracking-[0%]
-    text-base py-[19px] px-[30px]
-    lg:w-full lg:py-[11px]
+    `hover:bg-darker-blue will-change-transform pointer-events-auto transition-all duration-300 ease-in-out cursor-pointer w-[8.3125rem] h-[4rem] rounded-[65px] font-geist font-semibold text-base leading-[130%] tracking-[0%] uppercase text-raisin-black bg-[#BADEF3] lg:w-full lg:h-[3rem] lg:text-sm
     `,
-    // 4K responsive scaling for font, padding, radius, and width
     `
     text-2k-4k
-    4k:[padding-top:clamp(19px,calc(19px+((100vw-2000px)/2000px)*19px),38px)]
-    4k:[padding-bottom:clamp(19px,calc(19px+((100vw-2000px)/2000px)*19px),38px)]
-    4k:[padding-left:clamp(30px,calc(30px+((100vw-2000px)/2000px)*30px),60px)]
-    4k:[padding-right:clamp(30px,calc(30px+((100vw-2000px)/2000px)*30px),60px)]
+    4k:[width:clamp(8.3125rem,calc(8.3125rem+((100vw-2000px)/2000px)*8.3125rem),16.625rem)]
+    4k:[height:clamp(4rem,calc(4rem+((100vw-2000px)/2000px)*4rem),8rem)]
     4k:[border-radius:clamp(65px,calc(65px+((100vw-2000px)/2000px)*65px),130px)]
     4k:[min-width:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),28rem)]
     `,

@@ -16,7 +16,7 @@ export default function EnhancedPresentationsSection() {
     flex items-center justify-between
     lg:flex-col lg:items-start
     pt-[15rem] lg:pt-[8.5rem]
-    4k:[padding-top:clamp(15rem,calc(15rem+((100vw-2000px)/2000px)*15rem),30rem)]
+    4k:[padding-top:clamp(9rem,calc(9rem+((100vw-2000px)/2000px)*9rem),18rem)]
   "
       >
         <div
@@ -73,7 +73,7 @@ export default function EnhancedPresentationsSection() {
           </div>
         </div>
 
-        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-21.3125rem,calc(-21.3125rem+((100vw-2000px)/2000px)*-21.3125rem),-42.625rem)] 4k:[width:clamp(55%,calc(55%+((100vw-2000px)/2000px)*5%),60%)]">
+        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-25.3125rem,calc(-25.3125rem+((100vw-2000px)/2000px)*-25.3125rem),-42.625rem)] 4k:[width:clamp(55%,calc(55%+((100vw-2000px)/2000px)*5%),60%)]">
           <HeroVideoContainer />
           {/* <video
                             src={heroVideo}
