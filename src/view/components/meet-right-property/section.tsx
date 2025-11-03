@@ -24,20 +24,24 @@ const MeetRightPropertySection = ({ ref }: Props) => {
         pb-[19.75rem] pt-[13.75rem]
         flex gap-[3.25rem] items-start justify-center
         lg:gap-0 lg:flex-col lg:py-0 lg:pb-[0rem]
-        4k:pb-[24rem] 4k:pt-[16rem] 4k:gap-[4rem]
+        4k:[padding-bottom:clamp(19.75rem,calc(19.75rem+((100vw-2000px)/2000px)*19.75rem),39.5rem)]
+        4k:[padding-top:clamp(13.75rem,calc(13.75rem+((100vw-2000px)/2000px)*13.75rem),27.5rem)]
+        4k:[gap:clamp(3.25rem,calc(3.25rem+((100vw-2000px)/2000px)*3.25rem),6.5rem)]
       "
     >
-      <div className="max-w-[53.75rem] lg:max-w-full 4k:max-w-[65rem]">
-        <div className="pl-[1.25rem] flex flex-col justify-start min-h-[30rem] lg:p-4 lg:pt-0 lg:min-h-0 lg:mb-[7.5rem] 4k:pl-[2rem] 4k:min-h-[36rem]">
+      <div className="max-w-[60rem] lg:max-w-full 4k:[max-width:clamp(60rem,calc(60rem+((100vw-2000px)/2000px)*60rem),107.5rem)]">
+        <div className="pl-[1.25rem] flex flex-col justify-start min-h-[30rem] lg:p-4 lg:pt-0 lg:min-h-0 lg:mb-[7.5rem] 4k:[padding-left:clamp(1.25rem,calc(1.25rem+((100vw-2000px)/2000px)*1.25rem),2.5rem)] 4k:[min-height:clamp(30rem,calc(30rem+((100vw-2000px)/2000px)*30rem),60rem)]">
           <div className="mt-0 flex flex-col w-full lg:mt-3">
-            
             {/* Subheading */}
-            <h2 className="
-              mb-[2rem] font-geist-mono font-normal uppercase text-squid-ink
-              text-16 leading-[150%] tracking-[4%]
-              lg:text-16 lg:mb-[1.25rem]
-              text-2k-4k
-            ">
+            <h2
+              className="
+                mb-[2rem] font-geist-mono font-normal uppercase text-squid-ink
+                text-[16px] leading-[150%] tracking-[0.04em]
+                lg:text-[16px] lg:mb-[1.25rem]
+                4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+              "
+            >
               Meet Right Property
             </h2>
 
@@ -45,10 +49,18 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <div
               data-bg-color="#C4C4C4"
               data-fg-color="#000000"
-              className="reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black mb-[2.5rem] lg:mb-[2rem] text-40 leading-[120%] -tracking-[0.01em] lg:text-28 text-fluid-4k-40 4k:leading-[130%] 4k:mb-[3rem] meet-right-property-text
+              className="
+                reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black
+                mb-[2.5rem] lg:mb-[2rem]
+                text-[40px] leading-[120%] -tracking-[0.01em]
+                lg:text-[28px]
+                text-fluid-4k-40
+                4k:[line-height:clamp(120%,calc(120%+((100vw-2000px)/2000px)*10%),130%)]
+                4k:[margin-bottom:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
               "
             >
-              Property sales require more than just listings, 3D models and brochures – it's about
+              Property sales require more than just listings, 3D models and
+              brochures – it's about
               <span className="block lg:hidden"></span>
               <CircleNumber
                 borderColor="lightPurple"
@@ -80,24 +92,34 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             </div>
 
             {/* Paragraph */}
-            <p className="
-              mb-[2.5rem] font-geist font-normal text-32 leading-[140%] -tracking-[0.01em]
-              lg:mb-[2rem] lg:leading-[130%] lg:text-24
-              4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)] 4k:mb-[3rem]
-            ">
-              Right Property gives you precisely what you need to make your sales and marketing efforts truly count.
+            <p
+              className="
+                mb-[2.5rem] font-geist font-normal text-[32px] leading-[140%] -tracking-[0.01em]
+                lg:mb-[2rem] lg:leading-[130%] lg:text-[24px]
+                4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+                4k:[margin-bottom:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
+              "
+            >
+              Right Property gives you precisely what you need to make your
+              sales and marketing efforts truly count.
             </p>
 
             {/* Footer heading */}
-            <h3 className="
-              font-geist-mono font-normal uppercase text-squid-ink text-16 tracking-[0.04em]
-              leading-[150%] lg:text-14
-              text-2k-4k
-            ">
-              Trusted by <span className="hidden lg:inline"><br/></span>
+            <h3
+              className="
+                font-geist-mono font-normal uppercase text-squid-ink
+                text-[16px] tracking-[0.04em] leading-[150%]
+                lg:text-[14px]
+                4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                4k:[line-height:clamp(150%,calc(150%+((100vw-2000px)/2000px)*10%),160%)]
+              "
+            >
+              Trusted by{" "}
+              <span className="hidden lg:inline">
+                <br />
+              </span>
               <span className="font-semibold">forward-thinking developers</span>
             </h3>
-
           </div>
         </div>
       </div>
@@ -106,6 +128,10 @@ const MeetRightPropertySection = ({ ref }: Props) => {
 };
 
 export const MeetRightProperty = withRevealText(MeetRightPropertySection);
+
+/* -------------------------------------------------------------------------- */
+/*                             CIRCLE NUMBER 4K FIX                           */
+/* -------------------------------------------------------------------------- */
 
 type CircleNumberProps = {
   children: ReactNode;
@@ -125,9 +151,25 @@ export const CircleNumber: FC<CircleNumberProps> = ({
 }) => {
   return (
     <span
-      className={cn(circleNumber({ size, borderColor, bgColor }), className)}
+      className={cn(
+        circleNumber({ size, borderColor, bgColor }),
+        `
+          inline-flex items-center justify-center rounded-full
+          border-[2px] w-[1.875rem] h-[1.875rem]
+          font-geist font-medium text-[1rem] text-black
+          leading-[1]
+          4k:[width:clamp(1.875rem,calc(1.875rem+((100vw-2000px)/2000px)*1.875rem),3.75rem)]
+          4k:[height:clamp(1.875rem,calc(1.875rem+((100vw-2000px)/2000px)*1.875rem),3.75rem)]
+          4k:[border-width:clamp(2px,calc(2px+((100vw-2000px)/2000px)*2px),4px)]
+          4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+        `,
+        className
+      )}
       data-fill-color={fillColor}
       data-circle={circleNo}
+      style={{
+        backgroundColor: fillColor ?? "transparent",
+      }}
     >
       {children}
     </span>
