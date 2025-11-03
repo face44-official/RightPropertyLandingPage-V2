@@ -46,7 +46,7 @@ export default function HeroVideoContainer() {
         }}
       >
         {/* video or first-frame image inside the frame */}
-        <div className="absolute inset-[2.8rem_2.5rem_3.4rem_6.6rem] lg:inset-[2.2rem_2.6rem_2.6rem_5.4rem] 4k:[inset:clamp(2.8rem,calc(2.8rem+((100vw-2000px)/2000px)*3.8rem),6.6rem)_clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)_clamp(3.4rem,calc(3.4rem+((100vw-2000px)/2000px)*3.4rem),6.8rem)_clamp(6.6rem,calc(6.6rem+((100vw-2000px)/2000px)*4.4rem),11rem)] 4k:[box-shadow:-20px_40px_40px_rgba(0,0,0,0.6)] overflow-hidden">
+        <div className="absolute inset-[2.8rem_2.5rem_3.4rem_6.6rem] lg:inset-[2.2rem_2.6rem_2.6rem_5.4rem] 4k:inset-[4.2rem_5rem_5rem_11rem] shadow-[0_20px_20px_rgba(0,0,0,0.6)] 4k:[box-shadow:-20px_40px_40px_rgba(0,0,0,0.6)] overflow-hidden">
           {!showVideo && (
             <img
               src="/hero_first_frame.webp"
