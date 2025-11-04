@@ -56,17 +56,16 @@ export default function PresentSmarterSection() {
   return (
     <div
       className="
-        mb-[8rem] xl:mb-[12rem] lg:mb-[3rem]
-        4k:[margin-bottom:clamp(8rem,calc(8rem+((100vw-2000px)/2000px)*8rem),12rem)]
-        bg-[#EEF1F7]
-        h-auto overflow-visible relative content-visibility-auto
+        lg:mb-[3rem]
+        h-auto
+        overflow-visible relative content-visibility-auto
       "
     >
       <section>
         {/* Mobile Background */}
         <img
           src={presentSmarterBgMobile}
-          alt='present smarter'
+          alt="present smarter"
           className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem] rp-container"
         />
 
@@ -74,50 +73,71 @@ export default function PresentSmarterSection() {
           className="
             lg:bg-none! lg:h-auto! relative z-[8]
             flex justify-start
-            p-[7.5rem] pl-[48vw] lg:p-4
-            4k:[padding:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
-            4k:[padding-left:clamp(48vw,calc(48vw+((100vw-2000px)/2000px)*4vw),52vw)]
+            pt-[7.5rem]! pl-[48vw] lg:p-4
+            4k:[padding-left:clamp(46vw,calc(46vw+((100vw-2000px)/2000px)*3vw),50vw)]
           "
         >
           {/* Left Image Grid */}
           <div
             className="
-              absolute left-0 top-0 w-[50vw] h-[80vh] object-top object-cover lg:hidden
-              4k:[width:clamp(50vw,calc(50vw+((100vw-2000px)/2000px)*5vw),55vw)]
-              4k:[height:clamp(80vh,calc(80vh+((100vw-2000px)/2000px)*20vh),100vh)]
+              absolute left-0 top-0 w-full h-[calc(58rem+15px)] bg-[#EEF1F7] 
+              4k:[height:clamp(56rem,calc(56rem+((100vw-2000px)/2000px)*56rem),114rem)]
             "
           >
-            <div className="w-full">
-              <img
-                src={presentSmarterBg1}
-                alt='main'
-                className="w-full h-auto object-cover"
-              />
-            </div>
+            <div className="image-wrap absolute left-0 top-0 w-[50vw] object-top object-cover overflow-hidden lg:hidden">
+              <div
+                className="
+                  w-full h-[35rem] overflow-hidden
+                  4k:[height:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*35rem),70rem)]
+                "
+              >
+                <img
+                  src={presentSmarterBg1}
+                  alt="main"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-            {/* Grid of secondary images */}
-            <div
-              className="
-                mt-4 grid grid-cols-2 gap-4
-                4k:[margin-top:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
-                4k:[gap:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
-              "
-            >
-              <img
-                src={presentSmarterBg2}
-                alt='secondary 1'
-                className="w-full h-auto object-cover rounded-lg"
-              />
-              <img
-                src={presentSmarterBg3}
-                alt='secondary 2'
-                className="w-full h-auto object-cover rounded-lg"
-              />
+              {/* Grid of secondary images */}
+              <div
+                className="
+                  mt-4 grid grid-cols-2 gap-4
+                  4k:[margin-top:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                  4k:[gap:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                  h-[23rem] overflow-hidden
+                  4k:[height:clamp(23rem,calc(23rem+((100vw-2000px)/2000px)*23rem),46rem)]
+                "
+              >
+                <div
+                  className="
+                    image-1 h-[18rem] overflow-hidden relative
+                    4k:[height:clamp(18rem,calc(18rem+((100vw-2000px)/2000px)*18rem),36rem)]
+                  "
+                >
+                  <img
+                    src={presentSmarterBg2}
+                    alt="secondary 1"
+                    className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+                  />
+                </div>
+                <div
+                  className="
+                    image-2 h-[23rem] overflow-hidden relative
+                    4k:[height:clamp(23rem,calc(23rem+((100vw-2000px)/2000px)*23rem),46rem)]
+                  "
+                >
+                  <img
+                    src={presentSmarterBg3}
+                    alt="secondary 2"
+                    className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+                  />
+                </div>  
+              </div>
             </div>
           </div>
 
           {/* Right Text / Content */}
-          <Parallax id='present-smarter-section' speed={1.3}>
+          <Parallax id="present-smarter-section" speed={1.3}>
             <div
               className="
                 w-[49.375rem] lg:w-full
@@ -125,9 +145,9 @@ export default function PresentSmarterSection() {
               "
             >
               <Accessibility
-                title='Present smarter, your way'
-                subHeading='Presentation'
-                description='A property is more than floor plans and price lists — it’s an experience waiting to be brought to life. Our technology turns presentations into interactive journeys, tailored for any setting.'
+                title="Present smarter, your way"
+                subHeading="Presentation"
+                description="A property is more than floor plans and price lists — it’s an experience waiting to be brought to life. Our technology turns presentations into interactive journeys, tailored for any setting."
                 items={items}
               />
             </div>
@@ -135,7 +155,6 @@ export default function PresentSmarterSection() {
         </div>
       </section>
 
-      {/* White background band bottom */}
       <div
         className="
           hidden lg:block absolute bottom-0 w-full h-[15rem] bg-white z-[0]

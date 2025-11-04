@@ -63,7 +63,7 @@ export default function SimpleSetupSection() {
   const scaleFactor = Math.min(vw / 2000, 2);
 
   const CONFIG = {
-    offsetX: 200 * scaleFactor,
+    offsetX: 300 * scaleFactor,
     offsetY: -180 * scaleFactor,
     xBias: 0 * scaleFactor,
     yBias: 0 * scaleFactor,
@@ -157,7 +157,7 @@ export default function SimpleSetupSection() {
         className="
           rp-container relative z-[-1]
           lg:h-auto!
-          [height:108.375rem]
+          [height:100rem]
           4k:[height:clamp(100.375rem,calc(100.375rem+((100vw-2000px)/2000px)*100.375rem),175.75rem)]
         "
       >
@@ -172,9 +172,8 @@ export default function SimpleSetupSection() {
           {/* BACKGROUND */}
           <div
             className="
-              absolute -top-[32.5rem] -left-[2.5rem] z-[-1]
+              absolute -top-[32.5rem] left-5 z-[-1]
               4k:[top:clamp(-32.5rem,calc(-32.5rem-((100vw-2000px)/2000px)*32.5rem),-65rem)]
-              4k:[left:clamp(-2.5rem,calc(-2.5rem-((100vw-2000px)/2000px)*2.5rem),-5rem)]
             "
           >
             <div
@@ -233,7 +232,7 @@ export default function SimpleSetupSection() {
             className="
               absolute left-[35rem] bottom-[16.875rem] lg:hidden
               4k:[left:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*35rem),70rem)]
-              4k:[bottom:clamp(16.875rem,calc(16.875rem+((100vw-2000px)/2000px)*16.875rem),33.75rem)]
+              4k:[bottom:clamp(10.875rem,calc(10.875rem+((100vw-2000px)/2000px)*10.875rem),20.75rem)]
             "
           >
             <BinarySection
