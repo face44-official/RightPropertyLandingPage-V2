@@ -81,7 +81,7 @@ export default function PresentSmarterSection() {
           <div
             className="
               absolute left-0 top-0 w-full h-[calc(58rem+15px)] lg:h-auto bg-[#EEF1F7] 
-              4k:[height:clamp(56rem,calc(56rem+((100vw-2000px)/2000px)*56rem),114rem)]
+              4k:[height:clamp(59rem,calc(59rem+((100vw-2000px)/2000px)*59rem),118rem)]
             "
           >
             <div className="image-wrap absolute left-0 top-0 w-[50vw] object-top object-cover overflow-hidden lg:hidden">
