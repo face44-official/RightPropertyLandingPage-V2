@@ -58,7 +58,7 @@ export default function ConvertMoreLeadsSection() {
         bg-[#EEF1F7]
         h-[63.25rem] lg:h-auto overflow-visible relative content-visibility-auto
         4k:[height:clamp(63.25rem,calc(63.25rem+((100vw-2000px)/2000px)*63.25rem),126.5rem)]
-        4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),28rem)]
+        4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),16rem)]
       "
     >
       {/* MOBILE */}
