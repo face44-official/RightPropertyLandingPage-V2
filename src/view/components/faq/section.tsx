@@ -107,7 +107,7 @@ export default function FaqSection() {
       <section
         className="
           rp-container mx-auto max-w-[1680px]
-          py-[7.5rem] px-[11.75rem]
+          py-[10rem] px-[5rem]
           lg:px-4 lg:pb-[5rem] lg:pt-[2rem]
           4k:[max-width:clamp(1680px,calc(1680px+((100vw-2000px)/2000px)*520px),2200px)]
           4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
@@ -145,7 +145,7 @@ export default function FaqSection() {
         </h2>
 
         {/* FAQ Grid */}
-        <div className="flex gap-6 lg:flex-col lg:gap-2 4k:[gap:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*4rem),10rem)]">
+        <div className="flex gap-[30px] lg:flex-col lg:gap-2 4k:[gap:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*4rem),10rem)]">
           <div className="flex-1 space-y-6 lg:space-y-2 4k:[space-y:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*4rem),10rem)]">
             {faqData.slice(0, 5).map((item, index) => (
               <FaqItem key={index} question={item.question} answer={item.answer} />

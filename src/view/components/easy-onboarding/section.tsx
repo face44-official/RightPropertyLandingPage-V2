@@ -222,9 +222,9 @@ export default function EasyOnboardingSection() {
         <div
           className="
         flex justify-end relative z-[10] lg:p-4
-        pr-[10rem] pt-[10rem]
+        pr-[10rem] pt-[5rem]
         4k:[padding-right:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*10rem),20rem)]
-        4k:[padding-top:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*10rem),20rem)]
+        4k:[padding-top:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
       "
         >
           <div

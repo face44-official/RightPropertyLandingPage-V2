@@ -12,8 +12,8 @@ export default function ScheduleADemoSection({
     <section
       className="
         relative flex items-center justify-center
-        min-h-[100vh] lg:h-auto
-        py-[7.5rem] px-[5rem]
+        lg:h-auto
+        py-[18rem] px-[5rem]
         4k:[padding-block:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
         4k:[padding-inline:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
         lg:pt-[3.75rem] lg:px-4
@@ -101,7 +101,7 @@ export default function ScheduleADemoSection({
       {/* Background gradients */}
       {displayGradient && (
         <img
-          className="lg:hidden absolute z-[-1] w-full h-auto"
+          className="lg:hidden absolute z-[-1] w-[73%] h-auto"
           src={footerDesktopBg}
           alt="Footer Desktop Background"
         />
