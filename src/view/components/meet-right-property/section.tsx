@@ -21,7 +21,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
       aria-label="Meet Right Property features"
       className="
         content-visibility-auto rp-container
-        pb-[16.75rem] pt-[12.75rem]
+        pb-[16.75rem] pt-[12.75rem] 2xl:pt-[10rem] 2xl:pb-[10.75rem]
         flex gap-[3.25rem] items-start justify-center
         lg:gap-0 lg:flex-col lg:py-0 lg:pb-[0rem]
         4k:[padding-bottom:clamp(7.75rem,calc(7.75rem+((100vw-2000px)/2000px)*7.75rem),14.5rem)]

@@ -15,7 +15,7 @@ export default function EnhancedPresentationsSection() {
     relative desktop-rp-container
     flex items-center justify-between
     lg:flex-col lg:items-start
-    pt-[15rem] lg:pt-[8.5rem]
+    pt-[15rem] lg:pt-[8.5rem] 2xl:pt-[10rem]
     4k:[padding-top:clamp(9rem,calc(9rem+((100vw-2000px)/2000px)*9rem),18rem)]
   "
       >

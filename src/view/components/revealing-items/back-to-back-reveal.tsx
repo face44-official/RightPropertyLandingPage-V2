@@ -110,7 +110,7 @@ export default function BackToBackReveal() {
       id="why-right-property"
       ref={$ref}
       className="
-        relative mt-[13.4375rem] lg:hidden content-visibility-auto
+        relative lg:hidden content-visibility-auto
         h-[600vh] 4k:h-[650vh]
       "
       style={{

@@ -147,7 +147,7 @@ export default function EasyOnboardingSection() {
       <div
         className="
       rp-container relative lg:h-auto
-      [height:98.75rem]
+      [height:98.75rem] 2xl:h-[92.75rem]
       4k:[height:clamp(98.75rem,calc(98.75rem+((100vw-2000px)/2000px)*98.75rem),197.5rem)]
     "
       >
@@ -161,7 +161,7 @@ export default function EasyOnboardingSection() {
           height="1286"
           className="
         absolute lg:hidden z-[-1]
-        top-[5rem] -left-[4.375rem] w-[61.6875rem] h-[80.375rem]
+        top-[5rem] -left-[4.375rem] w-[61.6875rem] h-[80.375rem] 2xl:w-[50rem] 2xl:h-[65rem]
         4k:[width:clamp(61.6875rem,calc(61.6875rem+((100vw-2000px)/2000px)*61.6875rem),123.375rem)]
         4k:[height:clamp(80.375rem,calc(80.375rem+((100vw-2000px)/2000px)*80.375rem),160.75rem)]
         4k:[top:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
@@ -205,7 +205,7 @@ export default function EasyOnboardingSection() {
         <div
           className="
         absolute lg:hidden
-        left-[35rem] bottom-[7.125rem]
+        left-[35rem] bottom-[7.125rem] 2xl:bottom-[12rem] 2xl:left-[25rem]
         4k:[left:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*35rem),70rem)]
         4k:[bottom:clamp(7.125rem,calc(7.125rem+((100vw-2000px)/2000px)*7.125rem),14.25rem)]
       "
