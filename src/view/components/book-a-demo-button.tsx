@@ -34,13 +34,12 @@ export default function BookADemoButton({ className }: { className?: string }) {
         </span>
         <div
           className="
-            absolute top-[5px] right-[5px]
+            absolute top-1/2 translate-y-[-50%] right-[5px]
             flex items-center justify-center rounded-full
             bg-[#EF716E]
             transition-all duration-300 ease-in-out
             w-[3.5rem] h-[3.375rem] group-hover:w-[10.875rem]
             lg:w-[2.463125rem] lg:h-[2.375rem]
-            4k:[top:clamp(5px,calc(5px+((100vw-2000px)/2000px)*5px),10px)]
             4k:[right:clamp(5px,calc(5px+((100vw-2000px)/2000px)*5px),10px)]
             4k:[width:clamp(3.5rem,calc(3.5rem+((100vw-2000px)/2000px)*3.5rem),7rem)]
             4k:[height:clamp(3.375rem,calc(3.375rem+((100vw-2000px)/2000px)*3.375rem),6.75rem)]
@@ -50,7 +49,7 @@ export default function BookADemoButton({ className }: { className?: string }) {
           <svg
             className="transition-transform duration-300 ease-in-out group-hover:translate-x-[14em] 4k:group-hover:translate-x-[28em]
                        4k:[width:clamp(24px,calc(24px+((100vw-2000px)/2000px)*24px),48px)]
-                       4k:[height:clamp(25px,calc(25px+((100vw-2000px)/2000px)*25px),50px)]"
+                       4k:[height:clamp(25px,calc(25px+((100vw-2000px)/2000px)*25px),50px)] xl:w-[18px] xl:h-[19px]"
             width="24"
             height="25"
             viewBox="0 0 24 25"
