@@ -26,7 +26,7 @@ export default function MadeToFit() {
       <div
         className="
           rp-container relative z-[10]
-          lg:px-0 lg:pt-[3.75rem] lg:pb-[2.5rem]
+          lg:px-0 lg:pt-[3.75rem] lg:pb-[2.5rem] pl-[5rem] pr-[5rem]
           4k:[max-width:clamp(1680px,calc(1680px+((100vw-2000px)/2000px)*420px),2100px)]
         "
         style={{ height: "auto" }}

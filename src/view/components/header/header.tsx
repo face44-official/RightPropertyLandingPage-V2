@@ -78,7 +78,7 @@ export default function Header() {
         <div
           className="
             rp-container h-full flex items-center justify-between
-            pl-[5.875rem] pr-[5.1875rem] lg:px-4
+            pl-[5rem] pr-[5rem] lg:px-4
             4k:[padding-left:clamp(5.875rem,calc(5.875rem+((100vw-2000px)/2000px)*5.875rem),11.75rem)]
             4k:[padding-right:clamp(5.1875rem,calc(5.1875rem+((100vw-2000px)/2000px)*5.1875rem),10.375rem)]
           "

@@ -88,7 +88,7 @@ export default function ConvertMoreLeadsSection() {
           className="
             rp-container relative z-[8] flex justify-start
             py-[7.5rem] px-[5rem] lg:p-4
-            4k:[padding:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
+            4k:[padding:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
           "
         >
           <img
