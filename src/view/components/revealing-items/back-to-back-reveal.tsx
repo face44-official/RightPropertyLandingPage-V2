@@ -282,7 +282,7 @@ export const VideoContainer = ({
 }) => {
   return (
     <div
-      className="relative w-full h-[100vh] 4k:h-[110vh] flex items-center justify-end pr-[6.875rem] 4k:pr-[8rem]"
+      className="relative w-full h-[100vh] 4k:h-[110vh] flex items-center justify-end pr-[6.875rem] 4k:pr-0"
       ref={sectionRef}
     >
       {road && (
