@@ -54,11 +54,11 @@ export default function ConvertMoreLeadsSection() {
   return (
     <div
       className="
-        mb-[30rem] lg:mb-0
+        mb-[14rem] lg:mb-0
         bg-[#EEF1F7]
-        h-[45.25rem] lg:h-auto overflow-visible relative content-visibility-auto
-        4k:[height:clamp(45.25rem,calc(45.25rem+((100vw-2000px)/2000px)*45.25rem),90.5rem)]
-        4k:[margin-bottom:clamp(30rem,calc(30rem+((100vw-2000px)/2000px)*30rem),60rem)]
+        h-[63.25rem] lg:h-auto overflow-visible relative content-visibility-auto
+        4k:[height:clamp(63.25rem,calc(63.25rem+((100vw-2000px)/2000px)*63.25rem),126.5rem)]
+        4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),28rem)]
       "
     >
       {/* MOBILE */}
@@ -87,7 +87,7 @@ export default function ConvertMoreLeadsSection() {
         <div
           className="
             rp-container relative z-[8] flex justify-start
-            p-[7.5rem] lg:p-4
+            py-[7.5rem] px-[5rem] lg:p-4
             4k:[padding:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
           "
         >

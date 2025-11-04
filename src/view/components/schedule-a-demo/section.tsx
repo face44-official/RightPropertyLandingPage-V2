@@ -13,7 +13,7 @@ export default function ScheduleADemoSection({
       className="
         relative flex items-center justify-center
         lg:h-auto
-        py-[18rem] px-[5rem]
+        py-[18rem] xl:py-[14rem] px-[5rem]
         4k:[padding-block:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
         4k:[padding-inline:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
         lg:pt-[3.75rem] lg:px-4
