@@ -56,7 +56,7 @@ export default function PresentSmarterSection() {
   return (
     <div
       className="
-        lg:mb-[3rem]
+        mb-[3rem] lg:mb-[3rem]
         h-auto
         overflow-visible relative content-visibility-auto
       "
