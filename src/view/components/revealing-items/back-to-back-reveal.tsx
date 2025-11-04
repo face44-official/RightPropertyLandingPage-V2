@@ -117,13 +117,12 @@ export default function BackToBackReveal() {
         background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)",
       }}
     >
-      <div className="max-w-[1680px] mx-auto w-full relative z-[50]">
+      <div className="desktop-rp-container mx-auto w-full relative z-[50]">
         {/* PINNED CARD AREA */}
         <div
           ref={$pinRef}
           className="
-            absolute top-[215px] left-[109px]
-            4k:top-[240px] 4k:left-[140px]
+            absolute top-[215px] left-[90px]
           "
         >
           <div

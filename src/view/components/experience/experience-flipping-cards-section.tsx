@@ -69,7 +69,7 @@ export default function ExperienceFlippingCardsSection() {
           ref={$pinRef}
           className="
             absolute top-[215px] left-[109px]
-            4k:top-[240px] 4k:left-[140px]
+            4k:top-[430px]! 4k:left-[218px]!
           "
         >
           <div
