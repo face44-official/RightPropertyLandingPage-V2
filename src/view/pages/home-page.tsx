@@ -16,70 +16,99 @@ import MaskPath from "../components/enhanced-presentations/mask-path"
 import { useMotionPath } from "../../lib/useMotionPath"
 import HeroRoad from "../components/common/hero-road"
 export default function HomePage() {
-    // Use the motion path hook
-    const { divRef, pathRef, initializeMotionPath } = useMotionPath({
-        trigger: ".trigger",
-        startOffset: "top+=250px top",
-        endOffset: "+=100%",
-        scrollScrub: true,
-        markers: false,
-        responsiveScale: true
-    })
+  const { divRef, pathRef, initializeMotionPath } = useMotionPath({
+    trigger: ".trigger",
+    startOffset: "top+=250px top",
+    endOffset: "+=100%",
+    scrollScrub: true,
+    markers: false,
+    responsiveScale: true,
+  });
 
-    useEffect(() => {
-        initializeMotionPath()
-    }, [])
+  useEffect(() => {
+    initializeMotionPath();
+  }, []);
 
-    return (
-        <div className="relative">
-            <Helmet>
-                <title>Right Property | Marketing Suite for Real Estate Developers</title>
-                <meta name="robots" content="index, follow" />
-            </Helmet>
+  return (
+    <div className="relative">
+      <Helmet>
+        <title>
+          Right Property | Marketing Suite for Real Estate Developers
+        </title>
+        <meta name="robots" content="index, follow" />
+      </Helmet>
 
+      <main
+        role="main"
+        className="relative z-[10] 4k:max-w-[100vw] 4k:overflow-x-hidden"
+        aria-label="Right Property homepage content"
+      >
+        <div className="relative z-[20]">
+          <div id="first-two">
+            {/* HERO ROAD + MASK */}
+            <div
+              ref={divRef}
+              className="
+                lg:hidden transition-colors duration-300 z-[8]
+                absolute top-0 left-0 w-full h-auto inline-block
+                mask max-w-[100vw] overflow-hidden
+              "
+            >
+              <div className="rp-container relative content-visiblity-auto">
+                <HeroRoad
+                  className="
+                    w-[62.37rem] h-auto trigger
+                    -translate-y-[2.5rem] translate-x-[2.5rem]
+                    4k:[width:clamp(62.37rem,calc(62.37rem+((100vw-2000px)/2000px)*7.63rem),70rem)]
+                    4k:translate-x-[clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*16rem),18.5rem)]
+                    4k:-translate-y-[clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*0.5rem),3rem)]
+                  "
+                />
 
-            <main role="main" className="relative z-[10] 4k:max-w-[100vw] 4k:overflow-x-hidden" aria-label="Right Property homepage content">
-                <div className="relative z-[20]">
-                    <div id="first-two">
-                        <div ref={divRef} className="lg:hidden transition-colors duration-300 z-[8] absolute top-0 left-0 w-full  h-auto inline-block mask max-w-[100vw] overflow-hidden 4k:scale-[1.1]">
-                            <div className="rp-container relative content-visiblity-auto">
-                                <HeroRoad className="w-[62.37rem] h-auto trigger -translate-y-[2.5rem] translate-x-[2.5rem] 4k:w-[70rem] 4k:translate-x-[18.5rem] 4k:-translate-y-[3rem]" />
-                                {/* <img src={heroRoad} alt="Hero road" className="w-[100vw] h-auto trigger" /> */}
-                                <div className="z-[8] absolute top-[23.4375rem] left-[8.5rem] 4k:top-[30rem] 4k:left-[12rem]">
-                                    <div className="rp-container ">
-                                        <div ref={(el) => {
-                                            if (el) {
-                                                const path = el.querySelector('path')
-                                                if (path) pathRef.current = path
-                                            }
-                                        }}>
-                                            <MaskPath />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="highlight"></div>
-                        </div>
-
-                        <div className="relative z-[10]">
-                            <EnhancedPresentationsSection />
-                            <MeetRightProperty />
-                        </div>
+                <div
+                  className="
+                    z-[8] absolute top-[23.4375rem] left-[8.5rem]
+                    4k:[top:clamp(23.4375rem,calc(23.4375rem+((100vw-2000px)/2000px)*6.5625rem),30rem)]
+                    4k:[left:clamp(8.5rem,calc(8.5rem+((100vw-2000px)/2000px)*3.5rem),12rem)]
+                  "
+                >
+                  <div className="rp-container">
+                    <div
+                      ref={(el) => {
+                        if (el) {
+                          const path = el.querySelector("path");
+                          if (path) pathRef.current = path;
+                        }
+                      }}
+                    >
+                      <MaskPath />
                     </div>
-
-                    <PresentSmarterSection />
-                    <ChoosePresentationSection />
-                    <SimpleSetupSection />
-                    <ConvertMoreLeadsSection />
-                    <EasyOnboardingSection />
-                    <FeaturesCarousel />
-                    <BackToBackReveal />
-                    <MadeToFit />
-                    <FaqSection />
-                    <ScheduleADemoSection />
+                  </div>
                 </div>
+              </div>
 
-            </main>
+              <div className="highlight" />
+            </div>
+
+            {/* FIRST TWO SECTIONS */}
+            <div className="relative z-[10]">
+              <EnhancedPresentationsSection />
+              <MeetRightProperty />
+            </div>
+          </div>
+
+          <PresentSmarterSection />
+          <ChoosePresentationSection />
+          <SimpleSetupSection />
+          <ConvertMoreLeadsSection />
+          <EasyOnboardingSection />
+          <FeaturesCarousel />
+          <BackToBackReveal />
+          <MadeToFit />
+          <FaqSection />
+          <ScheduleADemoSection />
         </div>
-    )
+      </main>
+    </div>
+  );
 }
