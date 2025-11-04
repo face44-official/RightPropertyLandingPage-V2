@@ -73,7 +73,7 @@ export default function EnhancedPresentationsSection() {
           </div>
         </div>
 
-        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-25.3125rem,calc(-25.3125rem+((100vw-2000px)/2000px)*-25.3125rem),-42.625rem)] 4k:[width:clamp(55%,calc(55%+((100vw-2000px)/2000px)*5%),60%)]">
+        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-25.3125rem,calc(-25.3125rem+((100vw-2000px)/2000px)*-25.3125rem),-42.625rem)] 4k:[width:clamp(60%,calc(60%+((100vw-2000px)/2000px)*10%),60%)]">
           <HeroVideoContainer />
           {/* <video
                             src={heroVideo}
