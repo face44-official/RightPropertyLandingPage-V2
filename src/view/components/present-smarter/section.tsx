@@ -80,7 +80,7 @@ export default function PresentSmarterSection() {
           {/* Left Image Grid */}
           <div
             className="
-              absolute left-0 top-0 w-full h-[calc(58rem+15px)] bg-[#EEF1F7] 
+              absolute left-0 top-0 w-full h-[calc(58rem+15px)] lg:h-auto bg-[#EEF1F7] 
               4k:[height:clamp(56rem,calc(56rem+((100vw-2000px)/2000px)*56rem),114rem)]
             "
           >

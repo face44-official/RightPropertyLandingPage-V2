@@ -235,7 +235,7 @@ export default function EasyOnboardingSection() {
           >
             <p
               className="
-            mb-8 font-geist-mono font-normal uppercase
+            mb-8 lg:mb-[1.5rem] font-geist-mono font-normal uppercase
             text-16 lg:text-14 leading-[150%] tracking-[0.02em] text-primary-black
             text-2k-4k
             4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
@@ -246,8 +246,8 @@ export default function EasyOnboardingSection() {
 
             <h2
               className="
-            mb-8 font-general-sans font-semibold text-primary-black
-            leading-[130%] -tracking-[0.01em] text-40
+            mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
+            leading-[130%] -tracking-[0.01em] text-40 lg:text-32
             text-fluid-4k-40
             4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
           "
@@ -257,8 +257,8 @@ export default function EasyOnboardingSection() {
 
             <p
               className="
-            mb-[5rem] font-geist font-normal text-dark-gray leading-[140%]
-            text-32
+            mb-[5rem] lg:mb-[2rem] font-geist font-normal text-dark-gray leading-[140%]
+            text-32 lg:text-24
             text-fluid-4k-32
             4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
           "
@@ -268,7 +268,7 @@ export default function EasyOnboardingSection() {
             </p>
 
             {/* FEATURES LIST */}
-            <div className="flex flex-col gap-8 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
+            <div className="flex flex-col gap-8 lg:gap-5 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
               {items.map((item, idx) => (
                 <div
                   key={idx}
@@ -282,7 +282,7 @@ export default function EasyOnboardingSection() {
                     <h3
                       className="
                     mb-2 font-geist font-medium text-primary-black leading-[140%]
-                    text-28
+                    text-28 lg:text-20
                     text-fluid-4k-28
                     4k:[margin-bottom:clamp(0.5rem,calc(0.5rem+((100vw-2000px)/2000px)*0.5rem),1rem)]
                   "
@@ -292,7 +292,7 @@ export default function EasyOnboardingSection() {
                     <p
                       className="
                     font-geist font-normal text-primary-black leading-[140%]
-                    text-24
+                    text-24 lg:text-base
                     text-2k-4k-24
                   "
                     >
