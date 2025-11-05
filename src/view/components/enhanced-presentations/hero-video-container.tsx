@@ -14,9 +14,9 @@ export default function HeroVideoContainer() {
           fetchPriority="high"
           className="
       absolute z-[-1] h-auto
-      w-[62rem] top-[6.3rem] left-[4.3rem]
+      w-[62rem] top-[6rem] left-[4.3rem]
       4k:[width:clamp(62rem,calc(62rem+((100vw-2000px)/2000px)*62rem),124rem)]
-      4k:[top:clamp(6.3rem,calc(6.3rem+((100vw-2000px)/2000px)*6.3rem),12.6rem)]
+      4k:[top:clamp(6rem,calc(6.3rem+((100vw-2000px)/2000px)*6.3rem),12.6rem)]
       4k:[left:clamp(4.3rem,calc(4.3rem+((100vw-2000px)/2000px)*4.3rem),8.6rem)]
       lg:top-[13%] lg:left-[6%] lg:w-[88%]
     "
@@ -28,9 +28,9 @@ export default function HeroVideoContainer() {
           src={heroVideo}
           className={`
       absolute z-[-1] h-auto
-      w-[62rem] top-[6.3rem] left-[4.3rem]
+      w-[62rem] top-[6rem] left-[4.3rem]
       4k:[width:clamp(62rem,calc(62rem+((100vw-2000px)/2000px)*62rem),124rem)]
-      4k:[top:clamp(6.3rem,calc(6.3rem+((100vw-2000px)/2000px)*6.3rem),12.6rem)]
+      4k:[top:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*6rem),12rem)]
       4k:[left:clamp(4.3rem,calc(4.3rem+((100vw-2000px)/2000px)*4.3rem),8.6rem)]
       lg:top-[13%] lg:left-[6%] lg:w-[88%]
       ${showVideo ? "block" : "hidden"}
