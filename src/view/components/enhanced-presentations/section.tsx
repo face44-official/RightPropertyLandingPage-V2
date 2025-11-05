@@ -16,7 +16,7 @@ export default function EnhancedPresentationsSection() {
     flex items-center justify-between
     lg:flex-col lg:items-start
     pt-[7.5rem] lg:pt-[8.5rem] 2xl:pt-[10rem]
-    4k:[padding-top:clamp(9rem,calc(9rem+((100vw-2000px)/2000px)*9rem),18rem)]
+    4k:[padding-top:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*12rem),24rem)]
   "
       >
         <div
