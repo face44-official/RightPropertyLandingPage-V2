@@ -34,7 +34,6 @@ function BlueExploreButton({
     4k:[width:clamp(8.3125rem,calc(8.3125rem+((100vw-2000px)/2000px)*8.3125rem),16.625rem)]
     4k:[height:clamp(4rem,calc(4rem+((100vw-2000px)/2000px)*4rem),8rem)]
     4k:[border-radius:clamp(65px,calc(65px+((100vw-2000px)/2000px)*65px),130px)]
-    4k:[min-width:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),28rem)]
     `,
     className
   );
