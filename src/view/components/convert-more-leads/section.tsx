@@ -98,6 +98,7 @@ export default function ConvertMoreLeadsSection() {
               z-[-1] absolute top-0 left-0 w-full lg:hidden
               h-[48.25rem]
               4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2000px)/2000px)*48.25rem),96.5rem)]
+              object-cover
             "
           />
 
