@@ -34,10 +34,9 @@ export default function MadeToFit() {
       >
         <p
           className="
-            mb-8 font-geist-mono font-medium uppercase text-[#E2E2E2]
-            text-base lg:text-sm leading-[140%] tracking-[0.02em]
-            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
-            text-2k-4k
+            mb-6 font-geist-mono font-medium uppercase text-[#E2E2E2]
+            text-fluid-4k-14 text-14 lg:text-sm leading-[140%] tracking-[0.02em]
+            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
           "
         >
           An experience that matters

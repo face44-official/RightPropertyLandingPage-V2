@@ -157,8 +157,8 @@ export default function SimpleSetupSection() {
         className="
           rp-container relative z-[-1]
           lg:h-auto!
-          [height:100rem]
-          4k:[height:clamp(100.375rem,calc(100.375rem+((100vw-2000px)/2000px)*100.375rem),175.75rem)]
+          [height:90rem]
+          4k:[height:clamp(90rem,calc(90rem+((100vw-2000px)/2000px)*90rem),180rem)]
         "
       >
         <div
@@ -253,12 +253,12 @@ export default function SimpleSetupSection() {
           >
             <p
               className="
-                mb-8 lg:mb-[1.5rem]
+                mb-5 lg:mb-[1.5rem]
                 font-geist-mono font-normal uppercase text-primary-black
                 leading-[150%] tracking-[0.02em]
-                text-16 lg:text-14
-                4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
-                4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+                text-14 lg:text-14
+                text-fluid-4k-14
+                4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
               "
             >
               Presentation
@@ -266,12 +266,12 @@ export default function SimpleSetupSection() {
 
             <h2
               className="
-                mb-8 lg:mb-[1.5rem]
+                mb-5 lg:mb-[1.5rem]
                 font-general-sans font-semibold text-primary-black
                 leading-[130%] -tracking-[0.01em]
                 text-40 lg:text-32
                 text-fluid-4k-40
-                4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+                4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
                 4k:leading-[120%]
               "
             >
@@ -280,19 +280,19 @@ export default function SimpleSetupSection() {
 
             <p
               className="
-                mb-[5rem] lg:mb-[2rem]
+                mb-[3rem] lg:mb-[2rem]
                 font-geist font-normal text-dark-gray
                 leading-[140%] -tracking-[0.01em]
-                text-32 lg:text-24
-                text-fluid-4k-32
-                4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+                text-18 lg:text-18
+                text-2k-4k-18
+                4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),6rem)]
               "
             >
               The process is straightforward, flexible, and built to get you moving fast.
             </p>
 
             {/* ITEMS */}
-            <div className="flex flex-col gap-8 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
+            <div className="flex flex-col gap-8 pl-12 lg:pl-4 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
               {items.map((item, i) => (
                 <div
                   key={i}
@@ -307,8 +307,8 @@ export default function SimpleSetupSection() {
                     <h3
                       className="
                         font-geist font-medium text-primary-black leading-[140%]
-                        text-28 lg:text-20
-                        4k:[font-size:clamp(1.75rem,calc(1.75rem+((100vw-2000px)/2000px)*1.75rem),3.5rem)]
+                        text-24 lg:text-20
+                        text-2k-4k-24
                       "
                     >
                       {item.title}
@@ -316,8 +316,8 @@ export default function SimpleSetupSection() {
                     <p
                       className="
                         font-geist font-normal text-primary-black leading-[140%]
-                        text-24 lg:text-base
-                        4k:[font-size:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+                        text-18 lg:text-base
+                        text-2k-4k-18
                       "
                     >
                       {item.description}

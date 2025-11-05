@@ -120,10 +120,10 @@ export default function FaqSection() {
         {/* Subtitle */}
         <p
           className="
-            mb-8 lg:mb-6 font-geist-mono font-medium uppercase text-[#E2E2E2]
-            text-base lg:text-sm leading-[140%] lg:leading-[148%] tracking-[0.02em]
-            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
-            text-2k-4k
+            mb-6 lg:mb-6 font-geist-mono font-medium uppercase text-[#E2E2E2]
+            text-14 lg:text-sm leading-[140%] lg:leading-[148%] tracking-[0.02em]
+            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
+            text-fluid-4k-14
           "
         >
           Have a question?

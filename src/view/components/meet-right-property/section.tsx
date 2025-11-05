@@ -21,7 +21,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
       aria-label="Meet Right Property features"
       className="
         content-visibility-auto rp-container
-        pb-[16.75rem] pt-[12.75rem] 2xl:pt-[10rem] 2xl:pb-[10.75rem]
+        pb-[12.75rem] pt-[10.75rem] 2xl:pt-[10rem] 2xl:pb-[10.75rem]
         flex gap-[3.25rem] items-start justify-center
         lg:gap-0 lg:flex-col lg:py-0 lg:pb-[0rem]
         4k:[padding-bottom:clamp(7.75rem,calc(7.75rem+((100vw-2000px)/2000px)*7.75rem),14.5rem)]
@@ -36,9 +36,9 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <h2
               className="
                 mb-[2rem] font-geist-mono font-normal uppercase text-squid-ink
-                text-16px leading-[150%] tracking-[0.04em]
-                lg:text-[16px] lg:mb-[1.25rem]
-                4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                text-14 leading-[150%] tracking-[0.04em]
+                lg:text-[14px] lg:mb-[1.25rem]
+                text-fluid-4k-14
                 4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
               "
             >
@@ -51,7 +51,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
               data-fg-color="#000000"
               className="
                 reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black
-                mb-[2.5rem] lg:mb-[2rem]
+                mb-[2rem] lg:mb-[2rem]
                 text-40 leading-[120%] -tracking-[0.01em]
                 lg:text-[28px]
                 text-fluid-4k-40
@@ -94,9 +94,9 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             {/* Paragraph */}
             <p
               className="
-                mb-[2.5rem] font-geist font-normal text-32 leading-[140%] text-dark-gray -tracking-[0.01em]
-                lg:mb-[2rem] lg:leading-[130%] lg:text-24
-                4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+                mb-[2rem] font-geist font-normal text-24 leading-[140%] text-dark-gray -tracking-[0.01em]
+                lg:mb-[2rem] lg:leading-[130%] lg:text-18
+                text-2k-4k-24
                 4k:[margin-bottom:clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*2.5rem),5rem)]
               "
             >
@@ -108,9 +108,9 @@ const MeetRightPropertySection = ({ ref }: Props) => {
             <h3
               className="
                 font-geist-mono font-normal uppercase text-squid-ink
-                text-16px tracking-[0.04em] leading-[150%]
+                text-14 tracking-[0.04em] leading-[150%]
                 lg:text-[14px]
-                4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                text-fluid-4k-14
                 4k:[line-height:clamp(150%,calc(150%+((100vw-2000px)/2000px)*10%),160%)]
               "
             >

@@ -50,10 +50,9 @@ export default function EnhancedPresentationsSection() {
       mb-[2.5625rem] lg:mb-[1.5rem]
       w-[28.875rem] lg:w-full
       font-geist font-normal
-      text-32 lg:text-24
+      text-24 lg:text-24 text-2k-4k-24
       leading-[130%] -tracking-[0.01em] text-tundora
       4k:[width:clamp(28.875rem,calc(28.875rem+((100vw-2000px)/2000px)*28.875rem),57.75rem)]
-      4k:[font-size:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
       4k:[margin-bottom:clamp(2.5625rem,calc(2.5625rem+((100vw-2000px)/2000px)*2.5625rem),5.125rem)]
     "
           >

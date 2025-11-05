@@ -235,10 +235,10 @@ export default function EasyOnboardingSection() {
           >
             <p
               className="
-            mb-8 lg:mb-[1.5rem] font-geist-mono font-normal uppercase
-            text-16 lg:text-14 leading-[150%] tracking-[0.02em] text-primary-black
-            text-2k-4k
-            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+            mb-5 lg:mb-[1.5rem] font-geist-mono font-normal uppercase
+            text-14 lg:text-14 leading-[150%] tracking-[0.02em] text-primary-black
+            text-fluid-4k-14
+            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
           "
             >
               Presentation
@@ -246,10 +246,10 @@ export default function EasyOnboardingSection() {
 
             <h2
               className="
-            mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
+            mb-5 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
             leading-[130%] -tracking-[0.01em] text-40 lg:text-32
             text-fluid-4k-40
-            4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
           "
             >
               Easy Onboarding
@@ -257,10 +257,10 @@ export default function EasyOnboardingSection() {
 
             <p
               className="
-            mb-[5rem] lg:mb-[2rem] font-geist font-normal text-dark-gray leading-[140%]
-            text-32 lg:text-24
-            text-fluid-4k-32
-            4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            mb-[3rem] lg:mb-[2rem] font-geist font-normal text-dark-gray leading-[140%]
+            text-18 lg:text-18
+            text-2k-4k-18
+            4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),6rem)]
           "
             >
               Get started in hours, scale on your terms, and pay only for what
@@ -268,7 +268,7 @@ export default function EasyOnboardingSection() {
             </p>
 
             {/* FEATURES LIST */}
-            <div className="flex flex-col gap-8 lg:gap-5 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
+            <div className="flex flex-col gap-8 lg:gap-5 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)] pl-12 lg:pl-4">
               {items.map((item, idx) => (
                 <div
                   key={idx}
@@ -282,8 +282,8 @@ export default function EasyOnboardingSection() {
                     <h3
                       className="
                     mb-2 font-geist font-medium text-primary-black leading-[140%]
-                    text-28 lg:text-20
-                    text-fluid-4k-28
+                    text-24 lg:text-20
+                    text-2k-4k-24
                     4k:[margin-bottom:clamp(0.5rem,calc(0.5rem+((100vw-2000px)/2000px)*0.5rem),1rem)]
                   "
                     >
@@ -292,8 +292,8 @@ export default function EasyOnboardingSection() {
                     <p
                       className="
                     font-geist font-normal text-primary-black leading-[140%]
-                    text-24 lg:text-base
-                    text-2k-4k-24
+                    text-18 lg:text-base
+                    text-2k-4k-18
                   "
                     >
                       {item.description}

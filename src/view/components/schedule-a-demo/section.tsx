@@ -13,9 +13,9 @@ export default function ScheduleADemoSection({
       className="
         relative flex items-center justify-center
         lg:h-auto
-        py-[18rem] xl:py-[14rem] px-[5rem]
-        4k:[padding-block:clamp(15rem,calc(15rem+((100vw-2000px)/2000px)*15rem),30rem)]
-        4k:[padding-inline:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+        py-[12rem] xl:py-[8rem] px-[5rem]
+        4k:[padding-block:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*12rem),24rem)]
+        4k:[padding-inline:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*12rem),24rem)]
         lg:pt-[3.75rem] lg:px-4
         max-w-[100vw] overflow-hidden
       "
@@ -51,11 +51,11 @@ export default function ScheduleADemoSection({
         <div className="inline-block lg:p-[1rem]">
           <p
             className="
-              mb-8 lg:mb-[1rem]
+              mb-6 lg:mb-[1rem]
               font-geist font-medium uppercase tracking-[0.02em]
-              text-base lg:text-14
-              text-2k-4k
-              4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+              text-14
+              text-fluid-4k-14
+              4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
               leading-[150%] lg:pt-[1rem]
             "
           >
@@ -64,11 +64,11 @@ export default function ScheduleADemoSection({
 
           <h3
             className="
-              mb-8 lg:mb-[0.75rem]
+              mb-6 lg:mb-[0.75rem]
               font-general-sans font-semibold text-[#232323]
               text-40 lg:text-40
               text-fluid-4k-40
-              4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+              4k:[margin-bottom:clamp(1.3rem,calc(2rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
               leading-[130%] tracking-[0.01em]
             "
           >
@@ -81,11 +81,11 @@ export default function ScheduleADemoSection({
 
           <p
             className="
-              mb-[3.125rem] lg:mb-[2rem]
+              mb-[3rem] lg:mb-[2rem]
               font-geist font-normal
-              text-32 lg:text-24
-              text-fluid-4k-32
-              4k:[margin-bottom:clamp(3.125rem,calc(3.125rem+((100vw-2000px)/2000px)*3.125rem),6.25rem)]
+              text-18
+              text-2k-4k-18
+              4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),6rem)]
               leading-[140%] tracking-[0]
               w-[37.5rem] lg:w-full
               4k:[width:clamp(37.5rem,calc(37.5rem+((100vw-2000px)/2000px)*37.5rem),75rem)]

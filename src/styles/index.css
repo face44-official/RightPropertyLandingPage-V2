@@ -440,17 +440,26 @@ body {
 }
 
 @layer utilities {
-
   @media (min-width: 2000px) {
-      .desktop-rp-container,
-      .rp-container {
-         max-width: clamp(
+    .desktop-rp-container,
+    .rp-container {
+      max-width: clamp(
         1680px,
         calc(1680px + (100vw - 2000px) * 0.84),
         3360px
       ) !important;
-      }
     }
+  }
+
+  .text-fluid-4k-14 {
+    @media (min-width: 2000px) {
+      font-size: clamp(
+        0.875rem,
+        calc(0.875rem + ((100vw - 2000px) / 2000px) * 0.875rem),
+        1.75rem
+      );
+    }
+  }
 
   .text-2k-4k {
     @media (min-width: 2000px) {
@@ -575,6 +584,10 @@ body {
 }
 @media (min-width: 2000px) {
   .circle-fill > * {
-    font-size: clamp(1.3rem, calc(1.3rem + ((100vw - 2000px) / 2000px) * 1.3rem), 2.6rem);
+    font-size: clamp(
+      1.3rem,
+      calc(1.3rem + ((100vw - 2000px) / 2000px) * 1.3rem),
+      2.6rem
+    );
   }
 }

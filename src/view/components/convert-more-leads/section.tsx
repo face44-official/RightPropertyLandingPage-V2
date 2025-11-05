@@ -56,8 +56,8 @@ export default function ConvertMoreLeadsSection() {
       className="
         mb-[14rem] lg:mb-0
         bg-[#EEF1F7]
-        h-[63.25rem] lg:h-auto overflow-visible relative content-visibility-auto
-        4k:[height:clamp(63.25rem,calc(63.25rem+((100vw-2000px)/2000px)*63.25rem),126.5rem)]
+        h-[48.25rem] lg:h-auto overflow-visible relative content-visibility-auto
+        4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2000px)/2000px)*48.25rem),96.5rem)]
         4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),16rem)]
       "
     >
@@ -96,8 +96,8 @@ export default function ConvertMoreLeadsSection() {
             alt="Right Property lead conversion insights desktop background"
             className="
               z-[-1] absolute top-0 left-0 w-full lg:hidden
-              h-[63.25rem]
-              4k:[height:clamp(63.25rem,calc(63.25rem+((100vw-2000px)/2000px)*63.25rem),126.5rem)]
+              h-[48.25rem]
+              4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2000px)/2000px)*48.25rem),96.5rem)]
             "
           />
 

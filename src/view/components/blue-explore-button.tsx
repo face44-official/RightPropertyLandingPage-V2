@@ -27,7 +27,7 @@ function BlueExploreButton({
   onClick?: () => void;
 }) {
   const cnClass = cn(
-    `hover:bg-darker-blue will-change-transform pointer-events-auto transition-all duration-300 ease-in-out cursor-pointer w-[8.3125rem] h-[4rem] rounded-[65px] font-geist font-semibold text-base leading-[130%] tracking-[0%] uppercase text-raisin-black bg-[#BADEF3] lg:w-full lg:h-[3rem] lg:text-sm
+    `hover:bg-darker-blue will-change-transform pointer-events-auto transition-all duration-300 ease-in-out cursor-pointer w-[8.3125rem] h-[4rem] rounded-[65px] text-primary-black font-geist font-semibold text-base leading-[130%] tracking-[0%] uppercase bg-[#BADEF3] lg:w-full lg:h-[3rem] lg:text-sm
     `,
     `
     text-2k-4k

@@ -17,7 +17,7 @@ export default function BookADemoButton({ className }: { className?: string }) {
     4k:[width:clamp(14.5625rem,calc(14.5625rem+((100vw-2000px)/2000px)*14.5625rem),29.125rem)]
     4k:[height:clamp(4rem,calc(4rem+((100vw-2000px)/2000px)*4rem),8rem)]
     4k:[border-radius:clamp(65px,calc(65px+((100vw-2000px)/2000px)*65px),130px)]
-    4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+    text-2k-4k
     4k:[letter-spacing:clamp(0em,calc(0em+((100vw-2000px)/2000px)*0.05em),0.05em)]
     4k:[padding-left:clamp(2.25rem,calc(2.25rem+((100vw-2000px)/2000px)*2.25rem),4.5rem)]
     hover:4k:[padding-left:clamp(5.25rem,calc(5.25rem+((100vw-2000px)/2000px)*5.25rem),10.5rem)]

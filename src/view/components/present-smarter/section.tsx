@@ -56,8 +56,8 @@ export default function PresentSmarterSection() {
   return (
     <div
       className="
-        mb-[3rem] lg:mb-[3rem]
-        4k:[margin-bottom:clamp(8rem,calc(8rem+((100vw-2000px)/2000px)*8rem),16rem)]
+        mb-[6rem] lg:mb-[10rem]
+        4k:[margin-bottom:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*10rem),20rem)]
         h-auto
         overflow-visible relative content-visibility-auto
       "
@@ -74,7 +74,7 @@ export default function PresentSmarterSection() {
           className="
             lg:bg-none! lg:h-auto! relative z-[8]
             flex justify-start
-            pt-[7.5rem]! pl-[48vw] lg:p-4
+            pt-[7.5rem]! pl-[48vw] lg:p-4 lg:pt-0!
             4k:[padding-left:clamp(46vw,calc(46vw+((100vw-2000px)/2000px)*3vw),50vw)]
           "
         >

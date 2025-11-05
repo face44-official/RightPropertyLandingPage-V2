@@ -12,7 +12,7 @@ export default function HeaderBookADemo() {
           font-geist font-semibold uppercase text-[#232323]
           leading-[130%] tracking-[0%] rounded-[65px]
           py-[15px] px-[25px] text-14
-          4k:[font-size:clamp(14px,calc(14px+((100vw-2000px)/2000px)*22px),28px)]
+          text-fluid-4k-14
           4k:[padding-top:clamp(15px,calc(15px+((100vw-2000px)/2000px)*15px),30px)]
           4k:[padding-bottom:clamp(15px,calc(15px+((100vw-2000px)/2000px)*15px),30px)]
           4k:[padding-left:clamp(25px,calc(25px+((100vw-2000px)/2000px)*25px),50px)]

@@ -123,17 +123,17 @@ export default function Accessibility({
       4k:[padding:clamp(3.35rem,calc(3.35rem+((100vw-2000px)/2000px)*3.35rem),6.7rem)]
     ">
       <p className="
-        mb-8 lg:mb-4 font-geist-mono font-normal uppercase text-primary-black
+        mb-5 lg:mb-4 font-geist-mono font-normal uppercase text-primary-black
         leading-[150%] tracking-[0.04em]
-        text16 lg:text-[14px]
-        text-2k-4k
+        text-14 lg:text-[14px]
+        text-fluid-4k-14
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
       ">
         {subHeading}
       </p>
 
       <h2 className="
-        mb-8 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
+        mb-5 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
         leading-[130%] tracking-[0em]
         text-40 lg:text-32
         text-fluid-4k-40
@@ -146,8 +146,8 @@ export default function Accessibility({
         mb-[2.5rem] lg:mb-[2rem]
         font-geist font-normal text-dark-gray
         leading-[140%] tracking-[0em]
-        text-32 lg:text-24
-        text-fluid-4k-32
+        text-18
+        text-2k-4k-18
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),5rem)]
       ">
         {description}
@@ -166,7 +166,7 @@ export default function Accessibility({
             key={index}
             className="
               flex flex-col items-start
-              gap-[2.5rem] lg:gap-[1.5rem]
+              gap-[2rem] lg:gap-[1.5rem]
               4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),5rem)]
               p-[2.5rem] lg:p-[1.5rem]
               4k:[padding:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),5rem)]
@@ -185,8 +185,8 @@ export default function Accessibility({
               <h3 className="
                 mb-1 font-geist font-medium text-primary-black
                 leading-[140%] tracking-[-0.02em]
-                text-28 lg:text-20
-                text-fluid-4k-28
+                text-24 lg:text-20
+                text-2k-4k-24
               ">
                 {item.title}
               </h3>
@@ -195,8 +195,8 @@ export default function Accessibility({
             <p className="
               font-geist font-normal text-primary-black leading-[140%]
               tracking-[-0.01em] pr-[1rem]
-              text-24 lg:text-base
-              text-2k-4k-24
+              text-18 lg:text-base
+              text-2k-4k-18
               4k:[padding-right:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
             ">
               {item.description}

@@ -13,13 +13,13 @@ export default function ChoosePresentationSection() {
         <div className="rp-container w-full">
           <p
             className="
-              pl-[5rem] mb-8 lg:mb-[1.5rem]
+              pl-[5rem] mb-5 lg:mb-[1rem]
               font-geist-mono font-medium uppercase text-primary-black
-              text-16 leading-[150%] tracking-[0.04em]
+              text-14 leading-[150%] tracking-[0.04em]
               lg:px-4 lg:text-start lg:text-14
-              text-2k-4k
+              text-fluid-4k-14
               4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-              4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+              4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
             "
           >
             Choose the Presentation Experience
@@ -89,8 +89,8 @@ export default function ChoosePresentationSection() {
                 className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-dark-gray relative z-[2]
-                  text-22 leading-[140%]
-                  text-2k-4k-22
+                  text-18 leading-[140%]
+                  text-2k-4k-18
                   4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
                 "
               >
@@ -144,8 +144,8 @@ export default function ChoosePresentationSection() {
                 className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-white relative z-[2]
-                  text-22 leading-[140%]
-                  text-2k-4k-22
+                  text-18 leading-[140%]
+                  text-2k-4k-18
                   4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
                 "
               >

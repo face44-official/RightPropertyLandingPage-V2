@@ -186,8 +186,8 @@ export default function FooterSection() {
                   className="
                     mb-6 lg:mb-4
                     text-[#48515B] font-geist-mono font-medium uppercase
-                    text-16 lg:text-sm
-                    text-2k-4k
+                    text-14 lg:text-sm
+                    text-2k-4k-14
                     4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
                     leading-[122%]
                   "
@@ -199,8 +199,8 @@ export default function FooterSection() {
                   className="
                     mb-[0.5rem]
                     font-geist font-medium text-[#48515B]
-                    text-20 lg:text-base
-                    text-2k-4k-20
+                    text-base
+                    text-2k-4k
                     leading-[1.4em]
                     space-y-[0.4rem]
                     4k:[space-y:clamp(0.4rem,calc(0.4rem+((100vw-2000px)/2000px)*0.35rem),0.75rem)]
