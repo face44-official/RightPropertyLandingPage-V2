@@ -71,8 +71,6 @@ export default function FaqItem({
           gap-[5.625rem] lg:gap-6
           min-h-[40px] lg:min-h-[2.5rem]
           4k:[gap:clamp(5.625rem,calc(5.625rem+((100vw-2000px)/2000px)*3.375rem),9rem)]
-          p-[0.625rem] lg:p-2
-          4k:[padding:clamp(0.625rem,calc(0.625rem+((100vw-2000px)/2000px)*0.625rem),1.25rem)]
   "
       >
         <h3

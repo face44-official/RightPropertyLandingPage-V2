@@ -5,7 +5,7 @@ export default function FaqSection() {
     {
       question: "How long does it take to set up Right Property?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>2D Setup can be completed in as little as 48 hours.</li>
           <li>3D Setup takes 4–6 weeks, depending on project complexity.</li>
         </ul>
@@ -14,7 +14,7 @@ export default function FaqSection() {
     {
       question: "What makes Right Property different from other solutions?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>
             Unlike other tools, Right Property offers a non-linear, interactive presentation mode, a built-in CRM, and a fully integrated sales & marketing platform — all in one seamless experience.
           </li>
@@ -24,7 +24,7 @@ export default function FaqSection() {
     {
       question: "Is Right Property only for large developments?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>
             Not at all! Whether your project is small or large, you get the same high-quality experience.
           </li>
@@ -37,7 +37,7 @@ export default function FaqSection() {
     {
       question: "What kind of support do you offer?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>We provide full onboarding support for smooth setup.</li>
           <li>
             Ongoing support includes technical help, updates, and expert guidance.
@@ -48,7 +48,7 @@ export default function FaqSection() {
     {
       question: "Can I upgrade from 2D to 3D later?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>
             Yes! You can start with 2D for faster setup and upgrade to 3D anytime.
           </li>
@@ -58,7 +58,7 @@ export default function FaqSection() {
     {
       question: "Do I need existing marketing materials?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>
             You can upload existing renders, videos, or site plans directly.
           </li>
@@ -71,7 +71,7 @@ export default function FaqSection() {
     {
       question: "Does it replace traditional listing platforms?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>Not necessarily—but it removes your reliance on them.</li>
           <li>
             Your interactive website is SEO-ready, integrates Google Analytics,
@@ -83,7 +83,7 @@ export default function FaqSection() {
     {
       question: "How does pricing work?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>Pricing depends on project complexity.</li>
           <li>You can start with 2D and upgrade anytime.</li>
           <li>
@@ -95,7 +95,7 @@ export default function FaqSection() {
     {
       question: "Do I need to purchase hardware?",
       answer: (
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside pt-2.5">
           <li>Right Property works with all available touchscreens.</li>
         </ul>
       ),
