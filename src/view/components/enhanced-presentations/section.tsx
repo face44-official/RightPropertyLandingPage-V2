@@ -64,8 +64,8 @@ export default function EnhancedPresentationsSection() {
           <div
             className="
       flex lg:flex-col lg:w-full
-      lg:gap-[0.75rem] gap-[1.875rem]
-      4k:[gap:clamp(1.875rem,calc(1.875rem+((100vw-2000px)/2000px)*1.875rem),3.75rem)]
+      lg:gap-[0.75rem] gap-[1rem]
+      4k:[gap:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),3rem)]
     "
           >
             <BlueExploreButtonLink href="meet-right-property" title="Explore" />
