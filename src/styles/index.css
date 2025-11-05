@@ -570,3 +570,11 @@ body {
   margin: calc(calc(var(--dfes-circlegraph-circle-size) / 2) * -1);
   border-radius: 50%;
 }
+.circle-fill > * {
+  font-size: 1.3rem;
+}
+@media (min-width: 2000px) {
+  .circle-fill > * {
+    font-size: clamp(1.3rem, calc(1.3rem + ((100vw - 2000px) / 2000px) * 1.3rem), 2.6rem);
+  }
+}
