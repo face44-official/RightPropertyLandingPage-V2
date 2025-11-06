@@ -14,7 +14,7 @@ export default function ConvertMoreLeadsSection() {
           alt="Performance tracking feature icon"
           className="
             w-[5rem] h-auto object-contain
-            4k:[width:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            4k:[width:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         />
       ),
@@ -35,7 +35,7 @@ export default function ConvertMoreLeadsSection() {
           alt="User-centered platform feature icon"
           className="
             w-[5rem] h-auto object-contain
-            4k:[width:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            4k:[width:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         />
       ),
@@ -57,8 +57,8 @@ export default function ConvertMoreLeadsSection() {
         mb-[14rem] lg:mb-0
         bg-[#EEF1F7]
         h-[48.25rem] lg:h-auto overflow-visible relative content-visibility-auto
-        4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2000px)/2000px)*48.25rem),96.5rem)]
-        4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2000px)/2000px)*14rem),16rem)]
+        4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2050px)/2000px)*48.25rem),96.5rem)]
+        4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2050px)/2000px)*14rem),16rem)]
       "
     >
       {/* MOBILE */}
@@ -73,8 +73,8 @@ export default function ConvertMoreLeadsSection() {
             className="
               absolute right-0 bottom-0
               w-[375px] h-[68px]
-              4k:[width:clamp(375px,calc(375px+((100vw-2000px)/2000px)*375px),750px)]
-              4k:[height:clamp(68px,calc(68px+((100vw-2000px)/2000px)*68px),136px)]
+              4k:[width:clamp(375px,calc(375px+((100vw-2050px)/2000px)*375px),750px)]
+              4k:[height:clamp(68px,calc(68px+((100vw-2050px)/2000px)*68px),136px)]
             "
             style={{
               background:
@@ -88,7 +88,7 @@ export default function ConvertMoreLeadsSection() {
           className="
             rp-container relative z-[8] flex justify-start
             py-[7.5rem] px-[5rem] lg:p-4
-            4k:[padding:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            4k:[padding:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         >
           <img
@@ -97,7 +97,7 @@ export default function ConvertMoreLeadsSection() {
             className="
               z-[-1] absolute top-0 left-0 w-full lg:hidden
               h-[48.25rem]
-              4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2000px)/2000px)*48.25rem),96.5rem)]
+              4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2050px)/2000px)*48.25rem),96.5rem)]
               object-cover
             "
           />
@@ -106,7 +106,7 @@ export default function ConvertMoreLeadsSection() {
             <div
               className="
                 w-[49.375rem] lg:w-full
-                4k:[width:clamp(49.375rem,calc(49.375rem+((100vw-2000px)/2000px)*49.375rem),98.75rem)]
+                4k:[width:clamp(49.375rem,calc(49.375rem+((100vw-2050px)/2000px)*49.375rem),98.75rem)]
               "
             >
               <Accessibility
@@ -125,7 +125,7 @@ export default function ConvertMoreLeadsSection() {
         className="
           hidden lg:block absolute bottom-0 w-full bg-white z-[5]
           h-[13rem]
-          4k:[height:clamp(13rem,calc(13rem+((100vw-2000px)/2000px)*13rem),26rem)]
+          4k:[height:clamp(13rem,calc(13rem+((100vw-2050px)/2000px)*13rem),26rem)]
         "
       ></div>
     </div>

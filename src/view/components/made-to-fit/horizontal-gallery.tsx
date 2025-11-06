@@ -124,8 +124,8 @@ export default function HorizontalGallery({
 
   return (
     <div className="gallery relative z-[8] overflow-visible min-h-full lg:min-h-[75vw] max-w-[100vw]">
-      <div className="rp-container pl-[5rem] mx-auto w-full 4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)] lg:px-4">
-        <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5vw] 4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]">
+      <div className="rp-container pl-[5rem] mx-auto w-full 4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)] lg:px-4">
+        <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5vw] 4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]">
           {images.map((image, index) => (
             <img
               src={image}
@@ -137,9 +137,9 @@ export default function HorizontalGallery({
                 item relative object-cover rounded-[1rem]
                 w-[42.375rem] h-[42.375rem]
                 lg:w-[68vw] lg:h-[68vw]
-                4k:[width:clamp(42.375rem,calc(42.375rem+((100vw-2000px)/2000px)*42.375rem),84.75rem)]
-                4k:[height:clamp(42.375rem,calc(42.375rem+((100vw-2000px)/2000px)*42.375rem),84.75rem)]
-                4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                4k:[width:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
+                4k:[height:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
+                4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
               "
             />
           ))}

@@ -115,9 +115,9 @@ export default function FooterSection() {
         className="
           relative h-[45.3125rem] lg:h-auto lg:p-0
           px-[5rem] pt-[7.125rem] lg:w-full
-          4k:[height:clamp(45.3125rem,calc(45.3125rem+((100vw-2000px)/2000px)*45.3125rem),90.625rem)]
-          4k:[padding-inline:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-          4k:[padding-top:clamp(7.125rem,calc(7.125rem+((100vw-2000px)/2000px)*7.125rem),14.25rem)]
+          4k:[height:clamp(45.3125rem,calc(45.3125rem+((100vw-2050px)/2000px)*45.3125rem),90.625rem)]
+          4k:[padding-inline:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+          4k:[padding-top:clamp(7.125rem,calc(7.125rem+((100vw-2050px)/2000px)*7.125rem),14.25rem)]
         "
       >
         {/* Levitate Image */}
@@ -127,9 +127,9 @@ export default function FooterSection() {
           className="
             absolute left-[36.25rem] top-[29.25rem]
             w-[21.25rem] h-auto object-contain z-[0] lg:hidden
-            4k:[left:clamp(36.25rem,calc(36.25rem+((100vw-2000px)/2000px)*36.25rem),72.5rem)]
-            4k:[top:clamp(29.25rem,calc(29.25rem+((100vw-2000px)/2000px)*29.25rem),58.5rem)]
-            4k:[width:clamp(21.25rem,calc(21.25rem+((100vw-2000px)/2000px)*21.25rem),42.5rem)]
+            4k:[left:clamp(36.25rem,calc(36.25rem+((100vw-2050px)/2000px)*36.25rem),72.5rem)]
+            4k:[top:clamp(29.25rem,calc(29.25rem+((100vw-2050px)/2000px)*29.25rem),58.5rem)]
+            4k:[width:clamp(21.25rem,calc(21.25rem+((100vw-2050px)/2000px)*21.25rem),42.5rem)]
           "
           alt="Right Property footer floating decoration element"
         />
@@ -139,7 +139,7 @@ export default function FooterSection() {
           src={footerBg}
           className="
             absolute bottom-0 left-0 w-[105rem] h-full object-cover z-[-1] lg:hidden
-            4k:[width:clamp(105rem,calc(105rem+((100vw-2000px)/2000px)*105rem),210rem)]
+            4k:[width:clamp(105rem,calc(105rem+((100vw-2050px)/2000px)*105rem),210rem)]
           "
           alt="Right Property footer background design"
         />
@@ -148,8 +148,6 @@ export default function FooterSection() {
         <div
           className="
             flex justify-between lg:flex-col
-            4k:[gap:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*2rem),5rem)]
-            4k:[padding-inline:clamp(0rem,calc(0rem+((100vw-2000px)/2000px)*10rem),10rem)]
           "
         >
           {/* Left — Logo + Copyright */}
@@ -163,8 +161,8 @@ export default function FooterSection() {
               className="
                 w-[8.25rem] lg:w-[7.875rem] h-auto
                 mb-[7.125rem] lg:mb-[4rem] lg:px-4
-                4k:[width:clamp(8.25rem,calc(8.25rem+((100vw-2000px)/2000px)*8.25rem),16.5rem)]
-                4k:[margin-bottom:clamp(7.125rem,calc(7.125rem+((100vw-2000px)/2000px)*7.125rem),14.25rem)]
+                4k:[width:clamp(8.25rem,calc(8.25rem+((100vw-2050px)/2000px)*8.25rem),16.5rem)]
+                4k:[margin-bottom:clamp(7.125rem,calc(7.125rem+((100vw-2050px)/2000px)*7.125rem),14.25rem)]
               "
             />
             <CopyRight className="lg:hidden 4k:text-[1.125rem]" />
@@ -176,8 +174,8 @@ export default function FooterSection() {
               flex flex-row-reverse lg:flex-col
               gap-[3.75rem] lg:gap-[2.5rem] mb-[5rem] lg:mb-[2rem]
               lg:px-4 lg:flex-wrap
-              4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*1.25rem),5rem)]
-              4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*1rem),6rem)]
+              4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*1.25rem),5rem)]
+              4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*1rem),6rem)]
             "
           >
             {footerItems.map((item) => (
@@ -188,7 +186,7 @@ export default function FooterSection() {
                     text-[#48515B] font-geist-mono font-medium uppercase
                     text-14 lg:text-sm
                     text-2k-4k-14
-                    4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+                    4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2050px)/2000px)*1.5rem),3rem)]
                     leading-[122%]
                   "
                 >
@@ -203,7 +201,7 @@ export default function FooterSection() {
                     text-2k-4k
                     leading-[1.4em]
                     space-y-[0.4rem]
-                    4k:[space-y:clamp(0.4rem,calc(0.4rem+((100vw-2000px)/2000px)*0.35rem),0.75rem)]
+                    4k:[space-y:clamp(0.4rem,calc(0.4rem+((100vw-2050px)/2000px)*0.35rem),0.75rem)]
                   "
                 >
                   {item.items.map((link) => (
@@ -263,8 +261,8 @@ const CopyRight = ({ className }: { className?: string }) => {
         className="
           font-geist font-normal tracking-[0] text-[#8D98A5]
           text-14 leading-[24px]
-          4k:[font-size:clamp(0.875rem,calc(0.875rem+((100vw-2000px)/2000px)*0.875rem),1.75rem)]
-          4k:[line-height:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+          4k:[font-size:clamp(0.875rem,calc(0.875rem+((100vw-2050px)/2000px)*0.875rem),1.75rem)]
+          4k:[line-height:clamp(1.5rem,calc(1.5rem+((100vw-2050px)/2000px)*1.5rem),3rem)]
         "
       >
         © {year} Right Property Ltd

@@ -16,10 +16,10 @@ export default function MadeToFit() {
         min-h-full
         pt-[7.5rem] px-[5rem] pb-[9rem]
         lg:p-4
-        4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
-        4k:[padding-bottom:clamp(9rem,calc(9rem+((100vw-2000px)/2000px)*9rem),18rem)]
-        4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-        4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+        4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2050px)/2000px)*7.5rem),15rem)]
+        4k:[padding-bottom:clamp(9rem,calc(9rem+((100vw-2050px)/2000px)*9rem),18rem)]
+        4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+        4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
       "
       aria-label="Right Property platform adaptability showcase"
     >
@@ -27,8 +27,8 @@ export default function MadeToFit() {
         className="
           rp-container relative z-[10]
           lg:px-0 lg:pt-[3.75rem] lg:pb-[2.5rem] pl-[5rem] pr-[5rem]
-          4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-          4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+          4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+          4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
         "
         style={{ height: "auto" }}
       >
@@ -36,7 +36,7 @@ export default function MadeToFit() {
           className="
             mb-6 font-geist-mono font-medium uppercase text-[#E2E2E2]
             text-fluid-4k-14 text-14 lg:text-sm leading-[140%] tracking-[0.02em]
-            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
+            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2050px)/2000px)*1.3rem),2.6rem)]
           "
         >
           An experience that matters
@@ -47,7 +47,7 @@ export default function MadeToFit() {
             text-[#E2E2E2] font-general-sans font-semibold tracking-[0.01em]
             text-40 lg:text-32 leading-[140%] lg:leading-[130%]
             mb-[3.75rem] lg:mb-0
-            4k:[margin-bottom:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
+            4k:[margin-bottom:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]
             text-fluid-4k-40
           "
         >

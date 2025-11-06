@@ -3,7 +3,7 @@ export default function SimpleSetupGradientPath() {
     <svg
       className="
         w-[35.9375rem] h-auto
-        4k:[width:clamp(35.9375rem,calc(35.9375rem+((100vw-2000px)/2000px)*35.9375rem),71.875rem)]
+        4k:[width:clamp(35.9375rem,calc(35.9375rem+((100vw-2050px)/2000px)*35.9375rem),71.875rem)]
       "
       viewBox="0 0 575 827"
       fill="none"

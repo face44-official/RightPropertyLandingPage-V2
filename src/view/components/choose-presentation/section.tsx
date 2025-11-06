@@ -18,8 +18,8 @@ export default function ChoosePresentationSection() {
               text-14 leading-[150%] tracking-[0.04em]
               lg:px-4 lg:text-start lg:text-14
               text-fluid-4k-14
-              4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-              4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
+              4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+              4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2050px)/2000px)*1.3rem),2.6rem)]
             "
           >
             Choose the Presentation Experience
@@ -32,10 +32,10 @@ export default function ChoosePresentationSection() {
               font-geist font-semibold text-primary-black
               text-40 lg:text-32 leading-[130%]
               text-fluid-4k-40
-              4k:[width:clamp(46.875rem,calc(46.875rem+((100vw-2000px)/2000px)*46.875rem),93.75rem)]
-              4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-              4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),5rem)]
-              4k:[line-height:clamp(130%,calc(130%+((100vw-2000px)/2000px)*0%),130%)]
+              4k:[width:clamp(46.875rem,calc(46.875rem+((100vw-2050px)/2000px)*46.875rem),93.75rem)]
+              4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+              4k:[margin-bottom:clamp(3rem,calc(3rem+((100vw-2050px)/2000px)*3rem),5rem)]
+              4k:[line-height:clamp(130%,calc(130%+((100vw-2050px)/2000px)*0%),130%)]
             "
           >
             Right Property offers two powerful ways to present
@@ -48,7 +48,7 @@ export default function ChoosePresentationSection() {
           <div
             className="
               group relative grow basis-[100%] overflow-hidden
-              4k:[min-height:clamp(45rem,calc(45rem+((100vw-2000px)/2000px)*15rem),60rem)]
+              4k:[min-height:clamp(45rem,calc(45rem+((100vw-2050px)/2000px)*15rem),60rem)]
             "
           >
             <img
@@ -64,15 +64,15 @@ export default function ChoosePresentationSection() {
               }}
               className="
                 absolute top-0 left-0 z-[1] w-full h-[16.825rem]
-                4k:[height:clamp(16.825rem,calc(16.825rem+((100vw-2000px)/2000px)*8.175rem),25rem)]
+                4k:[height:clamp(16.825rem,calc(16.825rem+((100vw-2050px)/2000px)*8.175rem),25rem)]
               "
             />
 
             <div
               className="
                 absolute left-[5rem] top-[4.0625rem] lg:left-6 lg:top-6
-                4k:[left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*3rem),8rem)]
-                4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2000px)/2000px)*2.9375rem),7rem)]
+                4k:[left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*3rem),8rem)]
+                4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2050px)/2000px)*2.9375rem),7rem)]
               "
             >
               <h3
@@ -80,7 +80,7 @@ export default function ChoosePresentationSection() {
                   mb-3 font-general-sans font-medium text-raisin-black relative z-[2]
                   text-40 leading-[130%] lg:text-32
                   text-fluid-4k-40
-                  4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                  4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                 "
               >
                 Surface
@@ -91,7 +91,7 @@ export default function ChoosePresentationSection() {
                   font-geist font-normal text-dark-gray relative z-[2]
                   text-18 leading-[140%]
                   text-2k-4k-18
-                  4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
+                  4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2050px)/2000px)*3.375rem),10rem)]
                 "
               >
                 2D, fast, cost-effective, and easy to set up
@@ -103,7 +103,7 @@ export default function ChoosePresentationSection() {
           <div
             className="
               group relative grow basis-[100%] overflow-hidden
-              4k:[min-height:clamp(45rem,calc(45rem+((100vw-2000px)/2000px)*15rem),60rem)]
+              4k:[min-height:clamp(45rem,calc(45rem+((100vw-2050px)/2000px)*15rem),60rem)]
             "
           >
             <img
@@ -119,15 +119,15 @@ export default function ChoosePresentationSection() {
               }}
               className="
                 absolute top-0 left-0 z-[1] w-full h-[16.825rem]
-                4k:[height:clamp(16.825rem,calc(16.825rem+((100vw-2000px)/2000px)*8.175rem),25rem)]
+                4k:[height:clamp(16.825rem,calc(16.825rem+((100vw-2050px)/2000px)*8.175rem),25rem)]
               "
             />
 
             <div
               className="
                 absolute left-[5rem] top-[4.0625rem] lg:left-6 lg:top-6
-                4k:[left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*3rem),8rem)]
-                4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2000px)/2000px)*2.9375rem),7rem)]
+                4k:[left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*3rem),8rem)]
+                4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2050px)/2000px)*2.9375rem),7rem)]
               "
             >
               <h3
@@ -135,7 +135,7 @@ export default function ChoosePresentationSection() {
                   mb-3 font-general-sans font-medium text-white relative z-[2]
                   text-40 leading-[130%] lg:text-32
                   text-fluid-4k-40
-                  4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                  4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                 "
               >
                 Space
@@ -146,7 +146,7 @@ export default function ChoosePresentationSection() {
                   font-geist font-normal text-white relative z-[2]
                   text-18 leading-[140%]
                   text-2k-4k-18
-                  4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2000px)/2000px)*3.375rem),10rem)]
+                  4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2050px)/2000px)*3.375rem),10rem)]
                 "
               >
                 3D, stunning, immersive, interactive

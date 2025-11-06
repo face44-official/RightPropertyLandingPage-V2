@@ -9,12 +9,12 @@ export default function LearnMoreButton() {
         font-geist font-semibold uppercase leading-[130%] tracking-[0%]
         px-[1.625rem] py-[1.34375rem] rounded-[65px] text-base
 
-        4k:[padding-left:clamp(1.625rem,calc(1.625rem+((100vw-2000px)/2000px)*1.625rem),3.25rem)]
-        4k:[padding-right:clamp(1.625rem,calc(1.625rem+((100vw-2000px)/2000px)*1.625rem),3.25rem)]
-        4k:[padding-top:clamp(1.34375rem,calc(1.34375rem+((100vw-2000px)/2000px)*1.34375rem),2.6875rem)]
-        4k:[padding-bottom:clamp(1.34375rem,calc(1.34375rem+((100vw-2000px)/2000px)*1.34375rem),2.6875rem)]
-        4k:[border-radius:clamp(65px,calc(65px+((100vw-2000px)/2000px)*65px),130px)]
-        4k:[font-size:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+        4k:[padding-left:clamp(1.625rem,calc(1.625rem+((100vw-2050px)/2000px)*1.625rem),3.25rem)]
+        4k:[padding-right:clamp(1.625rem,calc(1.625rem+((100vw-2050px)/2000px)*1.625rem),3.25rem)]
+        4k:[padding-top:clamp(1.34375rem,calc(1.34375rem+((100vw-2050px)/2000px)*1.34375rem),2.6875rem)]
+        4k:[padding-bottom:clamp(1.34375rem,calc(1.34375rem+((100vw-2050px)/2000px)*1.34375rem),2.6875rem)]
+        4k:[border-radius:clamp(65px,calc(65px+((100vw-2050px)/2000px)*65px),130px)]
+        4k:[font-size:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
       "
     >
       Learn more

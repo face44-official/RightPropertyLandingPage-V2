@@ -16,7 +16,7 @@ export default function EnhancedPresentationsSection() {
     flex items-center justify-between
     lg:flex-col lg:items-start
     pt-[7.5rem] lg:pt-[8.5rem] 2xl:pt-[10rem]
-    4k:[padding-top:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*12rem),24rem)]
+    4k:[padding-top:clamp(12rem,calc(12rem+((100vw-2050px)/2000px)*12rem),24rem)]
   "
       >
         <div
@@ -26,8 +26,8 @@ export default function EnhancedPresentationsSection() {
     flex flex-col items-start justify-center
     font-general-sans
     min-h-[40rem] lg:min-h-0 lg:order-2
-    4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-    4k:[min-height:clamp(40rem,calc(40rem+((100vw-2000px)/2000px)*20rem),60rem)]
+    4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+    4k:[min-height:clamp(40rem,calc(40rem+((100vw-2050px)/2000px)*20rem),60rem)]
   "
         >
           <h1
@@ -36,8 +36,8 @@ export default function EnhancedPresentationsSection() {
       font-general-sans font-semibold
       text-60 lg:text-40
       leading-[100%] tracking-[0%] text-raisin-black
-      4k:[font-size:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
-      4k:[margin-bottom:clamp(2.0625rem,calc(2.0625rem+((100vw-2000px)/2000px)*2.0625rem),4.125rem)]
+      4k:[font-size:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]
+      4k:[margin-bottom:clamp(2.0625rem,calc(2.0625rem+((100vw-2050px)/2000px)*2.0625rem),4.125rem)]
     "
           >
             Enhanced <br />
@@ -52,8 +52,8 @@ export default function EnhancedPresentationsSection() {
       font-geist font-normal
       text-24 lg:text-24 text-2k-4k-24
       leading-[130%] -tracking-[0.01em] text-tundora
-      4k:[width:clamp(28.875rem,calc(28.875rem+((100vw-2000px)/2000px)*28.875rem),57.75rem)]
-      4k:[margin-bottom:clamp(2.5625rem,calc(2.5625rem+((100vw-2000px)/2000px)*2.5625rem),5.125rem)]
+      4k:[width:clamp(28.875rem,calc(28.875rem+((100vw-2050px)/2000px)*28.875rem),57.75rem)]
+      4k:[margin-bottom:clamp(2.5625rem,calc(2.5625rem+((100vw-2050px)/2000px)*2.5625rem),5.125rem)]
     "
           >
             The digital suite that maximises your off-plan project sales and
@@ -64,7 +64,7 @@ export default function EnhancedPresentationsSection() {
             className="
       flex lg:flex-col lg:w-full
       lg:gap-[0.75rem] gap-[1rem]
-      4k:[gap:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),3rem)]
+      4k:[gap:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),3rem)]
     "
           >
             <BlueExploreButtonLink href="meet-right-property" title="Explore" />
@@ -72,7 +72,7 @@ export default function EnhancedPresentationsSection() {
           </div>
         </div>
 
-        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-25.3125rem,calc(-25.3125rem+((100vw-2000px)/2000px)*-25.3125rem),-42.625rem)] 4k:[width:clamp(60%,calc(60%+((100vw-2000px)/2000px)*10%),60%)]">
+        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-25.3125rem,calc(-25.3125rem+((100vw-2050px)/2000px)*-25.3125rem),-42.625rem)] 4k:[width:clamp(67%,calc(67%+((100vw-2050px)/2000px)*10%),60%)]">
           <HeroVideoContainer />
           {/* <video
                             src={heroVideo}

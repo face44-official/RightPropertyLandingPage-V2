@@ -157,8 +157,8 @@ export default function SimpleSetupSection() {
         className="
           rp-container relative z-[-1]
           lg:h-auto!
-          [height:90rem]
-          4k:[height:clamp(90rem,calc(90rem+((100vw-2000px)/2000px)*90rem),180rem)]
+          [height:85rem]
+          4k:[height:clamp(85rem,calc(85rem+((100vw-2050px)/2000px)*85rem),170rem)]
         "
       >
         <div
@@ -178,9 +178,9 @@ export default function SimpleSetupSection() {
           >
             <div
               className="
-                w-[133.8125rem] h-[176rem] lg:hidden
-                4k:[width:clamp(133.8125rem,calc(133.8125rem+((100vw-2000px)/2000px)*133.8125rem),267.625rem)]
-                4k:[height:clamp(176rem,calc(176rem+((100vw-2000px)/2000px)*176rem),352rem)]
+                w-[140.8125rem] h-[196rem] 2xl:w-[133.8125rem] 2xl:h-[190rem] lg:hidden
+                4k:[width:clamp(150.8125rem,calc(150.8125rem+((100vw-2000px)/2000px)*150.8125rem),300.625rem)]
+                4k:[height:clamp(180rem,calc(180rem+((100vw-2050px)/2000px)*180rem),360rem)]
               "
             >
               <img
@@ -230,9 +230,8 @@ export default function SimpleSetupSection() {
           {/* BINARY BLOCK */}
           <div
             className="
-              absolute left-[35rem] bottom-[16.875rem] lg:hidden
-              4k:[left:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*35rem),70rem)]
-              4k:[bottom:clamp(10.875rem,calc(10.875rem+((100vw-2000px)/2000px)*10.875rem),20.75rem)]
+              absolute lg:hidden left-1/2 -translate-x-1/2 bottom-[14.875rem]
+              4k:[bottom:clamp(14.875rem,calc(14.875rem+((100vw-2000px)/2000px)*14.875rem),28.75rem)]
             "
           >
             <BinarySection

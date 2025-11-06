@@ -97,8 +97,8 @@ export const BinaryBlockImage = ({ path }: { path: string }) => (
   <img
     src={path}
     className="
-      w-[13.125rem] lg:w-full h-auto
-      4k:[width:clamp(13.125rem,calc(13.125rem+((100vw-2000px)/2000px)*13.125rem),26.25rem)]
+      w-[8.5rem] lg:w-full h-auto
+      4k:[width:clamp(8.5rem,calc(8.5rem+((100vw-2000px)/2000px)*8.5rem),17rem)]
     "
     alt="binary code icon representing software development"
     loading="lazy"

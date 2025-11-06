@@ -59,17 +59,17 @@ export default function HomePage() {
                   className="
                     w-[62.37rem] h-auto trigger
                     -translate-y-[2.5rem] translate-x-[2.5rem]
-                    4k:[width:clamp(62.37rem,calc(62.37rem+((100vw-2000px)/2000px)*7.63rem),70rem)]
-                    4k:translate-x-[clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*16rem),18.5rem)]
-                    4k:-translate-y-[clamp(2.5rem,calc(2.5rem+((100vw-2000px)/2000px)*0.5rem),3rem)]
+                    4k:[width:clamp(60.37rem,calc(60.37rem+((100vw-2050px)/2000px)*60.63rem),65rem)]
+                    4k:translate-x-[clamp(0rem,calc(0rem+((100vw-2050px)/2000px)*0rem),0rem)]
+                    4k:-translate-y-[clamp(3rem,calc(3rem+((100vw-2050px)/2000px)*1rem),4rem)]
                   "
                 />
 
                 <div
                   className="
                     z-[8] absolute top-[23.4375rem] left-[8.5rem]
-                    4k:[top:clamp(23.4375rem,calc(23.4375rem+((100vw-2000px)/2000px)*6.5625rem),30rem)]
-                    4k:[left:clamp(8.5rem,calc(8.5rem+((100vw-2000px)/2000px)*3.5rem),12rem)]
+                    4k:[top:clamp(23.4375rem,calc(23.4375rem+((100vw-2050px)/2000px)*6.5625rem),30rem)]
+                    4k:[left:clamp(8.5rem,calc(8.5rem+((100vw-2050px)/2000px)*3.5rem),12rem)]
                   "
                 >
                   <div className="rp-container">

@@ -24,8 +24,8 @@ export default function PresentSmarterSection() {
           src={startIcon}
           alt="interactive storytelling icon"
           className="
-            w-[5rem] lg:w-[3.5rem] h-auto object-contain
-            4k:[width:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            w-[4rem] lg:w-[3rem] h-auto object-contain
+            4k:[width:clamp(4rem,calc(4rem+((100vw-2050px)/2000px)*4rem),8rem)]
           "
         />
       ),
@@ -45,8 +45,8 @@ export default function PresentSmarterSection() {
           src={spaceIcon}
           alt="responsive design icon"
           className="
-            w-[5rem] lg:w-[3.5rem] h-auto object-contain
-            4k:[width:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            w-[4rem] lg:w-[3rem] h-auto object-contain
+            4k:[width:clamp(4rem,calc(4rem+((100vw-2050px)/2000px)*4rem),8rem)]
           "
         />
       ),
@@ -57,7 +57,7 @@ export default function PresentSmarterSection() {
     <div
       className="
         mb-[7rem] lg:mb-[10rem]
-        4k:[margin-bottom:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*12rem),24rem)]
+        4k:[margin-bottom:clamp(12rem,calc(12rem+((100vw-2050px)/2000px)*12rem),24rem)]
         h-auto
         overflow-visible relative content-visibility-auto
       "
@@ -75,21 +75,21 @@ export default function PresentSmarterSection() {
             lg:bg-none! lg:h-auto! relative z-[8]
             flex justify-start
             pt-[7.5rem]! pl-[48vw] lg:p-4 lg:pt-0!
-            4k:[padding-left:clamp(46vw,calc(46vw+((100vw-2000px)/2000px)*3vw),50vw)]
+            4k:[padding-left:clamp(45vw,calc(45vw+((100vw-2050px)/2000px)*3vw),50vw)]
           "
         >
           {/* Left Image Grid */}
           <div
             className="
               absolute left-0 top-0 w-full h-[calc(58rem+15px)] lg:h-auto bg-[#EEF1F7] 
-              4k:[height:clamp(59rem,calc(59rem+((100vw-2000px)/2000px)*59rem),118rem)]
+              4k:[height:clamp(59rem,calc(59rem+((100vw-2050px)/2000px)*59rem),118rem)]
             "
           >
             <div className="image-wrap absolute left-0 top-0 w-[50vw] object-top object-cover overflow-hidden lg:hidden">
               <div
                 className="
                   w-full h-[35rem] overflow-hidden
-                  4k:[height:clamp(35rem,calc(35rem+((100vw-2000px)/2000px)*35rem),70rem)]
+                  4k:[height:clamp(35rem,calc(35rem+((100vw-2050px)/2000px)*35rem),70rem)]
                 "
               >
                 <img
@@ -103,16 +103,16 @@ export default function PresentSmarterSection() {
               <div
                 className="
                   mt-4 grid grid-cols-2 gap-4
-                  4k:[margin-top:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
-                  4k:[gap:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+                  4k:[margin-top:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
+                  4k:[gap:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                   h-[23rem] overflow-hidden
-                  4k:[height:clamp(23rem,calc(23rem+((100vw-2000px)/2000px)*23rem),46rem)]
+                  4k:[height:clamp(23rem,calc(23rem+((100vw-2050px)/2000px)*23rem),46rem)]
                 "
               >
                 <div
                   className="
                     image-1 h-[18rem] overflow-hidden relative
-                    4k:[height:clamp(18rem,calc(18rem+((100vw-2000px)/2000px)*18rem),36rem)]
+                    4k:[height:clamp(18rem,calc(18rem+((100vw-2050px)/2000px)*18rem),36rem)]
                   "
                 >
                   <img
@@ -124,7 +124,7 @@ export default function PresentSmarterSection() {
                 <div
                   className="
                     image-2 h-[23rem] overflow-hidden relative
-                    4k:[height:clamp(23rem,calc(23rem+((100vw-2000px)/2000px)*23rem),46rem)]
+                    4k:[height:clamp(23rem,calc(23rem+((100vw-2050px)/2000px)*23rem),46rem)]
                   "
                 >
                   <img
@@ -142,7 +142,7 @@ export default function PresentSmarterSection() {
             <div
               className="
                 w-[49.375rem] lg:w-full
-                4k:[width:clamp(49.375rem,calc(49.375rem+((100vw-2000px)/2000px)*49.375rem),98.75rem)]
+                4k:[width:clamp(49.375rem,calc(49.375rem+((100vw-2050px)/2000px)*49.375rem),98.75rem)]
               "
             >
               <Accessibility
@@ -159,7 +159,7 @@ export default function PresentSmarterSection() {
       <div
         className="
           hidden lg:block absolute bottom-0 w-full h-[15rem] bg-white z-[0]
-          4k:[height:clamp(15rem,calc(15rem+((100vw-2000px)/2000px)*15rem),30rem)]
+          4k:[height:clamp(15rem,calc(15rem+((100vw-2050px)/2000px)*15rem),30rem)]
         "
       ></div>
     </div>

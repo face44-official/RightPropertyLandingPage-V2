@@ -57,10 +57,10 @@ export default function FaqItem({
       className="
         text-[#E2E2E2] cursor-pointer flex flex-col
         p-[2rem] lg:p-6 mb-[30px]
-        4k:[padding:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]
+        4k:[padding:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),4rem)]
         transition-all duration-300 ease-in-out
         hover:bg-[rgba(187,135,255,0.15)]
-        4k:[margin-bottom:clamp(1.875rem,calc(1.875rem+((100vw-2000px)/2000px)*1.875rem),3.75rem)]
+        4k:[margin-bottom:clamp(1.875rem,calc(1.875rem+((100vw-2050px)/2000px)*1.875rem),3.75rem)]
       "
       style={{ background: "rgba(187, 135, 255, 0.1)" }}
     >
@@ -70,7 +70,7 @@ export default function FaqItem({
           flex items-center justify-between
           gap-[5.625rem] lg:gap-6
           min-h-[40px] lg:min-h-[2.5rem]
-          4k:[gap:clamp(5.625rem,calc(5.625rem+((100vw-2000px)/2000px)*3.375rem),9rem)]
+          4k:[gap:clamp(5.625rem,calc(5.625rem+((100vw-2050px)/2000px)*3.375rem),9rem)]
   "
       >
         <h3
@@ -79,7 +79,7 @@ export default function FaqItem({
             text-20 lg:text-base
             leading-[140%] -tracking-[0.02em]
             text-2k-4k-20
-            4k:[line-height:clamp(140%,calc(140%+((100vw-2000px)/2000px)*10%),150%)]
+            4k:[line-height:clamp(140%,calc(140%+((100vw-2050px)/2000px)*10%),150%)]
           "
         >
           {question}
@@ -89,8 +89,8 @@ export default function FaqItem({
           className="
             shrink-0 flex items-center justify-center
             w-[40px] h-[40px] lg:w-[2.5rem] lg:h-[2.5rem]
-            4k:[width:clamp(40px,calc(40px+((100vw-2000px)/2000px)*40px),80px)]
-            4k:[height:clamp(40px,calc(40px+((100vw-2000px)/2000px)*40px),80px)]
+            4k:[width:clamp(40px,calc(40px+((100vw-2050px)/2000px)*40px),80px)]
+            4k:[height:clamp(40px,calc(40px+((100vw-2050px)/2000px)*40px),80px)]
             rounded-full border border-[#FF947E]
             transition-all duration-300
           "
@@ -99,8 +99,8 @@ export default function FaqItem({
             ref={iconRef}
             className="
               w-[1rem] h-[1rem]
-              4k:[width:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
-              4k:[height:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+              4k:[width:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
+              4k:[height:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
               transition-transform
             "
             viewBox="0 0 24 24"

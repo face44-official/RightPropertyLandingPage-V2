@@ -67,7 +67,7 @@ export default function Header() {
     `
       fixed top-0 left-0 z-50 w-full bg-white
       transition-all duration-[500ms] ease-out
-      [height:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*6rem),12rem)]
+      [height:clamp(6rem,calc(6rem+((100vw-2050px)/2000px)*6rem),12rem)]
     `,
     hideHeader ? "-translate-y-full" : ""
   );
@@ -79,14 +79,14 @@ export default function Header() {
           className="
             rp-container h-full flex items-center justify-between
             pl-[5rem] pr-[5rem] lg:px-4
-            4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
-            4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2000px)/2000px)*5rem),10rem)]
+            4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
+            4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         >
           <div
             className="
               flex items-center gap-[5.52rem] lg:gap-[2.06rem]
-              4k:[gap:clamp(5.52rem,calc(5.52rem+((100vw-2000px)/2000px)*5.52rem),11.04rem)]
+              4k:[gap:clamp(5.52rem,calc(5.52rem+((100vw-2050px)/2000px)*5.52rem),11.04rem)]
             "
           >
             {/* Logo */}
@@ -96,7 +96,7 @@ export default function Header() {
             >
               <Logo
                 className="
-                  [width:clamp(6rem,calc(6rem+((100vw-2000px)/2000px)*6rem),12rem)]
+                  [width:clamp(6rem,calc(6rem+((100vw-2050px)/2000px)*6rem),12rem)]
                   h-auto
                 "
               />

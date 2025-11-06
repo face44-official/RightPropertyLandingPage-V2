@@ -8,7 +8,7 @@ export default function NavigationItems() {
     <div
       className="
     lg:hidden flex items-center gap-6
-    4k:[gap:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+    4k:[gap:clamp(1.5rem,calc(1.5rem+((100vw-2050px)/2000px)*1.5rem),3rem)]
   "
     >
       <NavigationItem href="presentation">Presentation</NavigationItem>
