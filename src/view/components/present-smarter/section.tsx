@@ -57,7 +57,7 @@ export default function PresentSmarterSection() {
     <div
       className="
         mb-[7rem] lg:mb-[10rem]
-        4k:[margin-bottom:clamp(10rem,calc(10rem+((100vw-2000px)/2000px)*10rem),20rem)]
+        4k:[margin-bottom:clamp(12rem,calc(12rem+((100vw-2000px)/2000px)*12rem),24rem)]
         h-auto
         overflow-visible relative content-visibility-auto
       "
