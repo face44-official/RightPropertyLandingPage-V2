@@ -108,7 +108,7 @@ export default function FaqSection() {
         className="
           rp-container mx-auto
           py-[10rem] px-[5rem]
-          lg:px-4 lg:pb-[5rem] lg:pt-[2rem]
+          lg:px-4 lg:pb-[5rem] lg:pt-[5rem]
           4k:[max-width:clamp(1680px,calc(1680px+((100vw-2000px)/2000px)*520px),2200px)]
           4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]
           4k:[padding-bottom:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]

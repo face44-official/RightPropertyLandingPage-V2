@@ -111,7 +111,7 @@ export default function BackToBackReveal() {
       ref={$ref}
       className="
         relative lg:hidden content-visibility-auto
-        h-[600vh] 4k:h-[650vh]
+        h-[600vh] xl:h-[610vh] 4k:h-[700vh]
       "
       style={{
         background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)",
@@ -143,7 +143,7 @@ export default function BackToBackReveal() {
             </div>
           </div>
 
-          <div className="absolute top-1/2 -translate-y-1/2 -left-[4.375rem] 4k:-left-[5.5rem]">
+          <div className="absolute top-1/2 -translate-y-1/2 xl:top-[150px] -left-[4.375rem] 4k:-left-[5.5rem]">
             <RevealItemsIndicator
               items={cardContents.length}
               currentItem={currentItem}
