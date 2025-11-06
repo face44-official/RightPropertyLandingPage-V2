@@ -172,8 +172,8 @@ export default function SimpleSetupSection() {
           {/* BACKGROUND */}
           <div
             className="
-              absolute -top-[32.5rem] left-5 z-[-1]
-              4k:[top:clamp(-32.5rem,calc(-32.5rem-((100vw-2000px)/2000px)*32.5rem),-65rem)]
+              absolute -top-[40.5rem] -left-12 z-[-1]
+              4k:[top:clamp(-35.5rem,calc(-35.5rem-((100vw-2000px)/2000px)*35.5rem),-70rem)]
             "
           >
             <div
