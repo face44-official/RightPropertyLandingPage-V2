@@ -158,7 +158,7 @@ export default function BackToBackReveal() {
           sectionRef={$cardSectionRef1}
           videoUrl={marketingOption1}
         >
-          <div className="absolute w-[109.25rem] h-[93.125rem] -left-[53.125rem] -top-[30.75rem] z-[-1] 4k:w-[124rem] 4k:h-[106rem] 4k:-left-[60rem] 4k:-top-[35rem]">
+          <div className="absolute w-[109.25rem] h-[93.125rem] -left-[53.125rem] -top-[20.75rem] z-[-1] 4k:w-[124rem] 4k:h-[106rem] 4k:-left-[60rem] 4k:-top-[35rem]">
             <img src={revealItem1Road} className="h-full w-full" alt="" />
           </div>
           <img

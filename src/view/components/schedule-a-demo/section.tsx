@@ -11,27 +11,33 @@ export default function ScheduleADemoSection({
   return (
     <section
       className="
-        relative flex items-center justify-center
-        lg:h-auto
-        py-[9rem] xl:py-[6rem] px-[5rem]
-        4k:[padding-block:clamp(9rem,calc(9rem+((100vw-2050px)/2000px)*9rem),18rem)]
-        4k:[padding-inline:clamp(9rem,calc(9rem+((100vw-2050px)/2000px)*9rem),18rem)]
-        lg:pt-[3.75rem] lg:px-4
-        max-w-[100vw] overflow-hidden
-      "
+    relative flex items-center justify-center
+    lg:h-auto
+    py-[9rem] xl:py-[6rem] px-[5rem]
+    4k:[padding-block:clamp(9rem,calc(9rem+((100vw-2050px)/2000px)*9rem),18rem)]
+    4k:[padding-inline:clamp(9rem,calc(9rem+((100vw-2050px)/2000px)*9rem),18rem)]
+    lg:pt-[3.75rem] lg:px-4
+    max-w-[100vw] overflow-hidden
+    transition-all duration-500
+    before:content-[''] before:absolute before:inset-0 before:z-[1]
+    before:pointer-events-none
+    before:opacity-100
+    before:transition-opacity before:duration-700
+    before:bg-[radial-gradient(50%_50%_at_50%_50%,#E7DFF2_0%,rgba(255,255,255,0)_100%)]
+    before:mix-blend-multiply
+  "
       aria-label="Schedule a demo meeting with Right Property team"
     >
       <div
         className="
-          relative rp-container bg-white overflow-hidden
-          w-[54.1875rem] lg:w-full
-          p-[2.5rem] lg:pt-[1rem] lg:pb-[1.5rem] lg:px-0
-          4k:[width:clamp(54.1875rem,calc(54.1875rem+((100vw-2050px)/2000px)*54.1875rem),108.375rem)]
-          4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
-        "
-        style={{
-          boxShadow: "3px 32px 58.5px rgba(134, 101, 177, 0.1)",
-        }}
+      relative rp-container bg-white overflow-hidden z-[2]
+      w-[54.1875rem] lg:w-full
+      p-[2.5rem] lg:pt-[1rem] lg:pb-[1.5rem] lg:px-0
+      4k:[width:clamp(54.1875rem,calc(54.1875rem+((100vw-2050px)/2000px)*54.1875rem),108.375rem)]
+      4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
+      transition-all duration-500
+      hover:shadow-[3px_51px_109.4px_29px_#7E669D4F]
+    "
       >
         {/* Representative image */}
         <img
@@ -91,7 +97,8 @@ export default function ScheduleADemoSection({
               4k:[width:clamp(37.5rem,calc(37.5rem+((100vw-2050px)/2000px)*37.5rem),75rem)]
             "
           >
-            We'd be happy to meet and discuss how we can transform your business.
+            We'd be happy to meet and discuss how we can transform your
+            business.
           </p>
 
           <BookADemoButton />

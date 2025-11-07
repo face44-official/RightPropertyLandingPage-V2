@@ -27,6 +27,8 @@ export default function BinarySection({
           lg:flex-col-reverse lg:p-6 lg:gap-[2rem]
           4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
           4k:[padding:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),5rem)]
+          transition-shadow duration-500
+          hover:shadow-[3px_51px_109.4px_29px_#7E669D4F]
         "
       >
         <div

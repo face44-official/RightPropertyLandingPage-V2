@@ -172,6 +172,7 @@ export default function Accessibility({
               4k:[padding:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),5rem)]
               rounded-[20px]
               4k:[border-radius:clamp(20px,calc(20px+((100vw-2050px)/2000px)*20px),40px)]
+              hover:shadow-[0px_6px_13.2px_0px_#0000000F] transition-shadow duration-300
             "
             style={{ border: `1px solid ${itemColors[index]}` }}
           >

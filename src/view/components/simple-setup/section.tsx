@@ -155,7 +155,7 @@ export default function SimpleSetupSection() {
       {/* DESKTOP */}
       <div
         className="
-          rp-container relative z-[-1]
+          rp-container relative z-[0]
           lg:h-auto!
           [height:85rem]
           4k:[height:clamp(85rem,calc(85rem+((100vw-2050px)/2000px)*85rem),170rem)]
