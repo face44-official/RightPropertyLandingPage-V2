@@ -147,7 +147,7 @@ export default function EasyOnboardingSection() {
       <div
         className="
       rp-container relative lg:h-auto
-      [height:86.75rem] 2xl:h-[85.75rem]
+      [height:80.75rem] 2xl:h-[80.75rem]
       4k:[height:clamp(80.75rem,calc(80.75rem+((100vw-2000px)/2000px)*80.75rem),160.5rem)]
     "
       >
@@ -161,7 +161,7 @@ export default function EasyOnboardingSection() {
           height="1286"
           className="
         absolute lg:hidden z-[-1]
-        top-[0rem] -left-[4.375rem] w-[61.6875rem] h-[75.375rem] 2xl:w-[50rem] 2xl:h-[65rem]
+        top-[0rem] -left-[4.375rem] w-[61.6875rem] h-[70.375rem] 2xl:w-[50rem] 2xl:h-[65rem]
         4k:[width:clamp(61.6875rem,calc(61.6875rem+((100vw-2000px)/2000px)*61.6875rem),122.375rem)]
         4k:[height:clamp(75.375rem,calc(75.375rem+((100vw-2000px)/2000px)*75.375rem),150.75rem)]
         4k:[top:clamp(0rem,calc(0rem+((100vw-2000px)/2000px)*0rem),0rem)]
@@ -204,8 +204,8 @@ export default function EasyOnboardingSection() {
         {/* RIGHT BINARY BLOCK */}
         <div
           className="
-            absolute lg:hidden left-1/2 -translate-x-1/2 bottom-[12.125rem]
-            2xl:bottom-[12rem]
+            absolute lg:hidden left-1/2 -translate-x-1/2 bottom-[14.125rem]
+            2xl:bottom-[8.125rem]
             4k:[bottom:clamp(8.125rem,calc(8.125rem+((100vw-2050px)/2000px)*8.125rem),16.25rem)]
           "
         >
