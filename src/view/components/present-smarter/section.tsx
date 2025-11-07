@@ -1,7 +1,7 @@
 import presentSmarterBgMobile from "@/assets/v3/mobile_present_smarter.webp";
-import presentSmarterBg1 from "@/assets/v3/presentation-img1.webp";
+import presentSmarterBg1 from "@/assets/v3/presentation-img1.png";
 import presentSmarterBg2 from "@/assets/v3/presentation-img2.webp";
-import presentSmarterBg3 from "@/assets/v3/presentation-img3.webp";
+import presentSmarterBg3 from "@/assets/v3/estate-agent.webp";
 
 import Accessibility from "@/view/components/accessiblity";
 import { Parallax } from "../parallax";
