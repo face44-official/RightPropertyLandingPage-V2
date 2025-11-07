@@ -127,7 +127,7 @@ export default function FooterSection() {
           className="
             absolute left-[36.25rem] top-[29.25rem]
             w-[21.25rem] h-auto object-contain z-[0] lg:hidden
-            4k:[left:clamp(36.25rem,calc(36.25rem+((100vw-2050px)/2000px)*36.25rem),72.5rem)]
+            4k:[left:clamp(36.25rem,calc(36.25rem+((100vw-2050px)/2000px)*20.125rem),54.375rem)]
             4k:[top:clamp(29.25rem,calc(29.25rem+((100vw-2050px)/2000px)*29.25rem),58.5rem)]
             4k:[width:clamp(21.25rem,calc(21.25rem+((100vw-2050px)/2000px)*21.25rem),42.5rem)]
           "
@@ -237,7 +237,7 @@ export default function FooterSection() {
           <img
             ref={$mobileFooterLevitate}
             src={mobileFooterLevitate}
-            className="absolute left-[8.148125rem] top-[5.375rem] w-[4.6418rem] h-auto object-contain z-[0] hidden lg:block"
+            className="absolute left-[11.848rem] sm-575:left-[8.148rem] top-[7.375rem] sm-575:top-[5.375rem] w-[6.6418rem] sm-575:w-[4.6418rem] h-auto object-contain z-[0] hidden lg:block"
             alt="Right Property mobile footer floating decoration element"
           />
         </div>

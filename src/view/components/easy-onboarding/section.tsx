@@ -96,7 +96,7 @@ export default function EasyOnboardingSection() {
 
       const anim = gsap.to(gradientRef.current, {
         width: "1445px",
-        height: "1048px",
+        height: "580px",
       });
 
       motionTimeline.current.add(moveAnim, 0);
@@ -147,7 +147,7 @@ export default function EasyOnboardingSection() {
       <div
         className="
       rp-container relative lg:h-auto
-      [height:80.75rem] 2xl:h-[80.75rem]
+      [height:75.75rem] 2xl:h-[75.75rem]
       4k:[height:clamp(80.75rem,calc(80.75rem+((100vw-2000px)/2000px)*80.75rem),160.5rem)]
     "
       >
@@ -204,8 +204,8 @@ export default function EasyOnboardingSection() {
         {/* RIGHT BINARY BLOCK */}
         <div
           className="
-            absolute lg:hidden left-1/2 -translate-x-1/2 bottom-[14.125rem]
-            2xl:bottom-[14.125rem]
+            absolute lg:hidden left-1/2 -translate-x-1/2 bottom-[10.125rem]
+            2xl:bottom-[10.125rem]
             4k:[bottom:clamp(8.125rem,calc(8.125rem+((100vw-2050px)/2000px)*8.125rem),16.25rem)]
           "
         >

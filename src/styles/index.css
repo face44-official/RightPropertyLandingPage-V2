@@ -9,6 +9,7 @@
 @custom-variant lg (@media (max-width: 767px));
 @custom-variant md (@media (max-width: 767px));
 @custom-variant sm (@media (max-width: 639px));
+@custom-variant sm-575 (@media (max-width: 575px));
 @custom-variant xs (@media (max-width: 479px));
 @import "./fonts.css";
 
@@ -424,13 +425,13 @@ body {
     @apply bg-background text-foreground;
   }
   @media (min-width: 2000px) {
-    html {
-      font-size: 110%; /* scales all rem/em-based sizes up 10% */
+    /* html {
+      font-size: 100%;
     }
 
     .desktop-rp-container {
       max-width: 90%;
-    }
+    } */
 
     img,
     video {
