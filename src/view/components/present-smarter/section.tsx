@@ -64,11 +64,13 @@ export default function PresentSmarterSection() {
     >
       <section>
         {/* Mobile Background */}
-        <img
-          src={presentSmarterBgMobile}
-          alt="present smarter"
-          className="z-[-1] w-full h-auto hidden lg:block mb-[2.5rem] rp-container"
-        />
+        <div className="hidden lg:block bg-[#EEF1F7]">
+          <img
+            src={presentSmarterBgMobile}
+            alt="present smarter"
+            className="z-[-1] w-full h-auto mb-[2.5rem] rp-container"
+          />
+        </div>
 
         <div
           className="
@@ -132,7 +134,7 @@ export default function PresentSmarterSection() {
                     alt="secondary 2"
                     className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
                   />
-                </div>  
+                </div>
               </div>
             </div>
           </div>
