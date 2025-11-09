@@ -135,6 +135,12 @@ body {
   -webkit-mask-repeat: no-repeat;
   
 }
+.motion-path-item {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+}
 .mask .highlight {
   z-index: -1;
   position: absolute;

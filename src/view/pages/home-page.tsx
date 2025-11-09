@@ -19,7 +19,7 @@ export default function HomePage() {
   const { divRef, pathRef, initializeMotionPath } = useMotionPath({
     trigger: ".trigger",
     startOffset: "top top",
-    endOffset: "+=100%",
+    endOffset: "+=200%",
     scrollScrub: true,
     markers: false,
     responsiveScale: true,
