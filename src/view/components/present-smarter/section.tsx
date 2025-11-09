@@ -64,7 +64,7 @@ export default function PresentSmarterSection() {
     >
       <section>
         {/* Mobile Background */}
-        <div className="hidden lg:block bg-[#EEF1F7]">
+        <div className="hidden lg:block bg-[#EEF1F7] lg:pb-16">
           <img
             src={presentSmarterBgMobile}
             alt="present smarter"
@@ -76,8 +76,13 @@ export default function PresentSmarterSection() {
           className="
             lg:bg-none! lg:h-auto! relative z-[8]
             flex justify-start
-            pt-[7.5rem]! pl-[48vw] lg:p-4 lg:pt-0!
-            4k:[padding-left:clamp(45vw,calc(45vw+((100vw-2050px)/2000px)*3vw),50vw)]
+            pt-[7.5rem]! pl-[46vw] 2xl:pl-[48vw] lg:p-4 lg:pt-0!
+            4k:[padding-left:clamp(46vw,calc(46vw+((100vw-2050px)/2000px)*3vw),50vw)]
+            lg:before:content-[''] 
+            lg:before:absolute lg:before:left-0 lg:before:top-0
+            lg:before:w-full lg:before:h-[45rem]
+            lg:before:bg-[#EEF1F7]
+            lg:before:z-[-1]
           "
         >
           {/* Left Image Grid */}
@@ -132,14 +137,13 @@ export default function PresentSmarterSection() {
                   <img
                     src={presentSmarterBg3}
                     alt="secondary 2"
-                    className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+                    className="w-full h-[calc(100%+10px)] object-cover rounded-lg absolute top-0 left-0"
                   />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Text / Content */}
           <Parallax id="present-smarter-section" speed={1.3}>
             <div
               className="

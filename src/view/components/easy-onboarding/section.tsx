@@ -53,56 +53,70 @@ export default function EasyOnboardingSection() {
   ];
 
   const startMotionPath = useCallback(() => {
-    if (gradientRef.current && pathRef.current) {
-      if (motionTimeline.current) motionTimeline.current.kill();
+    if (!gradientRef.current || !pathRef.current) return;
 
-      motionTimeline.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#easy-onboarding",
-          start: "center-=20% center",
-          end: "center top",
-          scrub: 1,
-        },
-      });
+    motionTimeline.current?.kill();
 
-      const follower = { x: 0, y: 0 };
+    const vw = window.innerWidth;
+    const scaleFactor = Math.min(vw / 2000, 2); // proportional scale (2k base → 4k = 2x)
 
-      const moveAnim = gsap.to(follower, {
-        ease: "power3.out",
-        motionPath: {
-          path: pathRef.current,
-          offsetX: 0,
-          offsetY: 150,
-          autoRotate: true,
-          start: 0,
-          end: 1,
-        },
-        onUpdate: function () {
-          const progress = this.progress();
-          if (gradientRef.current) {
-            gradientRef.current.style.setProperty("left", `${follower.x}px`);
-            gradientRef.current.style.setProperty("top", `${follower.y}px`);
+    const CONFIG = {
+      offsetX: 0,
+      offsetY: 150 * scaleFactor, // ✅ scale vertical offset
+      sizeTo: {
+        w: 1445 * scaleFactor,
+        h: 580 * scaleFactor,
+      },
+    };
 
-            const startColor = interpolateColor("#C4EEE3", "#E7DFF2", progress);
-            const middleColor = interpolateColor(
-              "#EFF9FF",
-              "#F5F2F9",
-              progress
-            );
-            gradientRef.current.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${middleColor} 25.96%, rgba(255, 255, 255, 0) 100%)`;
-          }
-        },
-      });
+    gsap.set(gradientRef.current, {
+      width: 1000 * scaleFactor,
+      height: 1000 * scaleFactor,
+    });
 
-      const anim = gsap.to(gradientRef.current, {
-        width: "1445px",
-        height: "580px",
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#easy-onboarding",
+        start: "center-=20% center",
+        end: "center top",
+        scrub: 1,
+      },
+    });
+    motionTimeline.current = tl;
 
-      motionTimeline.current.add(moveAnim, 0);
-      motionTimeline.current.add(anim, 0);
-    }
-  }, [gradientRef, pathRef]);
+    const follower = { x: 0, y: 0 };
+
+    const moveAnim = gsap.to(follower, {
+      ease: "power3.out",
+      motionPath: {
+        path: pathRef.current,
+        offsetX: CONFIG.offsetX,
+        offsetY: CONFIG.offsetY,
+        autoRotate: true,
+        start: 0,
+        end: 1,
+      },
+      onUpdate: function () {
+        const el = gradientRef.current;
+        if (!el) return;
+        el.style.left = `${follower.x}px`;
+        el.style.top = `${follower.y}px`;
+
+        const progress = this.progress();
+        const startColor = interpolateColor("#C4EEE3", "#E7DFF2", progress);
+        const midColor = interpolateColor("#EFF9FF", "#F5F2F9", progress);
+        el.style.background = `radial-gradient(50% 50% at 50% 50%, ${startColor} 0%, ${midColor} 25.96%, rgba(255,255,255,0) 100%)`;
+      },
+    });
+
+    const sizeAnim = gsap.to(gradientRef.current, {
+      width: CONFIG.sizeTo.w,
+      height: CONFIG.sizeTo.h,
+      ease: "none",
+    });
+
+    tl.add(moveAnim, 0).add(sizeAnim, 0);
+  }, []);
 
   useEffect(() => {
     const mm = gsap.matchMedia();

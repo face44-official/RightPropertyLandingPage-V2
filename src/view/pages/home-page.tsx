@@ -18,11 +18,12 @@ import HeroRoad from "../components/common/hero-road"
 export default function HomePage() {
   const { divRef, pathRef, initializeMotionPath } = useMotionPath({
     trigger: ".trigger",
-    startOffset: "top+=250px top",
+    startOffset: "top top",
     endOffset: "+=100%",
     scrollScrub: true,
     markers: false,
     responsiveScale: true,
+
   });
 
   useEffect(() => {

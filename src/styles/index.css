@@ -218,11 +218,11 @@ body {
 }
 
 .rp-container {
-  max-width: 1680px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 .desktop-rp-container {
-  max-width: 1680px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 @media (max-width: 576px) {
@@ -446,8 +446,8 @@ body {
     .desktop-rp-container,
     .rp-container {
       max-width: clamp(
-        1680px,
-        calc(1680px + (100vw - 2050px) * 0.6),
+        1600px,
+        calc(1600px + (100vw - 2050px) * 0.55),
         3000px
       ) !important;
     }

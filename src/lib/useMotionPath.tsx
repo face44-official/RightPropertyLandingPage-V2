@@ -19,7 +19,7 @@ interface UseMotionPathProps {
 
 export const useMotionPath = ({
   trigger = ".trigger",
-  startOffset = "top+=250px top",
+  startOffset = "top top",
   endOffset = "+=100%",
   scrollScrub = true,
   markers = false,

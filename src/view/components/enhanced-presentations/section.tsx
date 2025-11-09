@@ -15,7 +15,7 @@ export default function EnhancedPresentationsSection() {
     relative desktop-rp-container
     flex items-center justify-between
     lg:flex-col lg:items-start
-    pt-[7.5rem] lg:pt-[8.5rem] 2xl:pt-[10rem]
+    pt-[7.5rem] lg:pt-[4.5rem] 2xl:pt-[10rem]
     4k:[padding-top:clamp(12rem,calc(12rem+((100vw-2050px)/2000px)*12rem),24rem)]
   "
       >
@@ -72,7 +72,7 @@ export default function EnhancedPresentationsSection() {
           </div>
         </div>
 
-        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-25.3125rem,calc(-25.3125rem+((100vw-2050px)/2000px)*-25.3125rem),-42.625rem)] 4k:[width:clamp(67%,calc(67%+((100vw-2050px)/2000px)*10%),60%)]">
+        <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:mx-auto 4k:[margin-right:clamp(-35.3125rem,calc(-35.3125rem+((100vw-2050px)/2000px)*-35.3125rem),-70.625rem)] 4k:[width:clamp(75%,calc(75%+((100vw-2050px)/2000px)*10%),75%)]">
           <HeroVideoContainer />
           {/* <video
                             src={heroVideo}
