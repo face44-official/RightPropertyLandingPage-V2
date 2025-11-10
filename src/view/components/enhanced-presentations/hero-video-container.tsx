@@ -36,7 +36,7 @@ export default function HeroVideoContainer() {
       4k:[width:clamp(62rem,calc(62rem+((100vw-2050px)/2000px)*62rem),124rem)]
       4k:[top:clamp(6.2rem,calc(6.2rem+((100vw-2050px)/2000px)*6.2rem),12.4rem)]
       4k:[left:clamp(4.3rem,calc(4.3rem+((100vw-2050px)/2000px)*4.3rem),8.6rem)]
-      lg:top-[13%] lg:left-[6%] lg:w-[88%]
+      lg:top-[13%] lg:left-[6%] lg:w-[88%] lg:z-20
       ${showVideo ? "block" : "hidden"}
     `}
         width="1200"
