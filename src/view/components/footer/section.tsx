@@ -1,5 +1,5 @@
-import footerBg from "@/assets/v3/footer_bg.webp";
-import footerLevitate from "@/assets/v3/footer_levitate.webp";
+import footerBg from "@/assets/v3/footer-bg.svg";
+import footerLevitate from "@/assets/v3/footer_levitate.svg";
 import mobileFooterBg from "@/assets/v3/mobile_right_footer.webp";
 import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.webp";
 import { useRef } from "react";
