@@ -68,7 +68,7 @@ export default function PresentSmarterSection() {
           <img
             src={presentSmarterBgMobile}
             alt="present smarter"
-            className="z-[-1] w-full h-auto mb-[2.5rem] rp-container"
+            className="z-[-1] w-full h-auto mb-[2.5rem]"
           />
         </div>
 
