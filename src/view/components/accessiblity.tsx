@@ -207,8 +207,8 @@ export default function Accessibility({
           >
             <div
               className="
-              flex items-center gap-8
-              lg:flex-col lg:items-start lg:gap-4
+              flex items-center gap-5
+              lg:flex-col lg:items-start lg:gap-2
               4k:[gap:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),4rem)]
             "
             >

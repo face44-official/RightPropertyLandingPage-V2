@@ -291,12 +291,12 @@ export default function SimpleSetupSection() {
             </p>
 
             {/* ITEMS */}
-            <div className="flex flex-col gap-8 pl-12 lg:pl-4 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
+            <div className="flex flex-col gap-8 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
               {items.map((item, i) => (
                 <div
                   key={i}
                   className="
-                    flex gap-6 items-start
+                    flex gap-5 items-start
                     lg:gap-[0.75rem]
                     4k:[gap:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
                   "

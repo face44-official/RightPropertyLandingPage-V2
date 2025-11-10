@@ -96,7 +96,7 @@ export default function Header() {
             >
               <Logo
                 className="
-                  [width:clamp(6rem,calc(6rem+((100vw-2050px)/2000px)*6rem),12rem)] sm:w-[60px]
+                  w-[96px] 4k:[width:clamp(6rem,calc(6rem+(100vw-2050px)*0.003),12rem)] sm:w-[60px]
                   h-auto
                 "
               />

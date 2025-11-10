@@ -281,12 +281,12 @@ export default function EasyOnboardingSection() {
             </p>
 
             {/* FEATURES LIST */}
-            <div className="flex flex-col gap-8 lg:gap-5 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)] pl-12 lg:pl-4">
+            <div className="flex flex-col gap-8 lg:gap-5 4k:[gap:clamp(2rem,calc(2rem+((100vw-2000px)/2000px)*2rem),4rem)]">
               {items.map((item, idx) => (
                 <div
                   key={idx}
                   className="
-                flex items-start gap-6 lg:gap-[0.75rem]
+                flex items-start gap-5 lg:gap-[0.75rem]
                 4k:[gap:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
               "
                 >
