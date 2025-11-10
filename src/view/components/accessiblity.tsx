@@ -179,7 +179,7 @@ export default function Accessibility({
       </p>
 
       <div>
-        <BookADemoButton />
+        <BookADemoButton className="sm:justify-start sm:pl-[1.5rem]" />
       </div>
       <div className="mb-[3.75rem] lg:mb-[2rem] 4k:[margin-bottom:clamp(4rem,calc(4rem+((100vw-2050px)/2000px)*4rem),7rem)]"></div>
 

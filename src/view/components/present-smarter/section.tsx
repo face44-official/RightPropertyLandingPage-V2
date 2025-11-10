@@ -64,7 +64,7 @@ export default function PresentSmarterSection() {
     >
       <section>
         {/* Mobile Background */}
-        <div className="hidden lg:block bg-[#EEF1F7] lg:pb-16">
+        <div className="hidden lg:block bg-[#EEF1F7] lg:pb-14">
           <img
             src={presentSmarterBgMobile}
             alt="present smarter"

@@ -30,7 +30,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
       "
     >
       <div className="max-w-[60rem] lg:max-w-full 4k:[max-width:clamp(60rem,calc(60rem+((100vw-2050px)/2000px)*60rem),107.5rem)]">
-        <div className="pl-[1.25rem] flex flex-col justify-start min-h-[30rem] lg:p-4 lg:pt-0 lg:min-h-0 lg:mb-[7.5rem] 4k:[padding-left:clamp(1.25rem,calc(1.25rem+((100vw-2050px)/2000px)*1.25rem),2.5rem)] 4k:[min-height:clamp(30rem,calc(30rem+((100vw-2050px)/2000px)*30rem),60rem)]">
+        <div className="pl-[1.25rem] flex flex-col justify-start min-h-[30rem] lg:p-4 lg:pt-0 lg:min-h-0 lg:mb-[6rem] 4k:[padding-left:clamp(1.25rem,calc(1.25rem+((100vw-2050px)/2000px)*1.25rem),2.5rem)] 4k:[min-height:clamp(30rem,calc(30rem+((100vw-2050px)/2000px)*30rem),60rem)]">
           <div className="mt-0 flex flex-col w-full lg:mt-3">
             {/* Subheading */}
             <h2
