@@ -13,7 +13,7 @@ export default function EnhancedPresentationsSection() {
       <div
         className="
     relative desktop-rp-container
-    flex items-center gap-[15rem]
+    flex items-center gap-[15rem] lg:gap-0
     lg:flex-col lg:items-start
     pt-[7.5rem] lg:pt-[4.5rem] 2xl:pt-[10rem]
     4k:[padding-top:clamp(13rem,calc(13rem+((100vw-2050px)/2000px)*13rem),26rem)]
