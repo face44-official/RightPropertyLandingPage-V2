@@ -77,7 +77,7 @@ export default function FooterSection() {
               start: "bottom-=15% bottom",
               end: "bottom-=15% bottom-=5%",
               scrub: false,
-              toggleActions: "play none none reset",
+              toggleActions: "play none none reverse",
             },
           })
           .to($levitateItem.current, {
@@ -96,7 +96,7 @@ export default function FooterSection() {
               start: "bottom-=20% bottom",
               end: "bottom-=20% bottom-=5%",
               scrub: false,
-              toggleActions: "play none none reset",
+              toggleActions: "play none none reverse",
             },
           })
           .to($mobileFooterLevitate.current, {
