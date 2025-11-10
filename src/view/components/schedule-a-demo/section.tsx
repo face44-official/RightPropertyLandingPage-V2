@@ -101,7 +101,7 @@ export default function ScheduleADemoSection({
             business.
           </p>
 
-          <BookADemoButton />
+          <BookADemoButton className="sm:justify-start sm:pl-[1.5rem]" />
         </div>
       </div>
 

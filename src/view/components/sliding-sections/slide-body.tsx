@@ -7,7 +7,7 @@ export default function SlideBody({ caption, title, description, buttonType, use
     const ElementButton = () => {
         switch (buttonType) {
             case "book":
-                return <BookADemoButton />
+                return <BookADemoButton className="sm:justify-start sm:pl-[1.5rem]" />
             default:
                 return <BlueExploreButtonLink className="uppercase" href="meet-right-property" title="Learn More" />
         }
