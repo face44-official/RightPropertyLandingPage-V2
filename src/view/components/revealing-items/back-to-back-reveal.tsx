@@ -282,7 +282,7 @@ export const VideoContainer = ({
 }) => {
   return (
     <div
-      className="relative w-full h-[100vh] 4k:h-[100vh] flex items-center justify-end pr-[5.875rem] 4k:pr-0"
+      className="relative w-full h-[100vh] 4k:h-[100vh] flex items-center justify-end pr-[5.875rem] 4k:[padding-right:clamp(5.875rem,calc(5.875rem+((100vw-2050px)/2000px)*5.875rem),11.75rem)]"
       ref={sectionRef}
     >
       {road && (
@@ -305,7 +305,7 @@ export const VideoContainer = ({
           playsInline
           className="
             w-[40.1875rem] h-[26.75rem] object-cover
-            4k:[width:clamp(40.1875rem,calc(40.1875rem+((100vw-2050px)/2000px)*41.8125rem),82rem)]
+            4k:[width:clamp(40.1875rem,calc(40.1875rem+((100vw-2050px)/2000px)*41.8125rem),65rem)]
             4k:[height:clamp(26.75rem,calc(26.75rem+((100vw-2050px)/2000px)*25.25rem),52rem)]
           "
         />
