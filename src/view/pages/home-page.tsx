@@ -58,7 +58,7 @@ export default function HomePage() {
               <div className="rp-container relative content-visiblity-auto">
                 <HeroRoad
                   className="
-                    w-[62.37rem] h-auto trigger
+                    w-[56.37rem] h-auto trigger
                     -translate-y-[2.5rem] translate-x-[2.5rem]
                     4k:[width:clamp(60.37rem,calc(60.37rem+((100vw-2050px)/2000px)*60.63rem),65rem)]
                     4k:translate-x-[clamp(0rem,calc(0rem+((100vw-2050px)/2000px)*0rem),0rem)]

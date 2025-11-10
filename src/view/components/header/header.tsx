@@ -67,7 +67,8 @@ export default function Header() {
     `
       fixed top-0 left-0 z-50 w-full bg-white
       transition-all duration-[500ms] ease-out
-      [height:clamp(6rem,calc(6rem+((100vw-2050px)/2000px)*6rem),12rem)]
+      h-[calc(clamp(6rem,12rem,100vw*0.02))]
+      4k:[height:clamp(6rem,calc(6rem+((100vw-2050px)/2000px)*6rem),12rem)]
     `,
     hideHeader ? "-translate-y-full" : ""
   );
