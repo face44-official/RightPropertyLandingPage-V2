@@ -237,7 +237,7 @@ export default function FooterSection() {
           <img
             ref={$mobileFooterLevitate}
             src={mobileFooterLevitate}
-            className="absolute left-[11.848rem] sm-575:left-[34%] top-[7.375rem] sm-575:top-[7rem] w-[6.6418rem] sm-575:w-[21%] h-auto object-contain z-[0] hidden lg:block"
+            className="absolute left-[11.848rem] sm-575:left-[34%] top-[7.375rem] sm-575:top-[7rem] xs:top-[6.2rem] w-[6.6418rem] sm-575:w-[21%] h-auto object-contain z-[0] hidden lg:block"
             alt="Right Property mobile footer floating decoration element"
           />
         </div>
