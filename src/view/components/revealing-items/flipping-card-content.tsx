@@ -47,7 +47,7 @@ export default function FlippingCardContent({
       ref={containerRef}
       className="
         bg-white p-[3.75rem] w-[44.9375rem]
-        4k:[width:clamp(40.9375rem,calc(40.9375rem+((100vw-2050px)/2000px)*40.9375rem),80.875rem)]
+        4k:[width:clamp(45.9375rem,calc(45.9375rem+((100vw-2050px)/2000px)*45.9375rem),67.875rem)]
         4k:[padding:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]
         4k:[border-radius:clamp(0px,calc(0px+((100vw-2050px)/2000px)*40px),40px)]
       "

@@ -176,7 +176,7 @@ export default function EasyOnboardingSection() {
           className="
         absolute lg:hidden z-[-1]
         top-[0rem] -left-[4.375rem] w-[61.6875rem] h-[70.375rem] 2xl:w-[65rem] 2xl:h-[71rem]
-        4k:[width:clamp(61.6875rem,calc(61.6875rem+((100vw-2000px)/2000px)*61.6875rem),122.375rem)]
+        4k:[width:clamp(60.6875rem,calc(60.6875rem+((100vw-2000px)/2000px)*60.6875rem),90.375rem)]
         4k:[height:clamp(75.375rem,calc(75.375rem+((100vw-2000px)/2000px)*75.375rem),150.75rem)]
         4k:[top:clamp(0rem,calc(0rem+((100vw-2000px)/2000px)*0rem),0rem)]
         4k:[left:clamp(-4.375rem,calc(-4.375rem-((100vw-2000px)/2000px)*4.375rem),-8.75rem)]
