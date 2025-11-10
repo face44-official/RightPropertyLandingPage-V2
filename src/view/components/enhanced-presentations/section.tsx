@@ -28,6 +28,7 @@ export default function EnhancedPresentationsSection() {
     min-h-[40rem] lg:min-h-0 lg:order-2
     4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
     4k:[min-height:clamp(40rem,calc(40rem+((100vw-2050px)/2000px)*20rem),60rem)]
+    relative z-10
   "
         >
           <h1

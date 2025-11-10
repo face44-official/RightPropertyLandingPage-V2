@@ -1,4 +1,6 @@
 import heroVideo from "@/assets/v3/hero-noframe.mp4";
+import MobileCircle from "@/assets/v3/circle-mobile.svg";
+
 import { useState } from "react";
 export default function HeroVideoContainer() {
   const [showVideo, setShowVideo] = useState(false);
@@ -7,6 +9,9 @@ export default function HeroVideoContainer() {
   };
   return (
     <div className="relative">
+      <div className="mobile-circle absolute -bottom-[9rem] right-[5rem] hidden lg:block z-[-1]">
+          <img src={MobileCircle} alt="mobile-circle" />
+        </div>
       {/* Poster frame under the video */}
       <img
         src="/hero_first_frame.webp"
