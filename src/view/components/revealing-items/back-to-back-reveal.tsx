@@ -20,7 +20,7 @@ import emailMarketingVideo from "@/assets/v3/email_marketing.webm";
 import interactiveVideo from "@/assets/v3/interactive_website.webm";
 import marketingOption1 from "@/assets/v3/marketing_option1.webm";
 import websiteTemplates from "@/assets/v3/website_templates.webm";
-import seoVideo from "@/assets/v3/seo.mp4";
+import seoVideo from "@/assets/v3/seo.webm";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, Flip);
@@ -104,16 +104,7 @@ export default function BackToBackReveal() {
       pinTl?.kill();
     };
   }, []);
-
-  useEffect(() => {
-    const video = document.querySelector("video");
-    video?.play().catch(() => {
-      // fallback if autoplay blocked
-      document.addEventListener("touchstart", () => video.play(), {
-        once: true,
-      });
-    });
-  }, []);
+  
 
   return (
     <section
@@ -308,19 +299,17 @@ export const VideoContainer = ({
 
       <div className="relative will-change-transform">
         <video
+          src={videoUrl}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
           className="
             w-[40.1875rem] h-[26.75rem] object-cover
             4k:[width:clamp(40.1875rem,calc(40.1875rem+((100vw-2050px)/2000px)*41.8125rem),65rem)]
             4k:[height:clamp(26.75rem,calc(26.75rem+((100vw-2050px)/2000px)*25.25rem),52rem)]
           "
-        >
-          <source src={videoUrl} type="video/mp4" />
-        </video>
+        />
         {children}
       </div>
     </div>
