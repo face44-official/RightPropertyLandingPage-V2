@@ -15,12 +15,12 @@ import revealItem1Road from "@/assets/v3/reveal_item_1_road.svg";
 import revealItem2Road from "@/assets/v3/reveal_item_2_road.svg";
 import revealItem3Road from "@/assets/v3/reveal_item_3_road.svg";
 import revealItem5Road from "@/assets/v3/reveal_item_5_road.svg";
-import cmsVideo from "/cms.mp4";
-import emailMarketingVideo from "/email_marketing.mp4";
-import interactiveVideo from "/interactive_website.mp4";
-import marketingOption1 from "/marketing_option1.mp4";
-import websiteTemplates from "/website_templates.mp4";
-import seoVideo from "/seo.mp4";
+import cmsVideo from "@/assets/v3/cms.webm";
+import emailMarketingVideo from "@/assets/v3/email_marketing.webm";
+import interactiveVideo from "@/assets/v3/interactive_website.webm";
+import marketingOption1 from "@/assets/v3/marketing_option1.webm";
+import websiteTemplates from "@/assets/v3/website_templates.webm";
+import seoVideo from "@/assets/v3/seo.webm";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, Flip);
@@ -104,6 +104,7 @@ export default function BackToBackReveal() {
       pinTl?.kill();
     };
   }, []);
+  
 
   return (
     <section
@@ -297,7 +298,7 @@ export const VideoContainer = ({
       )}
 
       <div className="relative will-change-transform">
-        {/* <video
+        <video
           src={videoUrl}
           autoPlay
           muted
@@ -308,15 +309,7 @@ export const VideoContainer = ({
             4k:[width:clamp(40.1875rem,calc(40.1875rem+((100vw-2050px)/2000px)*41.8125rem),65rem)]
             4k:[height:clamp(26.75rem,calc(26.75rem+((100vw-2050px)/2000px)*25.25rem),52rem)]
           "
-        /> */}
-        <video poster="/fallback-poster.jpg" autoPlay muted playsInline loop className="
-            w-[40.1875rem] h-[26.75rem] object-cover
-            4k:[width:clamp(40.1875rem,calc(40.1875rem+((100vw-2050px)/2000px)*41.8125rem),65rem)]
-            4k:[height:clamp(26.75rem,calc(26.75rem+((100vw-2050px)/2000px)*25.25rem),52rem)]
-          ">
-          <source src={videoUrl} type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
+        />
         {children}
       </div>
     </div>
