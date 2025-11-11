@@ -327,7 +327,7 @@ export default function SimpleSetupSection() {
             </div>
 
             {/* MOBILE BINARY */}
-            <div className="hidden lg:block py-[7.5rem] relative 4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)] 4k:[padding-bottom:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]">
+            <div className="hidden lg:block py-[7.5rem] lg:py-16 relative 4k:[padding-top:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)] 4k:[padding-bottom:clamp(7.5rem,calc(7.5rem+((100vw-2000px)/2000px)*7.5rem),15rem)]">
               <BinarySection
                 subHeader="Did you know?"
                 title="Built by software minds"

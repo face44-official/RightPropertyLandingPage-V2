@@ -235,13 +235,13 @@ body {
   .desktop-rp-container {
     max-width: unset;
   }
-  /* .mobile-rp-container {
+  .mobile-rp-container {
     max-width: 375px;
     margin: 0 auto;
   }
   .rp-container {
     max-width: 375px;
-  } */
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {

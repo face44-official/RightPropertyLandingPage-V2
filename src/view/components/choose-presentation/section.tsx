@@ -16,7 +16,7 @@ export default function ChoosePresentationSection() {
               pl-[5rem] mb-5 lg:mb-[1rem]
               font-geist-mono font-medium uppercase text-primary-black
               text-14 leading-[150%] tracking-[0.04em]
-              lg:px-4 lg:text-start lg:text-14
+              lg:px-5 lg:text-start lg:text-14
               text-fluid-4k-14
               4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
               4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2050px)/2000px)*1.3rem),2.6rem)]
@@ -43,7 +43,7 @@ export default function ChoosePresentationSection() {
         </div>
 
         {/* Presentation options */}
-        <div className="flex w-full lg:flex-col lg:gap-0 mobile-rp-container lg:m-auto">
+        <div className="flex w-full lg:flex-col lg:gap-0 mobile-rp-container lg:max-w-full lg:m-auto">
           {/* Surface */}
           <div
             className="

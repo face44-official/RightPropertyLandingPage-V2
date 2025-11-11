@@ -76,7 +76,7 @@ export default function PresentSmarterSection() {
           className="
             lg:bg-none! lg:h-auto! relative z-[8]
             flex justify-start
-            pt-[7.5rem]! pl-[46vw] 2xl:pl-[48vw] lg:p-4 lg:pt-0!
+            pt-[7.5rem]! pl-[46vw] 2xl:pl-[48vw] lg:p-5 lg:pt-0!
             4k:[padding-left:clamp(46vw,calc(46vw+((100vw-2050px)/2000px)*3vw),50vw)]
             lg:before:content-[''] 
             lg:before:absolute lg:before:left-0 lg:before:top-0
