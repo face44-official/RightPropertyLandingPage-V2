@@ -6,8 +6,8 @@
 @custom-variant 4k (@media (min-width: 2000px));
 @custom-variant 2xl (@media (max-width: 1535px));
 @custom-variant xl (@media (max-width: 1279px));
-@custom-variant lg (@media (max-width: 767px));
-@custom-variant md (@media (max-width: 767px));
+@custom-variant lg (@media (max-width: 768px));
+@custom-variant md (@media (max-width: 768px));
 @custom-variant sm (@media (max-width: 639px));
 @custom-variant sm-575 (@media (max-width: 575px));
 @custom-variant xs (@media (max-width: 479px));
