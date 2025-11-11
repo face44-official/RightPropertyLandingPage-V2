@@ -15,12 +15,12 @@ import revealItem1Road from "@/assets/v3/reveal_item_1_road.svg";
 import revealItem2Road from "@/assets/v3/reveal_item_2_road.svg";
 import revealItem3Road from "@/assets/v3/reveal_item_3_road.svg";
 import revealItem5Road from "@/assets/v3/reveal_item_5_road.svg";
-import cmsVideo from "@/assets/v3/cms.mp4";
-import emailMarketingVideo from "@/assets/v3/email_marketing.mp4";
-import interactiveVideo from "@/assets/v3/interactive_website.mp4";
-import marketingOption1 from "@/assets/v3/marketing_option1.mp4";
-import websiteTemplates from "@/assets/v3/website_templates.mp4";
-import seoVideo from "@/assets/v3/seo.mp4";
+import cmsVideo from "/cms.mp4";
+import emailMarketingVideo from "/email_marketing.mp4";
+import interactiveVideo from "/interactive_website.mp4";
+import marketingOption1 from "/marketing_option1.mp4";
+import websiteTemplates from "/website_templates.mp4";
+import seoVideo from "/seo.mp4";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger, Flip);
