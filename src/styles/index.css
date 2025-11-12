@@ -261,6 +261,12 @@ body {
   .rp-container {
     max-width: 540px;
   }
+  .reveal-type > div > * {
+    color: #000000!important;
+  }
+  .binary-icons {
+    width: 8rem !important;
+  }
 }
 
 .enhanced-bg {
