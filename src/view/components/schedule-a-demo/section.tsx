@@ -85,7 +85,7 @@ export default function ScheduleADemoSection({
             <div className="hidden lg:inline">
               <br />
             </div>{" "}
-            a demo meeting
+            a Demo
           </h3>
 
           <p
@@ -100,7 +100,7 @@ export default function ScheduleADemoSection({
               4k:[width:clamp(37.5rem,calc(37.5rem+((100vw-2050px)/2000px)*37.5rem),75rem)]
             "
           >
-            We'd be happy to meet and discuss how we can transform your
+            We'd be happy to meet and discuss how we <br /> can transform your
             business.
           </p>
 
