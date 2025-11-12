@@ -18,7 +18,7 @@ import { useMotionPath } from "../../lib/useMotionPath";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-// import HeroRoadSvg from "../../assets/hero-test.svg?react";
+import HeroRoadSvg from "../../assets/hero-test.svg?react";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -37,322 +37,318 @@ export default function HomePage() {
   }, []);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
-  // const maskRef = useRef<HTMLDivElement | null>(null);
-  // const rafIdRef = useRef<number | null>(null);
-  // const scrollTweenRef = useRef<GSAPTween | null>(null);
-  // const heroRef = useRef<SVGSVGElement | null>(null);
+  const maskRef = useRef<HTMLDivElement | null>(null);
+  const rafIdRef = useRef<number | null>(null);
+  const scrollTweenRef = useRef<GSAPTween | null>(null);
+  const heroRef = useRef<SVGSVGElement | null>(null);
 
-  // useEffect(() => {
-  //   const updateTransform = () => {
-  //     const width = window.innerWidth;
+  useEffect(() => {
+    const updateTransform = () => {
+      const width = window.innerWidth;
 
-  //     // --- Range setup ---
-  //     const minWidth = 769;
-  //     const maxWidth = 3840;
+      // --- Range setup ---
+      const minWidth = 769;
+      const maxWidth = 3840;
 
-  //     // --- Scale logic (3-phase) ---
-  //     let scale: number;
-  //     if (width <= 1350) {
-  //       const t = (width - minWidth) / (1350 - minWidth);
-  //       scale = 0.5 + t * (1 - 0.5);
-  //     } else if (width <= 1920) {
-  //       scale = 1;
-  //     } else {
-  //       const t = (width - 1920) / (maxWidth - 1920);
-  //       scale = 1 + t * (1.5 - 1);
-  //     }
+      // --- Scale logic (3-phase) ---
+      let scale: number;
+      if (width <= 1350) {
+        const t = (width - minWidth) / (1350 - minWidth);
+        scale = 0.5 + t * (1 - 0.5);
+      } else if (width <= 1920) {
+        scale = 1;
+      } else {
+        const t = (width - 1920) / (maxWidth - 1920);
+        scale = 1 + t * (1.5 - 1);
+      }
 
-  //     const clampedWidth = Math.min(Math.max(width, minWidth), maxWidth);
+      const clampedWidth = Math.min(Math.max(width, minWidth), maxWidth);
 
-  //     // --- Top interpolation ---
-  //     let top: number;
+      // --- Top interpolation ---
+      let top: number;
 
-  //     if (width >= 1300 && width <= 1500) {
-  //       top = -100; // fixed
-  //     } else if (width >= 1000 && width < 1300) {
-  //       // linear interpolation between 1000 → 1300px
-  //       const t = (width - 1000) / (1300 - 1000);
-  //       const topAt1000 = -330;
-  //       const topAt1300 = -100;
-  //       top = topAt1000 + t * (topAt1300 - topAt1000);
-  //     } else if (width >= 769 && width < 1000) {
-  //       // linear interpolation 769 → 1000px
-  //       const t = (width - 769) / (1000 - 769);
-  //       const topAt769 = -560;
-  //       const topAt1000 = -330;
-  //       top = topAt769 + t * (topAt1000 - topAt769);
-  //     } else {
-  //       // width > 1500 → normal interpolation
-  //       const clampedWidth = Math.min(Math.max(width, minWidth), maxWidth);
-  //       const minTop = -340; // base
-  //       const maxTop = 850;
-  //       const tTop = (clampedWidth - minWidth) / (maxWidth - minWidth);
-  //       top = minTop + tTop * (maxTop - minTop);
-  //     }
+      if (width >= 1300 && width <= 1500) {
+        top = -100; // fixed
+      } else if (width >= 1000 && width < 1300) {
+        // linear interpolation between 1000 → 1300px
+        const t = (width - 1000) / (1300 - 1000);
+        const topAt1000 = -330;
+        const topAt1300 = -100;
+        top = topAt1000 + t * (topAt1300 - topAt1000);
+      } else if (width >= 769 && width < 1000) {
+        // linear interpolation 769 → 1000px
+        const t = (width - 769) / (1000 - 769);
+        const topAt769 = -560;
+        const topAt1000 = -330;
+        top = topAt769 + t * (topAt1000 - topAt769);
+      } else {
+        // width > 1500 → normal interpolation
+        const clampedWidth = Math.min(Math.max(width, minWidth), maxWidth);
+        const minTop = -340; // base
+        const maxTop = 850;
+        const tTop = (clampedWidth - minWidth) / (maxWidth - minWidth);
+        top = minTop + tTop * (maxTop - minTop);
+      }
 
-  //     // --- Right interpolation ---
-  //     const rightAtMin = 23.5; // 769px
-  //     const rightAt950 = 22; // 1000px
-  //     const rightAt1000 = 23.1; // 1000px
-  //     const rightAt1050 = 23.1; // 1050px
-  //     const rightAt1100 = 23.9; // 1100px
+      // --- Right interpolation ---
+      const rightAtMin = 23.5; // 769px
+      const rightAt950 = 22; // 1000px
+      const rightAt1000 = 23.1; // 1000px
+      const rightAt1050 = 23.1; // 1050px
+      const rightAt1100 = 23.9; // 1100px
 
-  //     const rightAt1250 = 24.2; // 1250px
-  //     const rightAt1500 = 22.2; // 1500px
-  //     const rightAt2000 = 15.2; // 2000px
-  //     const rightAt2500 = 13.3; // 2500px
-  //     const rightAt3000 = 11.3; // 3000px
-  //     const rightAt3500 = 11.2; // 3500px
-  //     const rightAt4000 = 10.3; // 3840–4K
-  //     let right: number;
+      const rightAt1250 = 24.2; // 1250px
+      const rightAt1500 = 22.2; // 1500px
+      const rightAt2000 = 15.2; // 2000px
+      const rightAt2500 = 13.3; // 2500px
+      const rightAt3000 = 11.3; // 3000px
+      const rightAt3500 = 11.2; // 3500px
+      const rightAt4000 = 10.3; // 3840–4K
+      let right: number;
 
-  //     if (width >= 3840) {
-  //       right = rightAt4000; // max 4K fixed
-  //     } else if (width >= 3500) {
-  //       // 3500 → 3840: 11.2 → 10.3
-  //       const t = (width - 3500) / (3840 - 3500);
-  //       right = rightAt3500 + t * (rightAt4000 - rightAt3500);
-  //     } else if (width >= 3000) {
-  //       // 3000 → 3500: 11.3 → 11.2
-  //       const t = (width - 3000) / (3500 - 3000);
-  //       right = rightAt3000 + t * (rightAt3500 - rightAt3000);
-  //     } else if (width >= 2500) {
-  //       // 2500 → 3000: 13.3 → 11.3
-  //       const t = (width - 2500) / (3000 - 2500);
-  //       right = rightAt2500 + t * (rightAt3000 - rightAt2500);
-  //     } else if (width >= 2000) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 2000) / (2500 - 2000);
-  //       right = rightAt2000 + t * (rightAt2500 - rightAt2000);
-  //     } else if (width >= 1500) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 1500) / (2000 - 1500);
-  //       right = rightAt1500 + t * (rightAt2000 - rightAt1500);
-  //     } else if (width >= 1250) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 1250) / (1500 - 1250);
-  //       right = rightAt1250 + t * (rightAt1500 - rightAt1250);
-  //     } else if (width >= 1100) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 1100) / (1250 - 1100);
-  //       right = rightAt1100 + t * (rightAt1250 - rightAt1100);
-  //     } else if (width >= 1050) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 1050) / (1100 - 1050);
-  //       right = rightAt1050 + t * (rightAt1100 - rightAt1050);
-  //     } else if (width >= 1000) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 1000) / (1050 - 1000);
-  //       right = rightAt1000 + t * (rightAt1050 - rightAt1000);
-  //     } else if (width >= 950) {
-  //       // 2000 → 2500: 12.2 → 13.3
-  //       const t = (width - 950) / (1000 - 950);
-  //       right = rightAt950 + t * (rightAt1000 - rightAt950);
-  //     } else {
-  //       // 769 → 2000: 14 → 12.2
-  //       const t = (clampedWidth - minWidth) / (2000 - minWidth);
-  //       right = rightAtMin + t * (rightAt2000 - rightAtMin);
-  //     }
+      if (width >= 3840) {
+        right = rightAt4000; // max 4K fixed
+      } else if (width >= 3500) {
+        // 3500 → 3840: 11.2 → 10.3
+        const t = (width - 3500) / (3840 - 3500);
+        right = rightAt3500 + t * (rightAt4000 - rightAt3500);
+      } else if (width >= 3000) {
+        // 3000 → 3500: 11.3 → 11.2
+        const t = (width - 3000) / (3500 - 3000);
+        right = rightAt3000 + t * (rightAt3500 - rightAt3000);
+      } else if (width >= 2500) {
+        // 2500 → 3000: 13.3 → 11.3
+        const t = (width - 2500) / (3000 - 2500);
+        right = rightAt2500 + t * (rightAt3000 - rightAt2500);
+      } else if (width >= 2000) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 2000) / (2500 - 2000);
+        right = rightAt2000 + t * (rightAt2500 - rightAt2000);
+      } else if (width >= 1500) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 1500) / (2000 - 1500);
+        right = rightAt1500 + t * (rightAt2000 - rightAt1500);
+      } else if (width >= 1250) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 1250) / (1500 - 1250);
+        right = rightAt1250 + t * (rightAt1500 - rightAt1250);
+      } else if (width >= 1100) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 1100) / (1250 - 1100);
+        right = rightAt1100 + t * (rightAt1250 - rightAt1100);
+      } else if (width >= 1050) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 1050) / (1100 - 1050);
+        right = rightAt1050 + t * (rightAt1100 - rightAt1050);
+      } else if (width >= 1000) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 1000) / (1050 - 1000);
+        right = rightAt1000 + t * (rightAt1050 - rightAt1000);
+      } else if (width >= 950) {
+        // 2000 → 2500: 12.2 → 13.3
+        const t = (width - 950) / (1000 - 950);
+        right = rightAt950 + t * (rightAt1000 - rightAt950);
+      } else {
+        // 769 → 2000: 14 → 12.2
+        const t = (clampedWidth - minWidth) / (2000 - minWidth);
+        right = rightAtMin + t * (rightAt2000 - rightAtMin);
+      }
 
-  //     // --- Apply styles ---
-  //     if (heroRef.current) {
-  //       heroRef.current.style.transform = `scale(${scale})`;
-  //       heroRef.current.style.top = `${top}px`;
-  //       heroRef.current.style.right = `${right}%`;
-  //     }
-  //   };
+      // --- Apply styles ---
+      if (heroRef.current) {
+        heroRef.current.style.transform = `scale(${scale})`;
+        heroRef.current.style.top = `${top}px`;
+        heroRef.current.style.right = `${right}%`;
+      }
+    };
 
-  //   updateTransform();
-  //   window.addEventListener("resize", updateTransform);
-  //   return () => window.removeEventListener("resize", updateTransform);
-  // }, []);
+    updateTransform();
+    window.addEventListener("resize", updateTransform);
+    return () => window.removeEventListener("resize", updateTransform);
+  }, []);
 
-  // useEffect(() => {
-  //   let mouseEnabled = true;
-  //   let maskRadius = 600;
+  useEffect(() => {
+    let mouseEnabled = true;
+    let maskRadius = 600;
 
-  //   // --- Responsive radius segmented ---
-  //   const getResponsiveRadius = () => {
-  //     const minWidth = 769;
-  //     const mid1 = 1350;
-  //     const mid2 = 1920;
-  //     const maxWidth = 3840;
-  //     const w = window.innerWidth;
+    // --- Responsive radius segmented ---
+    const getResponsiveRadius = () => {
+      const minWidth = 769;
+      const mid1 = 1350;
+      const mid2 = 1920;
+      const maxWidth = 3840;
+      const w = window.innerWidth;
 
-  //     if (w <= minWidth) return 150;
-  //     if (w <= mid1) {
-  //       // 769 → 1350: 150 → 400 (increasing)
-  //       const t = (w - minWidth) / (mid1 - minWidth);
-  //       return 150 + t * (400 - 150);
-  //     }
-  //     if (w <= mid2) return 400; // constant 400 between 1350–1920
-  //     if (w >= maxWidth) return 600;
+      if (w <= minWidth) return 150;
+      if (w <= mid1) {
+        // 769 → 1350: 150 → 400 (increasing)
+        const t = (w - minWidth) / (mid1 - minWidth);
+        return 150 + t * (400 - 150);
+      }
+      if (w <= mid2) return 400; // constant 400 between 1350–1920
+      if (w >= maxWidth) return 600;
 
-  //     // 1920 → 3840: 400 → 600 (increasing)
-  //     const t = (w - mid2) / (maxWidth - mid2);
-  //     return 400 + t * (600 - 400);
-  //   };
+      // 1920 → 3840: 400 → 600 (increasing)
+      const t = (w - mid2) / (maxWidth - mid2);
+      return 400 + t * (600 - 400);
+    };
 
-  //   // --- Scroll-based continuous decrease ---
-  //   const getScrollRadius = (responsiveRadius: number, progress: number) => {
-  //     // Define end radius based on initial responsive size
-  //     let endRadius = responsiveRadius;
-  //     if (responsiveRadius >= 500) endRadius = 150;
-  //     else if (responsiveRadius >= 400) endRadius = 120;
-  //     else if (responsiveRadius >= 300) endRadius = 100;
-  //     else if (responsiveRadius >= 200) endRadius = 80;
-  //     else if (responsiveRadius >= 150) endRadius = 60;
+    // --- Scroll-based continuous decrease ---
+    const getScrollRadius = (responsiveRadius: number, progress: number) => {
+      // Define end radius based on initial responsive size
+      let endRadius = responsiveRadius;
+      if (responsiveRadius >= 500) endRadius = 150;
+      else if (responsiveRadius >= 400) endRadius = 120;
+      else if (responsiveRadius >= 300) endRadius = 100;
+      else if (responsiveRadius >= 200) endRadius = 80;
+      else if (responsiveRadius >= 150) endRadius = 60;
 
-  //     // Smooth interpolation
-  //     const t = Math.min(Math.max(progress, 0), 1);
-  //     const easedT = 1 - Math.pow(1 - t, 2); // easeOutQuad
+      // Smooth interpolation
+      const t = Math.min(Math.max(progress, 0), 1);
+      const easedT = 1 - Math.pow(1 - t, 2); // easeOutQuad
 
-  //     return responsiveRadius + (endRadius - responsiveRadius) * easedT;
-  //   };
+      return responsiveRadius + (endRadius - responsiveRadius) * easedT;
+    };
 
-  //   const initAnimation = () => {
-  //     const container = containerRef.current;
-  //     const mask = maskRef.current;
-  //     if (!container || !mask) return;
+    const initAnimation = () => {
+      const container = containerRef.current;
+      const mask = maskRef.current;
+      if (!container || !mask) return;
 
-  //     interface Vector2D {
-  //       x: number;
-  //       y: number;
-  //     }
+      interface Vector2D {
+        x: number;
+        y: number;
+      }
 
-  //     const maskPos: Vector2D = { x: 0, y: 0 };
-  //     const offset: Vector2D = { x: 0, y: 0 };
-  //     const target: Vector2D = { x: 0, y: 0 };
-  //     const velocity: Vector2D = { x: 0, y: 0 };
+      const maskPos: Vector2D = { x: 0, y: 0 };
+      const offset: Vector2D = { x: 0, y: 0 };
+      const target: Vector2D = { x: 0, y: 0 };
+      const velocity: Vector2D = { x: 0, y: 0 };
 
-  //     const stiffness = 0.02;
-  //     const damping = 0.9;
-  //     const maxSpeed = 8;
+      const stiffness = 0.02;
+      const damping = 0.9;
+      const maxSpeed = 8;
 
-  //     let scrollProgress = 0;
+      let scrollProgress = 0;
 
-  //     // --- Animation Loop (smooth 60fps) ---
-  //     const animate = () => {
-  //       const dt = 1 / 60; // fixed delta time for 60 FPS
+      // --- Animation Loop (smooth 60fps) ---
+      const animate = () => {
+        console.log("animate calling");
+        const ax = (target.x - offset.x) * stiffness;
+        const ay = (target.y - offset.y) * stiffness;
 
-  //       // --- spring forces ---
-  //       const ax = (target.x - offset.x) * stiffness;
-  //       const ay = (target.y - offset.y) * stiffness;
+        velocity.x += ax;
+        velocity.y += ay;
 
-  //       // --- velocity update ---
-  //       velocity.x += ax;
-  //       velocity.y += ay;
+        velocity.x = Math.max(Math.min(velocity.x, maxSpeed), -maxSpeed);
+        velocity.y = Math.max(Math.min(velocity.y, maxSpeed), -maxSpeed);
 
-  //       // --- clamp velocity ---
-  //       velocity.x = Math.max(Math.min(velocity.x, maxSpeed), -maxSpeed);
-  //       velocity.y = Math.max(Math.min(velocity.y, maxSpeed), -maxSpeed);
+        velocity.x *= damping;
+        velocity.y *= damping;
 
-  //       // --- damping ---
-  //       velocity.x *= damping;
-  //       velocity.y *= damping;
+        offset.x += velocity.x;
+        offset.y += velocity.y;
 
-  //       // --- offset update ---
-  //       offset.x += velocity.x * dt * 60; // scale to 60fps units
-  //       offset.y += velocity.y * dt * 60;
+        const x = maskPos.x + offset.x;
+        const y = maskPos.y + offset.y;
 
-  //       const x = maskPos.x + offset.x;
-  //       const y = maskPos.y + offset.y;
+        // Calculate mask radius based on width + scroll
+        const responsiveRadius = getResponsiveRadius();
+        maskRadius = getScrollRadius(responsiveRadius, scrollProgress);
 
-  //       // --- responsive radius ---
-  //       const responsiveRadius = getResponsiveRadius();
-  //       maskRadius = getScrollRadius(responsiveRadius, scrollProgress);
+        const gradient = `radial-gradient(circle ${maskRadius}px at ${x}px ${y}px, black 30%, transparent 80%)`;
+        mask.style.maskImage = gradient;
 
-  //       const gradient = `radial-gradient(circle ${maskRadius}px at ${x}px ${y}px, black 30%, transparent 80%)`;
-  //       mask.style.maskImage = gradient;
+        rafIdRef.current = requestAnimationFrame(animate);
+      };
 
-  //       rafIdRef.current = requestAnimationFrame(animate);
-  //     };
+      animate();
 
-  //     animate();
+      const scrollStart =
+        window.innerWidth <= 1200 ? "top+=200 top" : "top+=400 top";
 
-  //     const scrollStart =
-  //       window.innerWidth <= 1200 ? "top+=200 top" : "top+=400 top";
+      // --- Scroll Tween with GSAP Motion Path ---
+      if (scrollTweenRef.current) scrollTweenRef.current.kill();
+      scrollTweenRef.current = gsap.to(maskPos, {
+        motionPath: {
+          path: "#motionPath",
+          align: "#motionPath",
+          alignOrigin: [0.5, 0.5],
+          curviness: 1.5,
+          autoRotate: false,
+        },
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: container,
+          start: scrollStart,
+          end: () => container.offsetTop + container.offsetHeight,
+          scrub: true,
+          markers: false,
+          onUpdate: (self) => {
+            scrollProgress = self.progress;
+          },
+          onEnter: () => (mouseEnabled = false),
+          onEnterBack: () => (mouseEnabled = false),
+          onLeave: () => (mouseEnabled = true),
+          onLeaveBack: () => (mouseEnabled = true),
+        },
+      });
 
-  //     // --- Scroll Tween with GSAP Motion Path ---
-  //     if (scrollTweenRef.current) scrollTweenRef.current.kill();
-  //     scrollTweenRef.current = gsap.to(maskPos, {
-  //       motionPath: {
-  //         path: "#motionPath",
-  //         align: "#motionPath",
-  //         alignOrigin: [0.5, 0.5],
-  //         curviness: 1.5,
-  //         autoRotate: false,
-  //       },
-  //       duration: 2,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: container,
-  //         start: scrollStart,
-  //         end: () => container.offsetTop + container.offsetHeight,
-  //         scrub: true,
-  //         markers: false,
-  //         onUpdate: (self) => {
-  //           scrollProgress = self.progress;
-  //         },
-  //         onEnter: () => (mouseEnabled = false),
-  //         onEnterBack: () => (mouseEnabled = false),
-  //         onLeave: () => (mouseEnabled = true),
-  //         onLeaveBack: () => (mouseEnabled = true),
-  //       },
-  //     });
+      // --- Mouse Movement ---
+      const handleMouseMove = (e: MouseEvent) => {
+        if (!mouseEnabled) return;
+        const rect = container.getBoundingClientRect();
+        const responsiveRadius = getResponsiveRadius();
 
-  //     // --- Mouse Movement ---
-  //     const handleMouseMove = (e: MouseEvent) => {
-  //       if (!mouseEnabled) return;
-  //       const rect = container.getBoundingClientRect();
-  //       const responsiveRadius = getResponsiveRadius();
+        const maxOffset =
+          responsiveRadius >= 600
+            ? 150
+            : responsiveRadius >= 400
+            ? 100
+            : responsiveRadius >= 300
+            ? 60
+            : responsiveRadius >= 200
+            ? 40
+            : 20;
 
-  //       const maxOffset =
-  //         responsiveRadius >= 600
-  //           ? 150
-  //           : responsiveRadius >= 400
-  //           ? 100
-  //           : responsiveRadius >= 300
-  //           ? 60
-  //           : responsiveRadius >= 200
-  //           ? 40
-  //           : 20;
+        const offsetX =
+          ((e.clientX - rect.left - maskPos.x) / rect.width) * maxOffset * 2;
+        const offsetY =
+          ((e.clientY - rect.top - maskPos.y) / rect.height) * maxOffset * 2;
 
-  //       const offsetX =
-  //         ((e.clientX - rect.left - maskPos.x) / rect.width) * maxOffset * 2;
-  //       const offsetY =
-  //         ((e.clientY - rect.top - maskPos.y) / rect.height) * maxOffset * 2;
+        target.x = Math.max(Math.min(offsetX, maxOffset), -maxOffset);
+        target.y = Math.max(Math.min(offsetY, maxOffset), -maxOffset);
+      };
 
-  //       target.x = Math.max(Math.min(offsetX, maxOffset), -maxOffset);
-  //       target.y = Math.max(Math.min(offsetY, maxOffset), -maxOffset);
-  //     };
+      container.addEventListener("mousemove", handleMouseMove);
 
-  //     container.addEventListener("mousemove", handleMouseMove);
+      // Cleanup
+      return () => {
+        container.removeEventListener("mousemove", handleMouseMove);
+        if (rafIdRef.current !== null) cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+        if (scrollTweenRef.current) scrollTweenRef.current.kill();
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
+    };
 
-  //     // Cleanup
-  //     return () => {
-  //       container.removeEventListener("mousemove", handleMouseMove);
-  //       if (rafIdRef.current !== null) cancelAnimationFrame(rafIdRef.current);
-  //       rafIdRef.current = null;
-  //       if (scrollTweenRef.current) scrollTweenRef.current.kill();
-  //       ScrollTrigger.getAll().forEach((t) => t.kill());
-  //     };
-  //   };
+    // --- Initialize ---
+    let cleanup = initAnimation();
 
-  //   // --- Initialize ---
-  //   let cleanup = initAnimation();
+    const handleResize = () => {
+      if (cleanup) cleanup();
+      cleanup = initAnimation();
+    };
+    window.addEventListener("resize", handleResize);
 
-  //   const handleResize = () => {
-  //     if (cleanup) cleanup();
-  //     cleanup = initAnimation();
-  //   };
-  //   window.addEventListener("resize", handleResize);
+    return () => {
+      if (cleanup) cleanup();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-  //   return () => {
-  //     if (cleanup) cleanup();
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+  /// ------------ Old animation code ------------------  //
   // const maskRef = useRef<HTMLDivElement | null>(null);
   // const rafIdRef = useRef<number | null>(null);
   // const scrollTweenRef = useRef<GSAPTween | null>(null);
@@ -548,7 +544,7 @@ export default function HomePage() {
       >
         <div className="relative z-[20]">
           <div ref={containerRef} className="first-two relative h-full w-full">
-            {/* <div
+            <div
               ref={maskRef}
               className="absolute inset-0 bg-linear-to-r from-[#BADEF3]/30 to-[#53B5EE]/30 pointer-events-none lg:hidden"
               style={{
@@ -562,7 +558,7 @@ export default function HomePage() {
                 ref={heroRef}
                 className="absolute top-[800px] overflow-hidden w-full"
               />
-            </div> */}
+            </div>
             {/* HERO ROAD + MASK */}
             {/* <div
               ref={divRef}
