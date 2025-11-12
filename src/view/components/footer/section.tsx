@@ -1,7 +1,7 @@
 import footerBg from "@/assets/v3/footer-bg.svg";
 import footerLevitate from "@/assets/v3/footer_levitate.svg";
-import mobileFooterBg from "@/assets/v3/mobile_right_footer.webp";
-import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.webp";
+import mobileFooterBg from "@/assets/v3/footer mobile.svg";
+// import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.webp";
 import { useRef } from "react";
 import { gsap } from "gsap";
 import Logo from "../header/logo";
@@ -234,12 +234,12 @@ export default function FooterSection() {
             className="w-full h-auto object-cover z-[-1] hidden lg:block"
             alt="Right Property mobile footer background design"
           />
-          <img
+          {/* <img
             ref={$mobileFooterLevitate}
             src={mobileFooterLevitate}
             className="absolute left-[11.848rem] sm-575:left-[34%] top-[7.375rem] sm-575:top-[7rem] xs:top-[5.2rem] w-[6.6418rem] sm-575:w-[21%] h-auto object-contain z-[0] hidden lg:block"
             alt="Right Property mobile footer floating decoration element"
-          />
+          /> */}
         </div>
       </div>
 
