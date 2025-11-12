@@ -243,7 +243,7 @@ export default function SimpleSetupSection() {
               image={
                 <DynamicRive
                   src="/rp_icon_1_w_container.riv"
-                  width="8rem" // max size on desktop
+                  width="8.5rem"
                   className="riv-icon"
                   autoplay
                 />

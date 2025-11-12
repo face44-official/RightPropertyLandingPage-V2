@@ -232,7 +232,7 @@ export default function EasyOnboardingSection() {
             image={
               <DynamicRive
                 src="/rp_icon_2_w_container.riv"
-                width="8rem" // max size on desktop
+                width="8.5rem"
                 className="riv-icon"
                 autoplay
               />

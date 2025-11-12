@@ -2,17 +2,15 @@ import { useRive } from "@rive-app/react-canvas";
 
 interface DynamicRiveProps {
   src: string;
-  width?: number | string;     // optional max width
-  height?: number | string;    // optional max height
+  width?: number | string;
   autoplay?: boolean;
   stateMachine?: string;
-  className?: string;          // optional Tailwind or CSS classes
+  className?: string;
 }
 
 export default function DynamicRive({
   src,
   width = "100%",
-  height = "auto",
   autoplay = true,
   stateMachine,
   className,

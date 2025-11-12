@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
-import DynamicRive from "./common/riv-icon";
 
 export default function BinarySection({
   subHeader,
