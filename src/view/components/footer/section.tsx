@@ -147,7 +147,7 @@ export default function FooterSection() {
         {/* Content */}
         <div
           className="
-            flex justify-between lg:flex-col
+            flex justify-between lg:flex-col lg:pt-6
           "
         >
           {/* Left — Logo + Copyright */}
@@ -172,7 +172,7 @@ export default function FooterSection() {
           <div
             className="
               flex flex-row-reverse lg:flex-col
-              gap-[3.75rem] lg:gap-[2.5rem] mb-[5rem] lg:mb-[2rem]
+              gap-[3.75rem] lg:gap-[1.5rem] mb-[5rem] lg:mb-[2rem]
               lg:px-4 lg:flex-wrap
               4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*1.25rem),5rem)]
               4k:[margin-bottom:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*1rem),6rem)]
