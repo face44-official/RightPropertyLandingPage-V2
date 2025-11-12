@@ -24,7 +24,7 @@ export default function PresentSmarterSection() {
           src={startIcon}
           alt="interactive storytelling icon"
           className="
-            w-[5rem] h-auto object-contain
+            w-[5rem] lg:w-[4rem] h-auto object-contain
             4k:[width:clamp(4rem,calc(4rem+((100vw-2050px)/2000px)*4rem),8rem)]
           "
         />
@@ -45,7 +45,7 @@ export default function PresentSmarterSection() {
           src={spaceIcon}
           alt="responsive design icon"
           className="
-            w-[5rem]  h-auto object-contain
+            w-[5rem] lg:w-[4rem] h-auto object-contain
             4k:[width:clamp(4rem,calc(4rem+((100vw-2050px)/2000px)*4rem),8rem)]
           "
         />

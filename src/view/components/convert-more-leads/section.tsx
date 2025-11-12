@@ -13,7 +13,7 @@ export default function ConvertMoreLeadsSection() {
           src={startIcon}
           alt="Performance tracking feature icon"
           className="
-            w-[5rem] h-auto object-contain
+            w-[5rem] lg:w-[4rem] h-auto object-contain
             4k:[width:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         />
@@ -34,7 +34,7 @@ export default function ConvertMoreLeadsSection() {
           src={spaceIcon}
           alt="User-centered platform feature icon"
           className="
-            w-[5rem] h-auto object-contain
+            w-[5rem] lg:w-[4rem] h-auto object-contain
             4k:[width:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         />
