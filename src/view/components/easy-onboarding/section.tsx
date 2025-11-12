@@ -7,6 +7,7 @@ import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.svg";
 import { gsap } from "gsap";
 import mobileRoad3 from "@/assets/v3/mobile_road_3.webp";
+import DynamicRive from "../common/riv-icon";
 
 export default function EasyOnboardingSection() {
   const pathRef = useRef<SVGPathElement>(null);
@@ -227,7 +228,15 @@ export default function EasyOnboardingSection() {
             subHeader="Did you know?"
             title="Built by software minds"
             description="No visuals or assets? Our team can produce what’s needed."
-            image={<BinaryBlockImage path={automated} />}
+            // image={<BinaryBlockImage path={automated} />}
+            image={
+              <DynamicRive
+                src="/rp_icon_2_w_container.riv"
+                width="8rem" // max size on desktop
+                className="riv-icon"
+                autoplay
+              />
+            }
           />
         </div>
 

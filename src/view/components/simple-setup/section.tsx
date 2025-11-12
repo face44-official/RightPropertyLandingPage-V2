@@ -8,6 +8,7 @@ import softwareMinds from "@/assets/v3/software_minds.webp";
 import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.svg";
 import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";
+import DynamicRive from "../common/riv-icon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -238,7 +239,15 @@ export default function SimpleSetupSection() {
               subHeader="Did you know?"
               title="Built by software minds"
               description="No visuals or assets? Our team can produce what’s needed."
-              image={<BinaryBlockImage path={softwareMinds} />}
+              // image={<BinaryBlockImage path={softwareMinds} />}
+              image={
+                <DynamicRive
+                  src="/rp_icon_1_w_container.riv"
+                  width="8rem" // max size on desktop
+                  className="riv-icon"
+                  autoplay
+                />
+              }
             />
           </div>
 

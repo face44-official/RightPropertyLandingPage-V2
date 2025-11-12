@@ -552,6 +552,16 @@ body {
     );
   }
 }
+
+@media (min-width: 2050px) {
+  .riv-icon {
+    max-width: clamp(
+      8rem,                                
+      calc(8rem + (100vw - 2050px) * 0.55),
+      14rem                                
+    ) !important;
+  }
+}
 }
 
 :root {

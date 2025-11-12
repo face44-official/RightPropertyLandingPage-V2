@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
+import DynamicRive from "./common/riv-icon";
 
 export default function BinarySection({
   subHeader,
@@ -22,7 +23,7 @@ export default function BinarySection({
     >
       <div
         className="
-          w-fit mx-auto bg-white flex items-center justify-center
+          w-fit lg:w-full mx-auto bg-white flex items-center justify-center
           gap-[3.75rem] p-[2.5rem]
           lg:flex-col-reverse lg:p-6 lg:gap-[2rem]
           4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
