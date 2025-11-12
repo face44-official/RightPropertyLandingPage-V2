@@ -92,7 +92,7 @@ export default function FaqItem({
             w-[46px] h-[46px] lg:w-[2.5rem] lg:h-[2.5rem]
             4k:[width:clamp(46px,calc(46px+((100vw-2050px)/2000px)*46px),92px)]
             4k:[height:clamp(46px,calc(46px+((100vw-2050px)/2000px)*46px),92px)]
-            rounded-full border border-[#FF947E]
+            rounded-full border border-[#FF947E80]
             transition-all duration-300
           "
         >
