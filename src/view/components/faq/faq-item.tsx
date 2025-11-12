@@ -56,7 +56,7 @@ export default function FaqItem({
       onClick={handleClick}
       className="
         text-[#E2E2E2] cursor-pointer flex flex-col
-        p-[2.5rem] pr-[1.75rem] lg:p-6 mb-[30px] rounded-[20px]
+        py-[2.25rem] pl-[2.5rem] pr-[1.75rem] lg:p-6 mb-[30px] rounded-[20px]
         4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
         4k:[padding-right:clamp(1.75rem,calc(1.75rem+((100vw-2050px)/2000px)*1.75rem),3.5rem)]
         transition-all duration-300 ease-in-out
