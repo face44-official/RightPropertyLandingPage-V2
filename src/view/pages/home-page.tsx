@@ -35,7 +35,7 @@ export default function HomePage() {
   useEffect(() => {
     initializeMotionPath();
   }, []);
-  
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const maskRef = useRef<HTMLDivElement | null>(null);
   const rafIdRef = useRef<number | null>(null);
@@ -233,25 +233,32 @@ export default function HomePage() {
 
       // --- Animation Loop (smooth 60fps) ---
       const animate = () => {
+        const dt = 1 / 60; // fixed delta time for 60 FPS
+
+        // --- spring forces ---
         const ax = (target.x - offset.x) * stiffness;
         const ay = (target.y - offset.y) * stiffness;
 
+        // --- velocity update ---
         velocity.x += ax;
         velocity.y += ay;
 
+        // --- clamp velocity ---
         velocity.x = Math.max(Math.min(velocity.x, maxSpeed), -maxSpeed);
         velocity.y = Math.max(Math.min(velocity.y, maxSpeed), -maxSpeed);
 
+        // --- damping ---
         velocity.x *= damping;
         velocity.y *= damping;
 
-        offset.x += velocity.x;
-        offset.y += velocity.y;
+        // --- offset update ---
+        offset.x += velocity.x * dt * 60; // scale to 60fps units
+        offset.y += velocity.y * dt * 60;
 
         const x = maskPos.x + offset.x;
         const y = maskPos.y + offset.y;
 
-        // Calculate mask radius based on width + scroll
+        // --- responsive radius ---
         const responsiveRadius = getResponsiveRadius();
         maskRadius = getScrollRadius(responsiveRadius, scrollProgress);
 
