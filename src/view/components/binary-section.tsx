@@ -22,7 +22,7 @@ export default function BinarySection({
     >
       <div
         className="
-          w-fit lg:w-full mx-auto bg-white flex items-center justify-center
+          w-fit lg:w-full mx-auto bg-white flex items-center lg:justify-start lg:items-start justify-center
           gap-[3.75rem] p-[2.5rem]
           lg:flex-col-reverse lg:p-6 lg:gap-[2rem]
           4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
@@ -101,6 +101,7 @@ export const BinaryBlockImage = ({ path }: { path: string }) => (
     className="
       w-[8.5rem] lg:w-full h-auto
       4k:[width:clamp(8.5rem,calc(8.5rem+((100vw-2000px)/2000px)*8.5rem),17rem)]
+      binary-icons
     "
     alt="binary code icon representing software development"
     loading="lazy"

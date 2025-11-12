@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
-import softwareMinds from "@/assets/v3/software_minds.webp";
+import softwareMinds from "@/assets/v3/software-minds.svg";
 import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.svg";
 import SimpleSetupMobileGradient from "./simple-setup-mobile-gradient";

@@ -56,13 +56,14 @@ export default function FaqItem({
       onClick={handleClick}
       className="
         text-[#E2E2E2] cursor-pointer flex flex-col
-        p-[2rem] lg:p-6 mb-[30px]
-        4k:[padding:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),4rem)]
+        p-[2.5rem] pr-[1.75rem] lg:p-6 mb-[30px] rounded-[20px]
+        4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
+        4k:[padding-right:clamp(1.75rem,calc(1.75rem+((100vw-2050px)/2000px)*1.75rem),3.5rem)]
         transition-all duration-300 ease-in-out
         hover:bg-[rgba(187,135,255,0.15)]
         4k:[margin-bottom:clamp(1.875rem,calc(1.875rem+((100vw-2050px)/2000px)*1.875rem),3.75rem)]
       "
-      style={{ background: "rgba(187, 135, 255, 0.1)" }}
+      style={{ background: "#BB87FF1A" }}
     >
       {/* Question Row */}
       <div
@@ -75,7 +76,7 @@ export default function FaqItem({
       >
         <h3
           className="
-            font-geist font-medium
+            font-geist font-regular
             text-20 lg:text-base
             leading-[140%] -tracking-[0.02em]
             text-2k-4k-20
@@ -88,9 +89,9 @@ export default function FaqItem({
         <div
           className="
             shrink-0 flex items-center justify-center
-            w-[40px] h-[40px] lg:w-[2.5rem] lg:h-[2.5rem]
-            4k:[width:clamp(40px,calc(40px+((100vw-2050px)/2000px)*40px),80px)]
-            4k:[height:clamp(40px,calc(40px+((100vw-2050px)/2000px)*40px),80px)]
+            w-[46px] h-[46px] lg:w-[2.5rem] lg:h-[2.5rem]
+            4k:[width:clamp(46px,calc(46px+((100vw-2050px)/2000px)*46px),92px)]
+            4k:[height:clamp(46px,calc(46px+((100vw-2050px)/2000px)*46px),92px)]
             rounded-full border border-[#FF947E]
             transition-all duration-300
           "

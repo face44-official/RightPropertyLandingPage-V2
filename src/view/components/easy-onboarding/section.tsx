@@ -2,7 +2,7 @@ import easyOnboarding from "@/assets/v3/easy_onboarding_desktop.svg";
 import EasyOnboardingPath from "./easy-onboarding-path";
 import { useCallback, useEffect, useRef } from "react";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
-import automated from "@/assets/v3/automated.webp";
+import automated from "@/assets/v3/automated.svg";
 import { interpolateColor } from "@/lib/utils";
 import purpleCheck from "@/assets/v3/purple_check.svg";
 import { gsap } from "gsap";

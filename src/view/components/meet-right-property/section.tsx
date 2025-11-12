@@ -50,7 +50,7 @@ const MeetRightPropertySection = ({ ref }: Props) => {
               data-bg-color="#CBDDEA"
               data-fg-color="#000000"
               className="
-                reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black
+                reveal-type font-general-sans font-medium text-[#D7D7D7] lg:text-black!
                 mb-[2rem] lg:mb-[2rem]
                 text-40 leading-[120%] -tracking-[0.01em]
                 lg:text-[28px]

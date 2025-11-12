@@ -32,9 +32,12 @@ export default function ScheduleADemoSection({
         className="
       relative rp-container bg-white overflow-hidden z-[2]
       w-[54.1875rem] lg:w-full
-      p-[2.5rem] lg:pt-[1rem] lg:pb-[1.5rem] lg:px-0
+      px-[3rem] py-[2.7rem] lg:pt-[1rem] lg:pb-[1.5rem] lg:p-4
       4k:[width:clamp(54.1875rem,calc(54.1875rem+((100vw-2050px)/2000px)*54.1875rem),108.375rem)]
-      4k:[padding:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
+      4k:[padding-left:clamp(3rem,calc(3rem+((100vw-2050px)/2000px)*3rem),6rem)]
+      4k:[padding-right:clamp(3rem,calc(3rem+((100vw-2050px)/2000px)*3rem),6rem)]
+      4k:[padding-top:clamp(2.7rem,calc(2.7rem+((100vw-2050px)/2000px)*2.7rem),5.4rem)]
+      4k:[padding-bottom:clamp(2.7rem,calc(2.7rem+((100vw-2050px)/2000px)*2.7rem),5.4rem)]
       transition-all duration-500
       hover:shadow-[3px_51px_109.4px_29px_#7E669D4F]
     "
@@ -46,7 +49,7 @@ export default function ScheduleADemoSection({
           className="
             absolute top-[2.3125rem] -right-[1rem]
             w-[16.25rem] h-auto object-contain
-            lg:w-[13.75rem] lg:static lg:scale-x-[-1] lg:top-0
+            lg:w-[13.75rem] lg:static lg:scale-x-[-1] lg:top-0 lg:hidden
             4k:[top:clamp(2.3125rem,calc(2.3125rem+((100vw-2050px)/2000px)*2.3125rem),4.625rem)]
             4k:[right:clamp(-1rem,calc(-1rem-((100vw-2050px)/2000px)*2rem),-3rem)]
             4k:[width:clamp(16.25rem,calc(16.25rem+((100vw-2050px)/2000px)*16.25rem),37.25rem)]
@@ -57,12 +60,12 @@ export default function ScheduleADemoSection({
         <div className="inline-block lg:p-[0.75rem]">
           <p
             className="
-              mb-4 lg:mb-[1rem]
-              font-geist font-medium uppercase tracking-[0.02em]
+              mb-4 lg:mb-[1.5rem]
+              font-geist-mono font-medium uppercase tracking-[1px]
               text-14
               text-fluid-4k-14
-              4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
-              leading-[150%] lg:pt-[1rem]
+              4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2050px)/2000px)*1.5rem),3rem)]
+              leading-[148%] lg:pt-[1rem]
             "
           >
             Let's take a seat
@@ -87,11 +90,11 @@ export default function ScheduleADemoSection({
 
           <p
             className="
-              mb-[2rem] lg:mb-[1rem]
+              mb-[2.5rem] lg:mb-[1rem]
               font-geist font-normal
               text-18
               text-2k-4k-18
-              4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),4rem)]
+              4k:[margin-bottom:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
               leading-[140%] tracking-[0]
               w-[37.5rem] lg:w-full
               4k:[width:clamp(37.5rem,calc(37.5rem+((100vw-2050px)/2000px)*37.5rem),75rem)]

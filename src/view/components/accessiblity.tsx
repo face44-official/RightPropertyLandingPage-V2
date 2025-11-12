@@ -197,8 +197,11 @@ export default function Accessibility({
               flex flex-col items-start
               gap-[2rem] lg:gap-[1.5rem]
               4k:[gap:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),5rem)]
-              p-[2.5rem] lg:p-[1.5rem]
-              4k:[padding:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),5rem)]
+              px-[2rem] py-[2.25rem] lg:p-[1.5rem]
+              4k:[padding-top:clamp(2.25rem,calc(2.25rem+((100vw-2050px)/2000px)*2.25rem),5rem)]
+              4k:[padding-bottom:clamp(2.25rem,calc(2.25rem+((100vw-2050px)/2000px)*2.25rem),5rem)]
+              4k:[padding-left:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),5rem)]
+              4k:[padding-right:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),5rem)]
               rounded-[20px]
               4k:[border-radius:clamp(20px,calc(20px+((100vw-2050px)/2000px)*20px),40px)]
               hover:shadow-[0px_6px_13.2px_0px_#0000000F] transition-shadow duration-300
@@ -207,16 +210,16 @@ export default function Accessibility({
           >
             <div
               className="
-              flex items-center gap-5
-              lg:flex-col lg:items-start lg:gap-2
-              4k:[gap:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),4rem)]
-            "
+                flex items-start gap-5 lg:flex-col
+                4k:[gap:clamp(1.25rem,calc(1.25rem+((100vw-2050px)/2000px)*1.25rem),2.5rem)]
+              "
             >
               {item.icon}
 
+              <div className="flex flex-col gap-3 4k:[gap:clamp(0.75rem,calc(0.75rem+((100vw-2050px)/2000px)*0.75rem),1.5rem)]">
               <h3
                 className="
-                mb-1 font-geist font-medium text-primary-black
+                mb-0 font-geist font-medium text-primary-black
                 leading-[140%] tracking-[-0.02em]
                 text-24 lg:text-20
                 text-2k-4k-24
@@ -224,19 +227,19 @@ export default function Accessibility({
               >
                 {item.title}
               </h3>
-            </div>
-
-            <p
-              className="
+              <p
+                className="
               font-geist font-normal text-primary-black leading-[140%]
               tracking-[-0.01em] pr-[1rem]
               text-18 lg:text-base
               text-2k-4k-18
               4k:[padding-right:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
             "
-            >
-              {item.description}
-            </p>
+              >
+                {item.description}
+              </p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
