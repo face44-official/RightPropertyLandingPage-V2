@@ -228,7 +228,7 @@ export default function FooterSection() {
         </div>
 
         {/* Mobile Footer */}
-        <div className="relative">
+        <div className="relative lg:mt-[-30px]">
           <img
             src={mobileFooterBg}
             className="w-full h-auto object-cover z-[-1] hidden lg:block"
