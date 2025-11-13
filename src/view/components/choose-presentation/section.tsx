@@ -54,7 +54,7 @@ export default function ChoosePresentationSection() {
           >
             <img
               src={surfaceImage}
-              alt='Right Property Surface 2D presentation mode interface'
+              alt="Right Property Surface 2D presentation mode interface"
               className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out"
             />
 
@@ -71,32 +71,34 @@ export default function ChoosePresentationSection() {
 
             <div
               className="
-                absolute left-[5rem] top-[4.0625rem] lg:left-5 lg:right-5 lg:px-4 lg:top-6
+                absolute z-10 left-[5rem] top-[4.0625rem] lg:left-0 lg:top-6 w-full
                 4k:[left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*3rem),8rem)]
                 4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2050px)/2000px)*2.9375rem),7rem)]
               "
             >
-              <h3
-                className="
+              <div className="rp-container mx-auto px-4">
+                <h3
+                  className="
                   mb-3 font-general-sans font-medium text-raisin-black relative z-[2]
                   text-40 leading-[130%] lg:text-32
                   text-fluid-4k-40
                   4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                 "
-              >
-                Surface
-              </h3>
-              <p
-                className="
+                >
+                  Surface
+                </h3>
+                <p
+                  className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-dark-gray relative z-[2]
                   text-18 leading-[140%]
                   text-2k-4k-18
                   4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2050px)/2000px)*3.375rem),10rem)]
                 "
-              >
-                2D, fast, cost-effective, and easy to set up
-              </p>
+                >
+                  2D, fast, cost-effective, and easy to set up
+                </p>
+              </div>
             </div>
           </div>
 
@@ -109,7 +111,7 @@ export default function ChoosePresentationSection() {
           >
             <img
               src={spaceImage}
-              alt='Right Property Space 3D presentation mode interface'
+              alt="Right Property Space 3D presentation mode interface"
               className="w-full h-auto group-hover:scale-105 transition-all duration-600 ease-in-out"
             />
 
@@ -126,32 +128,34 @@ export default function ChoosePresentationSection() {
 
             <div
               className="
-                absolute left-[5rem] top-[4.0625rem] lg:left-5 lg:right-5 lg:px-4 lg:top-6
+                absolute z-10 left-[5rem] top-[4.0625rem] lg:left-0 lg:top-6 w-full
                 4k:[left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*3rem),8rem)]
                 4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2050px)/2000px)*2.9375rem),7rem)]
               "
             >
-              <h3
-                className="
+              <div className="rp-container mx-auto px-4">
+                <h3
+                  className="
                   mb-3 font-general-sans font-medium text-white relative z-[2]
                   text-40 leading-[130%] lg:text-32
                   text-fluid-4k-40
                   4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                 "
-              >
-                Space
-              </h3>
-              <p
-                className="
+                >
+                  Space
+                </h3>
+                <p
+                  className="
                   mb-[6.625rem] lg:mb-[2.5rem]
                   font-geist font-normal text-white relative z-[2]
                   text-18 leading-[140%]
                   text-2k-4k-18
                   4k:[margin-bottom:clamp(6.625rem,calc(6.625rem+((100vw-2050px)/2000px)*3.375rem),10rem)]
                 "
-              >
-                3D, stunning, immersive, interactive
-              </p>
+                >
+                  3D, stunning, immersive, interactive
+                </p>
+              </div>
             </div>
           </div>
         </div>
