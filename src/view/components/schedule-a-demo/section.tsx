@@ -81,11 +81,7 @@ export default function ScheduleADemoSection({
               leading-[130%] tracking-[0.01em]
             "
           >
-            Schedule
-            <div className="hidden lg:inline">
-              <br />
-            </div>{" "}
-            a Demo
+            Schedule a Demo
           </h3>
 
           <p

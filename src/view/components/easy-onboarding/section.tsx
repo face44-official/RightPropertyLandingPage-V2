@@ -8,6 +8,7 @@ import purpleCheck from "@/assets/v3/purple_check.svg";
 import { gsap } from "gsap";
 import mobileRoad3 from "@/assets/v3/mobile_road_3.webp";
 import DynamicRive from "../common/riv-icon";
+import EasyOnboardingSvg from "@/assets/v3/easy_onboarding_desktop.svg?react";
 
 export default function EasyOnboardingSection() {
   const pathRef = useRef<SVGPathElement>(null);
@@ -167,7 +168,7 @@ export default function EasyOnboardingSection() {
     "
       >
         {/* PATH IMAGE */}
-        <img
+        {/* <img
           src={easyOnboarding}
           alt="Right Property easy onboarding process visualization"
           loading="lazy"
@@ -182,7 +183,14 @@ export default function EasyOnboardingSection() {
         4k:[top:clamp(0rem,calc(0rem+((100vw-2000px)/2000px)*0rem),0rem)]
         4k:[left:clamp(-4.375rem,calc(-4.375rem-((100vw-2000px)/2000px)*4.375rem),-8.75rem)]
       "
-        />
+        /> */}
+
+        <EasyOnboardingSvg className="absolute lg:hidden z-[-1]
+        top-[0rem] -left-[4.375rem] w-[61.6875rem] h-[70.375rem] 2xl:w-[65rem] 2xl:h-[71rem]
+        4k:[width:clamp(60.6875rem,calc(60.6875rem+((100vw-2000px)/2000px)*60.6875rem),90.375rem)]
+        4k:[height:clamp(75.375rem,calc(75.375rem+((100vw-2000px)/2000px)*75.375rem),150.75rem)]
+        4k:[top:clamp(0rem,calc(0rem+((100vw-2000px)/2000px)*0rem),0rem)]
+        4k:[left:clamp(-4.375rem,calc(-4.375rem-((100vw-2000px)/2000px)*4.375rem),-8.75rem)]" />
 
         {/* SVG PATH */}
         <div
