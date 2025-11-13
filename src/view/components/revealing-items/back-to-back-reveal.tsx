@@ -46,9 +46,11 @@ export default function BackToBackReveal() {
   const $cardSectionRef5 = useRef<HTMLDivElement>(null);
   const $cardSectionRef6 = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+    useEffect(() => {
     let pinTl: GSAPTimeline | null = null;
     let tlList: GSAPTimeline[] = [];
+    let resizeTimeout: NodeJS.Timeout | null = null;
+
     const refList = [
       $cardSectionRef1,
       $cardSectionRef2,
@@ -57,7 +59,24 @@ export default function BackToBackReveal() {
       $cardSectionRef5,
       $cardSectionRef6,
     ];
-    setTimeout(() => {
+
+    const initAnimations = () => {
+      // Kill any existing triggers for this section
+      tlList.forEach((tl) => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+      });
+      pinTl?.scrollTrigger?.kill();
+      pinTl?.kill();
+
+      const container = document.querySelector("#why-right-property");
+      if (!container) return;
+
+      // Skip setup if hidden (e.g. lg:hidden)
+      const isHidden = window.getComputedStyle(container).display === "none";
+      if (isHidden) return;
+
+      // --- Rebuild pin ---
       pinTl = gsap.timeline({
         scrollTrigger: {
           trigger: "#why-right-property",
@@ -68,11 +87,13 @@ export default function BackToBackReveal() {
           id: "back-to-back-reveal",
         },
       });
-      tlList = Array.from({ length: 6 }, (_, index) => {
+
+      // --- Rebuild each section trigger ---
+      tlList = refList.map((ref, index) => {
         const use_index = index + 0;
         return gsap.timeline({
           scrollTrigger: {
-            trigger: refList[use_index].current!,
+            trigger: ref.current!,
             start: "top top+=25%",
             end: "bottom bottom",
             id: `back-to-back-reveal-${use_index}`,
@@ -94,16 +115,102 @@ export default function BackToBackReveal() {
           },
         });
       });
-    }, 100);
 
+      // Refresh only these triggers (no global refresh)
+      pinTl.scrollTrigger?.refresh();
+      tlList.forEach((tl) => tl.scrollTrigger?.refresh());
+    };
+
+    // --- Initialize once on mount ---
+    const initTimeout = setTimeout(initAnimations, 100);
+
+    // --- Handle resize with debounce ---
+    const handleResize = () => {
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        initAnimations();
+      }, 200);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // --- Cleanup ---
     return () => {
-      tlList.forEach((tl) => tl.kill());
+      clearTimeout(initTimeout);
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      window.removeEventListener("resize", handleResize);
+
+      tlList.forEach((tl) => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+      });
+      pinTl?.scrollTrigger?.kill();
+      pinTl?.kill();
+
       animationQueue.current = [];
       isAnimating.current = false;
       $flipTl.current?.kill();
-      pinTl?.kill();
     };
   }, []);
+  
+  // useEffect(() => {
+  //   let pinTl: GSAPTimeline | null = null;
+  //   let tlList: GSAPTimeline[] = [];
+  //   const refList = [
+  //     $cardSectionRef1,
+  //     $cardSectionRef2,
+  //     $cardSectionRef3,
+  //     $cardSectionRef4,
+  //     $cardSectionRef5,
+  //     $cardSectionRef6,
+  //   ];
+  //   setTimeout(() => {
+  //     pinTl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: "#why-right-property",
+  //         start: "top top",
+  //         pin: $pinRef.current,
+  //         end: "bottom bottom",
+  //         scrub: true,
+  //         id: "back-to-back-reveal",
+  //       },
+  //     });
+  //     tlList = Array.from({ length: 6 }, (_, index) => {
+  //       const use_index = index + 0;
+  //       return gsap.timeline({
+  //         scrollTrigger: {
+  //           trigger: refList[use_index].current!,
+  //           start: "top top+=25%",
+  //           end: "bottom bottom",
+  //           id: `back-to-back-reveal-${use_index}`,
+  //           refreshPriority: 5 + index,
+  //           scrub: true,
+  //           invalidateOnRefresh: true,
+  //           anticipatePin: 1,
+  //           onEnter: (self) => {
+  //             $direction.current = self.direction as 1 | -1;
+  //             setCurrentItem(use_index);
+  //             $previousIndexRef.current = index;
+  //           },
+  //           onLeaveBack: () => {
+  //             if (use_index === 0) return;
+  //             $direction.current = -1;
+  //             setCurrentItem(use_index - 1);
+  //             $previousIndexRef.current = index;
+  //           },
+  //         },
+  //       });
+  //     });
+  //   }, 100);
+
+  //   return () => {
+  //     tlList.forEach((tl) => tl.kill());
+  //     animationQueue.current = [];
+  //     isAnimating.current = false;
+  //     $flipTl.current?.kill();
+  //     pinTl?.kill();
+  //   };
+  // }, []);
   
 
   return (
