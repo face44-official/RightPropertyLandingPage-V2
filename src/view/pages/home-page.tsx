@@ -170,6 +170,8 @@ export default function HomePage() {
   useEffect(() => {
     let mouseEnabled = true;
     let maskRadius = 600;
+    let cleanup: any;
+    let resizeTimeout: NodeJS.Timeout | null = null;
 
     // --- Responsive radius segmented ---
     const getResponsiveRadius = () => {
@@ -328,18 +330,32 @@ export default function HomePage() {
         container.removeEventListener("mousemove", handleMouseMove);
         if (rafIdRef.current !== null) cancelAnimationFrame(rafIdRef.current);
         rafIdRef.current = null;
-        if (scrollTweenRef.current) scrollTweenRef.current.kill();
-        ScrollTrigger.getAll().forEach((t) => t.kill());
+        if (scrollTweenRef.current) {
+          scrollTweenRef.current.kill();
+          if (scrollTweenRef.current.scrollTrigger)
+            scrollTweenRef.current.scrollTrigger.kill();
+          scrollTweenRef.current = null;
+        }
+        // if (scrollTweenRef.current) scrollTweenRef.current.kill();
+        // ScrollTrigger.getAll().forEach((t) => t.kill());
       };
     };
 
     // --- Initialize ---
-    let cleanup = initAnimation();
+    cleanup = initAnimation();
 
+    // const handleResize = () => {
+    //   if (cleanup) cleanup();
+    //   cleanup = initAnimation();
+    // };
     const handleResize = () => {
-      if (cleanup) cleanup();
-      cleanup = initAnimation();
+      if (resizeTimeout) clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (cleanup) cleanup();
+        cleanup = initAnimation();
+      }, 200); // 200ms debounce delay
     };
+
     window.addEventListener("resize", handleResize);
 
     return () => {
