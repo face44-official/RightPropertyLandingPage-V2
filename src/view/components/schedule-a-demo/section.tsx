@@ -25,7 +25,7 @@ export default function ScheduleADemoSection({
     before:transition-opacity before:duration-700
     before:bg-[radial-gradient(50%_50%_at_50%_50%,#E7DFF2_0%,rgba(255,255,255,0)_100%)]
     before:mix-blend-multiply
-    lg:before:bg-[radial-gradient(100%_40%_at_50%_40%,#E7DFF2_50%,rgba(255,255,255,0)_165%)]!
+    lg:before:bg-[radial-gradient(100%_30%_at_50%_50%,#E7DFF2_50%,rgba(255,255,255,0)_165%)]!
     "
       aria-label="Schedule a demo meeting with Right Property team"
     >
