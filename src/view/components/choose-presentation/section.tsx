@@ -6,7 +6,8 @@ export default function ChoosePresentationSection() {
     <section
       id="experiences"
       aria-label="Choose between Surface 2D and Space 3D presentation modes"
-      className="content-visibility-auto -mt-[7.5rem] lg:mt-16 4k:-mt-56 relative z-10"
+      className="content-visibility-auto -mt-[7.5rem] lg:mt-16 4k:[margin-top:clamp(-18.5rem,calc(-18.5rem+((100vw-2050px)/2000px)*-18rem),-25.5rem)]
+ relative z-10"
     >
       <div className="flex flex-col items-start justify-start lg:px-0 lg:items-start">
         {/* Heading */}

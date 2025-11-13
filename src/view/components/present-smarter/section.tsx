@@ -78,7 +78,7 @@ export default function PresentSmarterSection() {
             flex justify-start
             pt-[11.3rem]! pl-[46vw] 2xl:pl-[48vw] lg:p-5 lg:pt-0!
             4k:[padding-left:clamp(46vw,calc(46vw+((100vw-2050px)/2000px)*3vw),50vw)]
-            4k:[padding-top:clamp(11.3rem,calc(11.3rem+((100vw-2050px)/2000px)*11.3rem),22.6vw)]
+            4k:[padding-top:clamp(15rem,calc(15rem+((100vw-2050px)/2000px)*2rem),30rem)]!
             lg:before:content-[''] 
             lg:before:absolute lg:before:left-0 lg:before:top-0
             lg:before:w-full lg:before:h-[45rem]
