@@ -44,7 +44,7 @@ export default function ChoosePresentationSection() {
         </div>
 
         {/* Presentation options */}
-        <div className="flex w-full lg:flex-col lg:gap-0 mobile-rp-container lg:max-w-full lg:m-auto">
+        <div className="flex w-full lg:flex-col lg:gap-0 lg:mobile-rp-container lg:max-w-full lg:m-auto">
           {/* Surface */}
           <div
             className="
@@ -71,7 +71,7 @@ export default function ChoosePresentationSection() {
 
             <div
               className="
-                absolute left-[5rem] top-[4.0625rem] lg:left-5 lg:right-5 lg:top-6
+                absolute left-[5rem] top-[4.0625rem] lg:left-5 lg:right-5 lg:px-4 lg:top-6
                 4k:[left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*3rem),8rem)]
                 4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2050px)/2000px)*2.9375rem),7rem)]
               "
@@ -126,7 +126,7 @@ export default function ChoosePresentationSection() {
 
             <div
               className="
-                absolute left-[5rem] top-[4.0625rem] lg:left-5 lg:right-5 lg:top-6
+                absolute left-[5rem] top-[4.0625rem] lg:left-5 lg:right-5 lg:px-4 lg:top-6
                 4k:[left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*3rem),8rem)]
                 4k:[top:clamp(4.0625rem,calc(4.0625rem+((100vw-2050px)/2000px)*2.9375rem),7rem)]
               "

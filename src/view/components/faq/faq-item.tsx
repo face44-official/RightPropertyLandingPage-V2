@@ -127,7 +127,7 @@ export default function FaqItem({
         className="
           h-0 overflow-hidden
           font-geist font-normal
-          text-base text-fluid-4k-14
+          text-base lg:text-sm text-fluid-4k-14
           leading-[140%] tracking-[0%]
         "
       >

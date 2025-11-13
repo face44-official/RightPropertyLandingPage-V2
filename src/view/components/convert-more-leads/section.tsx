@@ -67,7 +67,7 @@ export default function ConvertMoreLeadsSection() {
           <img
             src={convertMoreLeadsMobile}
             alt="Right Property lead conversion insights mobile view"
-            className="z-[-1] w-full h-auto rp-container"
+            className="z-[-1] w-full h-auto lg:rp-container"
           />
           <div
             className="
@@ -87,7 +87,7 @@ export default function ConvertMoreLeadsSection() {
         <div
           className="
             rp-container relative z-[8] flex justify-start
-            py-[7.5rem] px-[5rem] lg:p-4
+            py-[7.5rem] px-[5rem] lg:p-4 lg:mt-[-100px]!
             4k:[padding:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           "
         >

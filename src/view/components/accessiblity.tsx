@@ -186,7 +186,7 @@ export default function Accessibility({
       {/* Items */}
       <div
         className="
-        flex flex-col gap-[1.9375rem] lg:w-full
+        flex flex-col gap-[1.9375rem] lg:w-full lg:gap-4
         4k:[gap:clamp(1.9375rem,calc(1.9375rem+((100vw-2050px)/2000px)*1.9375rem),3.875rem)]
       "
       >
