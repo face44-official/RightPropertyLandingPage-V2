@@ -94,6 +94,8 @@ export default function FaqItem({
             4k:[height:clamp(46px,calc(46px+((100vw-2050px)/2000px)*46px),92px)]
             rounded-full border border-[#FF947E80]
             transition-all duration-300
+            4k:[border-radius:clamp(23px,calc(23px+((100vw-2050px)/2000px)*23px),46px)]
+            4k:[border-width:clamp(1px,calc(1px+((100vw-2050px)/2000px)*1px),2px)]
           "
         >
           <svg
