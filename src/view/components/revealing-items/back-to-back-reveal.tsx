@@ -152,7 +152,7 @@ export default function BackToBackReveal() {
       $flipTl.current?.kill();
     };
   }, []);
-  
+
   // useEffect(() => {
   //   let pinTl: GSAPTimeline | null = null;
   //   let tlList: GSAPTimeline[] = [];
@@ -416,6 +416,8 @@ export const VideoContainer = ({
             4k:[width:clamp(40.1875rem,calc(40.1875rem+((100vw-2050px)/2000px)*41.8125rem),65rem)]
             4k:[height:clamp(26.75rem,calc(26.75rem+((100vw-2050px)/2000px)*25.25rem),52rem)]
           "
+          poster="/placeholder.webp"
+          preload="auto"
         />
         {children}
       </div>
