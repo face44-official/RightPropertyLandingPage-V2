@@ -84,11 +84,9 @@ export default function BinarySection({
             w-[1467px] h-[1064px]
             4k:[width:clamp(1467px,calc(1467px+((100vw-2000px)/2000px)*1467px),2934px)]
             4k:[height:clamp(1064px,calc(1064px+((100vw-2000px)/2000px)*1064px),2128px)]
+            bg-[radial-gradient(50%_50%_at_50%_50%,#E7DFF2_0%,rgba(255,255,255,0)_100%)]
+            lg:bg-[radial-gradient(50%_50%_at_50%_50%,#E7DFF2_0%,rgba(255,255,255,0)_40%)]
           "
-          style={{
-            background:
-              "radial-gradient(50% 50% at 50% 50%, #E7DFF2 0%, rgba(255,255,255,0) 100%)",
-          }}
         ></div>
       </div>
     </section>

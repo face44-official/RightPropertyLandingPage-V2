@@ -56,6 +56,7 @@ export default function ConvertMoreLeadsSection() {
       className="
         mb-[14rem] lg:mb-0
         bg-[#EEF1F7]
+        bg-[linear-gradient(to_bottom,rgba(255,255,255)_0%,#EEF1F7_100%)]
         h-[48.25rem] lg:h-auto overflow-visible relative content-visibility-auto
         4k:[height:clamp(48.25rem,calc(48.25rem+((100vw-2050px)/2000px)*48.25rem),96.5rem)]
         4k:[margin-bottom:clamp(14rem,calc(14rem+((100vw-2050px)/2000px)*14rem),16rem)]
