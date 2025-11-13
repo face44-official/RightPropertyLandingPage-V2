@@ -1,4 +1,3 @@
-import easyOnboarding from "@/assets/v3/easy_onboarding_desktop.svg";
 import EasyOnboardingPath from "./easy-onboarding-path";
 import { useCallback, useEffect, useRef } from "react";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
