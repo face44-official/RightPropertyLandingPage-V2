@@ -81,7 +81,7 @@ export default function FeaturesCarousel() {
     <section className="hidden lg:block px-4 relative overflow-hidden pb-[7.5rem] lg:pb-20 content-visibility-auto">
       {/* Background gradient */}
       <div
-        className="z-[-1] absolute top-1/2 w-[2205px] h-[2205px] 4k:w-[3000px] 4k:h-[3000px] -translate-y-1/2 left-1/2 -translate-x-[30%]"
+        className="z-[-1] absolute top-1/2 w-[2205px] h-[2205px] 4k:w-[3000px] 4k:h-[3000px] -translate-y-1/2 left-1/2 -translate-x-[30%] lg:bg-[linear-gradient(to_bottom,white_20%,rgba(197,230,255,0.9)_100%,rgba(200,229,255,0.85)_75%,rgba(178,216,255,1)_0%)]!"
         style={{
           background:
             "radial-gradient(50% 50% at 50% 50%, rgba(197, 230, 255, 0.72) 0%, rgba(200, 229, 255, 0.72) 25.96%, rgba(255, 255, 255, 0) 100%)",

@@ -21,7 +21,7 @@ export const MarketingVideo = () => (
   <LazyVideo
     src={marketingOption1}
     overlay={slideVideoOverlay1}
-    overlayClass="absolute -top-[4rem] left-[1.5625rem] w-[5.25rem] h-auto object-contain"
+    overlayClass="absolute top-[0rem] left-[1.5625rem] w-[5.25rem] h-auto object-contain"
     className="w-full h-auto object-cover"
   />
 );
@@ -30,7 +30,7 @@ export const InteractiveWebsiteVideo = () => (
   <LazyVideo
     src={interactiveVideo}
     overlay={slideVideoOverlay2}
-    overlayClass="absolute -top-[7rem] -right-[3.625rem] w-[13.75rem] h-auto object-contain"
+    overlayClass="absolute top-[0rem] -right-[3.625rem] w-[13.75rem] h-auto object-contain"
     className="w-full h-auto object-cover"
   />
 );
@@ -39,7 +39,7 @@ export const WebsiteTemplatesVideo = () => (
   <LazyVideo
     src={websiteTemplates}
     overlay={slideVideoOverlay3}
-    overlayClass="absolute -right-[1rem] -top-[3.125rem] w-[10.5rem] h-auto object-contain"
+    overlayClass="absolute -right-[1rem] top-[0.125rem] w-[10.5rem] h-auto object-contain"
     className="w-full h-auto object-cover"
   />
 );
@@ -48,7 +48,7 @@ export const PowerfulCMSVideo = () => (
   <LazyVideo
     src={cmsVideo}
     overlay={slideVideoOverlay4}
-    overlayClass="absolute -top-[3.625rem] right-[1rem] w-[3.75rem] h-auto object-contain"
+    overlayClass="absolute top-[0.625rem] right-[1rem] w-[3.75rem] h-auto object-contain"
     className="w-full h-auto object-cover"
   />
 );
@@ -57,7 +57,7 @@ export const EmailMarketingVideo = () => (
   <LazyVideo
     src={emailMarketingVideo}
     overlay={slideVideoOverlay5}
-    overlayClass="absolute -top-[2.75rem] right-[0.75rem] w-[5.375rem] h-auto object-contain"
+    overlayClass="absolute top-[0.75rem] right-[0.75rem] w-[5.375rem] h-auto object-contain"
     className="w-full h-auto object-cover"
   />
 );
@@ -66,7 +66,7 @@ export const SeoReadyVideo = () => (
   <LazyVideo
     src={seoVideo}
     overlay={slideVideoOverlay6}
-    overlayClass="absolute -top-[2.75rem] right-[1.75rem] w-[3rem] h-auto object-contain"
+    overlayClass="absolute top-[0.75rem] right-[1.75rem] w-[3rem] h-auto object-contain"
     className="w-full h-auto object-cover"
   />
 );

@@ -1,7 +1,7 @@
 import BookADemoButton from "../book-a-demo-button";
 import representive from "@/assets/v3/representive.webp";
 import footerDesktopBg from "@/assets/v3/common/footer_desktop_bg.svg";
-import footerMobileBg from "@/assets/v3/common/footer_mobile_bg.svg";
+// import footerMobileBg from "@/assets/v3/common/footer_mobile_bg.svg";
 
 export default function ScheduleADemoSection({
   displayGradient = true,
@@ -25,7 +25,8 @@ export default function ScheduleADemoSection({
     before:transition-opacity before:duration-700
     before:bg-[radial-gradient(50%_50%_at_50%_50%,#E7DFF2_0%,rgba(255,255,255,0)_100%)]
     before:mix-blend-multiply
-  "
+    lg:before:bg-[radial-gradient(100%_40%_at_50%_40%,#E7DFF2_50%,rgba(255,255,255,0)_165%)]!
+    "
       aria-label="Schedule a demo meeting with Right Property team"
     >
       <div
@@ -113,7 +114,7 @@ export default function ScheduleADemoSection({
         />
       )}
 
-      {displayGradient && (
+      {/* {displayGradient && (
         <div className="hidden lg:block absolute z-[-1] w-[100vw] h-auto">
           <img
             className="w-full h-auto"
@@ -121,7 +122,7 @@ export default function ScheduleADemoSection({
             alt="Footer Mobile Background"
           />
         </div>
-      )}
+      )} */}
     </section>
   );
 }

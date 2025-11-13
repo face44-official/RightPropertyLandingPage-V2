@@ -52,7 +52,7 @@ export default function LazyVideo({
   }, [isVisible]);
 
   return (
-    <div className="relative">
+    <div className="relative pt-[80px]">
       {overlay && (
         <img
           src={overlay}
