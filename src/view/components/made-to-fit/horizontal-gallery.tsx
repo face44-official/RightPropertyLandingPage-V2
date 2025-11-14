@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-// 🔧 Prevent iOS URL bar resize flicker
 if (typeof window !== "undefined") {
   ScrollTrigger.config({ ignoreMobileResize: true });
 }
@@ -94,7 +93,7 @@ export default function HorizontalGallery({
     horizontalPinTl.current = tl;
   }, [galleryInnerSelector, pinId, pinSelector]);
 
-  // --- Wait for images to load before building animation ---
+
   useLayoutEffect(() => {
     if (!images || images.length === 0) return;
 
@@ -107,7 +106,7 @@ export default function HorizontalGallery({
     const checkLoad = () => {
       loadedCount++;
       if (loadedCount === imgs.length) {
-        // Build animation after DOM stabilizes
+
         requestAnimationFrame(() => {
           horizontalPin();
           ScrollTrigger.refresh();
@@ -130,7 +129,6 @@ export default function HorizontalGallery({
     };
   }, [images, horizontalPin, galleryInnerSelector]);
 
-  // --- Resize handler ---
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -144,7 +142,7 @@ export default function HorizontalGallery({
     const handleResize = () => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        horizontalPin(); // rebuild animation safely
+        horizontalPin(); 
         ScrollTrigger.refresh();
       }, 250);
     };
@@ -156,149 +154,11 @@ export default function HorizontalGallery({
       clearTimeout(resizeTimeout);
     };
   }, [horizontalPin]);
-//   const horizontalPinTl = useRef<gsap.core.Timeline | null>(null);
-
-//   const horizontalPin = useCallback(() => {
-//     if (horizontalPinTl.current) {
-//       horizontalPinTl.current.scrollTrigger?.kill();
-//       horizontalPinTl.current.kill();
-//       horizontalPinTl.current = null;
-//     }
-
-//     const inner = document.querySelector(galleryInnerSelector);
-//     const items = gsap.utils.toArray(
-//       inner?.querySelectorAll(".item") || []
-//     ) as HTMLElement[];
-
-//     if (!inner || items.length === 0) return;
-
-//     const isMobile = window.innerWidth <= 768;
-//     const is4K = window.innerWidth >= 3840;
-
-//     const mobileOffsetStep = window.innerWidth / 12;
-//     const mobileElementWidth = window.innerWidth * 0.68;
-
-//     const offsetStep = isMobile ? mobileOffsetStep : is4K ? 180 : 96;
-
-//     const gapStep = isMobile
-//       ? 60
-//       : is4K
-//       ? window.innerWidth * 0.045
-//       : window.innerWidth * 0.053;
-
-//     items.forEach((el, i) => {
-//       gsap.set(el, { y: offsetStep * i });
-//     });
-
-//     const baseWidth = isMobile ? mobileElementWidth : is4K ? 1100 : 680;
-
-//     let compensation;
-//     if (isMobile) {
-//       compensation = window.innerWidth - baseWidth * 0.95;
-//     } else if (is4K) {
-//       compensation = window.innerWidth - baseWidth * 2.2;
-//     } else {
-//       compensation = window.innerWidth - baseWidth * 1.1;
-//     }
-
-//     const scrollDistance =
-//       (baseWidth + gapStep) * (items.length - 1) - compensation;
-
-//     const totalDuration = (items.length + 1) * 1;
-
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: inner,
-//         start: "center center",
-//         end: () => `+=${scrollDistance}`,
-//         scrub: 1,
-//         pin: pinSelector,
-//         pinSpacing: true,
-//         id: pinId,
-//         refreshPriority: 10,
-//       },
-//     });
-
-//     tl.to(
-//       inner,
-//       {
-//         x: () => `-${scrollDistance}px`,
-//         y: () => `-${offsetStep * (items.length - 2.8)}px`,
-//         ease: "none",
-//         duration: totalDuration,
-//       },
-//       0
-//     );
-
-//     horizontalPinTl.current = tl;
-//   }, [galleryInnerSelector, pinId, pinSelector]);
-
-//   useLayoutEffect(() => {
-//     const t = setTimeout(() => {
-//       horizontalPin();
-//     }, 150);
-
-//     return () => {
-//       clearTimeout(t);
-//       if (horizontalPinTl.current) {
-//         horizontalPinTl.current.scrollTrigger?.kill();
-//         horizontalPinTl.current.kill();
-//         horizontalPinTl.current = null;
-//       }
-//     };
-//   }, [images, horizontalPin]);
-
-//   useLayoutEffect(() => {
-//     if (typeof window === "undefined") return;
-
-//     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-//     const isTouch = ScrollTrigger.isTouch === 1;
-
-//     if (isIOS || isTouch) return;
-
-//     let resizeTimeout: any;
-
-//     const handleResize = () => {
-//       clearTimeout(resizeTimeout);
-//       resizeTimeout = setTimeout(() => {
-//         horizontalPin(); // rebuild animation safely
-//         ScrollTrigger.refresh();
-//       }, 250);
-//     };
-
-//     window.addEventListener("resize", handleResize);
-
-//     return () => {
-//       window.removeEventListener("resize", handleResize);
-//       clearTimeout(resizeTimeout);
-//     };
-//   }, [horizontalPin]);
-
 
   return (
     <div className="gallery relative z-[8] overflow-visible min-h-full lg:min-h-[75vw] max-w-[100vw]">
       <div className="rp-container pl-[5rem] mx-auto w-full 4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)] lg:px-4">
         <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5vw] 4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]">
-          {/* {images.map((image, index) => (
-            <div
-              key={index}
-              className="item relative rounded-[1rem]
-                w-[42.375rem] h-[42.375rem]
-                lg:w-[68vw] lg:h-[68vw]
-                4k:[width:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
-                4k:[height:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
-                4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)] aspect-square"
-            >
-              <img
-                src={image}
-                alt={`Right Property gallery image ${index + 1} of ${
-                  images.length
-                }`}
-                className=" h-full w-full object-cover rounded-[1rem] 
-              "
-              />
-            </div>
-          ))} */}
           {images.map((image, index) => (
             <img
               src={image}
