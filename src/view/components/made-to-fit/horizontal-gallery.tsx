@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -96,7 +96,7 @@ export default function HorizontalGallery({
     horizontalPinTl.current = tl;
   }, [galleryInnerSelector, pinId, pinSelector]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const t = setTimeout(() => {
       horizontalPin();
     }, 150);
@@ -111,7 +111,7 @@ export default function HorizontalGallery({
     };
   }, [images, horizontalPin]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window === "undefined") return;
 
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
