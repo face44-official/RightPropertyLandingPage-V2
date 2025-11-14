@@ -66,7 +66,7 @@ export default function LazyVideo({
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         className={className}
       >
         {isVisible && <source src={src} type="video/mp4" />}
