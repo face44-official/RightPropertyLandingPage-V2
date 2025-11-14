@@ -41,11 +41,7 @@ export default function HorizontalGallery({
     const mobileOffsetStep = window.innerWidth / 12;
     const mobileElementWidth = window.innerWidth * 0.68;
 
-    const offsetStep = isMobile
-      ? mobileOffsetStep
-      : is4K
-      ? 180
-      : 96;
+    const offsetStep = isMobile ? mobileOffsetStep : is4K ? 180 : 96;
 
     const gapStep = isMobile
       ? 60
@@ -57,11 +53,7 @@ export default function HorizontalGallery({
       gsap.set(el, { y: offsetStep * i });
     });
 
-    const baseWidth = isMobile
-      ? mobileElementWidth
-      : is4K
-      ? 1100
-      : 680;
+    const baseWidth = isMobile ? mobileElementWidth : is4K ? 1100 : 680;
 
     let compensation;
     if (isMobile) {
@@ -104,7 +96,6 @@ export default function HorizontalGallery({
     horizontalPinTl.current = tl;
   }, [galleryInnerSelector, pinId, pinSelector]);
 
-
   useEffect(() => {
     const t = setTimeout(() => {
       horizontalPin();
@@ -119,7 +110,6 @@ export default function HorizontalGallery({
       }
     };
   }, [images, horizontalPin]);
-
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -152,6 +142,26 @@ export default function HorizontalGallery({
       <div className="rp-container pl-[5rem] mx-auto w-full 4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)] lg:px-4">
         <div className="gallery__inner flex h-full gap-[3.75rem] lg:gap-[5vw] 4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]">
           {images.map((image, index) => (
+            <div
+              key={index}
+              className="item relative rounded-[1rem]
+                w-[42.375rem] h-[42.375rem]
+                lg:w-[68vw] lg:h-[68vw]
+                4k:[width:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
+                4k:[height:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
+                4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)] aspect-square"
+            >
+              <img
+                src={image}
+                alt={`Right Property gallery image ${index + 1} of ${
+                  images.length
+                }`}
+                className=" h-full w-full object-cover rounded-[1rem] 
+              "
+              />
+            </div>
+          ))}
+          {/* {images.map((image, index) => (
             <img
               src={image}
               key={index}
@@ -167,7 +177,7 @@ export default function HorizontalGallery({
                 4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
               "
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
