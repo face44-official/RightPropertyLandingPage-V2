@@ -219,7 +219,7 @@ export default function BackToBackReveal() {
       ref={$ref}
       className="
         relative lg:hidden content-visibility-auto
-        h-[600vh] xl:h-[610vh] 4k:h-[700vh]
+        min-h-[600vh] xl:h-[610vh] 4k:h-[700vh]
       "
       style={{
         background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)",
