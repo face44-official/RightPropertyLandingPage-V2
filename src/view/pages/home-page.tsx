@@ -234,10 +234,16 @@ export default function HomePage() {
       let scrollProgress = 0;
 
       // --- Animation Loop (smooth 60fps) ---
+      // --- Animation Loop (smooth 60fps) ---
+      let lastTime = performance.now();
+
       const animate = () => {
-        console.log("animate calling");
-        const ax = (target.x - offset.x) * stiffness;
-        const ay = (target.y - offset.y) * stiffness;
+        const now = performance.now();
+        const delta = (now - lastTime) / 16.666; // ~60fps baseline
+        lastTime = now;
+
+        const ax = (target.x - offset.x) * stiffness * delta;
+        const ay = (target.y - offset.y) * stiffness * delta;
 
         velocity.x += ax;
         velocity.y += ay;
@@ -245,16 +251,15 @@ export default function HomePage() {
         velocity.x = Math.max(Math.min(velocity.x, maxSpeed), -maxSpeed);
         velocity.y = Math.max(Math.min(velocity.y, maxSpeed), -maxSpeed);
 
-        velocity.x *= damping;
-        velocity.y *= damping;
+        velocity.x *= Math.pow(damping, delta);
+        velocity.y *= Math.pow(damping, delta);
 
-        offset.x += velocity.x;
-        offset.y += velocity.y;
+        offset.x += velocity.x * delta;
+        offset.y += velocity.y * delta;
 
         const x = maskPos.x + offset.x;
         const y = maskPos.y + offset.y;
 
-        // Calculate mask radius based on width + scroll
         const responsiveRadius = getResponsiveRadius();
         maskRadius = getScrollRadius(responsiveRadius, scrollProgress);
 
