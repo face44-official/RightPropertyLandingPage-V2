@@ -67,7 +67,7 @@ export default function Header() {
     `
       fixed top-0 left-0 z-50 w-full bg-white
       transition-all duration-[500ms] ease-out
-      h-[calc(clamp(6rem,12rem,100vw*0.02))]
+      h-[calc(clamp(6rem,12rem,100vw*0.02))] lg:h-[6rem] xl:h-[8rem] 
       4k:[height:clamp(6rem,calc(6rem+((100vw-2050px)/2000px)*6rem),12rem)]
     `,
     hideHeader ? "-translate-y-full" : ""
@@ -97,7 +97,7 @@ export default function Header() {
             >
               <Logo
                 className="
-                  w-[96px] 4k:[width:clamp(6rem,calc(6rem+(100vw-2050px)*0.003),12rem)] sm:w-[60px]
+                  w-[96px] lg:w-[66px] xl:w-[70px] 2xl:w-[80px] 4k:[width:clamp(6rem,calc(6rem+(100vw-2050px)*0.003),12rem)]
                   h-auto
                 "
               />
