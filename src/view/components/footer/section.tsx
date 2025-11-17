@@ -125,7 +125,7 @@ export default function FooterSection() {
           ref={$levitateItem}
           src={footerLevitate}
           className="
-            absolute left-[33.7rem] 2xl:left-[35.75rem] top-[29.25rem]
+            absolute left-0 right-[11.45%] m-auto top-[29.25rem]
             w-[21.25rem] h-auto object-contain z-[0] lg:hidden
             4k:[left:clamp(33.25rem,calc(33.25rem+((100vw-2050px)/2000px)*18.125rem),66.375rem)]
             4k:[top:clamp(29.25rem,calc(29.25rem+((100vw-2050px)/2000px)*29.25rem),52.5rem)]

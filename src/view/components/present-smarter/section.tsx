@@ -124,9 +124,9 @@ export default function PresentSmarterSection() {
                   "
                 >
                   <img
-                    src={presentSmarterBg2}
-                    alt="secondary 1"
-                    className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
+                    src={presentSmarterBg3}
+                    alt="secondary 2"
+                    className="w-full h-[calc(100%+10px)] object-cover rounded-lg absolute top-0 left-0"
                   />
                 </div>
                 <div
@@ -136,9 +136,9 @@ export default function PresentSmarterSection() {
                   "
                 >
                   <img
-                    src={presentSmarterBg3}
-                    alt="secondary 2"
-                    className="w-full h-[calc(100%+10px)] object-cover rounded-lg absolute top-0 left-0"
+                    src={presentSmarterBg2}
+                    alt="secondary 1"
+                    className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
                   />
                 </div>
               </div>
