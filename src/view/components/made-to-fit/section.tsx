@@ -9,7 +9,7 @@ import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
 
 import HorizontalGallery from "./horizontal-gallery";
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function MadeToFit() {
   const imagesSources = [laptopImage, lounge01, lounge02, lounge03, lounge04];
@@ -102,10 +102,10 @@ export default function MadeToFit() {
           {/* ------ Navigation (Below Slider) ------ */}
           <div className="flex items-center justify-end gap-2 mt-6 px-4">
             <button className="flex items-center justify-center swiper-prev-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
-              <ChevronLeft size={24} className="text-[#EF716E]" />
+              <ArrowLeft size={21} className="text-[#EF716E]" />
             </button>
             <button className="flex items-center justify-center swiper-next-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
-              <ChevronRight size={24} className="text-[#EF716E]" />
+              <ArrowRight size={21} className="text-[#EF716E]" />
             </button>
           </div>
         </div>
