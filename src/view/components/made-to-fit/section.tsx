@@ -71,7 +71,7 @@ export default function MadeToFit() {
       {/*   MOBILE → SWIPER SLIDER     */}
       {/* ----------------------------- */}
       {isMobile ? (
-        <div className="mt-10 px-4">
+        <div className="mt-10">
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={20}
