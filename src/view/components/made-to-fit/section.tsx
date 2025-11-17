@@ -77,7 +77,7 @@ export default function MadeToFit() {
         <div className="mt-10 rp-container overflow-visible">
           <Swiper
             modules={[Navigation, Pagination]}
-            slidesPerView={1.35}
+            slidesPerView={1.5}
             centeredSlides={true}
             spaceBetween={20}
             grabCursor={true}
