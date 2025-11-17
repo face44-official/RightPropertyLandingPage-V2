@@ -22,7 +22,7 @@ export default function BinarySection({
     >
       <div
         className="
-          w-fit lg:w-full mx-auto bg-white flex items-center lg:justify-start lg:items-start justify-center
+          w-fit lg:w-full mx-auto bg-white flex lg:justify-start lg:items-start justify-between
           gap-[3.75rem] p-[2.5rem]
           lg:flex-col-reverse lg:p-6 lg:gap-[1.5rem] sm:gap-[1.2rem]
           4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
@@ -77,7 +77,7 @@ export default function BinarySection({
         </div>
 
         {image}
-        <div className="mobile-block gap-4 flex">
+        <div className="mobile-block gap-4 lg:flex hidden">
           <div className="block-icon">{image}</div>
           <div className="hidden lg:flex flex-col">
             <p
