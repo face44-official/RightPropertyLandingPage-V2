@@ -73,13 +73,14 @@ body {
   color: var(--color-squid-ink);
 }
 
-/* @media (min-width: 768px) {
-  :root,
-  html,
-  body {
-    font-size: 90%;
+@media (max-width: 768px) {
+  .binary-block-wrapper .binary-icons {
+    display: none;
   }
-} */
+  .binary-block-wrapper .mobile-block .binary-icons {
+    display: block;
+  }
+}
 
 @media (min-width: 1280px) and (max-width: 1440px) {
   html {
@@ -133,7 +134,6 @@ body {
   ); */
   -webkit-mask-mode: alpha;
   -webkit-mask-repeat: no-repeat;
-  
 }
 .motion-path-item {
   will-change: transform;
@@ -243,7 +243,7 @@ body {
     max-width: 375px;
   }
   .reveal-type > div > * {
-    color: #000000!important;
+    color: #000000 !important;
   }
   .binary-icons {
     width: 8rem !important;
@@ -262,10 +262,10 @@ body {
     max-width: 540px;
   }
   .reveal-type > div > * {
-    color: #000000!important;
+    color: #000000 !important;
   }
   .binary-icons {
-    width: 8rem !important;
+    width: 6rem !important;
   }
 }
 
@@ -470,110 +470,110 @@ body {
       ) !important;
     }
   }
-/* 2K–4K Fluid Typography (starts from 2050px) */
-.text-fluid-4k-14 {
+  /* 2K–4K Fluid Typography (starts from 2050px) */
+  .text-fluid-4k-14 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        0.875rem,
+        calc(0.875rem + ((100vw - 2050px) / 2000px) * 0.875rem),
+        1.75rem
+      );
+    }
+  }
+
+  .text-2k-4k {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        var(--minSize),
+        calc(
+          var(--minSize) +
+            ((100vw - var(--minVw)) / (var(--maxVw) - var(--minVw))) *
+            (var(--maxSize) - var(--minSize))
+        ),
+        var(--maxSize)
+      );
+    }
+  }
+
+  .text-fluid-4k-40 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        2.5rem,
+        calc(2.5rem + ((100vw - 2050px) / 2000px) * 5rem),
+        5rem
+      );
+    }
+  }
+
+  .text-fluid-4k-32 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        2rem,
+        calc(2rem + ((100vw - 2050px) / 2000px) * 2rem),
+        4rem
+      );
+    }
+  }
+
+  .text-fluid-4k-28 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        1.75rem,
+        calc(1.75rem + ((100vw - 2050px) / 2000px) * 1.75rem),
+        3.5rem
+      );
+    }
+  }
+
+  .text-2k-4k-24 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        1.5rem,
+        calc(1.5rem + ((100vw - 2050px) / 1840px) * 1.5rem),
+        3rem
+      );
+    }
+  }
+
+  .text-2k-4k-22 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        1.375rem,
+        calc(1.375rem + ((100vw - 2050px) / 2000px) * 1.375rem),
+        2.75rem
+      );
+    }
+  }
+
+  .text-2k-4k-20 {
+    @media (min-width: 2050px) {
+      font-size: clamp(
+        20px,
+        calc(20px + ((100vw - 2050px) / 2000px) * 20px),
+        40px
+      );
+    }
+  }
+
   @media (min-width: 2050px) {
-    font-size: clamp(
-      0.875rem,
-      calc(0.875rem + ((100vw - 2050px) / 2000px) * 0.875rem),
-      1.75rem
-    );
+    .text-2k-4k-18 {
+      font-size: clamp(
+        1.125rem,
+        calc(1.125rem + ((100vw - 2050px) / 2000px) * 1.125rem),
+        2.25rem
+      );
+    }
   }
-}
 
-.text-2k-4k {
   @media (min-width: 2050px) {
-    font-size: clamp(
-      var(--minSize),
-      calc(
-        var(--minSize) +
-          ((100vw - var(--minVw)) / (var(--maxVw) - var(--minVw))) *
-          (var(--maxSize) - var(--minSize))
-      ),
-      var(--maxSize)
-    );
+    .riv-icon {
+      max-width: clamp(
+        8rem,
+        calc(8rem + (100vw - 2050px) * 0.55),
+        14rem
+      ) !important;
+    }
   }
-}
-
-.text-fluid-4k-40 {
-  @media (min-width: 2050px) {
-    font-size: clamp(
-      2.5rem,
-      calc(2.5rem + ((100vw - 2050px) / 2000px) * 5rem),
-      5rem
-    );
-  }
-}
-
-.text-fluid-4k-32 {
-  @media (min-width: 2050px) {
-    font-size: clamp(
-      2rem,
-      calc(2rem + ((100vw - 2050px) / 2000px) * 2rem),
-      4rem
-    );
-  }
-}
-
-.text-fluid-4k-28 {
-  @media (min-width: 2050px) {
-    font-size: clamp(
-      1.75rem,
-      calc(1.75rem + ((100vw - 2050px) / 2000px) * 1.75rem),
-      3.5rem
-    );
-  }
-}
-
-.text-2k-4k-24 {
-  @media (min-width: 2050px) {
-    font-size: clamp(
-      1.5rem,
-      calc(1.5rem + ((100vw - 2050px) / 1840px) * 1.5rem),
-      3rem
-    );
-  }
-}
-
-.text-2k-4k-22 {
-  @media (min-width: 2050px) {
-    font-size: clamp(
-      1.375rem,
-      calc(1.375rem + ((100vw - 2050px) / 2000px) * 1.375rem),
-      2.75rem
-    );
-  }
-}
-
-.text-2k-4k-20 {
-  @media (min-width: 2050px) {
-    font-size: clamp(
-      20px,
-      calc(20px + ((100vw - 2050px) / 2000px) * 20px),
-      40px
-    );
-  }
-}
-
-@media (min-width: 2050px) {
-  .text-2k-4k-18 {
-    font-size: clamp(
-      1.125rem,
-      calc(1.125rem + ((100vw - 2050px) / 2000px) * 1.125rem),
-      2.25rem
-    );
-  }
-}
-
-@media (min-width: 2050px) {
-  .riv-icon {
-    max-width: clamp(
-      8rem,                                
-      calc(8rem + (100vw - 2050px) * 0.55),
-      14rem                                
-    ) !important;
-  }
-}
 }
 
 :root {

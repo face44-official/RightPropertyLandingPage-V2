@@ -24,11 +24,12 @@ export default function BinarySection({
         className="
           w-fit lg:w-full mx-auto bg-white flex items-center lg:justify-start lg:items-start justify-center
           gap-[3.75rem] p-[2.5rem]
-          lg:flex-col-reverse lg:p-6 lg:gap-[2rem]
+          lg:flex-col-reverse lg:p-6 lg:gap-[1.5rem] sm:gap-[1.2rem]
           4k:[gap:clamp(3.75rem,calc(3.75rem+((100vw-2000px)/2000px)*3.75rem),7.5rem)]
           4k:[padding:clamp(3rem,calc(3rem+((100vw-2000px)/2000px)*3rem),5rem)]
           transition-shadow duration-500
           hover:shadow-[3px_51px_109.4px_29px_#7E669D4F]
+          binary-block-wrapper
         "
       >
         <div
@@ -44,6 +45,7 @@ export default function BinarySection({
               text-14 lg:text-sm
               text-fluid-4k-14
               4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+              lg:hidden
             "
           >
             {subHeader}
@@ -56,6 +58,7 @@ export default function BinarySection({
               text-24 lg:text-20
               text-2k-4k-24
               4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+              lg:hidden
             "
           >
             {title}
@@ -73,8 +76,34 @@ export default function BinarySection({
           </p>
         </div>
 
-        {/* IMAGE */}
         {image}
+        <div className="mobile-block gap-4 flex">
+          <div className="block-icon">{image}</div>
+          <div className="hidden lg:flex flex-col">
+            <p
+              className="
+              mb-6 lg:mb-3 font-geist-mono font-medium uppercase text-primary-black
+              leading-[150%] tracking-[0.04em]
+              text-14 lg:text-sm
+              text-fluid-4k-14
+              4k:[margin-bottom:clamp(1.5rem,calc(1.5rem+((100vw-2000px)/2000px)*1.5rem),3rem)]
+            "
+            >
+              {subHeader}
+            </p>
+            <h3
+              className="
+              mb-[1rem] lg:mb-0 font-general-sans font-semibold text-primary-black
+              leading-[110%]
+              text-24 lg:text-20
+              text-2k-4k-24
+              4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2000px)/2000px)*1rem),2rem)]
+            "
+            >
+              {title}
+            </h3>
+          </div>
+        </div>
 
         {/* BACKGROUND GLOW */}
         <div

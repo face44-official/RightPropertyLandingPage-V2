@@ -170,7 +170,7 @@ export default function Accessibility({
         mb-[2.5rem] lg:mb-[2rem]
         font-geist font-normal text-dark-gray
         leading-[140%] tracking-[0em]
-        text-24
+        text-18
         text-2k-4k-24
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),5rem)]
       "
