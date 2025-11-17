@@ -100,11 +100,12 @@ export default function PresentSmarterSection() {
                   4k:[height:clamp(35rem,calc(35rem+((100vw-2050px)/2000px)*35rem),70rem)]
                 "
               >
-                <img
-                  src={presentSmarterBg1}
-                  alt="main"
-                  className="w-full h-full object-cover"
-                />
+                <div
+                  style={{
+                    backgroundImage: `url(${presentSmarterBg1})`,
+                  }}
+                  className="w-full h-full bg-cover"
+                ></div>
               </div>
 
               {/* Grid of secondary images */}
@@ -119,15 +120,16 @@ export default function PresentSmarterSection() {
               >
                 <div
                   className="
-                    image-1 h-[18rem] overflow-hidden relative
+                    image-1 h-[18rem] relative
                     4k:[height:clamp(18rem,calc(18rem+((100vw-2050px)/2000px)*18rem),36rem)]
                   "
                 >
-                  <img
-                    src={presentSmarterBg3}
-                    alt="secondary 2"
-                    className="w-full h-[calc(100%+10px)] object-cover rounded-lg absolute top-0 left-0"
-                  />
+                  <div
+                    style={{
+                      backgroundImage: `url(${presentSmarterBg3})`,
+                    }}
+                    className="w-full h-[calc(100%+10px)] bg-cover rounded-tl-[0px] rounded-bl-[0px] rounded-[20px] absolute top-0 left-0"
+                  ></div>
                 </div>
                 <div
                   className="
@@ -135,11 +137,12 @@ export default function PresentSmarterSection() {
                     4k:[height:clamp(23rem,calc(23rem+((100vw-2050px)/2000px)*23rem),46rem)]
                   "
                 >
-                  <img
-                    src={presentSmarterBg2}
-                    alt="secondary 1"
-                    className="w-full h-full object-cover rounded-lg absolute top-0 left-0"
-                  />
+                  <div
+                     style={{
+                      backgroundImage: `url(${presentSmarterBg2})`,
+                    }}
+                    className="w-full h-full bg-cover rounded-[20px] rounded-b-[0px] absolute top-0 left-0"
+                  ></div>
                 </div>
               </div>
             </div>
