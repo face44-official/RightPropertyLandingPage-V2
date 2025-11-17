@@ -35,7 +35,7 @@ export default function EnhancedPresentationsSection() {
             className="
       mb-[2.0625rem] lg:mb-[0.875rem]
       font-general-sans font-semibold
-      text-60 lg:text-40
+      text-60 lg:text-36
       leading-[100%] tracking-[0%] text-raisin-black
       4k:[font-size:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]
       4k:[margin-bottom:clamp(2.0625rem,calc(2.0625rem+((100vw-2050px)/2000px)*2.0625rem),4.125rem)]
@@ -51,7 +51,7 @@ export default function EnhancedPresentationsSection() {
       mb-[2.5625rem] lg:mb-[1.5rem]
       w-[28.875rem] lg:w-full
       font-geist font-normal
-      text-24 lg:text-24 text-2k-4k-24
+      text-24 lg:text-20 text-2k-4k-24
       leading-[130%] -tracking-[0.01em] text-tundora
       4k:[width:clamp(28.875rem,calc(28.875rem+((100vw-2050px)/2000px)*28.875rem),57.75rem)]
       4k:[margin-bottom:clamp(2.5625rem,calc(2.5625rem+((100vw-2050px)/2000px)*2.5625rem),5.125rem)]

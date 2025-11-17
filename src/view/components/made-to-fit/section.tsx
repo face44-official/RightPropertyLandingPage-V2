@@ -45,7 +45,7 @@ export default function MadeToFit() {
         <h2
           className="
             text-[#E2E2E2] font-general-sans font-semibold tracking-[0.01em]
-            text-40 lg:text-32 leading-[140%] lg:leading-[130%]
+            text-40 lg:text-28 leading-[140%] lg:leading-[130%]
             mb-[3.75rem] lg:mb-0
             4k:[margin-bottom:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]
             text-fluid-4k-40

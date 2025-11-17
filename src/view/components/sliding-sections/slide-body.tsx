@@ -18,10 +18,10 @@ export default function SlideBody({ caption, title, description, buttonType, use
        {caption && <div className="font-geist-mono text-sm font-medium mb-4 uppercase text-[#232323]">
             {caption}
         </div>}
-        <div className="font-general-sans text-32 font-semibold leading-[130%] -tracking-[0.01em] mb-6 text-[#232323]">
+        <div className="font-general-sans text-28 font-semibold leading-[130%] -tracking-[0.01em] mb-6 text-[#232323]">
             {title}
         </div>
-        <div className="grow font-geist text-18 font-normal leading-[130%] -tracking-[0.01em] text-[#434343] mb-[2rem]">
+        <div className="grow font-geist text-16 font-normal leading-[130%] -tracking-[0.01em] text-[#434343] mb-[2rem]">
             {description}
         </div>
 

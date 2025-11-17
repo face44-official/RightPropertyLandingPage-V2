@@ -157,7 +157,7 @@ export default function Accessibility({
         className="
         mb-5 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
         leading-[130%] tracking-[0em]
-        text-40 lg:text-32
+        text-40 lg:text-28
         text-fluid-4k-40
         4k:[margin-bottom:clamp(2rem,calc(2rem+((100vw-2050px)/2000px)*2rem),4rem)]
       "

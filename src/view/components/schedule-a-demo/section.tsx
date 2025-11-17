@@ -76,7 +76,7 @@ export default function ScheduleADemoSection({
             className="
               mb-4 lg:mb-[0.75rem]
               font-general-sans font-semibold text-[#232323]
-              text-40 lg:text-32
+              text-40 lg:text-28
               text-fluid-4k-40
               4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
               leading-[130%] tracking-[0.01em]
@@ -89,7 +89,7 @@ export default function ScheduleADemoSection({
             className="
               mb-[2.5rem] lg:mb-[1rem]
               font-geist font-normal
-              text-18
+              text-16
               text-2k-4k-18
               4k:[margin-bottom:clamp(2.5rem,calc(2.5rem+((100vw-2050px)/2000px)*2.5rem),5rem)]
               leading-[140%] tracking-[0]

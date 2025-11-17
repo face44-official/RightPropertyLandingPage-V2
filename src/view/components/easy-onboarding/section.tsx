@@ -276,7 +276,7 @@ export default function EasyOnboardingSection() {
             <h2
               className="
             mb-5 lg:mb-[1.5rem] font-general-sans font-semibold text-primary-black
-            leading-[130%] -tracking-[0.01em] text-40 lg:text-32
+            leading-[130%] -tracking-[0.01em] text-40 lg:text-28
             text-fluid-4k-40
             4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2000px)/2000px)*1.3rem),2.6rem)]
           "

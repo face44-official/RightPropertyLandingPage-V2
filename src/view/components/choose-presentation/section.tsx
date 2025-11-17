@@ -31,7 +31,7 @@ export default function ChoosePresentationSection() {
               w-[46.875rem] lg:w-full pl-[5rem]
               mb-[2.5rem] lg:mb-[2rem] lg:px-4
               font-geist font-semibold text-primary-black
-              text-40 lg:text-32 leading-[130%]
+              text-40 lg:text-28 leading-[130%]
               text-fluid-4k-40
               4k:[width:clamp(46.875rem,calc(46.875rem+((100vw-2050px)/2000px)*46.875rem),93.75rem)]
               4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
@@ -80,7 +80,7 @@ export default function ChoosePresentationSection() {
                 <h3
                   className="
                   mb-3 font-general-sans font-medium text-raisin-black relative z-[2]
-                  text-40 leading-[130%] lg:text-32
+                  text-40 leading-[130%] lg:text-28
                   text-fluid-4k-40
                   4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                 "
@@ -137,7 +137,7 @@ export default function ChoosePresentationSection() {
                 <h3
                   className="
                   mb-3 font-general-sans font-medium text-white relative z-[2]
-                  text-40 leading-[130%] lg:text-32
+                  text-40 leading-[130%] lg:text-28
                   text-fluid-4k-40
                   4k:[margin-bottom:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
                 "
