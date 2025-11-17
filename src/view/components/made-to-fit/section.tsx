@@ -70,12 +70,16 @@ export default function MadeToFit() {
       {/* ----------------------------- */}
       {/*   MOBILE → SWIPER SLIDER     */}
       {/* ----------------------------- */}
+      {/* ----------------------------- */}
+      {/*   MOBILE → SWIPER SLIDER     */}
+      {/* ----------------------------- */}
       {isMobile ? (
-        <div className="mt-10 rp-container">
+        <div className="mt-10 rp-container overflow-visible">
           <Swiper
             modules={[Navigation, Pagination]}
-            slidesPerView={1}
+            slidesPerView={1.35}
             centeredSlides={true}
+            spaceBetween={20}
             grabCursor={true}
             navigation={{
               nextEl: ".swiper-next-btn",
@@ -89,24 +93,25 @@ export default function MadeToFit() {
           >
             {imagesSources.map((img, i) => (
               <SwiperSlide key={i}>
-                <img
-                  src={img}
-                  alt=""
-                  className="w-full h-auto rounded-xl object-cover"
-                />
+                <div className="w-full rounded-xl overflow-hidden">
+                  <img
+                    src={img}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          {/* ------ Navigation (Below Slider) ------ */}
-          <div className="flex items-center justify-end gap-2 mt-6">
+          {/* <div className="flex items-center justify-end gap-2 mt-6 pr-2">
             <button className="flex items-center justify-center swiper-prev-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
               <ArrowLeft size={21} className="text-[#EF716E]" />
             </button>
             <button className="flex items-center justify-center swiper-next-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
               <ArrowRight size={21} className="text-[#EF716E]" />
             </button>
-          </div>
+          </div> */}
         </div>
       ) : (
         <HorizontalGallery images={imagesSources} />

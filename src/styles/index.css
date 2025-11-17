@@ -359,6 +359,23 @@ body {
   border: none;
 }
 
+.mobile-swiper {
+  overflow: visible !important;
+}
+
+.mobile-swiper .swiper-slide {
+  display: flex !important;
+  align-items: flex-start !important; /* ⬅ FIXES TOP GAP */
+}
+.mobile-swiper .swiper-slide {
+  margin-top: 20px; /* spacing for all slides */
+  transition: margin-top 0.3s ease;
+}
+
+.mobile-swiper .swiper-slide-active {
+  margin-top: 0px !important; /* active slide aligns to top */
+}
+
 .pin-spacer-horizontal-gallery {
   background: black;
 }
