@@ -71,11 +71,10 @@ export default function MadeToFit() {
       {/*   MOBILE → SWIPER SLIDER     */}
       {/* ----------------------------- */}
       {isMobile ? (
-        <div className="mt-10">
+        <div className="mt-10 rp-container">
           <Swiper
             modules={[Navigation, Pagination]}
-            spaceBetween={20}
-            slidesPerView={1.1}
+            slidesPerView={1}
             centeredSlides={true}
             grabCursor={true}
             navigation={{
@@ -100,7 +99,7 @@ export default function MadeToFit() {
           </Swiper>
 
           {/* ------ Navigation (Below Slider) ------ */}
-          <div className="flex items-center justify-end gap-2 mt-6 px-4">
+          <div className="flex items-center justify-end gap-2 mt-6">
             <button className="flex items-center justify-center swiper-prev-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
               <ArrowLeft size={21} className="text-[#EF716E]" />
             </button>
