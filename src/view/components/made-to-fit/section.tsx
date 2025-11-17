@@ -79,7 +79,7 @@ export default function MadeToFit() {
             modules={[Navigation, Pagination]}
             slidesPerView={1.5}
             centeredSlides={false}
-            spaceBetween={20}
+            spaceBetween={16}
             grabCursor={true}
             navigation={{
               nextEl: ".swiper-next-btn",
