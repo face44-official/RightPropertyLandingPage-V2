@@ -93,7 +93,7 @@ export default function MadeToFit() {
           >
             {imagesSources.map((img, i) => (
               <SwiperSlide key={i}>
-                <div className="w-full rounded-xl overflow-hidden">
+                <div className="sm-575:w-[15rem] sm-575:h-[15rem] lg:w-full lg:h-full overflow-hidden">
                   <img
                     src={img}
                     alt=""

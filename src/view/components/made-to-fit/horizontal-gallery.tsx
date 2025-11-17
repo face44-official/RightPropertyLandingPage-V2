@@ -167,12 +167,11 @@ export default function HorizontalGallery({
                 images.length
               }`}
               className="
-                item relative object-cover rounded-[1rem]
+                item relative object-cover
                 w-[42.375rem] h-[42.375rem]
                 lg:w-[68vw] lg:h-[68vw]
                 4k:[width:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
                 4k:[height:clamp(42.375rem,calc(42.375rem+((100vw-2050px)/2000px)*42.375rem),84.75rem)]
-                4k:[border-radius:clamp(1rem,calc(1rem+((100vw-2050px)/2000px)*1rem),2rem)]
               "
             />
           ))}
