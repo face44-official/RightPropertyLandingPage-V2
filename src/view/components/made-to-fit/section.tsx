@@ -1,12 +1,26 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
 import laptopImage from "@/assets/gallery/laptop_optimized.webp";
 import lounge01 from "@/assets/gallery/lounge01_optimized.webp";
 import lounge02 from "@/assets/gallery/lounge02_optimized.webp";
 import lounge03 from "@/assets/gallery/lounge03_optimized.webp";
 import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
+
 import HorizontalGallery from "./horizontal-gallery";
+import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function MadeToFit() {
   const imagesSources = [laptopImage, lounge01, lounge02, lounge03, lounge04];
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section
@@ -21,7 +35,6 @@ export default function MadeToFit() {
         4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
         4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
       "
-      aria-label="Right Property platform adaptability showcase"
     >
       <div
         className="
@@ -30,13 +43,11 @@ export default function MadeToFit() {
           4k:[padding-left:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
           4k:[padding-right:clamp(5rem,calc(5rem+((100vw-2050px)/2000px)*5rem),10rem)]
         "
-        style={{ height: "auto" }}
       >
         <p
           className="
             mb-6 font-geist-mono font-medium uppercase text-[#E2E2E2]
             text-fluid-4k-14 text-14 lg:text-sm leading-[140%] tracking-[0.02em]
-            4k:[margin-bottom:clamp(1.3rem,calc(1.3rem+((100vw-2050px)/2000px)*1.3rem),2.6rem)]
           "
         >
           An experience that matters
@@ -47,7 +58,6 @@ export default function MadeToFit() {
             text-[#E2E2E2] font-general-sans font-semibold tracking-[0.01em]
             text-40 lg:text-28 leading-[140%] lg:leading-[130%]
             mb-[3.75rem] lg:mb-0
-            4k:[margin-bottom:clamp(3.75rem,calc(3.75rem+((100vw-2050px)/2000px)*3.75rem),7.5rem)]
             text-fluid-4k-40
           "
         >
@@ -57,7 +67,51 @@ export default function MadeToFit() {
         </h2>
       </div>
 
-      <HorizontalGallery images={imagesSources} />
+      {/* ----------------------------- */}
+      {/*   MOBILE → SWIPER SLIDER     */}
+      {/* ----------------------------- */}
+      {isMobile ? (
+        <div className="mt-10 px-4">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={20}
+            slidesPerView={1.1}
+            centeredSlides={true}
+            grabCursor={true}
+            navigation={{
+              nextEl: ".swiper-next-btn",
+              prevEl: ".swiper-prev-btn",
+            }}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+            }}
+            className="mobile-swiper"
+          >
+            {imagesSources.map((img, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src={img}
+                  alt=""
+                  className="w-full h-auto rounded-xl object-cover"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* ------ Navigation (Below Slider) ------ */}
+          <div className="flex items-center justify-end gap-2 mt-6 px-4">
+            <button className="flex items-center justify-center swiper-prev-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
+              <ChevronLeft size={24} className="text-[#EF716E]" />
+            </button>
+            <button className="flex items-center justify-center swiper-next-btn w-[2.5rem] h-[2.5rem] rounded-full border border-[#FF947E80] opacity-70">
+              <ChevronRight size={24} className="text-[#EF716E]" />
+            </button>
+          </div>
+        </div>
+      ) : (
+        <HorizontalGallery images={imagesSources} />
+      )}
     </section>
   );
 }
