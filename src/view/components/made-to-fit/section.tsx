@@ -78,7 +78,7 @@ export default function MadeToFit() {
           <Swiper
             modules={[Navigation, Pagination]}
             slidesPerView={1.5}
-            centeredSlides={true}
+            centeredSlides={false}
             spaceBetween={20}
             grabCursor={true}
             navigation={{
