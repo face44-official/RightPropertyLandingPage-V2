@@ -9,7 +9,7 @@ import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
 
 import HorizontalGallery from "./horizontal-gallery";
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+// import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function MadeToFit() {
   const imagesSources = [laptopImage, lounge01, lounge02, lounge03, lounge04];
